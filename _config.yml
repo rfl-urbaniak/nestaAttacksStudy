@@ -22,9 +22,9 @@ plugins:             [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-t
 
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title:		           'Personal attacks on Reddit'
+title:		           'Nesta personal attacks study'
 description:	       '</br> A study of their impact on user activity </br>'
-author:              'Rafal Urbaniak, Michał Ptaszyński, Patrycja Tempska, Gniewosz Leliwa, Maciej Brochocki, Michał Wroczyński'
+author:              'Patrycja Tempska and Rafal Urbaniak'
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:

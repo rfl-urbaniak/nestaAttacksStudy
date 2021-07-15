@@ -1,0 +1,5 @@
+remove textsf
+
+\\textsf{(\w{1,40})}
+
+$1

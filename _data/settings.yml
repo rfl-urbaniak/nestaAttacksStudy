@@ -1,0 +1,36 @@
+# Change 'comments' to true for Disqus comments
+disqus:
+  comments: false
+  disqus_shortname: ''
+
+# If you are not using Google Analytics, please change 'google-ID' to an empty string
+google-ID: ''
+
+menu:
+#- {name: 'About', path: 'menu', url: 'about.html'}
+#- {name: 'Writing', path: 'menu', url: 'writing.html'}
+#- {name: 'Contact', path: 'menu', url: 'contact.html'}
+
+# Available social icons are powered by Font Awesome, so you can use any icon that they offer
+social:
+- {icon: 'home', link: 'https://rfl-urbaniak.github.io/menu/about.html'}
+- {icon: 'envelope', link: 'mailto:rfl.urbaniak@gmail.com'}
+- {icon: 'github', link: 'https://github.com/rfl-urbaniak'}
+#- {icon: `orcid`, link: `https://orcid.org/0000-0002-6321-2866`}
+#- {icon: 'linkedin', link: ''}
+#- {icon: 'rss-square', link: '/feed.xml'}
+# - {icon: 'rss-square', link: '/rss-feed.xml'}
+
+# Customize site text
+#pagination:
+#  next_page: 'Newer'
+#  previous_page: 'Older'
+
+#sharing_button_prompt: 'Feel free to share!'
+
+#related_posts: 'You may also enjoy:'
+
+#post_date_prefix: 'Written on'
+
+plugins:
+  - jekyll-toc

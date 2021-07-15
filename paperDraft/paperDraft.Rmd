@@ -1,0 +1,54 @@
+---
+title: "Nesta attacks study"
+author: "Patrycja Tempska and Rafal Urbaniak"
+output:
+  pdf_document:
+    number_sections: true
+    df_print: kable 
+    keep_tex: true
+    includes:
+      in_header:
+        - Rafal_latex6.sty
+classoption: dvipsnames,enabledeprecatedfontcommands
+fontsize: 10pt
+documentclass: scrartcl
+urlcolor: blue
+bibliography: [../references/attacks.bib]
+csl: [../references/apa-6th-edition.csl] 
+---
+
+```{r, setup, include=FALSE}
+knitr::opts_knit$set(root.dir = '../')
+
+#libraries used
+library(ggplot2)
+library(ggthemes)
+library(gridExtra)
+```
+
+
+
+\tableofcontents
+
+# Section
+
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+2+2 #use this formatting for chunks
+```
+\normalsize
+
+
+# Section 2
+
+
+#  References {-}
+
+\vspace{-3mm}
+
+
+
+
+

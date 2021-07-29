@@ -24,6 +24,8 @@ knitr::opts_knit$set(root.dir = '../')
 library(ggplot2)
 library(ggthemes)
 library(gridExtra)
+
+Just a small change
 ```
 
 

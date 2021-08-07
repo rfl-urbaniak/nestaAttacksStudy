@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.2)  2 AUG 2021 11:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.2)  7 AUG 2021 09:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1741,26 +1741,26 @@ _ during _ coronavirus _ Report -[] L1ght . pdf$[][]}{[][]$https :
 
 
 {/Users/patrycjatempska/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
-x.map}] [2] (./paperDraft.aux) ) 
+x.map}] [2] [3] (./paperDraft.aux) ) 
 Here is how much of TeX's memory you used:
- 29095 strings out of 480502
- 536595 string characters out of 5898081
- 977325 words of memory out of 5000000
- 46205 multiletter control sequences out of 15000+600000
+ 29118 strings out of 480502
+ 537065 string characters out of 5898081
+ 978325 words of memory out of 5000000
+ 46208 multiletter control sequences out of 15000+600000
  462694 words of font info for 128 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,8n,108p,10633b,324s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/patrycjatempska/Library/TinyTeX/texmf-d
-ist/fonts/enc/dvips/base/8r.enc}</Users/patrycjatempska/Library/TinyTeX/texmf-d
-ist/fonts/type1/urw/courier/ucrr8a.pfb></Users/patrycjatempska/Library/TinyTeX/
-texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></Users/patrycjatempska/Library/
-TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/patrycjatempska/
-Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/patrycjatem
-pska/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paperDraft.pdf (2 pages, 58963 bytes).
+ 108i,8n,108p,10633b,360s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/patrycjatempska/Library/TinyTeX/tex
+mf-dist/fonts/enc/dvips/base/8r.enc}</Users/patrycjatempska/Library/TinyTeX/tex
+mf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/patrycjatempska/Library/Tiny
+TeX/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></Users/patrycjatempska/Libr
+ary/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/patrycjatemp
+ska/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/patrycj
+atempska/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paperDraft.pdf (3 pages, 78104 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
- 37 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 112 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
+ 34 named destinations out of 1000 (max. 500000)
+ 45 words of extra memory for PDF output out of 10000 (max. 10000000)
 

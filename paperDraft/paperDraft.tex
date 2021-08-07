@@ -326,8 +326,8 @@ interventions had their personal attacks' user significantly decreased.
 
 \normalsize
 
-\hypertarget{section-2}{%
-\section{Section 2}\label{section-2}}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
 
 Although much effort has been made in order to tackle the problem of
 verbal aggression and harassment online, looking at various reports and
@@ -348,16 +348,87 @@ Twitter. Gaming platforms were in the spotlight as well, with a 40\%
 increase in toxicity on Discord.
 
 But alongside the growing need for even more efficient and proactive
-moderation, the capacity to put it into life did not go hand in hand,
-forcing companies and policymakers to rethink the current model of
-moderation processes and workforce. Due to the COVID19 restrictions
-including social distancing, a lot of those serving the role of
-moderators had to be sent
+moderation, the capacity to execute it did not go hand in hand, forcing
+companies and policymakers to rethink the current model of moderation
+processes and workforce. Due to the COVID19 restrictions including
+social distancing, a lot of those serving the role of moderators had to
+be sent
 home\footnote{\href {https://qz.com/india/1976450/facebook-covid-19-lockdowns-hurt-content-moderation-algorithms/}{https://qz.com/india/1976450/facebook-covid-19-lockdowns-hurt-content-moderation-algorithms/}}
 without the ability to work remotely because of the constraints
-affiliated with restrictive non-disclosure agreements (NDA).
+affiliated with restrictive non-disclosure agreements (NDA) among
+others. Curtailing the moderators' workforce was accompanied by more
+agency given to algorithms and AI-based moderation. Those changes, as
+argued by Gerrard (2020), can be seen as a serious red flag in terms of
+safety for all users on online platforms.
 
-gerrard2020covid19
+\hypertarget{automated-versus-human-based-moderation}{%
+\section{Automated versus Human-based
+Moderation}\label{automated-versus-human-based-moderation}}
+
+The hindrances and threats that go along with the Artificial
+Intelligence-based methods for moderation have been widely debated, with
+the most critical discussions revolving around technology performance
+(MacAvaney et al. (2019), Schmidt \& Wiegand (2017)). State-of-the-art
+solutions are mostly governed by statistical methods including deep
+learning and machine learning (LeCun, Bengio, \& Hinton (2015),
+Sejnowski (2020), Jordan \& Mitchell (2015)). Their performance is
+inherently tied to the amount of data being fed to the system and the
+quality of its annotation. At different stages of the process, from
+datasets gathering and preparation, annotation to the training or
+algorithms themselves, biases seem to be omnipresent (Binns, Veale, Van
+Kleek, \& Shadbolt (2017), Geva, Goldberg, \& Berant (2019) Mehrabi,
+Morstatter, Saxena, Lerman, \& Galstyan (2021)). Users' of online
+services are also creative in their strategies to circumvent automated
+content moderation systems and as shown by Gröndahl, Pajola, Juuti,
+Conti, \& Asokan (2018), current techniques are vulnerable to the most
+common evasion attacks like word changes (inseting typos and leetspeak),
+word-boundary changes (inserting or removing whitespace), or word
+appending (appending common or non-hateful words like ``love'').
+Generalisability of the models - an ability to perform well on datasets
+coming from sources other than the one used for training are an
+important shortcoming as well (Yin \& Zubiaga (2021), Swamy, Jamatia, \&
+Gambäck (2019), Rosa et al. (2019)). As shown by Wu, Ribeiro, Heer, \&
+Weld (2019), Lipton \& Steinhardt (2019), and Musgrave, Belongie, \& Lim
+(2020) in practice, creations of models often lacks thorough error
+analysis and legitimate experimental methodology, which can result in
+non-reproducibility. This is also connected with a potential lack of
+thorough understanding of the limitations of the models and spurious
+conclusions being made to a wider public. Specifically, @Lipton \&
+Steinhardt (2019) distinguishes four dysfunctional patterns occurring in
+the current research paradigm in the industry and academia alike. First,
+the inability to draw a clear distinction between speculation and
+explanation, with the first one often being disguised as the second.
+Second, inability for successful identification of the sources of
+empirical gains (whether it was problem formulation, optimization of the
+heuristics, data-preprocessing, hyperparameter tuning, or perhaps yet
+another aspect). Third, ``mathiness'' - the use obscure language and
+often covering weak argumentation with the alluring but often apparent
+depth of technical jargon. Last but not least - misuse of language. This
+includes suggestive definitions without proper explanation of what they
+mean in the context (e.g.~inflating good performance in simple NLP tasks
+to human-level natural understanding), overloading the papers with
+technical terminology, or suitcase words (those words that can encompass
+a variety of meanings, e.g.~consciousness).
+
+Yet another obstacle in the process is the lack of gold standard in
+dataset creation and taxonomies of abusive language being used for
+instance in the process of annotating different datasets. Frequently
+people obtain data from various sources and do not follow any
+universally used instructions when it comes to its annotation, leading
+to discrepancies between various datasets being tagged within one domain
+(e.g.~hate speech). Lack of expert annotators and proper annotation
+criteria and instructions are also widespread, with the common practice
+hiring untrained workers from Mechanical Turk or other crowdsourcing
+platforms.
+
+Although there are some initiatives developed in response, most notably,
+functional tests for Hate Speech Detection Models created by Röttger et
+al. (2020), or the Online Safety Data Initiative (OSDI) LINK
+\url{https://onlinesafetydata.blog.gov.uk/about-us/}, focused on
+projects related to improving access to data, standardizing the
+description of online harms, as well as creating tools and benchmarks
+for evaluation of technologies focused on safety, much effort must be
+made before wider adoption of such solutions comes into force.
 
 \hypertarget{references}{%
 \section*{References}\label{references}}
@@ -371,6 +442,96 @@ gerrard2020covid19
 Barlett, C. P., Simmers, M. M., Roth, B., \& Gentile, D. (2021).
 Comparing cyberbullying prevalence and process before and during the
 COVID-19 pandemic. \emph{The Journal of Social Psychology}, 1--11.
+
+\leavevmode\hypertarget{ref-binns2017like}{}%
+Binns, R., Veale, M., Van Kleek, M., \& Shadbolt, N. (2017). Like
+trainer, like bot? Inheritance of bias in algorithmic content
+moderation. \emph{International Conference on Social Informatics},
+405--415. Springer.
+
+\leavevmode\hypertarget{ref-gerrard2020covid19}{}%
+Gerrard, Y. (2020). \textless? covid19?\textgreater{} The COVID-19
+mental health content moderation conundrum. \emph{Social Media+
+Society}, \emph{6}(3), 2056305120948186.
+
+\leavevmode\hypertarget{ref-geva2019we}{}%
+Geva, M., Goldberg, Y., \& Berant, J. (2019). Are we modeling the task
+or the annotator? An investigation of annotator bias in natural language
+understanding datasets. \emph{arXiv Preprint arXiv:1908.07898}.
+
+\leavevmode\hypertarget{ref-grondahl2018all}{}%
+Gröndahl, T., Pajola, L., Juuti, M., Conti, M., \& Asokan, N. (2018).
+All you need is" love" evading hate speech detection. \emph{Proceedings
+of the 11th ACM Workshop on Artificial Intelligence and Security},
+2--12.
+
+\leavevmode\hypertarget{ref-jordan2015machine}{}%
+Jordan, M. I., \& Mitchell, T. M. (2015). Machine learning: Trends,
+perspectives, and prospects. \emph{Science}, \emph{349}(6245), 255--260.
+
+\leavevmode\hypertarget{ref-lecun2015deep}{}%
+LeCun, Y., Bengio, Y., \& Hinton, G. (2015). Deep learning.
+\emph{Nature}, \emph{521}(7553), 436--444.
+
+\leavevmode\hypertarget{ref-lipton2019troubling}{}%
+Lipton, Z. C., \& Steinhardt, J. (2019). Troubling trends in machine
+learning scholarship: Some ML papers suffer from flaws that could
+mislead the public and stymie future research. \emph{Queue},
+\emph{17}(1), 45--77.
+
+\leavevmode\hypertarget{ref-macavaney2019hate}{}%
+MacAvaney, S., Yao, H.-R., Yang, E., Russell, K., Goharian, N., \&
+Frieder, O. (2019). Hate speech detection: Challenges and solutions.
+\emph{PloS One}, \emph{14}(8), e0221152.
+
+\leavevmode\hypertarget{ref-mehrabi2021survey}{}%
+Mehrabi, N., Morstatter, F., Saxena, N., Lerman, K., \& Galstyan, A.
+(2021). A survey on bias and fairness in machine learning. \emph{ACM
+Computing Surveys (CSUR)}, \emph{54}(6), 1--35.
+
+\leavevmode\hypertarget{ref-musgrave2020metric}{}%
+Musgrave, K., Belongie, S., \& Lim, S.-N. (2020). A metric learning
+reality check. \emph{European Conference on Computer Vision}, 681--699.
+Springer.
+
+\leavevmode\hypertarget{ref-rosa2019automatic}{}%
+Rosa, H., Pereira, N., Ribeiro, R., Ferreira, P. C., Carvalho, J. P.,
+Oliveira, S., \ldots{} Trancoso, I. (2019). Automatic cyberbullying
+detection: A systematic review. \emph{Computers in Human Behavior},
+\emph{93}, 333--345.
+
+\leavevmode\hypertarget{ref-rottger2020hatecheck}{}%
+Röttger, P., Vidgen, B., Nguyen, D., Waseem, Z., Margetts, H., \&
+Pierrehumbert, J. (2020). Hatecheck: Functional tests for hate speech
+detection models. \emph{arXiv Preprint arXiv:2012.15606}.
+
+\leavevmode\hypertarget{ref-schmidt2017survey}{}%
+Schmidt, A., \& Wiegand, M. (2017). A survey on hate speech detection
+using natural language processing. \emph{Proceedings of the Fifth
+International Workshop on Natural Language Processing for Social Media},
+1--10.
+
+\leavevmode\hypertarget{ref-sejnowski2020unreasonable}{}%
+Sejnowski, T. J. (2020). The unreasonable effectiveness of deep learning
+in artificial intelligence. \emph{Proceedings of the National Academy of
+Sciences}, \emph{117}(48), 30033--30038.
+
+\leavevmode\hypertarget{ref-swamy2019studying}{}%
+Swamy, S. D., Jamatia, A., \& Gambäck, B. (2019). Studying
+generalisability across abusive language detection datasets.
+\emph{Proceedings of the 23rd Conference on Computational Natural
+Language Learning (CoNLL)}, 940--950.
+
+\leavevmode\hypertarget{ref-wu2019errudite}{}%
+Wu, T., Ribeiro, M. T., Heer, J., \& Weld, D. S. (2019). Errudite:
+Scalable, reproducible, and testable error analysis. \emph{Proceedings
+of the 57th Annual Meeting of the Association for Computational
+Linguistics}, 747--763.
+
+\leavevmode\hypertarget{ref-yin2021towards}{}%
+Yin, W., \& Zubiaga, A. (2021). Towards generalisable hate speech
+detection: A review on obstacles and solutions. \emph{PeerJ Computer
+Science}, \emph{7}, e598.
 
 \end{CSLReferences}
 

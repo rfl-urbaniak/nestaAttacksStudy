@@ -309,7 +309,7 @@ Intelligence was used to detect verbal aggression (personal attacks) and
 notify human volunteers about attacks. Volunteers after receiving
 notifications employed interventions based on norm or empathy promotion.
 We find that only those who were sanctioned with norms-inducing
-interventions had their personal attacks' user significantly decreased.
+interventions had their personal attacks' level significantly decreased.
 
 \vspace{1mm}
 \footnotesize
@@ -383,12 +383,12 @@ content moderation systems and as shown by Gröndahl, Pajola, Juuti,
 Conti, \& Asokan (2018), current techniques are vulnerable to the most
 common evasion attacks like word changes (inseting typos and leetspeak),
 word-boundary changes (inserting or removing whitespace), or word
-appending (appending common or non-hateful words like ``love'').
-Generalisability of the models - an ability to perform well on datasets
-coming from sources other than the one used for training are an
-important shortcoming as well (Yin \& Zubiaga (2021), Swamy, Jamatia, \&
-Gambäck (2019), Rosa et al. (2019)). As shown by Wu, Ribeiro, Heer, \&
-Weld (2019), Lipton \& Steinhardt (2019), and Musgrave, Belongie, \& Lim
+appending (appending common or non-hateful words like ``love''). Lack of
+generalisability of the models - an ability to perform well on datasets
+coming from sources other than the one used for training is a serious
+shortcoming as well (Yin \& Zubiaga (2021), Swamy, Jamatia, \& Gambäck
+(2019), Rosa et al. (2019)). As shown by Wu, Ribeiro, Heer, \& Weld
+(2019), Lipton \& Steinhardt (2019), and Musgrave, Belongie, \& Lim
 (2020) in practice, creations of models often lacks thorough error
 analysis and legitimate experimental methodology, which can result in
 non-reproducibility. This is also connected with a potential lack of
@@ -406,9 +406,9 @@ often covering weak argumentation with the alluring but often apparent
 depth of technical jargon. Last but not least - misuse of language. This
 includes suggestive definitions without proper explanation of what they
 mean in the context (e.g.~inflating good performance in simple NLP tasks
-to human-level natural understanding), overloading the papers with
-technical terminology, or suitcase words (those words that can encompass
-a variety of meanings, e.g.~consciousness).
+to human-level understanding), overloading the papers with technical
+terminology, or suitcase words (those words that can encompass a variety
+of meanings, e.g.~consciousness).
 
 Yet another obstacle in the process is the lack of gold standard in
 dataset creation and taxonomies of abusive language being used for
@@ -443,33 +443,72 @@ it's either impossible or extremely costly to scale the moderation
 workforce. One can also have doubts about the ethical aspects of hiring
 workers who are often unaware of how this kind of task will affect their
 well-being. Being submersed in the cyber-Augean stables takes a toll on
-many people. As examined by Roberts (2014) \& Roberts (2016), workers
-who are hired for such tasks are often low-status and low-wage,
-isolated, and asked to keep what they've seen in secret under
-restrictive NDAs. Screening through the reported user-generated content
-is connected with exposure to violent and deeply disturbing materials,
-with child pornography, murders, or suicides as examples of the most
-extreme cases. This can lead to serious psychological damage, like
-depression, or PTSD (Roberts (2014)). Some of the employees filed a
-lawsuit against Facebook and as a result, the company agreed to pay
-\$52M in compensation for mental health issues developed during the job
+many - as examined by Roberts (2014) \& Roberts (2016), workers who are
+hired for such tasks are often low-status and low-wage, isolated, and
+asked to keep what they've seen in secret under restrictive NDAs.
+Screening through the reported user-generated content is connected with
+exposure to violent and deeply disturbing materials, with child
+pornography, murders, or suicides as examples of the most extreme cases.
+This can lead to serious psychological damage, like depression, or PTSD
+(Roberts (2014)). Some of the employees filed a lawsuit against Facebook
+and as a result, the company agreed to pay \$52M in compensation for
+mental health issues developed during the job
 (\url{https://www.theverge.com/2020/5/12/21255870/facebook-content-moderator-settlement-scola-ptsd-mental-health}).
 Taking into consideration that Facebook employs 15K moderators
 (\url{https://www.forbes.com/sites/johnkoetsier/2020/06/09/300000-facebook-content-moderation-mistakes-daily-report-says/?sh=6c6bdbbc54d0})
 and most likely more are needed to keep up with the growing amount of
 content, with the parallel considerations about the negative effects of
 content moderation on mental health, a collaboration between humans and
-machines in this area seems inevitable. There is yet another aspect here
-- what moderators deal with is mostly content reported by humans. And as
-shown in various studies and reports, a lot of children, teens or even
-adults do not report cyberbullying or harassment online (LINKS:
-\url{https://www.ctvnews.ca/canada/as-the-pandemic-forces-us-online-lgbtq2s-teens-deal-with-cyberbullying-1.5430945}
-; \url{https://www.adl.org/free-to-play-2020} ;
-\url{https://www.ditchthelabel.org/wp-content/uploads/2017/05/InGameAbuse.pdf}).
+machines in this area seems inevitable.
 
 \hypertarget{pro-active-and-reactive-moderation}{%
 \section{Pro-active and reactive
 moderation}\label{pro-active-and-reactive-moderation}}
+
+There are different approaches when it comes to the moderation of online
+content. One can follow the workflow of reactive moderation, which
+happens once the content is published. Harmful messages can be either
+reported by the users of the platforms or automated methods and then
+sent for review to moderators. A set of actions can be then taken
+depending on the platform and their community guidelines - on the
+content or user level. A harmful message can be deleted, made invisible
+to other users, or certain profanities can be altered with special signs
+to censor them. Depending on the type and amount of infraction, a
+particular user can be warned, muted or shadowbanned, or banned from
+further participation in the community for a period of time. The
+weakness of the reactive method is that the damage is done. Whoever is
+the recipient of the abusive message has the chance to see it and
+potentially suffer (Hoff \& Mitchell (2009), Keipi, Näsi, Oksanen, \&
+Räsänen (2016), Wwachs2019associations). Yet another weakness connected
+with relying solely on human reports is the content that is harmful but
+unreported by a receipted or any bystander. Although the exact scale of
+unreported content is not known, various self-report studies show that a
+lot of children, teens, or even adults do not report cyberbullying or
+harassment online (LINKS:
+\url{https://www.ctvnews.ca/canada/as-the-pandemic-forces-us-online-lgbtq2s-teens-deal-with-cyberbullying-1.5430945}
+; \url{https://www.adl.org/free-to-play-2020} ;
+\url{https://www.ditchthelabel.org/wp-content/uploads/2017/05/InGameAbuse.pdf}).
+
+Yet another type of moderation can be distinguished as pro-active or
+pre-moderation. In pre-moderation, automated methods are either based on
+Artificial Intelligence or other less sophisticated tools
+(e.g.~blacklists) and can screen the content before it gets published.
+If a type of harmful message gets detected, it can be removed before
+reaching the recipient. Due to the aforementioned dubious performance of
+state-of-the-art statistical methods, particularly low precision, they
+are rarely used autonomously.
+
+Pro-active moderation can be utilized using AI or other methods to
+promote socially positive engagement. Instead of or in the combination
+with punitive solutions like privileges restriction, one can induce
+empathy or community norms with counter-speech. Counter speech as
+described by Dangerous Speech Project
+(\url{https://dangerousspeech.org/counterspeech/}) is ``any direct
+response to hateful or harmful speech which seeks to undermine it.'' As
+examined by Munger (2017), counter-speech can be effective in the
+reduction of racist tweets (although only in the condition in which a
+white male with high followers was approaching another white male). In a
+study conducted by Bilewicz et al. (2021), a bot \ldots{}
 
 \hypertarget{collective-intelligence-approach-to-counter-speech}{%
 \section{Collective Intelligence Approach to
@@ -561,6 +600,12 @@ Barlett, C. P., Simmers, M. M., Roth, B., \& Gentile, D. (2021).
 Comparing cyberbullying prevalence and process before and during the
 COVID-19 pandemic. \emph{The Journal of Social Psychology}, 1--11.
 
+\leavevmode\hypertarget{ref-bilewicz2021artificial}{}%
+Bilewicz, M., Tempska, P., Leliwa, G., Dowgiałło, M., Tańska, M.,
+Urbaniak, R., \& Wroczyński, M. (2021). Artificial intelligence against
+hate: Intervention reducing verbal aggression in the social network
+environment. \emph{Aggressive Behavior}, \emph{47}(3), 260--266.
+
 \leavevmode\hypertarget{ref-binns2017like}{}%
 Binns, R., Veale, M., Van Kleek, M., \& Shadbolt, N. (2017). Like
 trainer, like bot? Inheritance of bias in algorithmic content
@@ -583,9 +628,18 @@ All you need is" love" evading hate speech detection. \emph{Proceedings
 of the 11th ACM Workshop on Artificial Intelligence and Security},
 2--12.
 
+\leavevmode\hypertarget{ref-hoff2009cyberbullying}{}%
+Hoff, D. L., \& Mitchell, S. N. (2009). Cyberbullying: Causes, effects,
+and remedies. \emph{Journal of Educational Administration}.
+
 \leavevmode\hypertarget{ref-jordan2015machine}{}%
 Jordan, M. I., \& Mitchell, T. M. (2015). Machine learning: Trends,
 perspectives, and prospects. \emph{Science}, \emph{349}(6245), 255--260.
+
+\leavevmode\hypertarget{ref-keipi2016online}{}%
+Keipi, T., Näsi, M., Oksanen, A., \& Räsänen, P. (2016). \emph{Online
+hate and harmful content: Cross-national perspectives}. Taylor \&
+Francis.
 
 \leavevmode\hypertarget{ref-lecun2015deep}{}%
 LeCun, Y., Bengio, Y., \& Hinton, G. (2015). Deep learning.
@@ -606,6 +660,11 @@ Frieder, O. (2019). Hate speech detection: Challenges and solutions.
 Mehrabi, N., Morstatter, F., Saxena, N., Lerman, K., \& Galstyan, A.
 (2021). A survey on bias and fairness in machine learning. \emph{ACM
 Computing Surveys (CSUR)}, \emph{54}(6), 1--35.
+
+\leavevmode\hypertarget{ref-munger2017tweetment}{}%
+Munger, K. (2017). Tweetment effects on the tweeted: Experimentally
+reducing racist harassment. \emph{Political Behavior}, \emph{39}(3),
+629--649.
 
 \leavevmode\hypertarget{ref-musgrave2020metric}{}%
 Musgrave, K., Belongie, S., \& Lim, S.-N. (2020). A metric learning

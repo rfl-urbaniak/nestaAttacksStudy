@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.2)  17 AUG 2021 20:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.2)  18 AUG 2021 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1749,9 +1749,9 @@ Underfull \hbox (badness 4254) in paragraph at lines 433--463
 
 [3] [4] [5] [6] (./paperDraft.aux) ) 
 Here is how much of TeX's memory you used:
- 29143 strings out of 480502
- 537506 string characters out of 5898081
- 979325 words of memory out of 5000000
+ 29147 strings out of 480502
+ 537634 string characters out of 5898081
+ 980325 words of memory out of 5000000
  46216 multiletter control sequences out of 15000+600000
  462694 words of font info for 128 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1763,10 +1763,10 @@ TeX/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></Users/patrycjatempska/Libr
 ary/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/patrycjatemp
 ska/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/patrycj
 atempska/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paperDraft.pdf (6 pages, 90908 bytes).
+Output written on paperDraft.pdf (6 pages, 92839 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
- 51 named destinations out of 1000 (max. 500000)
+ 177 PDF objects out of 1000 (max. 8388607)
+ 157 compressed objects within 2 object streams
+ 55 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

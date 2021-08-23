@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.2)  18 AUG 2021 15:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.2)  23 AUG 2021 17:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1717,56 +1717,50 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 319.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 334.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 340.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 344.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 340.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 344.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 340.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 344.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 340.
-
-Underfull \hbox (badness 10000) in paragraph at lines 340--340
-  [][][][][]\T1/ptm/m/n/8 https://www.aspistrategist.org.au/australias-esafety-
-commissioner-targets-abuse-online-as-covid-19-supercharges-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 332--349
-\T1/ptm/m/n/10 L1ght \foot-note{\href {[][]$https : / / l1ght . com / Toxicity 
-_ during _ coronavirus _ Report -[] L1ght . pdf$[][]}{[][]$https :
- []
-
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 344.
 [1
 
 
 {/Users/patrycjatempska/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
-x.map}] [2]
-Underfull \hbox (badness 4254) in paragraph at lines 433--463
-\T1/ptm/m/n/10 15K mod-er-a-tors ([][]$https : / / www . forbes . com / sites /
- johnkoetsier / 2020 / 06 / 09 / 300000 -[] facebook -[] content -[]
- []
+x.map}]
 
-[3] [4] [5] [6] (./paperDraft.aux) ) 
+LaTeX Warning: Marginpar on page 2 moved.
+
+
+LaTeX Warning: Marginpar on page 2 moved.
+
+
+LaTeX Warning: Marginpar on page 2 moved.
+
+[2] [3] [4] [5] [6] (./paperDraft.aux) ) 
 Here is how much of TeX's memory you used:
- 29147 strings out of 480502
- 537634 string characters out of 5898081
- 980325 words of memory out of 5000000
- 46216 multiletter control sequences out of 15000+600000
+ 29343 strings out of 480502
+ 542053 string characters out of 5898081
+ 996325 words of memory out of 5000000
+ 46389 multiletter control sequences out of 15000+600000
  462694 words of font info for 128 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,8n,108p,10633b,362s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/patrycjatempska/Library/TinyTeX/tex
-mf-dist/fonts/enc/dvips/base/8r.enc}</Users/patrycjatempska/Library/TinyTeX/tex
-mf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/patrycjatempska/Library/Tiny
-TeX/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></Users/patrycjatempska/Libr
-ary/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/patrycjatemp
-ska/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/patrycj
-atempska/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paperDraft.pdf (6 pages, 92839 bytes).
+ 108i,9n,108p,10633b,948s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/patrycjatempska/Library/TinyTeX
+/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/patrycjatempska/Library/TinyTeX
+/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/patrycjatempska/Library/
+TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></Users/patrycjatempska/
+Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/patrycja
+tempska/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/pat
+rycjatempska/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paperDraft.pdf (6 pages, 97222 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
- 157 compressed objects within 2 object streams
- 55 named destinations out of 1000 (max. 500000)
+ 207 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
+ 78 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

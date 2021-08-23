@@ -5,5 +5,5 @@
 \contentsline {section}{\numberline {5}Collective Intelligence Approach to Counter-speech}{4}{section.5}%
 \contentsline {section}{\numberline {6}Experimental Design and data collection}{4}{section.6}%
 \contentsline {section}{\numberline {7}Results}{5}{section.7}%
-\contentsline {section}{References}{5}{section*.2}%
+\contentsline {section}{References}{5}{section*.11}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

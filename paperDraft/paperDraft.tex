@@ -331,16 +331,16 @@ interventions had their personal attacks' level significantly decreased.
 
 Although much effort has been made in order to tackle the problem of
 verbal aggression and harassment online, looking at various reports and
-surveys \todo{refs}, it remains a common hindrance for people engaging
-with social media in their everyday lives. The problem got exacerbated
-in the midst of the COVID19 pandemic \todo{is it less coloquial now?},
-during which a majority of our social life moved to cyberspace. During
-this shift, there was an increase in cyberbullying attitudes and
-perpetration (Barlett, Simmers, Roth, \& Gentile (2021)), 90\% increase
-in public reports of illegal online content Grant (2021), including
-114\% increase in non-consensual sharing of intimate images, 30\%
-increase in cyberbullying, as well as 40\% of increase in adults
-reporting online
+surveys (Laub, 2019; Sorrentino, Baldry, Farrington, \& Blaya, 2019;
+Vogels, 2021), it remains a common hindrance for people engaging with
+social media in their everyday lives. The problem got exacerbated in the
+midst of the COVID19 pandemic\todo{is it less coloquial now?}, during
+which a majority of our social life moved to cyberspace. During this
+shift, there was an increase in cyberbullying attitudes and perpetration
+(Barlett, Simmers, Roth, \& Gentile (2021)), 90\% increase in public
+reports of illegal online content Grant (2021), including 114\% increase
+in non-consensual sharing of intimate images, 30\% increase in
+cyberbullying, as well as 40\% of increase in adults reporting online
 harassment.\footnote{The increase is reported as a relative change between the year 2019 and 2020.}
 According to a report conducted by company L1ght (L1ght, 2020), hate
 speech directed towards China and the Chinese went up by 900\% on
@@ -389,30 +389,49 @@ appending (appending common or non-hateful words like ``love'').
 generalisability of the models---an ability to perform well on datasets
 coming from sources other than the one used for training is a serious
 shortcoming as well (Rosa et al., 2019; Swamy, Jamatia, \& Gambäck,
-2019; Yin \& Zubiaga, 2021). As shown by Wu, Ribeiro, Heer, \& Weld
-(2019), Lipton \& Steinhardt (2019), and Musgrave, Belongie, \& Lim
-(2020) in practice, the development of such models often lacks thorough
-error analysis and legitimate experimental methodology, which can result
-in non-reproducibility. This is also connected with a potential lack of
+2019; Yin \& Zubiaga, 2021).
+
+As shown by Wu, Ribeiro, Heer, \& Weld (2019), Lipton \& Steinhardt
+(2019), and Musgrave, Belongie, \& Lim (2020) in practice, the
+development of such models often lacks thorough error analysis and
+legitimate experimental methodology, which can result in
+non-reproducibility. This is also connected with a potential lack of
 thorough understanding of the limitations of the models and spurious
-conclusions being made to a wider public. Specifically, @Lipton \&
+conclusions being made to a wider public. Specifically, Lipton \&
 Steinhardt (2019) distinguishes four dysfunctional patterns occurring in
 the current research paradigm in the industry and academia alike. First,
 the inability to draw a clear distinction between speculation and
-explanation, with the first one often being disguised as the
-second\todo{give an example}. Second, the inability of successful
-identification of the sources of performance improvement (whether it was
-problem formulation, optimization of the heuristics, data-preprocessing,
-hyperparameter tuning, or perhaps yet another
-aspect)\todo{give an example}. Third, ``mathiness''---the use of obscure
-language and often covering weak argumentation with the alluring but
-often apparent depth of technical jargon\todo{Give an example}. Last but
-not least---misuse of language\todo{Give an example}. This includes
+explanation, with the first one often being disguised as the second. For
+instance, in a paper from 2017 (Steinhardt, Koh, \& Liang, 2017), Jacob
+Steinhardt, the author of Lipton \& Steinhardt (2019), admitted to
+stating that ``the high dimensionality and abundance of irrelevant
+features\ldots{} give the attacker more room to construct attacks'' -
+although no experiments were conducted to measure what is the effect of
+dimensionality of the neural network on its attackability. Second, the
+inability of successful identification of the sources of performance
+improvement (whether it was problem formulation, optimization of the
+heuristics, data-preprocessing, hyperparameter tuning, or perhaps yet
+another aspect). As was shown by Gabor Melis, Chris Dyer, and Phil
+Blunsom, some improvements in language modeling which originally were
+ascribed to complex innovations in the architecture of the network,
+stemed from hyperparameter tuning (Melis, Dyer, \& Blunsom, 2017). As
+mentioned by Lipton \& Steinhardt (2019), there is a tremendous value
+coming from the thorough understanding of a particular method, and a
+variety of techniques are vital in the process (like ablation,
+robustness checks, qualitative error analysis) for the benefit of the
+whole community. Third, ``mathiness''---the use of obscure language and
+often covering weak argumentation with the alluring but often apparent
+depth of technical jargon. Again Jacob Steinhardt admitted infusing his
+2015 paper co-authored with Percy Liang (Steinhardt \& Liang, 2015) with
+irrelevant theorem to amplify the empirical results. They discussed
+``staged strong Doeblin chains'' which actually had limited pertinence
+to the learning algorithm---the main subject of a paper. Last but not
+least---misuse of language\todo{Give an example}. This includes
 suggestive definitions without proper explanation of what they mean in
 the context (e.g.~inflating good performance in simple NLP tasks to
 human-level understanding), overloading the papers with technical
 terminology, or suitcase words (words that can encompass a variety of
-meanings, e.g.~consciousness).
+meanings, e.g.~consciousness)
 
 Yet another obstacle in the process is the lack of gold standard in
 dataset creation and taxonomies of abusive language being used for
@@ -455,15 +474,26 @@ break the NDA are risking a penalty. Screening through the reported
 user-generated content is connected with exposure to violent and deeply
 disturbing materials, with child pornography, murders, or suicides as
 examples of the most extreme cases. This can lead to serious
-psychological damage, such as depression, or PTSD (Roberts, 2014). Some
-of the employees filed a lawsuit against Facebook and as a result, the
-company agreed to pay \$52M in compensation for mental health issues
-developed during the job (Newton, 2020). Taking into consideration that
-Facebook employs 15K moderators (Koetsier, 2020) and most likely more
-are needed to keep up with the growing amount of content, with the
-parallel considerations about the negative effects of content moderation
-on mental health, a collaboration between humans and machines in this
-area seems inevitable.
+psychological damage, such as depression, or PTSD (Roberts, 2014).
+Although there are certain initiatives being developed or introduced to
+reduce the emotional impact of the moderation, like stylistic
+alterations to a content (applying grayscale or blurring to images)
+(Karunakaran \& Ramakrishan, 2019), workplace wellness programs,
+clinical support, or psychological training (Steiger, Bharucha,
+Venkatagiri, Riedl, \& Lease, 2021), none of the methods can eliminate
+the psychological distress completely. Some of the employees filed a
+lawsuit against Facebook and as a result, the company agreed to pay
+\$52M in compensation for mental health issues developed during the job
+(Newton, 2020). Also as described by Parks (2019), the work is often
+performed under time pressure, reviewing 25K pieces of content per day.
+Spending on average three to five seconds on each image reported for
+moderation might not lead to the most thoughtful decisions and as shown
+Stepanikova (2012), high time pressure can amplify human biases. Taking
+into consideration that Facebook employs 15K moderators (Koetsier, 2020)
+and most likely more are needed to keep up with the growing amount of
+content, with the parallel considerations about the negative effects of
+content moderation on mental health, a collaboration between humans and
+machines in this area seems inevitable.
 
 \hypertarget{pro-active-and-reactive-moderation}{%
 \section{Pro-active and reactive
@@ -524,6 +554,43 @@ Heinbach (2021), Molina \& Jennings (2018), Han, Brazeal, \& Pennington
 \hypertarget{collective-intelligence-approach-to-counter-speech}{%
 \section{Collective Intelligence Approach to
 Counter-speech}\label{collective-intelligence-approach-to-counter-speech}}
+
+Traditionally collective intelligence has been defined as ``a group or a
+team's combined capacity and capability to perform a wide variety of
+tasks and solve diverse problems'' ({``Collective {Intelligence},''}
+n.d.). In our paper and in the theoretical underpinnings of the
+experiment itself, we will be relying on a collective intelligence scope
+proposed by Nesta, an innovation foundation
+(\url{https://www.nesta.org.uk}), which focuses on a collaboration
+between human and machine intelligence to develop innovative solutions
+to social challenges. (Gdzieś stopka(?): Samurai Labs has been one of
+the 15 recipients of the second round of collective intelligence grants
+awarded by Nesta:
+\url{https://www.nesta.org.uk/project-updates/second-round-collective-intelligence-grants/})
+
+The main objective of the experiment was to test whether the level of
+verbal aggression (personal attacks) of a group of users' regularly
+attacking others on Reddit can be significantly decreased by
+community-driven, counter-speech interventions conducted by volunteers
+in partnership with Artificial Intelligence. Instead of using negative
+motivation system, the assumption was to test a positive one -
+convincing vrbally violent users to refrain from using cyberviolence
+based on peer-pressure regulation and experiential learning of a
+positive set of norms and empathy. Algorithms developed for the
+detection of personal attacks were used to monitor the activity of
+experimental groups and notify volunteers about all attacks generated by
+its' members. Volunteers, after receiving a notification on Slack
+(perhaps say more about those processes and infrastructure), could then
+react with the proper intervention. Such an approach served as a
+distributed bottom-up voluntary model of moderation based on collective
+intelligence - utilizing human + machine intelligence.
+
+In the end, what we were able to compare was the following: the
+effectiveness of the existing Reddit moderation system (predominantly
+grounded in a punitive authoritarian paradigm) versus the existing
+moderation system combined with collective intelligence - Artificial
+Intelligence supported with a crowd of volunteers - who introduced the
+element of positive peer-pressure.
 
 \hypertarget{experimental-design-and-data-collection}{%
 \section{Experimental Design and data
@@ -637,6 +704,10 @@ trainer, like bot? Inheritance of bias in algorithmic content
 moderation. \emph{International Conference on Social Informatics},
 405--415. Springer.
 
+\leavevmode\hypertarget{ref-noauthor_collective_nodate}{}%
+Collective {Intelligence}. (n.d.). Retrieved from
+\url{https://www.oxford-review.com/oxford-review-encyclopaedia-terms/collective-intelligence/}
+
 \leavevmode\hypertarget{ref-noauthor_counterspeech_2017}{}%
 Counterspeech {{}} {Dangerous} {Speech} {Project}. (2017). Retrieved
 from \url{https://dangerousspeech.org/counterspeech/}
@@ -702,6 +773,12 @@ In:{Game} {Abuse}. (2017). Retrieved from
 Jordan, M. I., \& Mitchell, T. M. (2015). Machine learning: Trends,
 perspectives, and prospects. \emph{Science}, \emph{349}(6245), 255--260.
 
+\leavevmode\hypertarget{ref-karunakaran2019testing}{}%
+Karunakaran, S., \& Ramakrishan, R. (2019). Testing stylistic
+interventions to reduce emotional impact of content moderation workers.
+\emph{Proceedings of the AAAI Conference on Human Computation and
+Crowdsourcing}, \emph{7}, 50--58.
+
 \leavevmode\hypertarget{ref-keipi2016online}{}%
 Keipi, T., Näsi, M., Oksanen, A., \& Räsänen, P. (2016). \emph{Online
 hate and harmful content: Cross-national perspectives}. Taylor \&
@@ -716,6 +793,11 @@ Koetsier, J. (2020). Report: {Facebook} {Makes} 300,000 {Content}
 L1ght. (2020). L1ght releases groundbreaking report on corona-related
 hate speech and online toxicity. Retrieved from
 \url{https://l1ght.com/l1ght-releases-groundbreaking-report-on-corona-related-hate-speech-and-online-toxicity/}
+
+\leavevmode\hypertarget{ref-Zachary_hate}{}%
+Laub, Z. (2019). Hate {Speech} on {Social} {Media}: {Global}
+{Comparisons}. Retrieved from
+\url{https://www.cfr.org/backgrounder/hate-speech-social-media-global-comparisons}
 
 \leavevmode\hypertarget{ref-lecun2015deep}{}%
 LeCun, Y., Bengio, Y., \& Hinton, G. (2015). Deep learning.
@@ -736,6 +818,11 @@ Frieder, O. (2019). Hate speech detection: Challenges and solutions.
 Mehrabi, N., Morstatter, F., Saxena, N., Lerman, K., \& Galstyan, A.
 (2021). A survey on bias and fairness in machine learning. \emph{ACM
 Computing Surveys (CSUR)}, \emph{54}(6), 1--35.
+
+\leavevmode\hypertarget{ref-melis2017state}{}%
+Melis, G., Dyer, C., \& Blunsom, P. (2017). On the state of the art of
+evaluation in neural language models. \emph{arXiv Preprint
+arXiv:1707.05589}.
 
 \leavevmode\hypertarget{ref-mivskolci2020countering}{}%
 Miškolci, J., Kováčová, L., \& Rigová, E. (2020). Countering hate speech
@@ -761,6 +848,11 @@ Springer.
 Newton, C. (2020). Facebook will pay \$52 million in settlement with
 moderators who developed {PTSD} on the job. Retrieved from
 \url{https://www.theverge.com/2020/5/12/21255870/facebook-content-moderator-settlement-scola-ptsd-mental-health}
+
+\leavevmode\hypertarget{ref-parks2019dirty}{}%
+Parks, L. (2019). Dirty data: Content moderation, regulatory
+outsourcing, and the cleaners. \emph{Film Quarterly}, \emph{73}(1),
+11--18.
 
 \leavevmode\hypertarget{ref-noauthor_reddit_nodate}{}%
 Reddit in 2020. (2020). Retrieved from
@@ -797,11 +889,43 @@ Sejnowski, T. J. (2020). The unreasonable effectiveness of deep learning
 in artificial intelligence. \emph{Proceedings of the National Academy of
 Sciences}, \emph{117}(48), 30033--30038.
 
+\leavevmode\hypertarget{ref-sorrentino2019epidemiology}{}%
+Sorrentino, A., Baldry, A. C., Farrington, D. P., \& Blaya, C. (2019).
+Epidemiology of cyberbullying across europe: Differences between
+countries and genders. \emph{Educational Sciences: Theory \& Practice},
+\emph{19}(2).
+
+\leavevmode\hypertarget{ref-steiger2021psychological}{}%
+Steiger, M., Bharucha, T. J., Venkatagiri, S., Riedl, M. J., \& Lease,
+M. (2021). The psychological well-being of content moderators.
+\emph{Proceedings of the 2021 CHI Conference on Human Factors in
+Computing Systems, CHI}, \emph{21}.
+
+\leavevmode\hypertarget{ref-steinhardt2017certified}{}%
+Steinhardt, J., Koh, P. W., \& Liang, P. (2017). Certified defenses for
+data poisoning attacks. \emph{Proceedings of the 31st International
+Conference on Neural Information Processing Systems}, 3520--3532.
+
+\leavevmode\hypertarget{ref-steinhardt2015learning}{}%
+Steinhardt, J., \& Liang, P. (2015). Learning fast-mixing models for
+structured prediction. \emph{International Conference on Machine
+Learning}, 1063--1072. PMLR.
+
+\leavevmode\hypertarget{ref-stepanikova2012racial}{}%
+Stepanikova, I. (2012). Racial-ethnic biases, time pressure, and medical
+decisions. \emph{Journal of Health and Social Behavior}, \emph{53}(3),
+329--343.
+
 \leavevmode\hypertarget{ref-swamy2019studying}{}%
 Swamy, S. D., Jamatia, A., \& Gambäck, B. (2019). Studying
 generalisability across abusive language detection datasets.
 \emph{Proceedings of the 23rd Conference on Computational Natural
 Language Learning (CoNLL)}, 940--950.
+
+\leavevmode\hypertarget{ref-vogels_state_2021}{}%
+Vogels, E. A. (2021). The {State} of {Online} {Harassment}. Retrieved
+from
+\url{https://www.pewresearch.org/internet/2021/01/13/the-state-of-online-harassment/}
 
 \leavevmode\hypertarget{ref-wachs2019associations}{}%
 Wachs, S., Wright, M. F., Sittichai, R., Singh, R., Biswal, R., Kim, E.,

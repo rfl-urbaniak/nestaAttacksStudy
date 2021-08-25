@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {3}Automated versus Human-based Moderation}{2}{section.3}%
 \contentsline {section}{\numberline {4}Pro-active and reactive moderation}{3}{section.4}%
 \contentsline {section}{\numberline {5}Collective Intelligence Approach to Counter-speech}{4}{section.5}%
-\contentsline {section}{\numberline {6}Experimental Design and data collection}{4}{section.6}%
-\contentsline {section}{\numberline {7}Results}{5}{section.7}%
-\contentsline {section}{References}{5}{section*.11}%
+\contentsline {section}{\numberline {6}Experimental Design and data collection}{5}{section.6}%
+\contentsline {section}{\numberline {7}Results}{6}{section.7}%
+\contentsline {section}{References}{6}{section*.7}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

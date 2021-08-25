@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.2)  24 AUG 2021 12:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.2)  25 AUG 2021 20:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1718,7 +1718,7 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 319.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 334.
+ine 337.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 344.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
@@ -1735,32 +1735,32 @@ x.map}]
 
 LaTeX Warning: Marginpar on page 2 moved.
 
+[2] [3] [4] [5]
+Underfull \hbox (badness 1173) in paragraph at lines 707--710
+[][]\T1/ptm/m/n/10 Collective In-tel-li-gence. (n.d.). Re-trieved from [][]$htt
+ps : / / www . oxford -[] review . com / oxford -[] review -[]
+ []
 
-LaTeX Warning: Marginpar on page 2 moved.
-
-
-LaTeX Warning: Marginpar on page 2 moved.
-
-[2] [3] [4] [5] [6] [7] (./paperDraft.aux) ) 
+[6] [7] [8] (./paperDraft.aux) ) 
 Here is how much of TeX's memory you used:
- 29360 strings out of 480502
- 542194 string characters out of 5898081
- 996325 words of memory out of 5000000
- 46391 multiletter control sequences out of 15000+600000
+ 29336 strings out of 480502
+ 541683 string characters out of 5898081
+ 987325 words of memory out of 5000000
+ 46359 multiletter control sequences out of 15000+600000
  462694 words of font info for 128 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,9n,108p,10633b,948s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/patrycjatempska/Library/Tin
-yTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}</Users/patrycjatempska/Library/Tin
-yTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/patrycjatempska/Libr
-ary/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></Users/patrycjatemp
-ska/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/patr
-ycjatempska/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users
-/patrycjatempska/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paperDraft.pdf (7 pages, 99812 bytes).
+{/Users/patrycjatempska/Library/TinyTeX/texmf-d
+ist/fonts/enc/dvips/base/8r.enc}</Users/patrycjatempska/Library/TinyTeX/texmf-d
+ist/fonts/type1/urw/courier/ucrr8a.pfb></Users/patrycjatempska/Library/TinyTeX/
+texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></Users/patrycjatempska/Library/
+TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/patrycjatempska/
+Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/patrycjatem
+pska/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paperDraft.pdf (8 pages, 105617 bytes).
 PDF statistics:
- 231 PDF objects out of 1000 (max. 8388607)
- 209 compressed objects within 3 object streams
- 93 named destinations out of 1000 (max. 500000)
+ 253 PDF objects out of 1000 (max. 8388607)
+ 230 compressed objects within 3 object streams
+ 101 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

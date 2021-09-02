@@ -7,6 +7,8 @@ library(rethinking)
 #B, D, A: before, during, after
 #T, C: type, count
 
+par( mfrow=c(1,1) )
+
 dag <- dagitty("
     dag{
         AD -> HD -> IC
@@ -32,14 +34,12 @@ paths(dag, from = c("IC"), to = "HC")
 
 paths(dag, from = c("IC"), to = "AC")
 
-
-
 impliedConditionalIndependencies(dag)
+
 
 adjustmentSets(dag, exposure = c("IC", "IT"), outcome = "HC")
 
 adjustmentSets(dag, exposure = c("IC", "IT"), outcome = "AC")
-
 
 
 
@@ -49,8 +49,6 @@ adjustmentSets(dag, exposure = c("IC"), outcome = "AC", effect = "direct")
 
 
 adjustmentSets(dag, exposure = c("IC", "IT"), outcome = "HC", effect = "direct")
-
-
 
 
 
@@ -99,6 +97,7 @@ paths(dag2, from = c("IC"), to = "AC")
 
 
 impliedConditionalIndependencies(dag2)
+impliedConditionalIndependencies(dag)
 
 adjustmentSets(dag2, exposure = c("IC", "IT"), outcome = "HC")
 

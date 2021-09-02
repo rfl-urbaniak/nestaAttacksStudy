@@ -1,6 +1,7 @@
 library(ggpubr)
 library(ggplot2)
 library(ggthemes)
+library("fitdistrplus")
 
 
 sim <- seq(0,400,by = 1)
@@ -12,14 +13,45 @@ pd <- ggplot(data = data.frame(change = xdnorm),
             mapping = aes(x = change))+theme_tufte()
 
 
-priorHD <-  function(x) dcauchy(x,1,22)
-p + stat_function(fun = priorHD)+xlim(c(0,20))+ggtitle("Prior for hate during")
-
 priorAC <- function(x) dnorm(x,0,1)
 pd + stat_function(fun = priorAC)+ggtitle("Prior for activity change")
 
 priorHC <- function(x) dnorm(x,0,1)
 pd + stat_function(fun = priorHC)+ggtitle("Prior for change in attacks")
+
+
+
+getwd()
+extraComments <- read.csv("datasets/extraCommentsFinal.csv")
+extraCommentsA <- rowSums(extraComments[2:11])
+extraCommentsB <- rowSums(extraComments[12:22])
+extraCommentsDiff <- extraCommentsA - extraCommentsB
+extraCommentsDiffS <- standardize(extraCommentsDiff)
+ggplot()+geom_histogram(aes(x=extraCommentsDiffS))
+AC <- function(x)dnorm(x,0,1.32)
+ggplot()+geom_histogram(aes(x=extraCommentsDiffS,y=..count../sum(..count..)), bins = 30)+
+        stat_function(fun = AC)+stat_function(fun=priorAC, color = "red")
+
+
+getwd()
+extraHate <- read.csv("datasets/extraHateFinal.csv")
+extraHateA <- rowSums(extraHate[2:11])
+extraHateB <- rowSums(extraHate[12:22])
+extraHateDiff <- extraHateA - extraHateB
+extraHateDiffS <- standardize(extraHateDiff)
+ggplot()+geom_histogram(aes(x=extraHateDiffS))
+HC <- function(x)dnorm(x,0,1.62)
+ggplot()+geom_histogram(aes(x=extraHateDiffS,y=..count../sum(..count..)))+
+  stat_function(fun = HC)+stat_function(fun=priorHC, color = "red")
+
+
+
+
+
+
+
+
+
 
 
 

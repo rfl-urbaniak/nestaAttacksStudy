@@ -85,4 +85,9 @@ ggsave("images/CCS.pdf", width = 20, height = 15, units = "cm", dpi = 450)
 
 
 
+summaries[summaries$IC != 0,]
+
+ggplot(summaries, aes(x = IC, y = AdiffS, color = group, fill = group))+geom_jitter(alpha = 0.6)+theme_tufte()+geom_smooth(alpha = 0.2, method = "lm")+xlim(c(0,20))+ylim(c(-2,2))
+
+
 

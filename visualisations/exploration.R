@@ -7,6 +7,45 @@ summaries <- readRDS(file = "datasets/Summaries.rds")
 
 head(summaries)
 
+
+
+# weekly averages
+#days: 81 (pre-treatment), 62 (treatment), 72 (post-treatment)
+
+head(summaries)
+summaries$ABw <- (summaries$AB/81)*7
+summaries$CBw <- (summaries$CB/81)*7
+summaries$AAw <- (summaries$AB/72)*7
+summaries$CAw <- (summaries$CB/72)*7
+
+summaries$Adiffw <- summaries$AAw - summaries$ABw
+summaries$Cdiffw <- summaries$CAw - summaries$CBw
+
+
+
+mean(summaries$AAw)
+mean(summaries$ABw)
+
+
+#barplot of attacks
+
+ggplot(summaries, aes(x = ABw, fill = "before"), alpha = 0.6, bins = 80)+geom_histogram()+theme_tufte() +geom_histogram(aes(x = AAw, fill = "after"), alpha = 0.6, bins = 80)+  xlab("attacks")+labs(title = "Attacks before & after", subtitle = "(weekly averages)")
+
+
+
+ggplot(summaries, aes(x = Adiffw, fill = group), alpha = 0.6, bins = 160)+geom_density(alpha=0.3)
+
+ggplot(summaries, aes(x = Adiffw, fill = group,  y = stat(count / sum(count))), alpha = 0.6, bins = 160)+geom_histogram()+theme_tufte()+  xlab("attacks")+labs(title = "Change in attacks", subtitle = "(weekly averages)")+facet_wrap(~group, ncol = 1)
+
+
+
+ggplot()+theme_tufte() +geom_histogram(aes(x = ACprop, fill = summaries$group, y  = stat(count / sum(count)), group = summaries$group), alpha = 0.4, bins = 80)+  xlab("attacks")+labs(title = "Proportional change in attacks by group")+geom_vline(xintercept = 1, size = 0.2)+xlim(c(0,3))+ylim(c(0,.2))
+
+
+
+
+
+
 #barplot of interventions
 ggplot(summaries[summaries$group != "control",], aes(x = IC))+geom_bar()+theme_tufte()+
   xlab("interventions received")+labs(title = "Intervention counts in treatment groups")+

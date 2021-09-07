@@ -16,6 +16,34 @@ pd <- ggplot(data = data.frame(change = xdnorm),
 priorAC <- function(x) dnorm(x,0,1)
 pd + stat_function(fun = priorAC)+ggtitle("Prior for activity change")
 
+
+priorA <- function(x) dcauchy(x,2,10)
+pd + stat_function(fun = priorA)+ggtitle("Prior for attacks")+xlim(c(0,60))+xlab("weekly attacks")
+
+
+sigmas <- rexp(100,3)
+ggplot()+ geom_density(aes(x=sigmas))+ggtitle("Prior for sd")+xlab("sd")
+
+priorb <- function(x) dnorm(x,0,.5)
+pd + stat_function(fun = priorb)+ggtitle("Prior for activity change")
+
+
+
+aa <- rpois(100,3)
+ggplot()+ geom_density(aes(x=aa))+ggtitle("Prior for sd")+xlab("sd")
+
+
+aa <- rlnorm(1e4,0,1)
+ggplot()+ geom_density(aes(x=aa))+ggtitle("Prior for attacks")+xlab("sd")+xlim(0,2)
+
+b <- rlnorm( 1e4 , 0 , 1 )
+dens( b , xlim=c(0,5) , adj=0.1 )
+
+
+
+
+?dexp
+
 priorHC <- function(x) dnorm(x,0,1)
 pd + stat_function(fun = priorHC)+ggtitle("Prior for change in attacks")
 

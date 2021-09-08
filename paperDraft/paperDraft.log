@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.2)  26 AUG 2021 13:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.2)  8 SEP 2021 18:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -479,24 +479,6 @@ File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 ))
 Package hyperref Info: Option `colorlinks' set `true' on input line 48.
 
-(/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.
-sty
-Package: fancyvrb 2021/01/20 v3.7 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count280
-\FV@InFile=\read2
-\FV@TabBox=\box54
-\c@FancyVerbLine=\count281
-\FV@StepNumber=\count282
-\FV@OutFile=\write3
-) (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.st
-y
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip67
-\fb@frw=\dimen152
-\fb@frh=\dimen153
-\FrameRule=\dimen154
-\FrameSep=\dimen155
-)
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.
 sty
 Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
@@ -513,77 +495,77 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
-\Gin@req@height=\dimen156
-\Gin@req@width=\dimen157
+\Gin@req@height=\dimen152
+\Gin@req@width=\dimen153
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.
 sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen158
-\lightrulewidth=\dimen159
-\cmidrulewidth=\dimen160
-\belowrulesep=\dimen161
-\belowbottomsep=\dimen162
-\aboverulesep=\dimen163
-\abovetopsep=\dimen164
-\cmidrulesep=\dimen165
-\cmidrulekern=\dimen166
-\defaultaddspace=\dimen167
-\@cmidla=\count283
-\@cmidlb=\count284
-\@aboverulesep=\dimen168
-\@belowrulesep=\dimen169
-\@thisruleclass=\count285
-\@lastruleclass=\count286
-\@thisrulewidth=\dimen170
+\heavyrulewidth=\dimen154
+\lightrulewidth=\dimen155
+\cmidrulewidth=\dimen156
+\belowrulesep=\dimen157
+\belowbottomsep=\dimen158
+\aboverulesep=\dimen159
+\abovetopsep=\dimen160
+\cmidrulesep=\dimen161
+\cmidrulekern=\dimen162
+\defaultaddspace=\dimen163
+\@cmidla=\count280
+\@cmidlb=\count281
+\@aboverulesep=\dimen164
+\@belowrulesep=\dimen165
+\@thisruleclass=\count282
+\@lastruleclass=\count283
+\@thisrulewidth=\dimen166
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.
 sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip68
-\multirow@cntb=\count287
-\multirow@dima=\skip69
-\bigstrutjot=\dimen171
+\multirow@colwidth=\skip67
+\multirow@cntb=\count284
+\multirow@dima=\skip68
+\bigstrutjot=\dimen167
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.st
 y
 Package: longtable 2021-05-07 v4.16 Multi-page Table package (DPC)
-\LTleft=\skip70
-\LTright=\skip71
-\LTpre=\skip72
-\LTpost=\skip73
-\LTchunksize=\count288
-\LTcapwidth=\dimen172
-\LT@head=\box55
-\LT@firsthead=\box56
-\LT@foot=\box57
-\LT@lastfoot=\box58
-\LT@gbox=\box59
-\LT@cols=\count289
-\LT@rows=\count290
-\c@LT@tables=\count291
-\c@LT@chunks=\count292
+\LTleft=\skip69
+\LTright=\skip70
+\LTpre=\skip71
+\LTpost=\skip72
+\LTchunksize=\count285
+\LTcapwidth=\dimen168
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@gbox=\box58
+\LT@cols=\count286
+\LT@rows=\count287
+\c@LT@tables=\count288
+\c@LT@chunks=\count289
 \LT@p@ftn=\toks24
 )
-Class scrartcl Info: longtable captions redefined on input line 116.
+Class scrartcl Info: longtable captions redefined on input line 76.
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/ragged2e/ragged2e.
 sty
 Package: ragged2e 2021/02/05 v3.0 ragged2e Package
-\CenteringLeftskip=\skip74
-\RaggedLeftLeftskip=\skip75
-\RaggedRightLeftskip=\skip76
-\CenteringRightskip=\skip77
-\RaggedLeftRightskip=\skip78
-\RaggedRightRightskip=\skip79
-\CenteringParfillskip=\skip80
-\RaggedLeftParfillskip=\skip81
-\RaggedRightParfillskip=\skip82
-\JustifyingParfillskip=\skip83
-\CenteringParindent=\skip84
-\RaggedLeftParindent=\skip85
-\RaggedRightParindent=\skip86
-\JustifyingParindent=\skip87
+\CenteringLeftskip=\skip73
+\RaggedLeftLeftskip=\skip74
+\RaggedRightLeftskip=\skip75
+\CenteringRightskip=\skip76
+\RaggedLeftRightskip=\skip77
+\RaggedRightRightskip=\skip78
+\CenteringParfillskip=\skip79
+\RaggedLeftParfillskip=\skip80
+\RaggedRightParfillskip=\skip81
+\JustifyingParfillskip=\skip82
+\CenteringParindent=\skip83
+\RaggedLeftParindent=\skip84
+\RaggedRightParindent=\skip85
+\JustifyingParindent=\skip86
 ) (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/etex-pkg/etex.st
 y
 Package: etex 2016/08/01 v2.7 eTeX basic definition package (PEB,DPC)
@@ -602,10 +584,10 @@ Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/kpfonts/kpfonts.st
 y
 Package: kpfonts  2010/08/20 v3.31
-\c@mv@rm=\count293
-\c@mv@boldrm=\count294
-\c@mv@sf=\count295
-\c@mv@boldsf=\count296
+\c@mv@rm=\count290
+\c@mv@boldrm=\count291
+\c@mv@sf=\count292
+\c@mv@boldsf=\count293
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 354.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/lmr/m/n --> OT1/jkp/m/n on input line 354.
@@ -897,9 +879,9 @@ LaTeX Info: Redefining \not on input line 1580.
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/units/nicefrac.sty
 Package: nicefrac 1998/08/04 v0.9b Nice fractions
-\L@UnitsRaiseDisplaystyle=\skip88
-\L@UnitsRaiseTextstyle=\skip89
-\L@UnitsRaiseScriptstyle=\skip90
+\L@UnitsRaiseDisplaystyle=\skip87
+\L@UnitsRaiseTextstyle=\skip88
+\L@UnitsRaiseScriptstyle=\skip89
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 ))
@@ -910,13 +892,13 @@ Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/caption/caption3.s
 ty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
-\captionmargin=\dimen173
-\captionmargin@=\dimen174
-\captionwidth=\dimen175
-\caption@tempdima=\dimen176
-\caption@indent=\dimen177
-\caption@parindent=\dimen178
-\caption@hangindent=\dimen179
+\captionmargin=\dimen169
+\captionmargin@=\dimen170
+\captionwidth=\dimen171
+\caption@tempdima=\dimen172
+\caption@indent=\dimen173
+\caption@parindent=\dimen174
+\caption@hangindent=\dimen175
 Package caption Info: KOMA-Script document class detected.
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/caption/caption-ko
@@ -924,40 +906,40 @@ ma.sto
 File: caption-koma.sto 2020/09/21 v2.0b Adaption of the caption package to the 
 KOMA-Script document classes (AR)
 ))
-\c@float@type=\count297
+\c@float@type=\count294
 \float@exts=\toks25
-\float@box=\box60
-\@floatcapt=\box61
+\float@box=\box59
+\@floatcapt=\box60
 Package floatrow Info: Modified float package code loaded on input line 455.
 Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 
 \FR@everyfloat=\toks26
 \flrow@foot=\insert252
-\FB@wd=\dimen180
-\FBo@wd=\dimen181
-\FBc@wd=\dimen182
-\FBo@ht=\skip91
-\FBc@ht=\skip92
-\FBf@ht=\skip93
-\FBo@max=\skip94
-\FBc@max=\skip95
-\FBf@max=\skip96
-\c@FBl@b=\count298
-\floatbox@depth=\count299
-\c@FRobj=\count300
-\c@FRsobj=\count301
-\Xhsize=\skip97
-\sXhsize=\skip98
-\Zhsize=\skip99
-\sZhsize=\skip100
-\flrow@rowbox=\box62
-\FR@Zunitlength=\dimen183
-\c@FBcnt=\count302
-\FPOScnt=\count303
-\LTleft=\skip101
-\LTright=\skip102
-\LTleft=\skip103
-\LTright=\skip104
+\FB@wd=\dimen176
+\FBo@wd=\dimen177
+\FBc@wd=\dimen178
+\FBo@ht=\skip90
+\FBc@ht=\skip91
+\FBf@ht=\skip92
+\FBo@max=\skip93
+\FBc@max=\skip94
+\FBf@max=\skip95
+\c@FBl@b=\count295
+\floatbox@depth=\count296
+\c@FRobj=\count297
+\c@FRsobj=\count298
+\Xhsize=\skip96
+\sXhsize=\skip97
+\Zhsize=\skip98
+\sZhsize=\skip99
+\flrow@rowbox=\box61
+\FR@Zunitlength=\dimen179
+\c@FBcnt=\count299
+\FPOScnt=\count300
+\LTleft=\skip100
+\LTright=\skip101
+\LTleft=\skip102
+\LTright=\skip103
 \flrow@types=\toks27
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/todonotes/todonote
@@ -976,7 +958,7 @@ tex
 \XKV@toks=\toks28
 \XKV@tempa@toks=\toks29
 )
-\XKV@depth=\count304
+\XKV@depth=\count301
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/
@@ -988,14 +970,14 @@ cs.sty
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pg
 futil-common.tex
 \pgfutil@everybye=\toks30
-\pgfutil@tempdima=\dimen184
-\pgfutil@tempdimb=\dimen185
+\pgfutil@tempdima=\dimen180
+\pgfutil@tempdimb=\dimen181
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pg
 futil-common-lists.tex))
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pg
 futil-latex.def
-\pgfutil@abb=\box63
+\pgfutil@abb=\box62
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pg
 frcs.code.tex
@@ -1022,26 +1004,26 @@ fkeys.code.tex
 fkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks33
 ))
-\pgf@x=\dimen186
-\pgf@y=\dimen187
-\pgf@xa=\dimen188
-\pgf@ya=\dimen189
-\pgf@xb=\dimen190
-\pgf@yb=\dimen191
-\pgf@xc=\dimen192
-\pgf@yc=\dimen193
-\pgf@xd=\dimen194
-\pgf@yd=\dimen195
-\w@pgf@writea=\write4
-\r@pgf@reada=\read3
-\c@pgf@counta=\count305
-\c@pgf@countb=\count306
-\c@pgf@countc=\count307
-\c@pgf@countd=\count308
+\pgf@x=\dimen182
+\pgf@y=\dimen183
+\pgf@xa=\dimen184
+\pgf@ya=\dimen185
+\pgf@xb=\dimen186
+\pgf@yb=\dimen187
+\pgf@xc=\dimen188
+\pgf@yc=\dimen189
+\pgf@xd=\dimen190
+\pgf@yd=\dimen191
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count302
+\c@pgf@countb=\count303
+\c@pgf@countc=\count304
+\c@pgf@countd=\count305
 \t@pgf@toka=\toks34
 \t@pgf@tokb=\toks35
 \t@pgf@tokc=\toks36
-\pgf@sys@id@count=\count309
+\pgf@sys@id@count=\count306
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/
 pgf.cfg
@@ -1060,8 +1042,8 @@ File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/
 pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count310
-\pgfsyssoftpath@bigbuffer@items=\count311
+\pgfsyssoftpath@smallbuffer@items=\count307
+\pgfsyssoftpath@bigbuffer@items=\count308
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/
 pgfsysprotocol.code.tex
@@ -1079,9 +1061,9 @@ calc.code.tex
 util.code.tex)
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath
 parser.code.tex
-\pgfmath@dimen=\dimen196
-\pgfmath@count=\count312
-\pgfmath@box=\box64
+\pgfmath@dimen=\dimen192
+\pgfmath@count=\count309
+\pgfmath@box=\box63
 \pgfmath@toks=\toks37
 \pgfmath@stack@operand=\toks38
 \pgfmath@stack@operation=\toks39
@@ -1106,59 +1088,59 @@ functions.misc.code.tex)
 functions.integerarithmetics.code.tex)))
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath
 float.code.tex
-\c@pgfmathroundto@lastzeros=\count313
+\c@pgfmathroundto@lastzeros=\count310
 ))
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.
 code.tex)
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/p
 gfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@picminx=\dimen197
-\pgf@picmaxx=\dimen198
-\pgf@picminy=\dimen199
-\pgf@picmaxy=\dimen256
-\pgf@pathminx=\dimen257
-\pgf@pathmaxx=\dimen258
-\pgf@pathminy=\dimen259
-\pgf@pathmaxy=\dimen260
-\pgf@xx=\dimen261
-\pgf@xy=\dimen262
-\pgf@yx=\dimen263
-\pgf@yy=\dimen264
-\pgf@zx=\dimen265
-\pgf@zy=\dimen266
+\pgf@picminx=\dimen193
+\pgf@picmaxx=\dimen194
+\pgf@picminy=\dimen195
+\pgf@picmaxy=\dimen196
+\pgf@pathminx=\dimen197
+\pgf@pathmaxx=\dimen198
+\pgf@pathminy=\dimen199
+\pgf@pathmaxy=\dimen256
+\pgf@xx=\dimen257
+\pgf@xy=\dimen258
+\pgf@yx=\dimen259
+\pgf@yy=\dimen260
+\pgf@zx=\dimen261
+\pgf@zy=\dimen262
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/p
 gfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@path@lastx=\dimen267
-\pgf@path@lasty=\dimen268
+\pgf@path@lastx=\dimen263
+\pgf@path@lasty=\dimen264
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/p
 gfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@shorten@end@additional=\dimen269
-\pgf@shorten@start@additional=\dimen270
+\pgf@shorten@end@additional=\dimen265
+\pgf@shorten@start@additional=\dimen266
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/p
 gfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfpic=\box65
-\pgf@hbox=\box66
-\pgf@layerbox@main=\box67
-\pgf@picture@serial@count=\count314
+\pgfpic=\box64
+\pgf@hbox=\box65
+\pgf@layerbox@main=\box66
+\pgf@picture@serial@count=\count311
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/p
 gfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgflinewidth=\dimen271
+\pgflinewidth=\dimen267
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/p
 gfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@pt@x=\dimen272
-\pgf@pt@y=\dimen273
-\pgf@pt@temp=\dimen274
+\pgf@pt@x=\dimen268
+\pgf@pt@y=\dimen269
+\pgf@pt@temp=\dimen270
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/p
 gfcorequick.code.tex
@@ -1175,14 +1157,14 @@ File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/p
 gfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowsep=\dimen275
+\pgfarrowsep=\dimen271
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/p
 gfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@max=\dimen276
-\pgf@sys@shading@range@num=\count315
-\pgf@shadingcount=\count316
+\pgf@max=\dimen272
+\pgf@sys@shading@range@num=\count312
+\pgf@shadingcount=\count313
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/p
 gfcoreimage.code.tex
@@ -1191,7 +1173,7 @@ File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/p
 gfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfexternal@startupbox=\box68
+\pgfexternal@startupbox=\box67
 ))
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/p
 gfcorelayers.code.tex
@@ -1212,7 +1194,7 @@ File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfm
 oduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfnodeparttextbox=\box69
+\pgfnodeparttextbox=\box68
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfm
 oduleplot.code.tex
@@ -1221,8 +1203,8 @@ File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/
 pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@nodesepstart=\dimen277
-\pgf@nodesepend=\dimen278
+\pgf@nodesepstart=\dimen273
+\pgf@nodesepend=\dimen274
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/
 pgfcomp-version-1-18.sty
@@ -1244,8 +1226,8 @@ Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath
 .code.tex)
-\pgffor@iter=\dimen279
-\pgffor@skip=\dimen280
+\pgffor@iter=\dimen275
+\pgffor@skip=\dimen276
 \pgffor@stack=\toks40
 \pgffor@toks=\toks41
 ))
@@ -1256,34 +1238,34 @@ Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pg
 flibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count317
-\pgfplotmarksize=\dimen281
+\pgf@plot@mark@count=\count314
+\pgfplotmarksize=\dimen277
 )
-\tikz@lastx=\dimen282
-\tikz@lasty=\dimen283
-\tikz@lastxsaved=\dimen284
-\tikz@lastysaved=\dimen285
-\tikz@lastmovetox=\dimen286
-\tikz@lastmovetoy=\dimen287
-\tikzleveldistance=\dimen288
-\tikzsiblingdistance=\dimen289
-\tikz@figbox=\box70
-\tikz@figbox@bg=\box71
-\tikz@tempbox=\box72
-\tikz@tempbox@bg=\box73
-\tikztreelevel=\count318
-\tikznumberofchildren=\count319
-\tikznumberofcurrentchild=\count320
-\tikz@fig@count=\count321
+\tikz@lastx=\dimen278
+\tikz@lasty=\dimen279
+\tikz@lastxsaved=\dimen280
+\tikz@lastysaved=\dimen281
+\tikz@lastmovetox=\dimen282
+\tikz@lastmovetoy=\dimen283
+\tikzleveldistance=\dimen284
+\tikzsiblingdistance=\dimen285
+\tikz@figbox=\box69
+\tikz@figbox@bg=\box70
+\tikz@tempbox=\box71
+\tikz@tempbox@bg=\box72
+\tikztreelevel=\count315
+\tikznumberofchildren=\count316
+\tikznumberofcurrentchild=\count317
+\tikz@fig@count=\count318
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfm
 odulematrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count322
-\pgfmatrixcurrentcolumn=\count323
-\pgf@matrix@numberofcolumns=\count324
+\pgfmatrixcurrentrow=\count319
+\pgfmatrixcurrentcolumn=\count320
+\pgf@matrix@numberofcolumns=\count321
 )
-\tikz@expandcount=\count325
+\tikz@expandcount=\count322
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlaye
 r/tikz/libraries/tikzlibrarytopaths.code.tex
@@ -1294,18 +1276,18 @@ r/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count326
-\calc@Bcount=\count327
-\calc@Adimen=\dimen290
-\calc@Bdimen=\dimen291
-\calc@Askip=\skip105
-\calc@Bskip=\skip106
+\calc@Acount=\count323
+\calc@Bcount=\count324
+\calc@Adimen=\dimen286
+\calc@Bdimen=\dimen287
+\calc@Askip=\skip104
+\calc@Bskip=\skip105
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count328
-\calc@Cskip=\skip107
+\calc@Ccount=\count325
+\calc@Cskip=\skip106
 )
-\c@@todonotes@numberoftodonotes=\count329
+\c@@todonotes@numberoftodonotes=\count326
 ) (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2020/03/25 PSNFSS-v9.3 (SPQR) 
 ) (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/base/t1enc.sty
@@ -1406,9 +1388,9 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headfont=\toks44
 \thm@notefont=\toks45
 \thm@headpunct=\toks46
-\thm@preskip=\skip108
-\thm@postskip=\skip109
-\thm@headsep=\skip110
+\thm@preskip=\skip107
+\thm@postskip=\skip108
+\thm@headsep=\skip109
 \dth@everypar=\toks47
 ) (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/xpatch/xpatch.st
 y
@@ -1418,8 +1400,8 @@ Package: expl3 2021-07-12 L3 programming layer (loader)
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backen
 d-pdftex.def
 File: l3backend-pdftex.def 2021-07-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count330
-\l__pdf_internal_box=\box74
+\l__color_backend_stack_int=\count327
+\l__pdf_internal_box=\box73
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 
@@ -1430,7 +1412,7 @@ Package: xparse 2021-06-18 L3 Experimental document command parser
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.
 sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count331
+\etb@tempcnta=\count328
 ))
 Class scrartcl Info: amsthm's \deferred@thm@head patched.
 
@@ -1446,17 +1428,17 @@ LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
-\g_MT_multlinerow_int=\count332
-\l_MT_multwidth_dim=\dimen292
-\origjot=\skip111
-\l_MT_shortvdotswithinadjustabove_dim=\dimen293
-\l_MT_shortvdotswithinadjustbelow_dim=\dimen294
-\l_MT_above_intertext_sep=\dimen295
-\l_MT_below_intertext_sep=\dimen296
-\l_MT_above_shortintertext_sep=\dimen297
-\l_MT_below_shortintertext_sep=\dimen298
-\xmathstrut@box=\box75
-\xmathstrut@dim=\dimen299
+\g_MT_multlinerow_int=\count329
+\l_MT_multwidth_dim=\dimen288
+\origjot=\skip110
+\l_MT_shortvdotswithinadjustabove_dim=\dimen289
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen290
+\l_MT_above_intertext_sep=\dimen291
+\l_MT_below_intertext_sep=\dimen292
+\l_MT_above_shortintertext_sep=\dimen293
+\l_MT_below_shortintertext_sep=\dimen294
+\xmathstrut@box=\box74
+\xmathstrut@dim=\dimen295
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/geometry/geometry.
 sty
@@ -1465,92 +1447,92 @@ Package: geometry 2020/01/02 v5.9 Page Geometry
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count333
-\Gm@cntv=\count334
-\c@Gm@tempcnt=\count335
-\Gm@bindingoffset=\dimen300
-\Gm@wd@mp=\dimen301
-\Gm@odd@mp=\dimen302
-\Gm@even@mp=\dimen303
-\Gm@layoutwidth=\dimen304
-\Gm@layoutheight=\dimen305
-\Gm@layouthoffset=\dimen306
-\Gm@layoutvoffset=\dimen307
+\Gm@cnth=\count330
+\Gm@cntv=\count331
+\c@Gm@tempcnt=\count332
+\Gm@bindingoffset=\dimen296
+\Gm@wd@mp=\dimen297
+\Gm@odd@mp=\dimen298
+\Gm@even@mp=\dimen299
+\Gm@layoutwidth=\dimen300
+\Gm@layoutheight=\dimen301
+\Gm@layouthoffset=\dimen302
+\Gm@layoutvoffset=\dimen303
 \Gm@dimlist=\toks48
 )
-\c@fact=\count336
-\c@q=\count337
-\c@lemma=\count338
-\c@theorem=\count339
+\c@fact=\count333
+\c@q=\count334
+\c@lemma=\count335
+\c@theorem=\count336
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/enumitem/enumitem.
 sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip112
-\enit@outerparindent=\dimen308
+\labelindent=\skip111
+\enit@outerparindent=\dimen304
 \enit@toks=\toks49
-\enit@inbox=\box76
-\enit@count@id=\count340
-\enitdp@description=\count341
+\enit@inbox=\box75
+\enit@count@id=\count337
+\enitdp@description=\count338
 ) (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/natbib/natbib.st
 y
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip113
-\bibsep=\skip114
+\bibhang=\skip112
+\bibsep=\skip113
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count342
+\c@NAT@ctr=\count339
 )
-\cslhangindent=\skip115
-\csllabelwidth=\skip116
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 29
-3.
+\cslhangindent=\skip114
+\csllabelwidth=\skip115
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 25
+4.
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (./paperDraft.aux)
 \openout1 = `paperDraft.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 293.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 254.
 LaTeX Font Info:    Trying to load font information for OML+jkp on input line 2
-93.
+54.
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 293.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 254.
 LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 2
-93.
+54.
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 293.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 254.
 LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 2
-93.
+54.
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 293.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 254.
 LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 
-293.
+254.
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 293.
-LaTeX Font Info:    ... okay on input line 293.
-Package scrbase Info: activating english \contentsname on input line 293.
-Package scrbase Info: activating english \listfigurename on input line 293.
-Package scrbase Info: activating english \listtablename on input line 293.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 254.
+LaTeX Font Info:    ... okay on input line 254.
+Package scrbase Info: activating english \contentsname on input line 254.
+Package scrbase Info: activating english \listfigurename on input line 254.
+Package scrbase Info: activating english \listtablename on input line 254.
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epsto
 pdf-base.sty
@@ -1570,7 +1552,7 @@ df-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 293.
+Package hyperref Info: Link coloring ON on input line 254.
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.s
 ty
@@ -1584,11 +1566,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count343
+\c@section@level=\count340
 )
-LaTeX Info: Redefining \ref on input line 293.
-LaTeX Info: Redefining \pageref on input line 293.
-LaTeX Info: Redefining \nameref on input line 293.
+LaTeX Info: Redefining \ref on input line 254.
+LaTeX Info: Redefining \pageref on input line 254.
+LaTeX Info: Redefining \nameref on input line 254.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -1596,9 +1578,9 @@ Package caption Info: End \AtBeginDocument code.
 ble.sty
 Package: fr-longtable 2007/11/28 v0.1b (beta) floatrow: additions for longtable
 
-\flrow@LT@lasthead=\box77
-\flrow@LT@prelastfoot=\box78
-\c@FBLTpage=\count344
+\flrow@LT@lasthead=\box76
+\flrow@LT@prelastfoot=\box77
+\c@FBLTpage=\count341
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1634,133 +1616,125 @@ Package: fr-longtable 2007/11/28 v0.1b (beta) floatrow: additions for longtable
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 29
-5.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 25
+6.
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.80005pt on input line 295.
+(Font)              scaled to size 8.80005pt on input line 256.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 8.80005pt on input line 295.
+(Font)              scaled to size 8.80005pt on input line 256.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 18.2513pt on input line 295.
+(Font)              scaled to size 18.2513pt on input line 256.
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
- 295.
+ 256.
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
- 295.
+ 256.
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
- 295.
+ 256.
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 295.
+ 256.
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsya on input line 
-295.
+256.
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyb on input line 
-295.
+256.
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpmia on input line 
-295.
+256.
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for U+jkpsyc on input line 
-295.
+256.
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 2
-95.
+56.
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 295.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 256.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 295.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 256.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 295.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 256.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 12.67206pt on input line 296.
+(Font)              scaled to size 12.67206pt on input line 257.
 (./paperDraft.toc)
-\tf@toc=\write5
-\openout5 = `paperDraft.toc'.
+\tf@toc=\write4
+\openout4 = `paperDraft.toc'.
 
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 31
-8.
-(/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 319.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 348.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 299.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 348.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 299.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 348.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 299.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 348.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 299.
 [1
 
 
 {/Users/patrycjatempska/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
 x.map}]
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 374.
+ine 325.
 
 LaTeX Warning: Marginpar on page 2 moved.
 
-[2] [3] [4] [5]
-Underfull \hbox (badness 1173) in paragraph at lines 681--684
+[2] [3] [4] [5] [6] [7]
+Underfull \hbox (badness 1173) in paragraph at lines 760--763
 [][]\T1/ptm/m/n/10 Collective In-tel-li-gence. (n.d.). Re-trieved from [][]$htt
 ps : / / www . oxford -[] review . com / oxford -[] review -[]
  []
 
-[6] [7] [8] (./paperDraft.aux) ) 
+[8] [9] (./paperDraft.aux) ) 
 Here is how much of TeX's memory you used:
- 29325 strings out of 480502
- 541382 string characters out of 5898081
- 983325 words of memory out of 5000000
- 46349 multiletter control sequences out of 15000+600000
- 462694 words of font info for 128 fonts, out of 8000000 for 9000
+ 28817 strings out of 480502
+ 533571 string characters out of 5898081
+ 976134 words of memory out of 5000000
+ 45853 multiletter control sequences out of 15000+600000
+ 464139 words of font info for 126 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,9n,108p,10633b,1073s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/patrycjatempska/Library/TinyTeX/texmf-d
-ist/fonts/enc/dvips/base/8r.enc}</Users/patrycjatempska/Library/TinyTeX/texmf-d
-ist/fonts/type1/urw/courier/ucrr8a.pfb></Users/patrycjatempska/Library/TinyTeX/
-texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb></Users/patrycjatempska/Library/
-TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/patrycjatempska/
-Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/patrycjatem
-pska/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paperDraft.pdf (8 pages, 105102 bytes).
+ 108i,9n,108p,10633b,1074s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/patrycjatempska/Library/TinyTeX/texmf-dist/
+fonts/enc/dvips/base/8r.enc}</Users/patrycjatempska/Library/TinyTeX/texmf-dist/
+fonts/type1/urw/helvetic/uhvb8a.pfb></Users/patrycjatempska/Library/TinyTeX/tex
+mf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/patrycjatempska/Library/TinyTe
+X/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/patrycjatempska/Library/T
+inyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paperDraft.pdf (9 pages, 105245 bytes).
 PDF statistics:
- 251 PDF objects out of 1000 (max. 8388607)
- 228 compressed objects within 3 object streams
- 100 named destinations out of 1000 (max. 500000)
+ 256 PDF objects out of 1000 (max. 8388607)
+ 234 compressed objects within 3 object streams
+ 101 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

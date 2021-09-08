@@ -58,6 +58,7 @@ periodsDF$interventions[is.na(periodsDF$interventions) & periodsDF$periods == "t
 
 periodsDF
 
+
 ggplot(periodsDF)+
   geom_line(aes(x=date, y = attacks, group = grp),
              alpha = 0.8, size = .6)+
@@ -83,15 +84,30 @@ ggplot(periodsDF)+
   annotate("text", label = "attacks:", x = as.Date(startDate)-30, y = 215, hjust =0 )
 
 
+ggsave("images/periods.pdf", width = 20, height = 15, units = "cm", dpi = 450)  
 
 
 
+periodsDF$weekdays <-  weekdays(as.Date(periodsDF$date))
+
+library(lubridate)
+periodsDF$weeks <-  week(as.Date(periodsDF$date))
 
 
+periodsDF$weekdays <- as.factor(periodsDF$weekdays)
+levels(periodsDF$weekdays) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+                                "Saturday", "Sunday")
 
-periodsDF
 
-dateDF
+ggplot(periodsDF)+
+  geom_smooth(aes(x = weekdays, y = attacks, group =1))+
+  geom_line(aes(x = weekdays, y = attacks, group = weeks),alpha = 0.1)+
+  theme_tufte()+labs(title="Weekly attacks over six months", subtitle = "No weekly patterns")+xlab("")+
+  ylab("count")
+
+
+ggsave("images/weeklyPatterns.pdf", width = 20, height = 15, units = "cm", dpi = 450)  
+
 
 
 
@@ -106,9 +122,6 @@ periods <- ggplot(dateDF, aes(x=dates, y = points, color = periods, group = grp)
   labs(title = "Data collection periods", subtitle = "no line at data gaps", caption = "days with data: 81 (pre-treatment), 62 (treatment), 72 (post-treatment)")+
   scale_color_discrete(breaks=c("pre-treatment", "treatment", "post-treatment"))
 
-ggsave("images/periods.pdf", width = 20, height = 6, units = "cm", dpi = 450)  
-
-  
 
 table(periods)
 

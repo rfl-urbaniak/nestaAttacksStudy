@@ -253,6 +253,21 @@ LotsOfInteractionsModel3Props <- quap(
 
 
 
+LotsOfInteractionsModel3PropsUlam <- ulam(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu <- a + bADS[groupID] * ADS +  bIT[groupID] + bIC[groupID] * IC + bADSIC * ADS * IC+ bCBS[groupID] *CBS,
+    a ~ dnorm (0,0.5),
+    bADS[groupID] ~ dnorm(0,.5),
+    bADSIC ~ dnorm(0,.5),
+    bCBS[groupID] ~ dnorm(0,.5),
+    bIT[groupID] ~ dnorm(0,.5),
+    bIC[groupID] ~ dnorm(0,.5),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries
+)
+
 
 precis(LotsOfInteractionsModel3Props, depth = 2)
 

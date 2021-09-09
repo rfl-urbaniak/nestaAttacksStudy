@@ -37,6 +37,9 @@ averageChange <- mean(summaries$Adiff[summaries$group == "control"])
 
 InteractionsModelDiff <- readRDS(file = "models/InteractionsModelDiff.rds")
 
+
+precis(InteractionsModelDiff, depth = 2)
+
 # 
 # InteractionsModelDiffSD1 <- ulam(
 #   alist(

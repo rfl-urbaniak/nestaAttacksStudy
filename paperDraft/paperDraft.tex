@@ -38,7 +38,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Investigating the impact of interventionist causal approach on the study of verbal aggression and discrimination online},
+  pdftitle={Investigating the impact of interventionist causal approach on the study of verbal aggression online},
   pdfauthor={Patrycja Tempska and Rafal Urbaniak},
   colorlinks=true,
   linkcolor=Maroon,
@@ -247,7 +247,7 @@
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \title{Investigating the impact of interventionist causal approach on
-the study of verbal aggression and discrimination online}
+the study of verbal aggression online}
 \author{Patrycja Tempska and Rafal Urbaniak}
 \date{}
 
@@ -256,34 +256,15 @@ the study of verbal aggression and discrimination online}
 
 \tableofcontents
 
-\hypertarget{section-abstract}{%
-\section{Section Abstract}\label{section-abstract}}
-
-This article
-\todo{hm not sure whether abstract is neccessary in BA thesis but I will leave it here for now}
-describes an experimental intervention study conducted in a
-naturalistic, digital setting (Q\&A forum on Reddit), utilizing a
-collective intelligence approach to content moderation and reduction of
-the level of verbal aggression among a selected group of Reddit users
-who regularly attack other community members. Collective Intelligence in
-this sense means exploring the collaboration between human and machine
-intelligence to develop solutions to social challenges. Artificial
-Intelligence was used to detect verbal aggression (personal attacks) and
-notify human volunteers about attacks. Volunteers after receiving
-notifications employed interventions based on norm or empathy promotion.
-We find that only those who were sanctioned with norms-inducing
-interventions had their personal attacks' level significantly decreased.
-
 \vspace{1mm}
 \footnotesize
 
 \normalsize
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\textbackslash section Introduction
 
-We live in a world in which there is an abundance of data. Paraphrasing
-the phrase coined by Clive Humby, ``data is the new oil'' --- data has
+We live in a world in which there is an abundance of data. Referring the
+phrase coined by Clive Humby, ``data is the new oil'' --- data has
 displaced oil and become the world's most valuable resource. Albeit
 there are some fundamental differences between the two assets. Oil
 belongs to a very limited and finite resource, while data is growing at
@@ -305,82 +286,83 @@ learning \todo{@article{lecun2015deep,
   pages={436--444},
   year={2015},
   publisher={Nature Publishing Group}
-}}. In the last couple of years, more and more researchers started to
-research and developed tools for causal discovery and inference.
-Unfortunately, although thinking in causal terms seems to be our
-inherent human capacity and one of our basic cognitive abilities, that
-is not necessarily the case with the majority of toolkits and
-statistical models developed to draw insight and correlations from data.
-In classical statistics, which is stripped of causality-related terms
-and reasoning, one cannot speak about causal effects, unless one deals
-with a randomized controlled experiment. This comprises one of the
-limits of the classical paradigm in statistics (among others such as
-arbitrary thresholds of statistical significance, p-hacking, disregard
-of prior information, and others which we will not discuss here). But
-often scientists conduct the so-called cross-sectional research, in
-which no variable is manipulated. In the language and toolkit of
-classical statistics in such cases we cannot conduct any causal
-inference. What we can measure using those methods is correlation, and,
-as frequently repeated, ``correlation does not imply causation.''
-Correlation can be positive, negative, or there can be no correlation at
-all. A positive one implies that the increase of the value of one
-variable will influence the increase of another variables' value. A
-negative correlation means that the change in values of two variables
-will diverge into separate directions --- one will increase and one will
-decrease alongside the first one. We can measure the strength of the
-correlation using various mathematical methods, where 1 or -1 means we
-are dealing with perfect correlation --- the value of one variable
-changes proportional to the value of another variable. But even though
-causation is necessarily connected with correlation, as already
-mentioned --- not every correlation implies causation. And as we will
-see, ignoring the causal story behind the data and relationships between
-the variables might lead to far-reaching consequences. Drawing false
-causal conclusions out of data can lead to false accusations of
-discrimination (\ldots here I will add something more once I decide
-which examples to choose). This is especially problematic if we take
-into consideration the fact that statisticians and people in general
-naturally think in causal terms and spurious interpretations of studies
-occur frequently. On the other hand, a conservative approach of many
-classical statisticians led to a long-living debate on whether smoking
-causes cancer, lasting for over 20 years (to check). One of the reasons
-for such a fierce debate was the lack of a causal framework, which was
-still in its infancy at that time. Framework of tools with which we
-could validate or invalidate assumptions about the existence of the
-potential confounder - a vari- able causing both craving cigarettes and
-lung cancer (e.g.~some genetic factor), creating a spurious correlation
-between cigarettes and lung cancer. Modeling causality and moving beyond
-traditional statistics is a relatively young endeavor. One of the
-pioneers of the work on causality is Judea Pearl. As he describes,
-causality and traditional statistics are governed by opposing ways of
-thinking. While statistics might be described as ``study of methods of
-the reduction of data'' (quoted here was Fischer I think, need to
-check), causality requires the incorporation of an extra layer - the
-understanding or prior knowl- edge (assumptions) about the process that
-generate the data in the first place. Classical statistics might be
-described here as a ``model-free approach,'' just as Artificial
-Intelligence methods based on machine learning/deep learning, in which
-no prior knowledge can be taken into account.
+}}. In the last couple of years, more and more industry and academia
+representatives alike started to research and develop tools for causal
+discovery and inference. Unfortunately, although thinking in causal
+terms seems to be our inherent human capacity and one of our basic
+cognitive abilities, that is not necessarily the case with the majority
+of toolkits and statistical models developed to draw insight and
+correlations from data. In classical statistics, which is stripped of
+causality-related terms and reasoning, one cannot speak about causal
+effects, unless one deals with a randomized controlled experiment. This
+comprises one of the limits of the classical paradigm in statistics
+(among others such as arbitrary thresholds of statistical significance,
+p-hacking, disregard of prior information, and others which we will not
+discuss here). But often scientists conduct the so-called
+cross-sectional research, in which no variable is manipulated. In the
+language and toolkit of classical statistics in such cases we cannot
+conduct any causal inference. What we can measure using those methods is
+correlation, and, as frequently repeated, ``correlation does not imply
+causation.'' Correlation can be positive, negative, or there can be no
+correlation at all. A positive one implies that the increase of the
+value of one variable will influence the increase of another variables'
+value. A negative correlation means that the change in values of two
+variables will diverge into separate directions --- one will increase
+and one will decrease alongside the first one. We can measure the
+strength of the correlation using various mathematical methods, where 1
+or -1 means we are dealing with perfect correlation --- the value of one
+variable changes proportional to the value of another variable. But even
+though causation is necessarily connected with correlation, as already
+mentioned --- not every correlation implies causation. This is
+especially problematic if we take into consideration the fact that
+statisticians and people in general naturally think in causal terms and
+spurious interpretations of studies occur frequently. On the other hand,
+a conservative approach of many classical statisticians led to a
+long-living debate on whether smoking causes cancer, lasting for over 20
+years. One of the reasons for such a fierce debate was the lack of a
+causal framework, which was still in its infancy at that time. Framework
+of tools with which we could validate or invalidate assumptions about
+the existence of the potential confounder --- a variable causing both
+craving cigarettes and lung cancer (e.g.~some genetic factor), creating
+a spurious correlation between cigarettes and lung cancer. Modeling
+causality and moving beyond traditional statistics is a relatively young
+endeavor. One of the pioneers of the work on causality is Judea Pearl.
+As he describes, causality and traditional statistics are governed by
+opposing ways of thinking. While statistics might be described as
+``study of methods of the reduction of data,'' causality requires the
+incorporation of an extra layer --- the understanding or prior knowledge
+(assumptions) about the process that generate the data in the first
+place. Classical statistics might be described here as a ``model-free
+approach,'' just as Artificial Intelligence methods based on machine
+learning/deep learning, in which no prior knowledge can be taken into
+account.
 
-In this paper, I will show how mathematical methods for causality
-modeling can be applied to discover how different variables affect each
-other, moving beyond traditional correlation. Data used for analysis
-comes from an experimental intervention study conducted in a
-naturalistic, digital setting (Q\&A forum on Reddit), utilizing a
-collective intelligence approach to content moderation and reduction of
-the level of verbal aggression among a selected group of Reddit users
-who regularly attack other community members. Collective Intelligence in
-this sense means exploring the collaboration between human and machine
-intelligence to develop solutions to social challenges. Artificial
-Intelligence was used to detect verbal aggression (personal attacks) and
-notify human volunteers about attacks. Volunteers after receiving
-notifications employed interventions grounded in philosophy. There were
-two broad categories - one based on norms (deontology, virtue ethics
-among others) and second based on empathy (inspired by notions of David
-Hume and Adam Smith).
+In this paper, I will show how mathematical methods for process modeling
+which includes assumptions about causal connections can be applied to
+discover how different variables affect each other, moving beyond
+classical statistics. Looking at the analysis from two perspectives ---
+traditional (classical, frequentist statistics) and bayesian -- we will
+see the advantage of the second paradigm in learning about the world
+based on the data we have at our disposal. Data used for analysis
+concerned in this paper comes from an experimental intervention study
+conducted in a naturalistic, digital setting (Q\&A forum on Reddit),
+utilizing a collective intelligence approach to content moderation and
+reduction of the level of verbal aggression among a selected group of
+Reddit users who regularly attack other community members. Collective
+Intelligence in this sense means exploring the collaboration between
+human and machine intelligence to develop solutions to social
+challenges. Artificial Intelligence was used to detect verbal aggression
+(personal attacks) and notify human volunteers about attacks. Volunteers
+after receiving notifications employed interventions inspired in its
+underlying principles in philosophy and psychology. There were two broad
+categories of interventions - one based on norms (deontology, virtue
+ethics among others) and the second based on empathy (inspired by
+notions of David Hume and Adam Smith).
 
-Although much effort has been made in order to tackle the problem of
-verbal aggression and harassment online, looking at various reports and
-surveys (Laub, 2019; Sorrentino, Baldry, Farrington, \& Blaya, 2019;
+One might also wonder about the motivations for conducting such an
+experiment. Much effort has been made in order to tackle the problem of
+verbal aggression and harassment online, but looking at various reports
+and surveys (Laub, 2019; Sorrentino, Baldry, Farrington, \& Blaya, 2019;
 Vogels, 2021), it remains a common hindrance for people engaging with
 social media in their everyday lives. The problem got exacerbated in the
 midst of the COVID19 pandemic, during which the majority of our social
@@ -406,7 +388,9 @@ because of the constraints affiliated with restrictive non-disclosure
 agreements (NDA) among others. Curtailing the moderators' workforce was
 accompanied by more agency given to algorithms and AI-based moderation.
 Those changes, as argued by Gerrard (2020), can be seen as a serious red
-flag in terms of safety for all users on online platforms.
+flag in terms of safety for all users on online platforms. That is why
+in the paper I will also try to sketch a landscape of current moderation
+techniques through a critical lens.
 
 \hypertarget{automated-versus-human-based-moderation}{%
 \section{Automated versus Human-based
@@ -587,10 +571,7 @@ experiment itself, we will be relying on a collective intelligence scope
 proposed by Nesta, an innovation foundation
 (\url{https://www.nesta.org.uk}), which focuses on a collaboration
 between human and machine intelligence to develop innovative solutions
-to social challenges. (Gdzieś stopka(?): Samurai Labs has been one of
-the 15 recipients of the second round of collective intelligence grants
-awarded by Nesta:
-\url{https://www.nesta.org.uk/project-updates/second-round-collective-intelligence-grants/})
+to social challenges.
 
 The main objective of the experiment was to test whether the level of
 verbal aggression (personal attacks) of a group of users' regularly
@@ -616,11 +597,11 @@ Intelligence supported with a crowd of volunteers---who introduced the
 element of positive peer-pressure.
 
 \textbf{Empathetic interventions} In the first treatment condition,
-volunteers were encouraged to send empathy-inducing messages focusing
-either on the target of verbal aggression (e.g.~„Hey such words might
-hurt the other person''), stressing the common humanity aspect that we
-call share („We are all humans of flesh and blood''), or even infusing
-the intervention with the emphatic response to the attacker (Hey I
+volunteers were asked to send empathy-inducing messages focusing either
+on the target of verbal aggression (e.g.~„Hey such words might hurt the
+other person''), stressing the common humanity aspect that we call share
+(„We are all humans of flesh and blood''), or even infusing the
+intervention with the emphatic response to the attacker (Hey I
 understand your strong emotions\ldots''). At the core of the empathetic
 interventions, we put forth the notion that goes back to David Hume and
 Adam Smith. The first one conceived empathy (at the time referred to as
@@ -631,97 +612,128 @@ and coined in the term emotional contagion
 ``the process in which an observed behavioral change in one individual
 leads to the reflexive production of the same behavior by other
 individuals in close proximity, with the likely outcome of converging
-emotionally.'' For Adam Smith, sympathy consisted of visualizing how the
-sympathetic person would feel in the particular circumstances of the
-other --- thus here the process was based not so much on mirroring, but
-rather projecting my imagination of what it is like to be that person in
-a certain moment). Without further delving into the differentiation
+emotionally.''
+
+For Adam Smith, sympathy consisted of visualizing how the sympathetic
+person would feel in the particular circumstances of the other --- thus
+here the process was based not so much on mirroring, but rather
+projecting my imagination of what it is like to be that person in a
+certain moment). Without further delving into the differentiation
 between those two, sympathy in both accounts is crucial in the
 constitution of human beings as social and moral creatures
 (\url{https://plato.stanford.edu/entries/empathy/}). It enables the
-emotional connection to others and concern for their well-being. In the
-psychological literature, various kinds of empathetic responses were
-distinguished - the aforementioned emotional contagion, affective/proper
-empathy, sympathy, personal distress or cognitive empathy
-((\url{https://plato.stanford.edu/entries/empathy/}). During the
-experiment, we couldn't observe or measure whether the empathetic
-response indeed was evoked. Also, interventions that stated that ``such
-words might hurt the other person'' have the underlying assumption that
-the receiver of the attack might be hurt, but in reality that might not
-even be the case. Intuitively, and following the argumentation of Thomas
-Nagel in ``What is it like to be a bat?'' one can only imagine what it
-is like - but for me - to be a bat or to be a receiver of the attack. To
-each observed or imagined experience there is an array of subjective
-quality to actually experiencing it and in this way receiving a
-particular message might be met with a unique reception by each
-conscious being. Also, full epistemic access to the mind and body of
-another is impossible. But even though such access is impossible and
-putting aside the broad spectrum of phenomena related to empathetic
-response, our goal was by utilizing interventions referring to empathy
-in various forms, changing the behavior of the attacker - convincing him
-to refrain from using verbal aggression towards others. Whether the
-message indeed gave rise to empathy was not of importance - one can
-imagine a hypothetical scenario of a successful intervention in which
-the attacker changed his behavior long-term and stopped attacking
-others, hopefully as a result of interventions, but the empathetic
-response was not even evoked. The behavioral change could be induced by
-other motivations - e.g.~unwillingness from the exclusion from the
-community. Thus the goal is not to evoke empathy, but through empathetic
-interventions - substantially limiting the use of verbal aggression.
+emotional connection to others and concern for their well-being. The
+interventions were supposed to serve the role of empathetic response
+enablers --- reminding the person in front of the screen that there is a
+real human being on the other side.
 
-\textbf{Normative interventions} Normative interventions were grounded
-in broadly defined norms and normative theories expressed via various
-means - either specific community guidelines imposed by Reddit or
-through ethics - deontology, virtue ethics. Whatever the strategy was
-used, it was supposed to express the unacceptability of verbal
-aggression in a direct or non-direct way.
+In the psychological literature, various kinds of empathetic responses
+were distinguished - the aforementioned emotional contagion,
+affective/proper empathy, sympathy, personal distress or cognitive
+empathy ((\url{https://plato.stanford.edu/entries/empathy/}). During the
+experiment, we could not observe or measure whether the empathetic
+response indeed was evoked. The study was conducted in a digital setting
+--- interventions were most likely read in the private space, in front
+of personal computers or smartphones. Even if we would change the
+setting to a lab, differentiating and measuring empathy is not trivial
+if not impossible (to check).
 
-A more direct approach referred to deontology in which „actions are good
+Also, interventions that stated that ``such words might hurt the other
+person'' have the underlying assumption that the receiver of the attack
+might be hurt, but in reality that might not even be the case.
+Intuitively, and following the argumentation of Thomas Nagel in ``What
+is it like to be a bat?'' one can only imagine what it is like --- but
+for me --- to be a bat or to be a receiver of the attack. To each
+observed or imagined experience there is an array of subjective quality
+to actually experiencing it and in this way receiving a particular
+message might be met with a unique reception by each conscious being.
+Also, full epistemic access to the mind and body of another is
+impossible.
+
+But even though such access is impossible and putting aside the broad
+spectrum of phenomena related to empathetic response, our goal was by
+utilizing interventions referring to empathy in various forms, changing
+the behavior of the attacker --- convincing him to refrain from using
+verbal aggression towards others. Whether the message indeed gave rise
+to empathy was not of importance --- one can imagine a hypothetical
+scenario of a successful intervention in which the attacker changed his
+behavior long-term and stopped attacking others, hopefully as a result
+of interventions, but the empathetic response was not even evoked. The
+behavioral change could be induced by other motivations ---
+e.g.~unwillingness from the exclusion from the community. Thus the goal
+is not to evoke empathy, but through empathetic interventions ---
+substantially limit the use of verbal aggression among study group
+members.
+
+\textbf{Normative interventions} In the second treatment condition,
+volunteers were asked to send norms-inducing messages written on the
+grounds of deontology (e.g.~„we have a duty to respect each other during
+the discussions``), virtue ethics (e.g.~„capacity to be respectful in a
+heated discussion is a virtue and requires hard work'') or Reddit's
+community guideline (e.g.~``Let's recall the reddiquette and adhere to
+the same standards of behavior online that you follow in real life'').
+
+Whatever the strategy was used, it was supposed to express the
+unacceptability of verbal aggression in a direct or non-direct way. A
+more direct approach referred to deontology in which „actions are good
 or bad according to a clear set of rules''
-(\url{https://ethics.org.au/ethics-explainer-deontology/}). Such
-interventions could state that „we have a duty to respect each other
-during the discussions``, „we have a moral obligation to act in a civil
-manner while participating in online communities,'' „we shouldn't use ad
-personam in here''. The basic assumption behind those interventions is
-that there is something we ought to do or are morally required to do -
-and such actions are the right actions. There are also actions we ought
-not to do - and such actions are morally wrongful. This line of thinking
-can be traced back to Immanuel Kant who thought that all universal moral
-obligations can stem from categorical imperative: ``act only in
-accordance with that maxim through which you can at the same time will
-that it become a universal law'' (Groundwork of the Metaphysic of
-Morals).
+(\url{https://ethics.org.au/ethics-explainer-deontology/}). The basic
+assumption behind those interventions is that there is something we
+ought to do or are morally required to do --- and such actions are the
+right actions. There are also actions we ought not to do --- and such
+actions are morally wrongful. This line of thinking can be traced back
+to Immanuel Kant who thought that all universal moral obligations can
+stem from categorical imperative: ``act only in accordance with that
+maxim through which you can at the same time will that it become a
+universal law'' (Groundwork of the Metaphysic of Morals).
 
-Yet other interventions were encouraged to be expressed in the light of
-virtue ethics and stressed the importance of adhering to or practicing
-certain virtues. Such a message was assumed to motivate the moral agent
-in the process of positive reinforcement and create a feeling of the
-desirability of certain behaviors, e.g.~„capacity to be respectful in a
-heated discussion is a virtue and requires hard work''. The core
-assumption here is that the virtue itself is not genetically inherited
-but is rather a potential or a disposition of a character that can be
-practice and mastered like a practical skill (even though as mentioned
-by Natasza Szutta in {[}cite her book about virtue ethics{]} virtues and
-practical skills share some fundamental differences). NS distinguished
-two types of virtues - affective and cognitive. Affective virtues
-encompass the emotions and feelings that play an important and positive
-role in morality and can act as a support in the course of becoming a
-virtuous man. A cognitive virtue relates to the intellectual aspect in
-which one knows how to act in certain situations and understands the
-rules of morally rightful actions (e.g.~what is kindness and how a kind
-man acts). Here, just as in the case of empathetic interventions, any
-attempts to measure whether the target of the intervention in the case
-of a positive outcome (behavioral change) indeed acted in a virtuous
-way. A virtue of kindness may manifest itself in particular behaviors
-but as such cannot be identified with the virtuous deed, as highlighted
-by Natasza Szutta. Although again, the goal of the experiment itself was
-to change the behavior of the attackers, and measuring whether
-particular messages contributed to more flourishing individuals in terms
-of virtue development and character creation lies beyond the scope of
-this work. Interventions could affect people either way - stimulate
-their moral reflections or limit their attacks due to consequentialist
-way of thinking and fear of potential outcomes (e.g.~being excluded from
-the community).
+In the psychological literature, Robert B. Cialdini distinguished three
+types of norms that he found to be effective in guiding human action:
+descriptive norms (focused on the perception of how the majority of
+people would behave), injunctive (based on the perception of how the
+majority of people would approve or disapprove certain conduct), or
+personal norms (based on the perception of how a particular person would
+approve or disapprove certain behavior) CITE:
+\url{https://www.sciencedirect.com/science/article/abs/pii/S0065260108603305}.
+Although interventions written on the grounds of duties and deontology
+cannot be reduced to any of the above, since following Hume's guillotine
+--- from the fact that the majority of people are respectful does not
+follow the normative statement of civility --- I hoped that expressing a
+universal normative statement will be even more powerful and potentially
+spawn an interpretation of social acceptability or unacceptability of
+certain behavior.
+
+Yet other interventions in normative group were encouraged to be
+expressed in the light of virtue ethics and stressed the importance of
+adhering to or practicing certain virtues. Such a message was assumed to
+motivate the moral agent in the process of positive reinforcement and
+create a feeling of the desirability of certain behaviors, like kindness
+and civility. The core assumption here is that the virtue itself is not
+genetically inherited but is rather a potential or a disposition of a
+character that can be practice and mastered like a practical skill (even
+though as mentioned by Natasza Szutta in {[}cite her book about virtue
+ethics{]} virtues and practical skills share some fundamental
+differences). NS distinguished two types of virtues - affective and
+cognitive. Affective virtues encompass the emotions and feelings that
+play an important and positive role in morality and can act as a support
+in the course of becoming a virtuous man. A cognitive virtue relates to
+the intellectual aspect in which one knows how to act in certain
+situations and understands the rules of morally rightful actions
+(e.g.~what is kindness and how a kind man acts).
+
+Here, just as in the case of empathetic interventions, any attempts to
+measure whether the target of the intervention in the case of a positive
+outcome (behavioral change) indeed acted in a virtuous way. A virtue of
+kindness may manifest itself in particular behaviors but as such cannot
+be identified with the virtuous deed, as highlighted by Natasza Szutta.
+Although again, the goal of the experiment itself was to change the
+behavior of the attackers, and measuring whether particular messages
+contributed to more flourishing individuals in terms of virtue
+development and character creation lies beyond the scope of this work.
+Interventions could affect people either way - stimulate their moral
+reflections or limit their attacks due to consequentialist way of
+thinking and fear of potential outcomes (e.g.~being excluded from the
+community).
 
 Additionally, Reddit created their social etiquette called
 ``Rediquette''
@@ -733,9 +745,7 @@ platform have the authority to exclude its members based either on the
 basis of breaking the rules of the reddiquette or any other local rules
 imposed by specific subreddit. Volunteers were encouraged to refer to
 those norms as well, citing specific points, for instance, ``Hey there,
-have you read the reddiquette? It says remember the human.'' or ``Let's
-recall the reddiquette and adhere to the same standards of behavior
-online that you follow in real life.''
+have you read the reddiquette? It says remember the human.''
 
 As we have seen, those two categories of interventions - normative and
 empathetic - encompass a whole variety of categories within. One might
@@ -750,8 +760,8 @@ reasoning, as proposed by Jonathan Haidt: Care/Harm, Fairness/Cheating,
 Loyalty/Betrayal, Authority/Subversion, Sanctity/Degradation, and
 Liberty/Oppression (J. Haidt, The Righteous Mind). Albeit for the sake
 of the sanity of our volunteers, we decided to create only two but broad
-categories and let them decide based on the context of the conversation,
-how they want to respond to the attacker.
+categories and let volunteers decide based on the context of the
+conversation, how they want to respond to the attacker.
 
 Cyberviolence was defined in this experiment as a personal attack - any
 kind of verbal harassment, insult, or threat directed against the

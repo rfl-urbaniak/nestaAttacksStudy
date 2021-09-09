@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.2)  8 SEP 2021 20:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.2)  9 SEP 2021 16:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1692,21 +1692,21 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 \tf@toc=\write4
 \openout4 = `paperDraft.toc'.
 
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 263.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 291.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 272.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 291.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 272.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 291.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 272.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 289.
 
-Overfull \hbox (11.30283pt too wide) in paragraph at lines 308--308
+Overfull \hbox (11.30283pt too wide) in paragraph at lines 289--289
 [][][]\T1/ptm/m/n/8 @articlelecun2015deep, 
  []
 
 
-Overfull \hbox (11.30283pt too wide) in paragraph at lines 308--308
+Overfull \hbox (11.30283pt too wide) in paragraph at lines 289--289
 [][][]\T1/ptm/m/n/8 @articlelecun2015deep, 
  []
 
@@ -1716,23 +1716,23 @@ Overfull \hbox (11.30283pt too wide) in paragraph at lines 308--308
 {/Users/patrycjatempska/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
 x.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 397.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 379.
 [2]
 
 LaTeX Warning: Marginpar on page 3 moved.
 
 [3] [4] [5] [6] [7] [8]
-Underfull \hbox (badness 1173) in paragraph at lines 858--861
+Underfull \hbox (badness 1173) in paragraph at lines 868--871
 [][]\T1/ptm/m/n/10 Collective In-tel-li-gence. (n.d.). Re-trieved from [][]$htt
 ps : / / www . oxford -[] review . com / oxford -[] review -[]
  []
 
 [9] [10] (./paperDraft.aux) ) 
 Here is how much of TeX's memory you used:
- 28838 strings out of 480502
- 534020 string characters out of 5898081
- 978134 words of memory out of 5000000
- 45871 multiletter control sequences out of 15000+600000
+ 28819 strings out of 480502
+ 533685 string characters out of 5898081
+ 978995 words of memory out of 5000000
+ 45857 multiletter control sequences out of 15000+600000
  464139 words of font info for 126 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,9n,108p,10633b,1074s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1742,10 +1742,10 @@ Here is how much of TeX's memory you used:
 xmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/patrycjatempska/Library/TinyT
 eX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/patrycjatempska/Library/
 TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paperDraft.pdf (10 pages, 111658 bytes).
+Output written on paperDraft.pdf (10 pages, 110272 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
- 242 compressed objects within 3 object streams
- 104 named destinations out of 1000 (max. 500000)
- 77 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 251 PDF objects out of 1000 (max. 8388607)
+ 228 compressed objects within 3 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

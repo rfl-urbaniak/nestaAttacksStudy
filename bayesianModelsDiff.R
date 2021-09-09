@@ -12,13 +12,6 @@ summaries$CDS <- standardize(summaries$CD)
 summaries$ADS <- standardize(summaries$AD)
 summaries$groupID <-  as.integer( as.factor(summaries$group) )
 
-summaries$ApropS <- standardize(summaries$AA/summaries$AB)
-
-
-ggplot(summaries)+geom_histogram(aes(x=ApropS, fill = group), bins = 100)
-
-
-head(summaries)
 
 
 

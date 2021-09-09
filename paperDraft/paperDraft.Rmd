@@ -189,8 +189,6 @@ The duration of the experiment, 6 months, was divided into three 2-months period
 
 
 
-
-
 #  References {-}
 
 \vspace{-3mm}

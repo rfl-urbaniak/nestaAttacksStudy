@@ -1,7 +1,8 @@
-\contentsline {section}{\numberline {1}Automated versus Human-based Moderation}{3}{section.1}%
-\contentsline {section}{\numberline {2}Pro-active and reactive moderation}{4}{section.2}%
-\contentsline {section}{\numberline {3}Collective Intelligence Approach to Counter-speech}{5}{section.3}%
-\contentsline {section}{\numberline {4}Experimental Design and data collection}{7}{section.4}%
-\contentsline {section}{\numberline {5}Results}{8}{section.5}%
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Automated versus Human-based Moderation}{3}{section.2}%
+\contentsline {section}{\numberline {3}Pro-active and reactive moderation}{4}{section.3}%
+\contentsline {section}{\numberline {4}Collective Intelligence Approach to Counter-speech}{5}{section.4}%
+\contentsline {section}{\numberline {5}Experimental Design and data collection}{7}{section.5}%
+\contentsline {section}{\numberline {6}Results}{8}{section.6}%
 \contentsline {section}{References}{8}{section*.7}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.2)  9 SEP 2021 16:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.9.9)  9 SEP 2021 21:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **paperDraft.tex
 (./paperDraft.tex
 LaTeX2e <2021-06-01> patch level 1
-L3 programming layer <2021-07-12>
+L3 programming layer <2021-08-27>
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrart
 cl.cls
 Document Class: scrartcl 2021/06/25 v3.34 KOMA-Script document class (article)
@@ -1395,11 +1395,11 @@ Package: amsthm 2020/05/29 v2.20.6
 ) (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/xpatch/xpatch.st
 y
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2021-07-12 L3 programming layer (loader) 
+Package: expl3 2021-08-27 L3 programming layer (loader) 
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backen
 d-pdftex.def
-File: l3backend-pdftex.def 2021-07-12 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count327
 \l__pdf_internal_box=\box73
 ))
@@ -1407,7 +1407,7 @@ Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/
 xparse.sty
-Package: xparse 2021-06-18 L3 Experimental document command parser
+Package: xparse 2021-08-27 L3 Experimental document command parser
 )
 (/Users/patrycjatempska/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.
 sty
@@ -1693,20 +1693,20 @@ LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 \openout4 = `paperDraft.toc'.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 272.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 273.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 272.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 273.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 272.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 273.
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 289.
+ine 290.
 
-Overfull \hbox (11.30283pt too wide) in paragraph at lines 289--289
+Overfull \hbox (11.30283pt too wide) in paragraph at lines 290--290
 [][][]\T1/ptm/m/n/8 @articlelecun2015deep, 
  []
 
 
-Overfull \hbox (11.30283pt too wide) in paragraph at lines 289--289
+Overfull \hbox (11.30283pt too wide) in paragraph at lines 290--290
 [][][]\T1/ptm/m/n/8 @articlelecun2015deep, 
  []
 
@@ -1716,36 +1716,36 @@ Overfull \hbox (11.30283pt too wide) in paragraph at lines 289--289
 {/Users/patrycjatempska/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdfte
 x.map}]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 379.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 380.
 [2]
 
 LaTeX Warning: Marginpar on page 3 moved.
 
 [3] [4] [5] [6] [7] [8]
-Underfull \hbox (badness 1173) in paragraph at lines 868--871
+Underfull \hbox (badness 1173) in paragraph at lines 869--872
 [][]\T1/ptm/m/n/10 Collective In-tel-li-gence. (n.d.). Re-trieved from [][]$htt
 ps : / / www . oxford -[] review . com / oxford -[] review -[]
  []
 
-[9] [10] (./paperDraft.aux) ) 
+[9] [10] [11] (./paperDraft.aux) ) 
 Here is how much of TeX's memory you used:
- 28819 strings out of 480502
- 533685 string characters out of 5898081
- 978995 words of memory out of 5000000
- 45857 multiletter control sequences out of 15000+600000
+ 28825 strings out of 480559
+ 533758 string characters out of 5901780
+ 977910 words of memory out of 5000000
+ 45803 multiletter control sequences out of 15000+600000
  464139 words of font info for 126 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,9n,108p,10633b,1074s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/patrycjatempska/Library/TinyTeX/texmf-dist
-/fonts/enc/dvips/base/8r.enc}</Users/patrycjatempska/Library/TinyTeX/texmf-dist
-/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/patrycjatempska/Library/TinyTeX/te
-xmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/patrycjatempska/Library/TinyT
-eX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/patrycjatempska/Library/
-TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on paperDraft.pdf (10 pages, 110272 bytes).
+{/Users/patrycjatempska/Library/TinyTeX/texmf
+-dist/fonts/enc/dvips/base/8r.enc}</Users/patrycjatempska/Library/TinyTeX/texmf
+-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/patrycjatempska/Library/TinyT
+eX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/patrycjatempska/Library/
+TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/patrycjatempska/Lib
+rary/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paperDraft.pdf (11 pages, 110830 bytes).
 PDF statistics:
- 251 PDF objects out of 1000 (max. 8388607)
- 228 compressed objects within 3 object streams
- 99 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 261 PDF objects out of 1000 (max. 8388607)
+ 237 compressed objects within 3 object streams
+ 102 named destinations out of 1000 (max. 500000)
+ 69 words of extra memory for PDF output out of 10000 (max. 10000000)
 

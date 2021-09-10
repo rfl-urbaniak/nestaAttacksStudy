@@ -17,7 +17,7 @@ summaries$groupID <-  as.integer( as.factor(summaries$group) )
 
 nullModelProps <- quap(
   alist(
-    ApropS ~ dnorm( mu, sigma ),
+    AdiffS ~ dnorm( mu, sigma ),
     mu ~ dnorm (0,0.5),
     sigma  ~ dexp(1)
   ), 

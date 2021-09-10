@@ -324,7 +324,7 @@ We will focus on a class of additive models where the outcome variable is normal
 
 \begin{align*}
 \mathsf{AdiffS} & \sim \textsf{Norm}(\mu, \sigma)\\
-mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} + \beta_{\mathsf{group}_i}  +
+\mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} + \beta_{\mathsf{group}_i}  +
  \beta_{\mathsf{IC}}[\mathsf{group}_i]\times \mathsf{IC} + \\
  & + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} + \beta_{\mathsf{CBS}}[\mathsf{group}_i] \times \mathsf{CBS}\\
  \alpha & \sim \textsf{Norm}(0,.3)\\
@@ -512,7 +512,7 @@ mu <- link(InteractionsModelDiff)
 mu_mean <- apply( mu , 2 , mean )
 mu_resid <- summaries$AdiffS - mu_mean
 ggplot()+geom_density(aes(x = mu_resid))+theme_tufte()+
-  ggtitle("Residuals are approximately normally distributed")
+  ggtitle("Residuals are approximately normally distributed")+xlab("residuals")
 ```
 \normalsize
 
@@ -534,6 +534,205 @@ ggplot()+geom_density(aes(x = mu_resid))+theme_tufte()+
 <!-- # ) -->
 
 
+# Model selection
+
+
+How did we get to this fairly complicated model though? Once preliminary causal considerations guided our restrictions on variable selection, we proceed by building models of increasing complexity, and comparing them in terms of Widely Acceptable Information Criterion. The models differ mostly in the underlying linear formulae. For computational ease we will here use quadratic approximations, while in the final analysis we will deploy Hamiltionian Monte Carlo. The names are meant to decode the model structure: the predictors are listed before dashes, whereas interactions are listed after dashes.
+
+\begin{align}
+\tag{Null}  \mu_i & = \alpha\\
+\tag{ADS}  \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS}\\
+\tag{ADSIC}  \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +    \beta_{\mathsf{IC}}\times \mathsf{IC}\\
+\tag{IT}  \mu_i & = \beta_{\mathsf{group}[i]} \\
+\tag{ADSIT} \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]}\\
+\tag{ADSITIC} \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +    \beta_{\mathsf{IC}}\times \mathsf{IC}\\
+\tag{ADSITIC-ADSIC} \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +    \beta_{\mathsf{IC}}\times \mathsf{IC} + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
+\tag{ADSITIT-ADSIC-ADSIT} \mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +  \\ \nonumber & +  \beta_{\mathsf{IC}}\times \mathsf{IC} + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
+\tag{ADSIT-ADSIT}   \mu_i &  = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i] \times
+ \mathsf{ADS} + \beta_{\mathsf{group}[i]} \\
+\tag{ADSITIC-ADSIT-ICIT-ADSIC}   \mu_i &  = \alpha  + \beta_{\mathsf{group}[i]} +  
+\beta_{\mathsf{IC}}[\mathsf{group}_i] \times \mathsf{IC}  + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
+\tag{ADSITICCBS-ITIC-ADSIC} \mu_i &  = \alpha  + \beta_{\mathsf{group}[i]} +  
+\beta_{\mathsf{ADS}}[\mathsf{group}_i] \times
+ \mathsf{ADS}  + \beta_{\mathsf{IC}}[\mathsf{group}_i] \times \mathsf{IC}  + \\ & \nonumber  \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} +
+ \beta_{\mathsf{group}[i]} +  
+\beta_{\mathsf{CBS}} \times \mathsf{CBS} \\
+\tag{Final} \mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} + \beta_{\mathsf{group}_i}  +  \beta_{\mathsf{IC}}[\mathsf{group}_i]\times \mathsf{IC} + \\
+ & + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} + \beta_{\mathsf{CBS}}[\mathsf{group}_i] \times \mathsf{CBS} \nonumber \end{align}
+
+
+
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+null <- quap(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu ~ dnorm (0,0.3),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries  
+)
+
+ADS <- quap(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu <-  a + bADS * ADS,
+    a ~ dnorm (0,0.3),
+    bADS ~ dnorm(0,0.3),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries
+)
+
+ADSIC <- quap(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu <-  a + bADS * ADS+ bIC * IC,
+    a ~ dnorm (0,0.3),
+    bADS ~ dnorm(0,0.3),
+    bIC ~ dnorm(0,0.3),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries
+)
+
+
+IT <- quap(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu <-  bIT[groupID] ,
+    bIT[groupID] ~ dnorm(0,.3),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries
+)
+
+
+ADSIT <- quap(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu <- a + bADS * ADS +  bIT[groupID],
+    a ~ dnorm (0,0.3),
+    bADS ~ dnorm(0,.3),
+    bIT[groupID] ~ dnorm(0,.3),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries
+)
+
+
+ADSITIC <- quap(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu <- a + bADS * ADS +  bIT[groupID] + bIC * IC,
+    a ~ dnorm (0,0.3),
+    bADS ~ dnorm(0,.3),
+    bIT[groupID] ~ dnorm(0,.3),
+    bIC ~ dnorm(0,.3),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries
+)
+
+
+ADSITIC_ADSIC <- quap(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu <- a + bADS * ADS +  bIT[groupID] + bIC * IC + bADSIC * ADS * IC,
+    a ~ dnorm (0,0.3),
+    bADS ~ dnorm(0,.3),
+    bADSIC ~ dnorm(0,.3),
+    bIT[groupID] ~ dnorm(0,.3),
+    bIC ~ dnorm(0,.3),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries
+)
+
+
+ADSITIT_ADSIC_ADSIT <- quap(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu <- a + bADS[groupID] * ADS +  bIT[groupID] + bIC * IC + bADSIC * ADS * IC,
+    a ~ dnorm (0,0.3),
+    bADS[groupID] ~ dnorm(0,.3),
+    bADSIC ~ dnorm(0,.3),
+    bIT[groupID] ~ dnorm(0,.3),
+    bIC ~ dnorm(0,.3),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries
+)
+
+
+ADSIT_ADSIT <- quap(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu <- a + bADS[groupID] * ADS +  bIT[groupID] ,
+    a ~ dnorm (0,0.3),
+    bADS[groupID] ~ dnorm(0,.3),
+    #bADSIC ~ dnorm(0,.5),
+    bIT[groupID] ~ dnorm(0,.3),
+    #bIC ~ dnorm(0,.5),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries
+)
+
+
+ADSITIC_ADSIT_ICIT_ADSIC <- quap(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu <- a + bADS[groupID] * ADS +  bIT[groupID] + bIC[groupID] * IC +
+      bADSIC * ADS * IC,
+    a ~ dnorm (0,0.3),
+    bADS[groupID] ~ dnorm(0,.3),
+    bADSIC ~ dnorm(0,.3),
+    bIT[groupID] ~ dnorm(0,.3),
+    bIC[groupID] ~ dnorm(0,.3),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries
+)
+
+
+ADSITICCBS_ITIC_ADSIC <- quap(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu <- a + bADS[groupID] * ADS +  bIT[groupID] + bIC[groupID] * IC + 
+      bADSIC * ADS * IC+ bCBS *CBS,
+    a ~ dnorm (0,0.3),
+    bADS[groupID] ~ dnorm(0,.3),
+    bADSIC ~ dnorm(0,.3),
+    bCBS ~ dnorm(0,.3),
+    bIT[groupID] ~ dnorm(0,.3),
+    bIC[groupID] ~ dnorm(0,.3),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries
+)
+
+
+Final <- quap(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu <- a + bADS[groupID] * ADS +  bIT[groupID] + bIC[groupID] * IC + 
+      bADSIC * ADS * IC+ bCBS[groupID] *CBS,
+    a ~ dnorm (0,0.3),
+    bADS[groupID] ~ dnorm(0,.3),
+    bADSIC ~ dnorm(0,.3),
+    bCBS[groupID] ~ dnorm(0,.3),
+    bIT[groupID] ~ dnorm(0,.3),
+    bIC[groupID] ~ dnorm(0,.3),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries
+)
+
+```
+\normalsize
 
 
 
@@ -542,6 +741,18 @@ ggplot()+geom_density(aes(x = mu_resid))+theme_tufte()+
 
 
 
+
+
+
+
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+comparison<- compare(null,ADS,ADSIC,IT,ADSIT,ADSITIC,ADSITIC_ADSIC,ADSITIT_ADSIC_ADSIT,ADSIT_ADSIT,ADSITIC_ADSIT_ICIT_ADSIC,ADSITICCBS_ITIC_ADSIC,Final)
+plot(comparison)
+```
+\normalsize
 
 
 

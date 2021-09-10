@@ -802,7 +802,7 @@ story, we will end up using a model, whose specification is as follows:
 
 \begin{align*}
 \mathsf{AdiffS} & \sim \textsf{Norm}(\mu, \sigma)\\
-mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} + \beta_{\mathsf{group}_i}  +
+\mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} + \beta_{\mathsf{group}_i}  +
  \beta_{\mathsf{IC}}[\mathsf{group}_i]\times \mathsf{IC} + \\
  & + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} + \beta_{\mathsf{CBS}}[\mathsf{group}_i] \times \mathsf{CBS}\\
  \alpha & \sim \textsf{Norm}(0,.3)\\
@@ -1030,11 +1030,230 @@ inspect the distribution of the distances:
 \NormalTok{mu_mean <-}\StringTok{ }\KeywordTok{apply}\NormalTok{( mu , }\DecValTok{2}\NormalTok{ , mean )}
 \NormalTok{mu_resid <-}\StringTok{ }\NormalTok{summaries}\OperatorTok{$}\NormalTok{AdiffS }\OperatorTok{-}\StringTok{ }\NormalTok{mu_mean}
 \KeywordTok{ggplot}\NormalTok{()}\OperatorTok{+}\KeywordTok{geom_density}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ mu_resid))}\OperatorTok{+}\KeywordTok{theme_tufte}\NormalTok{()}\OperatorTok{+}
-\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Residuals are approximately normally distributed"}\NormalTok{)}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Residuals are approximately normally distributed"}\NormalTok{)}\OperatorTok{+}\KeywordTok{xlab}\NormalTok{(}\StringTok{"residuals"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-9-1} \end{center}
+
+\normalsize
+
+\section{Model selection}\label{model-selection}
+
+How did we get to this fairly complicated model though? Once preliminary
+causal considerations guided our restrictions on variable selection, we
+proceed by building models of increasing complexity, and comparing them
+in terms of Widely Acceptable Information Criterion. The models differ
+mostly in the underlying linear formulae. For computational ease we will
+here use quadratic approximations, while in the final analysis we will
+deploy Hamiltionian Monte Carlo. The names are meant to decode the model
+structure: the predictors are listed before dashes, whereas interactions
+are listed after dashes.
+
+\begin{align}
+\tag{Null}  \mu_i & = \alpha\\
+\tag{ADS}  \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS}\\
+\tag{ADSIC}  \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +    \beta_{\mathsf{IC}}\times \mathsf{IC}\\
+\tag{IT}  \mu_i & = \beta_{\mathsf{group}[i]} \\
+\tag{ADSIT} \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]}\\
+\tag{ADSITIC} \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +    \beta_{\mathsf{IC}}\times \mathsf{IC}\\
+\tag{ADSITIC-ADSIC} \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +    \beta_{\mathsf{IC}}\times \mathsf{IC} + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
+\tag{ADSITIT-ADSIC-ADSIT} \mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +  \\ \nonumber & +  \beta_{\mathsf{IC}}\times \mathsf{IC} + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
+\tag{ADSIT-ADSIT}   \mu_i &  = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i] \times
+ \mathsf{ADS} + \beta_{\mathsf{group}[i]} \\
+\tag{ADSITIC-ADSIT-ICIT-ADSIC}   \mu_i &  = \alpha  + \beta_{\mathsf{group}[i]} +  
+\beta_{\mathsf{IC}}[\mathsf{group}_i] \times \mathsf{IC}  + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
+\tag{ADSITICCBS-ITIC-ADSIC} \mu_i &  = \alpha  + \beta_{\mathsf{group}[i]} +  
+\beta_{\mathsf{ADS}}[\mathsf{group}_i] \times
+ \mathsf{ADS}  + \beta_{\mathsf{IC}}[\mathsf{group}_i] \times \mathsf{IC}  + \\ & \nonumber  \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} +
+ \beta_{\mathsf{group}[i]} +  
+\beta_{\mathsf{CBS}} \times \mathsf{CBS} \\
+\tag{Final} \mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} + \beta_{\mathsf{group}_i}  +  \beta_{\mathsf{IC}}[\mathsf{group}_i]\times \mathsf{IC} + \\
+ & + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} + \beta_{\mathsf{CBS}}[\mathsf{group}_i] \times \mathsf{CBS} \nonumber \end{align}
+
+\vspace{1mm} \footnotesize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{null <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+  \KeywordTok{alist}\NormalTok{(}
+\NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
+\NormalTok{    mu }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{ (}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    sigma  }\OperatorTok{~}\StringTok{ }\KeywordTok{dexp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{data =}\NormalTok{ summaries  }
+\NormalTok{)}
+
+\NormalTok{ADS <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+  \KeywordTok{alist}\NormalTok{(}
+\NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
+\NormalTok{    mu <-}\StringTok{  }\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{bADS }\OperatorTok{*}\StringTok{ }\NormalTok{ADS,}
+\NormalTok{    a }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{ (}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    bADS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    sigma  }\OperatorTok{~}\StringTok{ }\KeywordTok{dexp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{data =}\NormalTok{ summaries}
+\NormalTok{)}
+
+\NormalTok{ADSIC <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+  \KeywordTok{alist}\NormalTok{(}
+\NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
+\NormalTok{    mu <-}\StringTok{  }\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{bADS }\OperatorTok{*}\StringTok{ }\NormalTok{ADS}\OperatorTok{+}\StringTok{ }\NormalTok{bIC }\OperatorTok{*}\StringTok{ }\NormalTok{IC,}
+\NormalTok{    a }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{ (}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    bADS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    bIC }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    sigma  }\OperatorTok{~}\StringTok{ }\KeywordTok{dexp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{data =}\NormalTok{ summaries}
+\NormalTok{)}
+
+
+\NormalTok{IT <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+  \KeywordTok{alist}\NormalTok{(}
+\NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
+\NormalTok{    mu <-}\StringTok{  }\NormalTok{bIT[groupID] ,}
+\NormalTok{    bIT[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    sigma  }\OperatorTok{~}\StringTok{ }\KeywordTok{dexp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{data =}\NormalTok{ summaries}
+\NormalTok{)}
+
+
+\NormalTok{ADSIT <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+  \KeywordTok{alist}\NormalTok{(}
+\NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
+\NormalTok{    mu <-}\StringTok{ }\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{bADS }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{+}\StringTok{  }\NormalTok{bIT[groupID],}
+\NormalTok{    a }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{ (}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    bADS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIT[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    sigma  }\OperatorTok{~}\StringTok{ }\KeywordTok{dexp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{data =}\NormalTok{ summaries}
+\NormalTok{)}
+
+
+\NormalTok{ADSITIC <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+  \KeywordTok{alist}\NormalTok{(}
+\NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
+\NormalTok{    mu <-}\StringTok{ }\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{bADS }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{+}\StringTok{  }\NormalTok{bIT[groupID] }\OperatorTok{+}\StringTok{ }\NormalTok{bIC }\OperatorTok{*}\StringTok{ }\NormalTok{IC,}
+\NormalTok{    a }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{ (}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    bADS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIT[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIC }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    sigma  }\OperatorTok{~}\StringTok{ }\KeywordTok{dexp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{data =}\NormalTok{ summaries}
+\NormalTok{)}
+
+
+\NormalTok{ADSITIC_ADSIC <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+  \KeywordTok{alist}\NormalTok{(}
+\NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
+\NormalTok{    mu <-}\StringTok{ }\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{bADS }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{+}\StringTok{  }\NormalTok{bIT[groupID] }\OperatorTok{+}\StringTok{ }\NormalTok{bIC }\OperatorTok{*}\StringTok{ }\NormalTok{IC }\OperatorTok{+}\StringTok{ }\NormalTok{bADSIC }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{*}\StringTok{ }\NormalTok{IC,}
+\NormalTok{    a }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{ (}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    bADS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bADSIC }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIT[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIC }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    sigma  }\OperatorTok{~}\StringTok{ }\KeywordTok{dexp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{data =}\NormalTok{ summaries}
+\NormalTok{)}
+
+
+\NormalTok{ADSITIT_ADSIC_ADSIT <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+  \KeywordTok{alist}\NormalTok{(}
+\NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
+\NormalTok{    mu <-}\StringTok{ }\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{bADS[groupID] }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{+}\StringTok{  }\NormalTok{bIT[groupID] }\OperatorTok{+}\StringTok{ }\NormalTok{bIC }\OperatorTok{*}\StringTok{ }\NormalTok{IC }\OperatorTok{+}\StringTok{ }\NormalTok{bADSIC }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{*}\StringTok{ }\NormalTok{IC,}
+\NormalTok{    a }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{ (}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    bADS[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bADSIC }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIT[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIC }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    sigma  }\OperatorTok{~}\StringTok{ }\KeywordTok{dexp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{data =}\NormalTok{ summaries}
+\NormalTok{)}
+
+
+\NormalTok{ADSIT_ADSIT <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+  \KeywordTok{alist}\NormalTok{(}
+\NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
+\NormalTok{    mu <-}\StringTok{ }\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{bADS[groupID] }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{+}\StringTok{  }\NormalTok{bIT[groupID] ,}
+\NormalTok{    a }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{ (}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    bADS[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+    \CommentTok{#bADSIC ~ dnorm(0,.5),}
+\NormalTok{    bIT[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+    \CommentTok{#bIC ~ dnorm(0,.5),}
+\NormalTok{    sigma  }\OperatorTok{~}\StringTok{ }\KeywordTok{dexp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{data =}\NormalTok{ summaries}
+\NormalTok{)}
+
+
+\NormalTok{ADSITIC_ADSIT_ICIT_ADSIC <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+  \KeywordTok{alist}\NormalTok{(}
+\NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
+\NormalTok{    mu <-}\StringTok{ }\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{bADS[groupID] }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{+}\StringTok{  }\NormalTok{bIT[groupID] }\OperatorTok{+}\StringTok{ }\NormalTok{bIC[groupID] }\OperatorTok{*}\StringTok{ }\NormalTok{IC }\OperatorTok{+}
+\StringTok{      }\NormalTok{bADSIC }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{*}\StringTok{ }\NormalTok{IC,}
+\NormalTok{    a }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{ (}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    bADS[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bADSIC }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIT[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIC[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    sigma  }\OperatorTok{~}\StringTok{ }\KeywordTok{dexp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{data =}\NormalTok{ summaries}
+\NormalTok{)}
+
+
+\NormalTok{ADSITICCBS_ITIC_ADSIC <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+  \KeywordTok{alist}\NormalTok{(}
+\NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
+\NormalTok{    mu <-}\StringTok{ }\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{bADS[groupID] }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{+}\StringTok{  }\NormalTok{bIT[groupID] }\OperatorTok{+}\StringTok{ }\NormalTok{bIC[groupID] }\OperatorTok{*}\StringTok{ }\NormalTok{IC }\OperatorTok{+}\StringTok{ }
+\StringTok{      }\NormalTok{bADSIC }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{*}\StringTok{ }\NormalTok{IC}\OperatorTok{+}\StringTok{ }\NormalTok{bCBS }\OperatorTok{*}\NormalTok{CBS,}
+\NormalTok{    a }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{ (}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    bADS[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bADSIC }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bCBS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIT[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIC[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    sigma  }\OperatorTok{~}\StringTok{ }\KeywordTok{dexp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{data =}\NormalTok{ summaries}
+\NormalTok{)}
+
+
+\NormalTok{Final <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+  \KeywordTok{alist}\NormalTok{(}
+\NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
+\NormalTok{    mu <-}\StringTok{ }\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{bADS[groupID] }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{+}\StringTok{  }\NormalTok{bIT[groupID] }\OperatorTok{+}\StringTok{ }\NormalTok{bIC[groupID] }\OperatorTok{*}\StringTok{ }\NormalTok{IC }\OperatorTok{+}\StringTok{ }
+\StringTok{      }\NormalTok{bADSIC }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{*}\StringTok{ }\NormalTok{IC}\OperatorTok{+}\StringTok{ }\NormalTok{bCBS[groupID] }\OperatorTok{*}\NormalTok{CBS,}
+\NormalTok{    a }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{ (}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    bADS[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bADSIC }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bCBS[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIT[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIC[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    sigma  }\OperatorTok{~}\StringTok{ }\KeywordTok{dexp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{data =}\NormalTok{ summaries}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\normalsize
+
+\vspace{1mm} \footnotesize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{comparison<-}\StringTok{ }\KeywordTok{compare}\NormalTok{(null,ADS,ADSIC,IT,ADSIT,ADSITIC,ADSITIC_ADSIC,ADSITIT_ADSIC_ADSIT,ADSIT_ADSIT,ADSITIC_ADSIT_ICIT_ADSIC,ADSITICCBS_ITIC_ADSIC,Final)}
+\KeywordTok{plot}\NormalTok{(comparison)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-11-1} \end{center}
 
 \normalsize
 

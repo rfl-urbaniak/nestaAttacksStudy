@@ -393,6 +393,8 @@ treatment groups:
 
 \todo{Note there were much more empathetic interventions, this needs an explanation}
 
+\todo{Question: intervention counts by group}
+
 Second, when we look at the distribution of standardized difference in
 attacks, when restricted to (-1,1), the peaks of distributions are
 shifted a bit, with lowest median for the normative group, but not too
@@ -750,10 +752,241 @@ function of predictors (possibly with some interactions). To spoil the
 story, we will end up using a model, whose specification is as follows:
 
 \begin{align*}
-\mathsf{AdiffS} & \sim Norm(\mu, \sigma)\\
-mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{ADS}] + \beta_{\mathsf{IT}}[\mathsf{group}] +
- \beta_{IC}[\mathsf{group}]\times \mathsf{IC} + b_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} + \beta_{\mathsf{CBS}}[\mathsf{group}] \times \mathsf{CBS}
+\mathsf{AdiffS} & \sim \textsf{Norm}(\mu, \sigma)\\
+mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} + \beta_{\mathsf{group}_i}  +
+ \beta_{\mathsf{IC}}[\mathsf{group}_i]\times \mathsf{IC} + \\
+ & + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} + \beta_{\mathsf{CBS}}[\mathsf{group}_i] \times \mathsf{CBS}\\
+ \alpha & \sim \textsf{Norm}(0,.3)\\
+\beta_{\mathsf{ADS}}[\mathsf{group}_i] & \sim \textsf{Norm}(0,.3)\\
+\beta_{\mathsf{group}_i} & \sim \textsf{Norm}(0,.3)\\
+\beta_{\mathsf{IC}}[\mathsf{group}_i] & \sim \textsf{Norm}(0,.3)\\
+ \beta_{\mathsf{ADSIC}} & \sim \textsf{Norm}(0,.3)\\
+ \beta_{\mathsf{CBS}}[\mathsf{group}_i]& \sim \textsf{Norm}(0,.3)\\
 \end{align*}
+
+That is, we take the resulting mean to be the result of the general
+average (\(\alpha\)) and the impact of the following coefficients:
+group-specific coefficient for \textsf{ADS}, group coefficient,
+group-specific coefficient for \textsf{IC}, interaction coefficient for
+\textsf{ADS} and \textsf{IC}, and group-specific coeffient for
+\textsf{CBS}. This is plausible prima facie which group a user belongs
+to might have impact on how attacks during the treatment is related to
+attacks after, the role of the intervention count, and the role of
+comments before. Moreover, the levels of agressive behavior displayed by
+the user during treament might have impact on the role played by the
+intervention count. Later on we will see that there are
+information-theoretic reasons to include these interactions.
+
+Now for the priors. One might be suspicious of \(\sigma =.3\) we
+employed and suggest using standard normal distributions with
+\(\sigma = 1\) instead. However, a quick prior predictive check shows
+that this results in insanely wide priors that are competely
+unrealistic. (For computational reasons, instead of running the
+simulations, we load pre-compiled models, but we include the code used
+to build them).
+
+\vspace{1mm} \footnotesize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# building model with sd=1}
+\CommentTok{# InteractionsModelDiffSD1 <- ulam(}
+\CommentTok{#   alist(}
+\CommentTok{#     AdiffS ~ dnorm( mu, sigma ),}
+\CommentTok{#     mu <- a + bADS[groupID] * ADS +  bIT[groupID] + bIC[groupID] * IC+}
+\CommentTok{#     bADSIC * ADS * IC+ bCBS[groupID] *CBS,}
+\CommentTok{#     a ~ dnorm (0,1),}
+\CommentTok{#     bADS[groupID] ~ dnorm(0,1),}
+\CommentTok{#     bADSIC ~ dnorm(0,1),}
+\CommentTok{#     bCBS[groupID] ~ dnorm(0,1),}
+\CommentTok{#     bIT[groupID] ~ dnorm(0,1),}
+\CommentTok{#     bIC[groupID] ~ dnorm(0,1),}
+\CommentTok{#     sigma  ~ dexp(1)}
+\CommentTok{#   ), }
+\CommentTok{#   data = summaries}
+\CommentTok{# )}
+\CommentTok{# }
+\CommentTok{# saveRDS(InteractionsModelDiffSD1, file = "models/InteractionsModelDiffSD1.rds")}
+\NormalTok{InteractionsModelDiffSD1 <-}\StringTok{ }\KeywordTok{readRDS}\NormalTok{(}\DataTypeTok{file =} \StringTok{"models/InteractionsModelDiffSD1.rds"}\NormalTok{)}
+
+
+\CommentTok{#now model with prior sd = .3}
+\CommentTok{# InteractionsModelDiff <- ulam(}
+\CommentTok{#   alist(}
+\CommentTok{#     AdiffS ~ dnorm( mu, sigma ),}
+\CommentTok{#     mu <- a + bADS[groupID] * ADS +  bIT[groupID] + bIC[groupID] * IC +}
+\CommentTok{#     bADSIC * ADS * IC+ bCBS[groupID] *CBS,}
+\CommentTok{#     a ~ dnorm (0,0.3),}
+\CommentTok{#     bADS[groupID] ~ dnorm(0,.3),}
+\CommentTok{#     bADSIC ~ dnorm(0,.3),}
+\CommentTok{#     bCBS[groupID] ~ dnorm(0,.3),}
+\CommentTok{#     bIT[groupID] ~ dnorm(0,.3),}
+\CommentTok{#     bIC[groupID] ~ dnorm(0,.3),}
+\CommentTok{#     sigma  ~ dexp(1)}
+\CommentTok{#   ), }
+\CommentTok{#   data = summaries}
+\CommentTok{# )}
+
+\CommentTok{#saveRDS(InteractionsModelDiff, file = "models/InteractionsModelDiff.rds")}
+
+\NormalTok{InteractionsModelDiff <-}\StringTok{ }\KeywordTok{readRDS}\NormalTok{(}\DataTypeTok{file =} \StringTok{"models/InteractionsModelDiff.rds"}\NormalTok{)}
+
+\NormalTok{##prior predictive checks sd =1}
+\NormalTok{ADS <-}\StringTok{ }\DecValTok{0}
+\NormalTok{CBS <-}\StringTok{ }\DecValTok{0}
+\NormalTok{groupID <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{3}
+\NormalTok{IC <-}\StringTok{ }\DecValTok{5}  \CommentTok{#mean for interventions in treatment}
+\NormalTok{data <-}\StringTok{ }\KeywordTok{expand.grid}\NormalTok{(}\DataTypeTok{ADS =}\NormalTok{ ADS,}\DataTypeTok{groupID =}\NormalTok{ groupID, }\DataTypeTok{CBS =}\NormalTok{ CBS, }\DataTypeTok{IC =}\NormalTok{  IC)}
+\NormalTok{prior <-}\StringTok{ }\KeywordTok{extract.prior}\NormalTok{(InteractionsModelDiffSD1, }\DataTypeTok{n =} \FloatTok{1e4}\NormalTok{)}
+\NormalTok{mu <-}\StringTok{ }\KeywordTok{link}\NormalTok{( InteractionsModelDiffSD1 , }\DataTypeTok{post=}\NormalTok{prior , }\DataTypeTok{data=}\NormalTok{data ) }
+\KeywordTok{colnames}\NormalTok{(mu) <-}\StringTok{ }\KeywordTok{levels}\NormalTok{(summaries}\OperatorTok{$}\NormalTok{group)}
+\NormalTok{muLong <-}\StringTok{ }\KeywordTok{melt}\NormalTok{(mu)}
+\KeywordTok{colnames}\NormalTok{(muLong) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"id"}\NormalTok{, }\StringTok{"group"}\NormalTok{, }\StringTok{"AdiffS"}\NormalTok{)}
+
+\NormalTok{priorGroupsSD1 <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(muLong)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_violin}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ group, }\DataTypeTok{y =}\NormalTok{ AdiffS))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_tufte}\NormalTok{()}\OperatorTok{+}\KeywordTok{xlab}\NormalTok{(}\StringTok{""}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title =} \StringTok{"Simulated priors by group"}\NormalTok{,}
+  \DataTypeTok{subtitle =} \StringTok{"(at ADS = CBS = 0, IC at mean = 5, sd = 1)"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"change in attacks (standardized)"}\NormalTok{)}
+
+\NormalTok{ADS <-}\StringTok{ }\DecValTok{0}
+\NormalTok{CBS <-}\StringTok{ }\DecValTok{0}
+\NormalTok{groupID <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{3}
+\NormalTok{IC <-}\StringTok{ }\DecValTok{0}\OperatorTok{:}\DecValTok{20}
+\NormalTok{data <-}\StringTok{ }\KeywordTok{expand.grid}\NormalTok{(}\DataTypeTok{ADS =}\NormalTok{ ADS,}\DataTypeTok{groupID =}\NormalTok{ groupID, }\DataTypeTok{CBS =}\NormalTok{ CBS, }\DataTypeTok{IC =}\NormalTok{  IC)}
+
+\NormalTok{prior <-}\StringTok{ }\KeywordTok{extract.prior}\NormalTok{(InteractionsModelDiffSD1, }\DataTypeTok{n =} \FloatTok{1e4}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## recompiling to avoid crashing R session
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mu <-}\StringTok{ }\KeywordTok{link}\NormalTok{(InteractionsModelDiffSD1 , }\DataTypeTok{post=}\NormalTok{prior , }\DataTypeTok{data=}\NormalTok{data ) }
+\NormalTok{mu.mean <-}\StringTok{ }\KeywordTok{apply}\NormalTok{( mu , }\DecValTok{2}\NormalTok{, mean )}
+\NormalTok{mu.HPDI <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\KeywordTok{t}\NormalTok{(}\KeywordTok{apply}\NormalTok{( mu , }\DecValTok{2}\NormalTok{ , HPDI )))}
+\NormalTok{priorDF <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(data, mu.mean, mu.HPDI)}
+\NormalTok{priorDF}\OperatorTok{$}\NormalTok{groupID <-}\StringTok{ }\KeywordTok{as.factor}\NormalTok{(groupID)}
+\KeywordTok{levels}\NormalTok{(priorDF}\OperatorTok{$}\NormalTok{groupID) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"control"}\NormalTok{, }\StringTok{"empathy"}\NormalTok{, }\StringTok{"normative"}\NormalTok{)}
+\KeywordTok{colnames}\NormalTok{(priorDF)[}\DecValTok{2}\NormalTok{]<-}\StringTok{ "group"}
+
+
+\NormalTok{priorICSD1  <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(priorDF, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ IC, }\DataTypeTok{y  =}\NormalTok{ mu.mean,  }\DataTypeTok{fill =}\NormalTok{ group))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_line}\NormalTok{()}\OperatorTok{+}\KeywordTok{geom_ribbon}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{ymin =}\NormalTok{ X.}\FloatTok{0.89}\NormalTok{, }\DataTypeTok{ymax =}\NormalTok{ X0.}\FloatTok{89.}\NormalTok{), }\DataTypeTok{alpha =} \FloatTok{0.2}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_tufte}\NormalTok{()}\OperatorTok{+}\KeywordTok{ylab}\NormalTok{(}\StringTok{"change in attacks (standardized)"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title =} \StringTok{"Simulated priors for AAS vs IC"}\NormalTok{,}
+      \DataTypeTok{subtitle =} \StringTok{"(at ADS = CBS = 0, sd = 1)"}\NormalTok{)}\OperatorTok{+}\KeywordTok{xlab}\NormalTok{(}\StringTok{"interventions"}\NormalTok{)}
+
+
+\NormalTok{priorJoint1 <-}\StringTok{ }\KeywordTok{ggarrange}\NormalTok{(priorGroupsSD1,priorICSD1, }\DataTypeTok{ncol =} \DecValTok{2}\NormalTok{) }
+\NormalTok{priorJoint1Titled <-}\StringTok{ }\KeywordTok{annotate_figure}\NormalTok{(priorJoint1, }
+  \DataTypeTok{top =} \KeywordTok{text_grob}\NormalTok{(}\StringTok{"Predictive priors with sd=1 are insanely wide"}\NormalTok{,}
+                  \DataTypeTok{size =} \DecValTok{14}\NormalTok{))}
+\NormalTok{priorJoint1Titled}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-13-1} \end{center}
+
+\normalsize
+
+Some experimentation leads to the value of \(\sigma =3\), which leads to
+the following priors:
+
+\vspace{1mm} \footnotesize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#prior predictive check sd =.3}
+\NormalTok{ADS <-}\StringTok{ }\DecValTok{0}
+\NormalTok{CBS <-}\StringTok{ }\DecValTok{0}
+\NormalTok{groupID <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{3}
+\NormalTok{IC <-}\StringTok{ }\DecValTok{5}  \CommentTok{#mean for interventions in treatment}
+\NormalTok{data <-}\StringTok{ }\KeywordTok{expand.grid}\NormalTok{(}\DataTypeTok{ADS =}\NormalTok{ ADS,}\DataTypeTok{groupID =}\NormalTok{ groupID, }\DataTypeTok{CBS =}\NormalTok{ CBS, }\DataTypeTok{IC =}\NormalTok{  IC)}
+\NormalTok{prior <-}\StringTok{ }\KeywordTok{extract.prior}\NormalTok{(InteractionsModelDiff, }\DataTypeTok{n =} \FloatTok{1e4}\NormalTok{)}
+\NormalTok{mu <-}\StringTok{ }\KeywordTok{link}\NormalTok{(InteractionsModelDiff , }\DataTypeTok{post=}\NormalTok{prior , }\DataTypeTok{data=}\NormalTok{data ) }
+\KeywordTok{colnames}\NormalTok{(mu) <-}\StringTok{ }\KeywordTok{levels}\NormalTok{(summaries}\OperatorTok{$}\NormalTok{group)}
+\NormalTok{muLong <-}\StringTok{ }\KeywordTok{melt}\NormalTok{(mu)}
+\KeywordTok{colnames}\NormalTok{(muLong) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"id"}\NormalTok{, }\StringTok{"group"}\NormalTok{, }\StringTok{"AdiffS"}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(muLong)}
+
+\NormalTok{priorGroupSD03 <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(muLong)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_violin}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ group, }\DataTypeTok{y =}\NormalTok{ AdiffS))}\OperatorTok{+}\KeywordTok{theme_tufte}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\StringTok{""}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title =} \StringTok{"Simulated priors  by group"}\NormalTok{, }
+  \DataTypeTok{subtitle =} \StringTok{"(at ADS = CBS = 0, IC at mean = 5, sd = .3)"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"change in attacks (standarized)"}\NormalTok{)}
+
+\NormalTok{ADS <-}\StringTok{ }\DecValTok{0}
+\NormalTok{CBS <-}\StringTok{ }\DecValTok{0}
+\NormalTok{groupID <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{3}
+\NormalTok{IC <-}\StringTok{ }\DecValTok{5}  \CommentTok{#mean for interventions in treatment}
+\NormalTok{data <-}\StringTok{ }\KeywordTok{expand.grid}\NormalTok{(}\DataTypeTok{ADS =}\NormalTok{ ADS,}\DataTypeTok{groupID =}\NormalTok{ groupID, }\DataTypeTok{CBS =}\NormalTok{ CBS, }\DataTypeTok{IC =}\NormalTok{  IC)}
+\NormalTok{prior <-}\StringTok{ }\KeywordTok{extract.prior}\NormalTok{(InteractionsModelDiffSD1, }\DataTypeTok{n =} \FloatTok{1e4}\NormalTok{)}
+\NormalTok{mu <-}\StringTok{ }\KeywordTok{link}\NormalTok{( InteractionsModelDiffSD1 , }\DataTypeTok{post=}\NormalTok{prior , }\DataTypeTok{data=}\NormalTok{data ) }
+\KeywordTok{colnames}\NormalTok{(mu) <-}\StringTok{ }\KeywordTok{levels}\NormalTok{(summaries}\OperatorTok{$}\NormalTok{group)}
+\NormalTok{muLong <-}\StringTok{ }\KeywordTok{melt}\NormalTok{(mu)}
+\KeywordTok{colnames}\NormalTok{(muLong) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"id"}\NormalTok{, }\StringTok{"group"}\NormalTok{, }\StringTok{"AdiffS"}\NormalTok{)}
+\KeywordTok{head}\NormalTok{(muLong)}
+
+\NormalTok{priorICSD03 <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(muLong)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_violin}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ group, }\DataTypeTok{y =}\NormalTok{ AdiffS))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{theme_tufte}\NormalTok{()}\OperatorTok{+}\KeywordTok{xlab}\NormalTok{(}\StringTok{""}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{title =} \StringTok{"Simulated priors by group"}\NormalTok{, }
+  \DataTypeTok{subtitle =} \StringTok{"(at ADS = CBS = 0, IC at mean = 5, sd = 1)"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"change in attacks (standardized)"}\NormalTok{)}
+
+\NormalTok{priorJoint03 <-}\StringTok{ }\KeywordTok{ggarrange}\NormalTok{(priorGroupSD03,priorICSD03, }\DataTypeTok{ncol =} \DecValTok{2}\NormalTok{) }
+\NormalTok{priorJoint03Titled <-}\StringTok{ }\KeywordTok{annotate_figure}\NormalTok{(priorJoint03, }
+  \DataTypeTok{top =} \KeywordTok{text_grob}\NormalTok{(}\StringTok{"Predictive priors with sd=.3 seem sensible"}\NormalTok{,}
+                  \DataTypeTok{size =} \DecValTok{14}\NormalTok{))}
+\NormalTok{priorJoint03Titled}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-14-1} \end{center}
+
+\normalsize
+
+Now, some model diagnostics before we move on. What we are witnessing is
+(1) stationarity (the chains stay mostly in the most probable regions),
+(2) good mixing (they explore a range of options in the beginning), and
+(3) convergence (they stabilize as they progress).
+
+\vspace{1mm} \footnotesize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{traceplot}\NormalTok{( InteractionsModelDiff )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-15-1} \end{center}
+
+\normalsize
+
+Finally, let's inspect the distribution of residuals. That is, we
+calculate all predictions, their distance from the actual values, and
+inspect the distribution of the distances:
+
+\vspace{1mm} \footnotesize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mu <-}\StringTok{ }\KeywordTok{link}\NormalTok{(InteractionsModelDiff)}
+\NormalTok{mu_mean <-}\StringTok{ }\KeywordTok{apply}\NormalTok{( mu , }\DecValTok{2}\NormalTok{ , mean )}
+\NormalTok{mu_resid <-}\StringTok{ }\NormalTok{summaries}\OperatorTok{$}\NormalTok{AdiffS }\OperatorTok{-}\StringTok{ }\NormalTok{mu_mean}
+\KeywordTok{ggplot}\NormalTok{()}\OperatorTok{+}\KeywordTok{geom_density}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ mu_resid))}\OperatorTok{+}\KeywordTok{theme_tufte}\NormalTok{()}\OperatorTok{+}\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Residuals are approximately normally distributed"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-16-1} \end{center}
+
+\normalsize
 
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}

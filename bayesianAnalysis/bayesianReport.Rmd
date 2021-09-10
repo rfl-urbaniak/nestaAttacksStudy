@@ -750,6 +750,7 @@ Final <- quap(
 \footnotesize
 ```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
 comparison<- compare(null,ADS,ADSIC,IT,ADSIT,ADSITIC,ADSITIC_ADSIC,ADSITIT_ADSIC_ADSIT,ADSIT_ADSIT,ADSITIC_ADSIT_ICIT_ADSIC,ADSITICCBS_ITIC_ADSIC,Final)
+data.frame(comparison )
 plot(comparison)
 ```
 \normalsize

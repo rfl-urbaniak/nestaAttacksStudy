@@ -1249,6 +1249,42 @@ are listed after dashes.
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{comparison<-}\StringTok{ }\KeywordTok{compare}\NormalTok{(null,ADS,ADSIC,IT,ADSIT,ADSITIC,ADSITIC_ADSIC,ADSITIT_ADSIC_ADSIT,ADSIT_ADSIT,ADSITIC_ADSIT_ICIT_ADSIC,ADSITICCBS_ITIC_ADSIC,Final)}
+\KeywordTok{data.frame}\NormalTok{(comparison )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l|r|r|r|r|r|r}
+\hline
+  & WAIC & SE & dWAIC & dSE & pWAIC & weight\\
+\hline
+Final & 1184.887 & 88.82495 & 0.000000 & NA & 26.78638 & 0.9374128\\
+\hline
+ADSITICCBS\_ITIC\_ADSIC & 1190.300 & 88.15088 & 5.413125 & 5.28405 & 25.85961 & 0.0625872\\
+\hline
+null & 1345.093 & 145.30463 & 160.205804 & 133.08233 & 17.53972 & 0.0000000\\
+\hline
+IT & 1345.699 & 144.37938 & 160.811380 & 132.23448 & 18.52390 & 0.0000000\\
+\hline
+ADS & 1349.245 & 144.21603 & 164.357989 & 132.37581 & 22.99570 & 0.0000000\\
+\hline
+ADSIT & 1349.479 & 143.67953 & 164.591729 & 131.67410 & 23.28995 & 0.0000000\\
+\hline
+ADSIT\_ADSIT & 1349.865 & 153.75814 & 164.977686 & 139.19081 & 31.36090 & 0.0000000\\
+\hline
+ADSITIC\_ADSIC & 1350.595 & 152.06030 & 165.708172 & 137.43447 & 29.28986 & 0.0000000\\
+\hline
+ADSITIC & 1352.954 & 147.94889 & 168.066787 & 135.07448 & 27.85676 & 0.0000000\\
+\hline
+ADSIC & 1354.602 & 147.00433 & 169.715332 & 134.18980 & 27.89223 & 0.0000000\\
+\hline
+ADSITIT\_ADSIC\_ADSIT & 1355.703 & 155.79070 & 170.815987 & 141.34671 & 33.73524 & 0.0000000\\
+\hline
+ADSITIC\_ADSIT\_ICIT\_ADSIC & 1357.561 & 157.21600 & 172.673396 & 142.39504 & 35.10954 & 0.0000000\\
+\hline
+\end{tabular}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \KeywordTok{plot}\NormalTok{(comparison)}
 \end{Highlighting}
 \end{Shaded}

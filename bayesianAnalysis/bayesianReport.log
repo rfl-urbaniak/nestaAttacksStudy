@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.16)  10 SEP 2021 13:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.16)  10 SEP 2021 13:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2465,31 +2465,40 @@ Package xcolor Warning: Incompatible color definition on input line 1254.
 
 Package xcolor Warning: Incompatible color definition on input line 1254.
 
+
+Package xcolor Warning: Incompatible color definition on input line 1286.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1290.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1290.
+
 <bayesianReport_files/figure-latex/unnamed-chunk-11-1.pdf, id=251, 438.63875pt 
 x 303.1325pt>
 File: bayesianReport_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (ty
 pe pdf)
 <use bayesianReport_files/figure-latex/unnamed-chunk-11-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/unnamed-chunk-11-1.p
-df  used on input line 1256.
+df  used on input line 1292.
 (pdftex.def)             Requested size: 408.30463pt x 282.16933pt.
 [18] [19 <./bayesianReport_files/figure-latex/unnamed-chunk-11-1.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1265.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1265.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1301.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1301.
 (./bayesianReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1265.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1265.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1301.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1301.
 
 Package rerunfilecheck Info: File `bayesianReport.out' has not changed.
 (rerunfilecheck)             Checksum: 309A2E23A7FBCBA6B3E271F0B923333B;690.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1265.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1301.
  ) 
 Here is how much of TeX's memory you used:
- 31595 strings out of 492982
- 546073 string characters out of 6134896
+ 31599 strings out of 492982
+ 546151 string characters out of 6134896
  735113 words of memory out of 5000000
- 34412 multiletter control sequences out of 15000+600000
- 89106 words of font info for 229 fonts, out of 8000000 for 9000
+ 34416 multiletter control sequences out of 15000+600000
+ 90940 words of font info for 231 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,10n,76p,8845b,712s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
@@ -2505,7 +2514,7 @@ ive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bayesianReport.pdf (19 pages, 486034 bytes).
+Output written on bayesianReport.pdf (19 pages, 487433 bytes).
 PDF statistics:
  326 PDF objects out of 1000 (max. 8388607)
  249 compressed objects within 3 object streams

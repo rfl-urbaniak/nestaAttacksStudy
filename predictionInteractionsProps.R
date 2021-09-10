@@ -9,7 +9,7 @@ summaries$CDS <- standardize(summaries$CD)
 summaries$ADS <- standardize(summaries$AD)
 summaries$group <- as.factor(summaries$group)
 summaries$groupID <-  as.integer( as.factor(summaries$group) )
-summaries$ApropS <- standardize(summaries$AA/summaries$AB)
+#summaries$ApropS <- standardize(summaries$AA/summaries$AB)
 
 
 ggplot()+geom_histogram(aes(x=summaries$AdiffS))

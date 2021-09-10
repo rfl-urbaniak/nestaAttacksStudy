@@ -1,0 +1,348 @@
+---
+title: "Bayesian analysis of the NESTA study of interventions against  verbal aggression online"
+author: "Rafal Urbaniak"
+output:
+  pdf_document:
+    number_sections: yes
+    df_print: kable
+    keep_tex: yes
+    includes:
+      in_header: Rafal_latex6.sty
+  html_document:
+    df_print: paged
+  word_document: default
+classoption: dvipsnames,enabledeprecatedfontcommands
+fontsize: 10pt
+documentclass: scrartcl
+urlcolor: blue
+bibliography: ../references/attacks.bib
+csl: ../references/apa-6th-edition.csl
+---
+
+```{r, setup, include=FALSE}
+knitr::opts_knit$set(root.dir = '../')
+
+#libraries used
+library(ggplot2)
+library(ggthemes)
+library(gridExtra)
+library(kableExtra)
+library(viridis)
+library(rethinking)
+library(ggplot2)
+library(ggpubr)
+library(tidyverse)
+library(GGally)
+library(dagitty)
+
+
+mykable <- function(object) {kable(object, "latex", booktabs = T) %>% kable_styling(latex_options = "striped",font_size = 9)}  
+
+#kable(table(data$group), "latex", booktabs = T, col.names = c("Group", "n")) %>% 
+#  kable_styling(latex_options = c("striped","HOLD_position"),font_size = 9) 
+```
+
+
+
+\tableofcontents
+
+
+# Exploration
+
+Load the dataset and take a look first.
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+summaries <- read.csv(file = "datasets/Summaries.csv")
+head(summaries) %>% kable( "latex", booktabs = T) %>% 
+  kable_styling(latex_options = c("striped", "scale_down") ,font_size = 9)
+```
+\normalsize
+
+The basic variables we are dealing with are in the following table. 
+
+
+
+```{r,echo=FALSE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+variable <- c("AB", "AD", "AA", "CB", "CD", "CA", "group", "IC")
+explanation <- c("attacks before (pre-treatment)", "attacks during (the treatment period)",
+                 "attacks after (post-treatment)", "comments before", "comments during",
+                 "comments after", "treatment group", "intervention count")
+vars <- data.frame(variable, explanation)
+mykable(vars)
+```
+
+
+
+Further variables are defined in terms of those, in particular, we will be predicting \textsf{AdiffS} which is the standardized difference  \textsf{AA}-\textsf{AB}, and \textsf{AdiffS}, which is the standardized difference \textsf{CA}-\textsf{CB}. Before we proceed, we will also standardize the predictors, and add a numerical index for the group:
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+summaries$ABS <- standardize(summaries$AB)
+summaries$CBS <- standardize(summaries$CB)
+summaries$AAS <- standardize(summaries$AA)
+summaries$CAS <- standardize(summaries$CA)
+summaries$CDS <- standardize(summaries$CD)
+summaries$ADS <- standardize(summaries$AD)
+summaries$group <- as.factor(summaries$group)
+summaries$groupID <-  as.integer( as.factor(summaries$group) )
+```
+\normalsize
+
+
+First, let's take a look at the distribution of \textsf{IC} in the treatment groups:
+
+
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+ggplot(summaries[summaries$group != "control",], aes(x = IC, fill = group))+
+  geom_bar()+theme_tufte()+
+  xlab("interventions received")+
+  labs(title = "Intervention counts in treatment groups")+
+  scale_x_continuous(breaks = seq(0,40,5))
+```
+\normalsize
+
+\todo{Note there were much more empathetic interventions, this needs an explanation}
+
+
+Second, when we look at the distribution of standardized difference in attacks, when restricted to (-1,1), the peaks of distributions are shifted a bit, with lowest median for the normative group, but not too much:
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+violAdiffS <- ggplot(summaries, aes(x=group, y = AdiffS))+
+  geom_violin() +theme_tufte() 
+violJoint <- ggarrange(violAdiffS+ggtitle("whole range"),
+              violAdiffS + ylim(c(-1,1))+geom_boxplot(width = .2)+
+              ggtitle("restricted to (-1,1)")) 
+violJointTitled <- annotate_figure(violJoint, 
+  top = text_grob("Empirical distribution of change in attacks (standardized)",
+                  size = 12))
+violJointTitled
+```
+\normalsize
+
+Analogous plot for comments does not reveal this slight downward shift for normative, but otherwise the visualisation migth suggest no strong impact of interventions on attacks, and no impact on comments.
+
+
+
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+violCdiffS <- ggplot(summaries, aes(x=group, y = CdiffS))+
+  geom_violin() +theme_tufte() 
+violJointC <- ggarrange(violCdiffS+ggtitle("whole range"),
+              violCdiffS + ylim(c(-1,1))+geom_boxplot(width = .2)+
+              ggtitle("restricted to (-1,1)")) 
+violJointCTitled <- annotate_figure(violJoint, 
+  top = text_grob("Empirical distribution of change in comments (standardized)",
+                  size = 12))
+violJointCTitled
+```
+\normalsize
+
+
+
+
+However, plotting changes against intervention counts reveals that restricting attention to various activity levels drastically changes the regression lines.
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE}
+icplot1 <- ggplot(summaries, aes(x = IC, y = AdiffS, color = group, fill = group))+
+  geom_jitter(alpha = 0.6, size =.8)+theme_tufte()+
+  geom_smooth(alpha = 0.2, method = "lm")+
+  xlim(c(0,25))+ylim(c(-2,2))+
+  ggtitle("sd restricted to (-2,2)")+
+  theme(legend.position = c(0.65, 0.1))
+
+icplot2 <-  ggplot(summaries, aes(x = IC, y = AdiffS, color = group, fill = group))+
+  geom_jitter(alpha = 0.6, size =.8)+theme_tufte()+
+  geom_smooth(alpha = 0.2, method = "lm")+
+  xlim(c(0,25))+ylim(c(-1,1))+ggtitle("sd restricted to (-1,1)")+
+  theme(legend.position = c(0.65, 0.1))
+
+icplotJoint <- ggarrange(icplot1, icplot2) 
+icplotTitled <- annotate_figure(icplotJoint, 
+  top = text_grob("Change in attacks (standardized) vs interventions received",  size = 12))
+icplotTitled
+```
+\normalsize
+
+Some interactions are also suggested by the differences in linear smoothing when attention is restricted when it comes to change in comments.
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE}
+icCplot1 <- ggplot(summaries, aes(x = IC, y = CdiffS, color = group, fill = group))+
+  geom_jitter(alpha = 0.6, size =.8)+theme_tufte()+
+  geom_smooth(alpha = 0.2, method = "lm")+
+  xlim(c(0,25))+ylim(c(-2,2))+
+  ggtitle("sd restricted to (-2,2)")+
+  theme(legend.position = c(0.65, 0.1))
+
+icCplot2 <-  ggplot(summaries, aes(x = IC, y = CdiffS, color = group, fill = group))+
+  geom_jitter(alpha = 0.6, size =.8)+theme_tufte()+
+  geom_smooth(alpha = 0.2, method = "lm")+
+  xlim(c(0,25))+ylim(c(-1,1))+ggtitle("sd restricted to (-1,1)")+
+  theme(legend.position = c(0.65, 0.1))
+
+icCplotJoint <- ggarrange(icCplot1, icCplot2) 
+icCplotTitled <- annotate_figure(icCplotJoint, 
+  top = text_grob("Change in comments (standardized) vs interventions received",
+   size = 12))
+icCplotTitled
+```
+\normalsize
+
+
+
+This suggests we should keep an eye out for interactions in the analysis, and that the intial comparison of means or medians between groups might be misleading if the effects in different volume groups are different and cancel each other. 
+
+
+
+Now, let's inspect correlations between the variables involved in the model:
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+summariesCorr <- select(summaries, IC, ABS, CBS, AAS, CAS, CDS, ADS)
+ggcorr(summariesCorr, method = c("pairwise"),
+       digits = 4, low = "steelblue", mid = "white",
+       high = "darkred", midpoint =0,
+       geom = "tile", label = TRUE, label_size=4, label_round =2, layout.exp =1,
+       label_alpha = FALSE,hjust = 0.75)
+
+
+```
+\normalsize
+
+This tells us that almost no predictors are strongly correlated, except for pairs \textsf{CBS}-\textsf{CDS}, so we drop CDS from the analysis and avoid using them  in the same model to avoid multicolinearity issues. These are just comments during the intervention period, which, unsurprisingly are also a good proxy for comments before and comments after.
+
+
+
+# Causal inference 
+
+To identify the right variables to condition (or not condition) on to identify the causal effect of the interventions, we first need to think about the causal structure of the problem. Here's a plausible causal structure that we will be working with:
+
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+dag <- dagitty("
+  dag{
+  CDS -> ADS -> IC  ons
+               U [unobserved]   
+               U -> CBS -> ABS  
+               U -> ABS        
+               U -> CDS -> ADS  
+               U -> ADS         
+               U -> CAS -> AAS    
+               U -> AAS                        
+               IC -> AAS        
+               IC -> CAS        
+               IT -> CAS        
+               IT -> AAS
+               CBS -> CDS -> CAS
+               ABS -> ADS -> AAS
+               }")
+set.seed(123)
+drawdag(dag)
+```
+\normalsize
+
+Comments during impact attacks during, which trigger interventions.
+Unmeasured user features cause comments before, which impact attacks before, and also    attacks before directly. Comments during (their impact on ADS is areadly included)  impact attacks during during directly and  comments after, which impact attacks after and   attacks after directly.  Intervention count impacts attacks after  and comments after. The same directions of impact are included for intervention type. Finally, comments through time are connected causally, and so are attacks.
+
+We already know not to condition on CDS if we condition on CAS or CBS. What else? \textsf{IT} has no bacwkard paths, but \textsf{IC} does. Let's identify all paths from \textsf{IC} to \textsf{AAS}:
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+paths(dag, from = c("IC"), to = "AAS")
+```
+\normalsize
+
+Crucially, all backdoor paths go through \textsf{ADS}, which then becomes either a fork or a pipe, so all backdoor paths can be closed by conditioning on \textsf{ADS}. Moreover there is only one directed indirect path, it goes through \textsf{CAS}, so we should not condition on it if we are to identify causal effect on attacks mediated by impact on comments (unless we care about the direct effect of \textsf{IC}  and \textsf{IT} on \textsf{AAS}, but that's a separate question). This is in line with the adjustment set identified algorithmically, and the same move makes sense when we want to predict \textsf{CAS}.
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+adjustmentSets(dag, exposure = c("IC", "IT"), outcome = "AAS")
+adjustmentSets(dag, exposure = c("IC", "IT"), outcome = "CAS")
+```
+\normalsize
+
+
+It's open season for other variables, and our decision to include them in the model will be guided by information-theoretic criteria of predictive power.
+
+
+# Bayesian models and their priors
+
+
+We will focus on a class of additive models where the outcome variable is normally distributed around the predicted mean, which is a linear function of predictors (possibly with some interactions). To spoil the story, we will end up using a model, whose specification is as follows:
+
+\begin{align*}
+\mathsf{AdiffS} & \sim Norm(\mu, \sigma)\\
+mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{ADS}] + \beta_{\mathsf{IT}}[\mathsf{group}] +
+ \beta_{IC}[\mathsf{group}]\times \mathsf{IC} + b_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} + \beta_{\mathsf{CBS}}[\mathsf{group}] \times \mathsf{CBS}
+\end{align*}
+
+
+<!-- # InteractionsModelDiff <- ulam( -->
+<!-- #   alist( -->
+<!-- #     AdiffS ~ dnorm( mu, sigma ), -->
+<!-- #     mu <- a + bADS[groupID] * ADS +  bIT[groupID] + bIC[groupID] * IC + bADSIC * ADS * IC+ bCBS[groupID] *CBS, -->
+<!-- #     a ~ dnorm (0,0.3), -->
+<!-- #     bADS[groupID] ~ dnorm(0,.3), -->
+<!-- #     bADSIC ~ dnorm(0,.3), -->
+<!-- #     bCBS[groupID] ~ dnorm(0,.3), -->
+<!-- #     bIT[groupID] ~ dnorm(0,.3), -->
+<!-- #     bIC[groupID] ~ dnorm(0,.3), -->
+<!-- #     sigma  ~ dexp(1) -->
+<!-- #   ),  -->
+<!-- #   data = summaries -->
+<!-- # ) -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#  References {-}
+
+\vspace{-3mm}
+
+
+
+
+

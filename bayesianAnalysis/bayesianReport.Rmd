@@ -99,7 +99,7 @@ First, let's take a look at the distribution of \textsf{IC} in the treatment gro
 
 \vspace{1mm}
 \footnotesize
-```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+```{r treatmentHist,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
 ggplot(summaries[summaries$group != "control",], aes(x = IC, fill = group))+
   geom_bar()+theme_tufte()+
   xlab("interventions received")+
@@ -116,7 +116,7 @@ Second, when we look at the distribution of standardized difference in attacks, 
 
 \vspace{1mm}
 \footnotesize
-```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+```{r violEmpiricalAdiff,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
 violAdiffS <- ggplot(summaries, aes(x=group, y = AdiffS))+
   geom_violin() +theme_tufte() 
 violJoint <- ggarrange(violAdiffS+ggtitle("whole range"),
@@ -136,7 +136,7 @@ Analogous plot for comments does not reveal this slight downward shift for norma
 
 \vspace{1mm}
 \footnotesize
-```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+```{r violEpmiricalCdiff,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
 violCdiffS <- ggplot(summaries, aes(x=group, y = CdiffS))+
   geom_violin() +theme_tufte() 
 violJointC <- ggarrange(violCdiffS+ggtitle("whole range"),
@@ -156,7 +156,7 @@ However, plotting changes against intervention counts reveals that restricting a
 
 \vspace{1mm}
 \footnotesize
-```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE}
+```{r ic,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE}
 icplot1 <- ggplot(summaries, aes(x = IC, y = AdiffS, color = group, fill = group))+
   geom_jitter(alpha = 0.6, size =.8)+theme_tufte()+
   geom_smooth(alpha = 0.2, method = "lm")+
@@ -181,7 +181,7 @@ Some interactions are also suggested by the differences in linear smoothing when
 
 \vspace{1mm}
 \footnotesize
-```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE}
+```{r icc,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE}
 icCplot1 <- ggplot(summaries, aes(x = IC, y = CdiffS, color = group, fill = group))+
   geom_jitter(alpha = 0.6, size =.8)+theme_tufte()+
   geom_smooth(alpha = 0.2, method = "lm")+
@@ -213,7 +213,7 @@ Now, let's inspect correlations between the variables involved in the model:
 
 \vspace{1mm}
 \footnotesize
-```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+```{r correlations,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
 summariesCorr <- select(summaries, IC, ABS, CBS, AAS, CAS, CDS, ADS)
 ggcorr(summariesCorr, method = c("pairwise"),
        digits = 4, low = "steelblue", mid = "white",
@@ -236,7 +236,7 @@ To identify the right variables to condition (or not condition) on to identify t
 
 \vspace{1mm}
 \footnotesize
-```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+```{r dag1,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
 dag <- dagitty("
   dag{
   CDS -> ADS -> IC  ons
@@ -284,8 +284,40 @@ adjustmentSets(dag, exposure = c("IC", "IT"), outcome = "CAS")
 
 It's open season for other variables, and our decision to include them in the model will be guided by information-theoretic criteria of predictive power.
 
+In fact, we will be predicting the difference between attacks before and after, and the difference between comments, before and after. Let's add them to the dag to double-check our selection of variables.
 
-# Bayesian models and their priors
+```{r dag2,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+dag2 <- dagitty("
+  dag{
+                CDS -> ADS -> IC  ons
+                U [unobserved]   
+                U -> CBS -> ABS  
+                U -> ABS        
+                U -> CDS -> ADS  
+                U -> ADS         
+                U -> CAS -> AAS    
+                U -> AAS                        
+                IC -> AAS        
+                IC -> CAS        
+                IT -> CAS        
+                IT -> AAS
+                CBS -> CDS -> CAS
+                ABS -> ADS -> AAS
+                ABS -> AdiffS
+                AAS -> AdiffS
+                CBS -> CdiffS
+                CAS -> CdiffS
+                }")
+set.seed(123)
+drawdag(dag2)
+adjustmentSets(dag2, exposure = c("IC", "IT"), outcome = "AdiffS")
+adjustmentSets(dag2, exposure = c("IC", "IT"), outcome = "CdiffS")
+```
+ 
+
+
+
+# Bayesian models, priors and diagnostics
 
 
 We will focus on a class of additive models where the outcome variable is normally distributed around the predicted mean, which is a linear function of predictors (possibly with some interactions). To spoil the story, we will end up using a model, whose specification is as follows:

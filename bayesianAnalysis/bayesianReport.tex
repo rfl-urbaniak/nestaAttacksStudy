@@ -387,7 +387,7 @@ treatment groups:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-4-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/treatmentHist-1} \end{center}
 
 \normalsize
 
@@ -429,7 +429,7 @@ much:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-5-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/violEmpiricalAdiff-1} \end{center}
 
 \normalsize
 
@@ -466,7 +466,7 @@ impact of interventions on attacks, and no impact on comments.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/violEpmiricalCdiff-1} \end{center}
 
 \normalsize
 
@@ -498,7 +498,7 @@ regression lines.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-7-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/ic-1} \end{center}
 
 \normalsize
 
@@ -531,7 +531,7 @@ comments.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-8-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/icc-1} \end{center}
 
 \normalsize
 
@@ -556,7 +556,7 @@ model:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-9-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/correlations-1} \end{center}
 
 \normalsize
 
@@ -600,7 +600,7 @@ structure that we will be working with:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-10-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/dag1-1} \end{center}
 
 \normalsize
 
@@ -743,8 +743,57 @@ It's open season for other variables, and our decision to include them
 in the model will be guided by information-theoretic criteria of
 predictive power.
 
-\section{Bayesian models and their
-priors}\label{bayesian-models-and-their-priors}
+In fact, we will be predicting the difference between attacks before and
+after, and the difference between comments, before and after. Let's add
+them to the dag to double-check our selection of variables.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dag2 <-}\StringTok{ }\KeywordTok{dagitty}\NormalTok{(}\StringTok{"}
+\StringTok{  dag\{}
+\StringTok{                CDS -> ADS -> IC  ons}
+\StringTok{                U [unobserved]   }
+\StringTok{                U -> CBS -> ABS  }
+\StringTok{                U -> ABS        }
+\StringTok{                U -> CDS -> ADS  }
+\StringTok{                U -> ADS         }
+\StringTok{                U -> CAS -> AAS    }
+\StringTok{                U -> AAS                        }
+\StringTok{                IC -> AAS        }
+\StringTok{                IC -> CAS        }
+\StringTok{                IT -> CAS        }
+\StringTok{                IT -> AAS}
+\StringTok{                CBS -> CDS -> CAS}
+\StringTok{                ABS -> ADS -> AAS}
+\StringTok{                ABS -> AdiffS}
+\StringTok{                AAS -> AdiffS}
+\StringTok{                CBS -> CdiffS}
+\StringTok{                CAS -> CdiffS}
+\StringTok{                \}"}\NormalTok{)}
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+\KeywordTok{drawdag}\NormalTok{(dag2)}
+\KeywordTok{adjustmentSets}\NormalTok{(dag2, }\DataTypeTok{exposure =} \KeywordTok{c}\NormalTok{(}\StringTok{"IC"}\NormalTok{, }\StringTok{"IT"}\NormalTok{), }\DataTypeTok{outcome =} \StringTok{"AdiffS"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## { ADS }
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{adjustmentSets}\NormalTok{(dag2, }\DataTypeTok{exposure =} \KeywordTok{c}\NormalTok{(}\StringTok{"IC"}\NormalTok{, }\StringTok{"IT"}\NormalTok{), }\DataTypeTok{outcome =} \StringTok{"CdiffS"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## { ADS }
+\end{verbatim}
+
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/dag2-1} \end{center}
+
+\section{Bayesian models, priors and
+diagnostics}\label{bayesian-models-priors-and-diagnostics}
 
 We will focus on a class of additive models where the outcome variable
 is normally distributed around the predicted mean, which is a linear
@@ -890,7 +939,7 @@ to build them).
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-13-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 \normalsize
 
@@ -948,7 +997,7 @@ the following priors:
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-14-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-7-1} \end{center}
 
 \normalsize
 
@@ -965,7 +1014,7 @@ Now, some model diagnostics before we move on. What we are witnessing is
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-15-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
 \normalsize
 
@@ -980,11 +1029,12 @@ inspect the distribution of the distances:
 \NormalTok{mu <-}\StringTok{ }\KeywordTok{link}\NormalTok{(InteractionsModelDiff)}
 \NormalTok{mu_mean <-}\StringTok{ }\KeywordTok{apply}\NormalTok{( mu , }\DecValTok{2}\NormalTok{ , mean )}
 \NormalTok{mu_resid <-}\StringTok{ }\NormalTok{summaries}\OperatorTok{$}\NormalTok{AdiffS }\OperatorTok{-}\StringTok{ }\NormalTok{mu_mean}
-\KeywordTok{ggplot}\NormalTok{()}\OperatorTok{+}\KeywordTok{geom_density}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ mu_resid))}\OperatorTok{+}\KeywordTok{theme_tufte}\NormalTok{()}\OperatorTok{+}\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Residuals are approximately normally distributed"}\NormalTok{)}
+\KeywordTok{ggplot}\NormalTok{()}\OperatorTok{+}\KeywordTok{geom_density}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ mu_resid))}\OperatorTok{+}\KeywordTok{theme_tufte}\NormalTok{()}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Residuals are approximately normally distributed"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-16-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 \normalsize
 

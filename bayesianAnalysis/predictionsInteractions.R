@@ -1,5 +1,18 @@
 source("utils/plotPriors.R")
 
+
+library(ggplot2)
+library(ggthemes)
+library(gridExtra)
+library(kableExtra)
+library(viridis)
+library(rethinking)
+library(ggpubr)
+library(tidyverse)
+library(GGally)
+library(dagitty)
+library(reshape)
+
 summaries <- readRDS(file = "datasets/Summaries.rds")
 
 
@@ -46,7 +59,29 @@ LotsOfInteractionsModel3ulam <- ulam(
   data = summaries
 )
 
+# FinalHMC <- ulam(
+#   alist(
+#     AdiffS ~ dnorm( mu, sigma ),
+#     mu <- a + bADS[groupID] * ADS +  bIT[groupID] +
+#     bIC[groupID] * IC + bADSIC * ADS * IC+
+#     bCBS[groupID] *CBS,
+#     a ~ dnorm (0,0.3),
+#     bADS[groupID] ~ dnorm(0,.3),
+#     bADSIC ~ dnorm(0,.3),
+#     bCBS[groupID] ~ dnorm(0,.3),
+#     bIT[groupID] ~ dnorm(0,.3),
+#     bIC[groupID] ~ dnorm(0,.3),
+#     sigma  ~ dexp(1)
+#   ),
+#   data = summaries
+# )
+# 
+# getwd()
+# saveRDS(FinalHMC, file = "models/FinalHMC.rds")
 
+FinalHMC <- readRDS(file = "models/FinalHMC.rds")
+
+traceplot(FinalHMC)
 
 #prior predictive check
 summary(summaries)

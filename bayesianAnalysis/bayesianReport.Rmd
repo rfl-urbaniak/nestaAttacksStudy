@@ -439,7 +439,7 @@ priorJoint1Titled
 
 
 
-Some experimentation leads to the value of $\sigma =3$, which leads to the following priors:
+Some experimentation leads to the value of $\sigma =.3$, which leads to the following priors:
 
 \vspace{1mm}
 \footnotesize
@@ -547,18 +547,22 @@ How did we get to this fairly complicated model though? Once preliminary causal 
 \tag{ADSIT} \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]}\\
 \tag{ADSITIC} \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +    \beta_{\mathsf{IC}}\times \mathsf{IC}\\
 \tag{ADSITIC-ADSIC} \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +    \beta_{\mathsf{IC}}\times \mathsf{IC} + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
-\tag{ADSITIT-ADSIC-ADSIT} \mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +  \\ \nonumber & +  \beta_{\mathsf{IC}}\times \mathsf{IC} + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
+\tag{ADSITIC-ADSIC-ADSIT} \mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +  \\ \nonumber & +  \beta_{\mathsf{IC}}\times \mathsf{IC} + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
 \tag{ADSIT-ADSIT}   \mu_i &  = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i] \times
  \mathsf{ADS} + \beta_{\mathsf{group}[i]} \\
-\tag{ADSITIC-ADSIT-ICIT-ADSIC}   \mu_i &  = \alpha  + \beta_{\mathsf{group}[i]} +  
-\beta_{\mathsf{IC}}[\mathsf{group}_i] \times \mathsf{IC}  + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
-\tag{ADSITICCBS-ITIC-ADSIC} \mu_i &  = \alpha  + \beta_{\mathsf{group}[i]} +  
-\beta_{\mathsf{ADS}}[\mathsf{group}_i] \times
- \mathsf{ADS}  + \beta_{\mathsf{IC}}[\mathsf{group}_i] \times \mathsf{IC}  + \\ & \nonumber  \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} +
- \beta_{\mathsf{group}[i]} +  
-\beta_{\mathsf{CBS}} \times \mathsf{CBS} \\
+\tag{ADSITIC-ADSIT-ITIC-ADSIC}   \mu_i &  = \alpha  +  \beta_{\mathsf{ADS}}[\mathsf{group}_i] \times \mathsf{ADS} + \beta_{\mathsf{group}[i]} +  
+\beta_{\mathsf{IC}}[\mathsf{group}_i] \times \mathsf{IC} + \\ \nonumber & + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
+\tag{ADSITICCBS-ITIC-ADSIC} \mu_i &  = \alpha  +  \beta_{\mathsf{ADS}}[\mathsf{group}_i] \times
+ \mathsf{ADS}  + \beta_{\mathsf{group}[i]} +   \beta_{\mathsf{IC}}[\mathsf{group}_i] \times \mathsf{IC} + \\ & \nonumber  + \beta_{\mathsf{CBS}} \times \mathsf{CBS} +  \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}  \\
 \tag{Final} \mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} + \beta_{\mathsf{group}_i}  +  \beta_{\mathsf{IC}}[\mathsf{group}_i]\times \mathsf{IC} + \\
- & + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} + \beta_{\mathsf{CBS}}[\mathsf{group}_i] \times \mathsf{CBS} \nonumber \end{align}
+ & + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} + \beta_{\mathsf{CBS}}[\mathsf{group}_i] \times \mathsf{CBS} \nonumber\\
+ \tag{tooFAr} \mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} + \beta_{\mathsf{group}_i}  +  \beta_{\mathsf{IC}}[\mathsf{group}_i]\times \mathsf{IC} + \\
+ & + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} + \beta_{\mathsf{CBS}}[\mathsf{group}_i] \times \mathsf{CBS} + \beta_{\mathsf{CBSIC}}\times
+ \mathsf{CBS} \times \mathsf{IC}\end{align}
+
+
+
+
 
 
 
@@ -652,7 +656,7 @@ ADSITIC_ADSIC <- quap(
 )
 
 
-ADSITIT_ADSIC_ADSIT <- quap(
+ADSITIC_ADSIC_ADSIT <- quap(
   alist(
     AdiffS ~ dnorm( mu, sigma ),
     mu <- a + bADS[groupID] * ADS +  bIT[groupID] + bIC * IC + bADSIC * ADS * IC,
@@ -682,7 +686,7 @@ ADSIT_ADSIT <- quap(
 )
 
 
-ADSITIC_ADSIT_ICIT_ADSIC <- quap(
+ADSITIC_ADSIT_ITIC_ADSIC <- quap(
   alist(
     AdiffS ~ dnorm( mu, sigma ),
     mu <- a + bADS[groupID] * ADS +  bIT[groupID] + bIC[groupID] * IC +
@@ -731,8 +735,29 @@ Final <- quap(
   data = summaries
 )
 
+
+tooFar <- quap(
+  alist(
+    AdiffS ~ dnorm( mu, sigma ),
+    mu <- a + bADS[groupID] * ADS +  bIT[groupID] + bIC[groupID] * IC + 
+      bADSIC * ADS * IC+ bCBS[groupID] *CBS + bCBSIC * CBS * IC, 
+    a ~ dnorm (0,0.3),
+    bADS[groupID] ~ dnorm(0,.3),
+    bADSIC ~ dnorm(0,.3),
+    bCBS[groupID] ~ dnorm(0,.3),
+    bIT[groupID] ~ dnorm(0,.3),
+    bIC[groupID] ~ dnorm(0,.3),
+     bCBSIC ~ dnorm(0, .3),
+    sigma  ~ dexp(1)
+  ), 
+  data = summaries
+)
+
 ```
 \normalsize
+
+
+
 
 
 
@@ -749,13 +774,15 @@ Final <- quap(
 \vspace{1mm}
 \footnotesize
 ```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
-comparison<- compare(null,ADS,ADSIC,IT,ADSIT,ADSITIC,ADSITIC_ADSIC,ADSITIT_ADSIC_ADSIT,ADSIT_ADSIT,ADSITIC_ADSIT_ICIT_ADSIC,ADSITICCBS_ITIC_ADSIC,Final)
-data.frame(comparison )
+comparison<- compare(null,ADS,ADSIC,IT,ADSIT,ADSITIC,ADSITIC_ADSIC,
+                     ADSITIC_ADSIC_ADSIT,ADSIT_ADSIT,ADSITIC_ADSIT_ITIC_ADSIC,
+                     ADSITICCBS_ITIC_ADSIC,Final, tooFar)
+mykable(data.frame(comparison )) 
 plot(comparison)
 ```
 \normalsize
 
-
+The three models that stand out  differ in including $\mathsf{CBS}$ as a predictor.  Moreover the final model includes an interaction between  treatment group and $\mathsf{CBS}$. Adding a further interaction between $\mathsf{CBS}$ and $\mathsf{IC}$ takes us too far.  $WAIC$-based weighing assigns the weight of $83\%$ to the final model, and the standard errors for the difference in WAIC for the top three models is fairly low,  so we will employ the top model ($\mathsf{Final}$) in   further analyses. 
 
 
 

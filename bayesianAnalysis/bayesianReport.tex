@@ -1,3 +1,7 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
 \documentclass[10pt,dvipsnames,enabledeprecatedfontcommands]{scrartcl}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -6,12 +10,9 @@
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
 \else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
+  \usepackage{unicode-math}
   \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
 \fi
 % use upquote if available, for straight quotes in verbatim environments
@@ -21,14 +22,20 @@
 \usepackage[]{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
-\usepackage[unicode=true]{hyperref}
-\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{xcolor}
+\usepackage{hyperref}
 \hypersetup{
             pdftitle={Bayesian analysis of the NESTA study of interventions against verbal aggression online},
             pdfauthor={Rafal Urbaniak},
             colorlinks=true,
             linkcolor=Maroon,
+            filecolor=Maroon,
             citecolor=Blue,
             urlcolor=blue,
             breaklinks=true}
@@ -42,37 +49,37 @@
 \usepackage{framed}
 \definecolor{shadecolor}{RGB}{248,248,248}
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -82,12 +89,6 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -290,11 +291,13 @@ aggression online}
 
 \tableofcontents
 
-\section{Exploration}\label{exploration}
+\hypertarget{exploration}{%
+\section{Exploration}\label{exploration}}
 
 Load the dataset and take a look first.
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -323,7 +326,6 @@ X & author & AB & AD & AA & CB & CD & CA & Adiff & Cdiff & AdiffS & CdiffS & gro
 \end{tabular}}
 \endgroup{}
 \end{table}
-
 \normalsize
 
 The basic variables we are dealing with are in the following table.
@@ -355,7 +357,8 @@ be predicting \textsf{AdiffS} which is the standardized difference
 difference \textsf{CA}-\textsf{CB}. Before we proceed, we will also
 standardize the predictors, and add a numerical index for the group:
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -375,7 +378,8 @@ standardize the predictors, and add a numerical index for the group:
 First, let's take a look at the distribution of \textsf{IC} in the
 treatment groups:
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -388,7 +392,6 @@ treatment groups:
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/treatmentHist-1} \end{center}
-
 \normalsize
 
 \todo{Note there were much more empathetic interventions, this needs an explanation}
@@ -400,7 +403,8 @@ attacks, when restricted to (-1,1), the peaks of distributions are
 shifted a bit, with lowest median for the normative group, but not too
 much:
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -430,14 +434,14 @@ much:
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/violEmpiricalAdiff-1} \end{center}
-
 \normalsize
 
 Analogous plot for comments does not reveal this slight downward shift
 for normative, but otherwise the visualisation migth suggest no strong
 impact of interventions on attacks, and no impact on comments.
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -467,14 +471,14 @@ impact of interventions on attacks, and no impact on comments.
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/violEpmiricalCdiff-1} \end{center}
-
 \normalsize
 
 However, plotting changes against intervention counts reveals that
 restricting attention to various activity levels drastically changes the
 regression lines.
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -499,14 +503,14 @@ regression lines.
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/ic-1} \end{center}
-
 \normalsize
 
 Some interactions are also suggested by the differences in linear
 smoothing when attention is restricted when it comes to change in
 comments.
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -532,7 +536,6 @@ comments.
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/icc-1} \end{center}
-
 \normalsize
 
 This suggests we should keep an eye out for interactions in the
@@ -543,7 +546,8 @@ different and cancel each other.
 Now, let's inspect correlations between the variables involved in the
 model:
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -557,7 +561,6 @@ model:
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/correlations-1} \end{center}
-
 \normalsize
 
 This tells us that almost no predictors are strongly correlated, except
@@ -567,14 +570,16 @@ These are just comments during the intervention period, which,
 unsurprisingly are also a good proxy for comments before and comments
 after.
 
-\section{Causal inference}\label{causal-inference}
+\hypertarget{causal-inference}{%
+\section{Causal inference}\label{causal-inference}}
 
 To identify the right variables to condition (or not condition) on to
 identify the causal effect of the interventions, we first need to think
 about the causal structure of the problem. Here's a plausible causal
 structure that we will be working with:
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -601,7 +606,6 @@ structure that we will be working with:
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/dag1-1} \end{center}
-
 \normalsize
 
 Comments during impact attacks during, which trigger interventions.
@@ -617,7 +621,8 @@ We already know not to condition on CDS if we condition on CAS or CBS.
 What else? \textsf{IT} has no bacwkard paths, but \textsf{IC} does.
 Let's identify all paths from \textsf{IC} to \textsf{AAS}:
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -715,7 +720,8 @@ on comments (unless we care about the direct effect of \textsf{IC} and
 line with the adjustment set identified algorithmically, and the same
 move makes sense when we want to predict \textsf{CAS}.
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -792,8 +798,9 @@ them to the dag to double-check our selection of variables.
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/dag2-1} \end{center}
 
+\hypertarget{bayesian-models-priors-and-diagnostics}{%
 \section{Bayesian models, priors and
-diagnostics}\label{bayesian-models-priors-and-diagnostics}
+diagnostics}\label{bayesian-models-priors-and-diagnostics}}
 
 We will focus on a class of additive models where the outcome variable
 is normally distributed around the predicted mean, which is a linear
@@ -834,7 +841,8 @@ unrealistic. (For computational reasons, instead of running the
 simulations, we load pre-compiled models, but we include the code used
 to build them).
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -880,7 +888,7 @@ to build them).
 
 \NormalTok{InteractionsModelDiff <-}\StringTok{ }\KeywordTok{readRDS}\NormalTok{(}\DataTypeTok{file =} \StringTok{"models/InteractionsModelDiff.rds"}\NormalTok{)}
 
-\NormalTok{##prior predictive checks sd =1}
+\CommentTok{##prior predictive checks sd =1}
 \NormalTok{ADS <-}\StringTok{ }\DecValTok{0}
 \NormalTok{CBS <-}\StringTok{ }\DecValTok{0}
 \NormalTok{groupID <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{3}
@@ -940,13 +948,13 @@ to build them).
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-6-1} \end{center}
-
 \normalsize
 
-Some experimentation leads to the value of \(\sigma =3\), which leads to
-the following priors:
+Some experimentation leads to the value of \(\sigma =.3\), which leads
+to the following priors:
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -998,7 +1006,6 @@ the following priors:
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-7-1} \end{center}
-
 \normalsize
 
 Now, some model diagnostics before we move on. What we are witnessing is
@@ -1006,7 +1013,8 @@ Now, some model diagnostics before we move on. What we are witnessing is
 (2) good mixing (they explore a range of options in the beginning), and
 (3) convergence (they stabilize as they progress).
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1015,14 +1023,14 @@ Now, some model diagnostics before we move on. What we are witnessing is
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-8-1} \end{center}
-
 \normalsize
 
 Finally, let's inspect the distribution of residuals. That is, we
 calculate all predictions, their distance from the actual values, and
 inspect the distribution of the distances:
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1035,10 +1043,10 @@ inspect the distribution of the distances:
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-9-1} \end{center}
-
 \normalsize
 
-\section{Model selection}\label{model-selection}
+\hypertarget{model-selection}{%
+\section{Model selection}\label{model-selection}}
 
 How did we get to this fairly complicated model though? Once preliminary
 causal considerations guided our restrictions on variable selection, we
@@ -1058,20 +1066,21 @@ are listed after dashes.
 \tag{ADSIT} \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]}\\
 \tag{ADSITIC} \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +    \beta_{\mathsf{IC}}\times \mathsf{IC}\\
 \tag{ADSITIC-ADSIC} \mu_i & = \alpha + \beta_{\mathsf{ADS}}\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +    \beta_{\mathsf{IC}}\times \mathsf{IC} + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
-\tag{ADSITIT-ADSIC-ADSIT} \mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +  \\ \nonumber & +  \beta_{\mathsf{IC}}\times \mathsf{IC} + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
+\tag{ADSITIC-ADSIC-ADSIT} \mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} +  \beta_{\mathsf{group}[i]} +  \\ \nonumber & +  \beta_{\mathsf{IC}}\times \mathsf{IC} + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
 \tag{ADSIT-ADSIT}   \mu_i &  = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i] \times
  \mathsf{ADS} + \beta_{\mathsf{group}[i]} \\
-\tag{ADSITIC-ADSIT-ICIT-ADSIC}   \mu_i &  = \alpha  + \beta_{\mathsf{group}[i]} +  
-\beta_{\mathsf{IC}}[\mathsf{group}_i] \times \mathsf{IC}  + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
-\tag{ADSITICCBS-ITIC-ADSIC} \mu_i &  = \alpha  + \beta_{\mathsf{group}[i]} +  
-\beta_{\mathsf{ADS}}[\mathsf{group}_i] \times
- \mathsf{ADS}  + \beta_{\mathsf{IC}}[\mathsf{group}_i] \times \mathsf{IC}  + \\ & \nonumber  \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} +
- \beta_{\mathsf{group}[i]} +  
-\beta_{\mathsf{CBS}} \times \mathsf{CBS} \\
+\tag{ADSITIC-ADSIT-ITIC-ADSIC}   \mu_i &  = \alpha  +  \beta_{\mathsf{ADS}}[\mathsf{group}_i] \times \mathsf{ADS} + \beta_{\mathsf{group}[i]} +  
+\beta_{\mathsf{IC}}[\mathsf{group}_i] \times \mathsf{IC} + \\ \nonumber & + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}\\
+\tag{ADSITICCBS-ITIC-ADSIC} \mu_i &  = \alpha  +  \beta_{\mathsf{ADS}}[\mathsf{group}_i] \times
+ \mathsf{ADS}  + \beta_{\mathsf{group}[i]} +   \beta_{\mathsf{IC}}[\mathsf{group}_i] \times \mathsf{IC} + \\ & \nonumber  + \beta_{\mathsf{CBS}} \times \mathsf{CBS} +  \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC}  \\
 \tag{Final} \mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} + \beta_{\mathsf{group}_i}  +  \beta_{\mathsf{IC}}[\mathsf{group}_i]\times \mathsf{IC} + \\
- & + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} + \beta_{\mathsf{CBS}}[\mathsf{group}_i] \times \mathsf{CBS} \nonumber \end{align}
+ & + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} + \beta_{\mathsf{CBS}}[\mathsf{group}_i] \times \mathsf{CBS} \nonumber\\
+ \tag{tooFAr} \mu_i & = \alpha + \beta_{\mathsf{ADS}}[\mathsf{group}_i]\times \mathsf{ADS} + \beta_{\mathsf{group}_i}  +  \beta_{\mathsf{IC}}[\mathsf{group}_i]\times \mathsf{IC} + \\
+ & + \beta_{\mathsf{ADSIC}}\times \mathsf{ADS} \times \mathsf{IC} + \beta_{\mathsf{CBS}}[\mathsf{group}_i] \times \mathsf{CBS} + \beta_{\mathsf{CBSIC}}\times
+ \mathsf{CBS} \times \mathsf{IC}\end{align}
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1161,7 +1170,7 @@ are listed after dashes.
 \NormalTok{)}
 
 
-\NormalTok{ADSITIT_ADSIC_ADSIT <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+\NormalTok{ADSITIC_ADSIC_ADSIT <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
   \KeywordTok{alist}\NormalTok{(}
 \NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
 \NormalTok{    mu <-}\StringTok{ }\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{bADS[groupID] }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{+}\StringTok{  }\NormalTok{bIT[groupID] }\OperatorTok{+}\StringTok{ }\NormalTok{bIC }\OperatorTok{*}\StringTok{ }\NormalTok{IC }\OperatorTok{+}\StringTok{ }\NormalTok{bADSIC }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{*}\StringTok{ }\NormalTok{IC,}
@@ -1191,7 +1200,7 @@ are listed after dashes.
 \NormalTok{)}
 
 
-\NormalTok{ADSITIC_ADSIT_ICIT_ADSIC <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+\NormalTok{ADSITIC_ADSIT_ITIC_ADSIC <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
   \KeywordTok{alist}\NormalTok{(}
 \NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
 \NormalTok{    mu <-}\StringTok{ }\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{bADS[groupID] }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{+}\StringTok{  }\NormalTok{bIT[groupID] }\OperatorTok{+}\StringTok{ }\NormalTok{bIC[groupID] }\OperatorTok{*}\StringTok{ }\NormalTok{IC }\OperatorTok{+}
@@ -1239,49 +1248,67 @@ are listed after dashes.
 \NormalTok{  ), }
   \DataTypeTok{data =}\NormalTok{ summaries}
 \NormalTok{)}
+
+
+\NormalTok{tooFar <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
+  \KeywordTok{alist}\NormalTok{(}
+\NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
+\NormalTok{    mu <-}\StringTok{ }\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{bADS[groupID] }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{+}\StringTok{  }\NormalTok{bIT[groupID] }\OperatorTok{+}\StringTok{ }\NormalTok{bIC[groupID] }\OperatorTok{*}\StringTok{ }\NormalTok{IC }\OperatorTok{+}\StringTok{ }
+\StringTok{      }\NormalTok{bADSIC }\OperatorTok{*}\StringTok{ }\NormalTok{ADS }\OperatorTok{*}\StringTok{ }\NormalTok{IC}\OperatorTok{+}\StringTok{ }\NormalTok{bCBS[groupID] }\OperatorTok{*}\NormalTok{CBS }\OperatorTok{+}\StringTok{ }\NormalTok{bCBSIC }\OperatorTok{*}\StringTok{ }\NormalTok{CBS }\OperatorTok{*}\StringTok{ }\NormalTok{IC, }
+\NormalTok{    a }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{ (}\DecValTok{0}\NormalTok{,}\FloatTok{0.3}\NormalTok{),}
+\NormalTok{    bADS[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bADSIC }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bCBS[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIT[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{    bIC[groupID] }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{,.}\DecValTok{3}\NormalTok{),}
+\NormalTok{     bCBSIC }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{(}\DecValTok{0}\NormalTok{, }\FloatTok{.3}\NormalTok{),}
+\NormalTok{    sigma  }\OperatorTok{~}\StringTok{ }\KeywordTok{dexp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\NormalTok{  ), }
+  \DataTypeTok{data =}\NormalTok{ summaries}
+\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \normalsize
 
-\vspace{1mm} \footnotesize
+\vspace{1mm}
+\footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{comparison<-}\StringTok{ }\KeywordTok{compare}\NormalTok{(null,ADS,ADSIC,IT,ADSIT,ADSITIC,ADSITIC_ADSIC,ADSITIT_ADSIC_ADSIT,ADSIT_ADSIT,ADSITIC_ADSIT_ICIT_ADSIC,ADSITICCBS_ITIC_ADSIC,Final)}
-\KeywordTok{data.frame}\NormalTok{(comparison )}
+\NormalTok{comparison<-}\StringTok{ }\KeywordTok{compare}\NormalTok{(null,ADS,ADSIC,IT,ADSIT,ADSITIC,ADSITIC_ADSIC,}
+\NormalTok{                     ADSITIC_ADSIC_ADSIT,ADSIT_ADSIT,ADSITIC_ADSIT_ITIC_ADSIC,}
+\NormalTok{                     ADSITICCBS_ITIC_ADSIC,Final, tooFar)}
+\KeywordTok{mykable}\NormalTok{(}\KeywordTok{data.frame}\NormalTok{(comparison )) }
 \end{Highlighting}
 \end{Shaded}
 
-\begin{tabular}{l|r|r|r|r|r|r}
-\hline
+\begin{table}[H]
+\centering\begingroup\fontsize{9}{11}\selectfont
+
+\begin{tabular}{lrrrrrr}
+\toprule
   & WAIC & SE & dWAIC & dSE & pWAIC & weight\\
-\hline
-Final & 1184.887 & 88.82495 & 0.000000 & NA & 26.78638 & 0.9374128\\
-\hline
-ADSITICCBS\_ITIC\_ADSIC & 1190.300 & 88.15088 & 5.413125 & 5.28405 & 25.85961 & 0.0625872\\
-\hline
-null & 1345.093 & 145.30463 & 160.205804 & 133.08233 & 17.53972 & 0.0000000\\
-\hline
-IT & 1345.699 & 144.37938 & 160.811380 & 132.23448 & 18.52390 & 0.0000000\\
-\hline
-ADS & 1349.245 & 144.21603 & 164.357989 & 132.37581 & 22.99570 & 0.0000000\\
-\hline
-ADSIT & 1349.479 & 143.67953 & 164.591729 & 131.67410 & 23.28995 & 0.0000000\\
-\hline
-ADSIT\_ADSIT & 1349.865 & 153.75814 & 164.977686 & 139.19081 & 31.36090 & 0.0000000\\
-\hline
-ADSITIC\_ADSIC & 1350.595 & 152.06030 & 165.708172 & 137.43447 & 29.28986 & 0.0000000\\
-\hline
-ADSITIC & 1352.954 & 147.94889 & 168.066787 & 135.07448 & 27.85676 & 0.0000000\\
-\hline
-ADSIC & 1354.602 & 147.00433 & 169.715332 & 134.18980 & 27.89223 & 0.0000000\\
-\hline
-ADSITIT\_ADSIC\_ADSIT & 1355.703 & 155.79070 & 170.815987 & 141.34671 & 33.73524 & 0.0000000\\
-\hline
-ADSITIC\_ADSIT\_ICIT\_ADSIC & 1357.561 & 157.21600 & 172.673396 & 142.39504 & 35.10954 & 0.0000000\\
-\hline
+\midrule
+\cellcolor{gray!6}{Final} & \cellcolor{gray!6}{1184.641} & \cellcolor{gray!6}{89.47387} & \cellcolor{gray!6}{0.000000} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{26.85809} & \cellcolor{gray!6}{0.8393664}\\
+tooFar & 1189.257 & 90.39801 & 4.616272 & 2.884162 & 29.81499 & 0.0834720\\
+\cellcolor{gray!6}{ADSITICCBS\_ITIC\_ADSIC} & \cellcolor{gray!6}{1189.414} & \cellcolor{gray!6}{87.19709} & \cellcolor{gray!6}{4.773490} & \cellcolor{gray!6}{5.762571} & \cellcolor{gray!6}{25.62296} & \cellcolor{gray!6}{0.0771616}\\
+null & 1344.835 & 144.95033 & 160.193855 & 132.894118 & 17.16957 & 0.0000000\\
+\cellcolor{gray!6}{IT} & \cellcolor{gray!6}{1345.879} & \cellcolor{gray!6}{144.64185} & \cellcolor{gray!6}{161.237934} & \cellcolor{gray!6}{132.478842} & \cellcolor{gray!6}{19.27433} & \cellcolor{gray!6}{0.0000000}\\
+\addlinespace
+ADSIT & 1348.714 & 142.29377 & 164.072877 & 130.485213 & 23.06652 & 0.0000000\\
+\cellcolor{gray!6}{ADS} & \cellcolor{gray!6}{1349.706} & \cellcolor{gray!6}{145.13624} & \cellcolor{gray!6}{165.065051} & \cellcolor{gray!6}{133.323101} & \cellcolor{gray!6}{23.10634} & \cellcolor{gray!6}{0.0000000}\\
+ADSIT\_ADSIT & 1351.571 & 154.69385 & 166.930496 & 140.429304 & 31.91506 & 0.0000000\\
+\cellcolor{gray!6}{ADSITIC\_ADSIC} & \cellcolor{gray!6}{1352.972} & \cellcolor{gray!6}{154.55405} & \cellcolor{gray!6}{168.331385} & \cellcolor{gray!6}{140.054704} & \cellcolor{gray!6}{30.65579} & \cellcolor{gray!6}{0.0000000}\\
+ADSITIC & 1353.603 & 147.38084 & 168.962571 & 134.581071 & 28.54365 & 0.0000000\\
+\addlinespace
+\cellcolor{gray!6}{ADSIC} & \cellcolor{gray!6}{1353.939} & \cellcolor{gray!6}{147.29717} & \cellcolor{gray!6}{169.298374} & \cellcolor{gray!6}{134.821036} & \cellcolor{gray!6}{26.91553} & \cellcolor{gray!6}{0.0000000}\\
+ADSITIC\_ADSIC\_ADSIT & 1355.353 & 156.53444 & 170.712149 & 142.268677 & 33.80858 & 0.0000000\\
+\cellcolor{gray!6}{ADSITIC\_ADSIT\_ITIC\_ADSIC} & \cellcolor{gray!6}{1355.442} & \cellcolor{gray!6}{155.55820} & \cellcolor{gray!6}{170.800602} & \cellcolor{gray!6}{140.950680} & \cellcolor{gray!6}{34.03861} & \cellcolor{gray!6}{0.0000000}\\
+\bottomrule
 \end{tabular}
+\endgroup{}
+\end{table}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1290,10 +1317,19 @@ ADSITIC\_ADSIT\_ICIT\_ADSIC & 1357.561 & 157.21600 & 172.673396 & 142.39504 & 35
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-11-1} \end{center}
-
 \normalsize
 
-\section*{References}\label{references}
+The three models that stand out differ in including \(\mathsf{CBS}\) as
+a predictor. Moreover the final model includes an interaction between
+treatment group and \(\mathsf{CBS}\). Adding a further interaction
+between \(\mathsf{CBS}\) and \(\mathsf{IC}\) takes us too far.
+\(WAIC\)-based weighing assigns the weight of \(83\%\) to the final
+model, and the standard errors for the difference in WAIC for the top
+three models is fairly low, so we will employ the top model
+(\(\mathsf{Final}\)) in further analyses.
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
 \addcontentsline{toc}{section}{References}
 
 \vspace{-3mm}

@@ -785,9 +785,98 @@ plot(comparison)
 The three models that stand out  differ in including $\mathsf{CBS}$ as a predictor.  Moreover the final model includes an interaction between  treatment group and $\mathsf{CBS}$. Adding a further interaction between $\mathsf{CBS}$ and $\mathsf{IC}$ takes us too far.  $WAIC$-based weighing assigns the weight of $83\%$ to the final model, and the standard errors for the difference in WAIC for the top three models is fairly low,  so we will employ the top model ($\mathsf{Final}$) in   further analyses. 
 
 
+# Inspecting the model and effect sizes
 
 
 
+We start by using the \textsf{Final} model formula to build a model, this time using Hamiltionian Monte Carlo. We leave the code commented out and load a pre-compiled model for computational convenience
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+# FinalHMC <- ulam(
+#   alist(
+#     AdiffS ~ dnorm( mu, sigma ),
+#     mu <- a + bADS[groupID] * ADS +  bIT[groupID] +
+#     bIC[groupID] * IC + bADSIC * ADS * IC+
+#     bCBS[groupID] *CBS,
+#     a ~ dnorm (0,0.3),
+#     bADS[groupID] ~ dnorm(0,.3),
+#     bADSIC ~ dnorm(0,.3),
+#     bCBS[groupID] ~ dnorm(0,.3),
+#     bIT[groupID] ~ dnorm(0,.3),
+#     bIC[groupID] ~ dnorm(0,.3),
+#     sigma  ~ dexp(1)
+#   ),
+#   data = summaries
+# )
+# saveRDS(FinalHMC, file = "models/FinalHMC.rds")
+
+FinalHMC <- readRDS(file = "models/FinalHMC.rds")
+```
+\normalsize
+First, let's take a look at the best model coefficients.
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+precis(FinalHMC, depth = 2)
+plot(precis(FinalHMC, depth = 2))
+```
+\normalsize
+
+
+These, however, are notoriously hard to interpret in models with interactions. For this reason, it is better to plot predicted effects for various combinations of predictors. 
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+visGroup <- function (model, ADS, CBS, xmin =2, ymax = -3)
+{
+groupID <- 1:3
+IC <- 5 
+data <- expand.grid(ADS = ADS,groupID = groupID, CBS = CBS, IC =  IC)
+posterior <- extract.samples(model, n = 1e5)
+mu <- link( model, data=data ) 
+colnames(mu) <- levels(summaries$group)
+muLong <- melt(mu)
+colnames(muLong) <- c("id", "group", "AdiffS")
+means <-  round(apply(mu , 2 , mean ), 2)
+mu_HPDI <- round(apply( mu , 2 , HPDI ),2)
+means <- as.data.frame(means)
+means$group <- rownames(means)
+rownames(means) <- NULL
+meansDisp <- cbind(means,t(as.data.frame(mu_HPDI)))
+meansDisp <- meansDisp[,c(1,3,4)]
+
+plot <- ggplot(muLong)+geom_violin(aes(x = group, y = AdiffS), alpha = 0.2)+
+  xlab("")+
+  labs(title = paste("ADS=", ADS, ", CBS=",  CBS, ", IC=5", sep = ""))+
+  theme_tufte(base_size = 6)
+#+ 
+#  annotation_custom(tableGrob(meansDisp), xmin=xmin,  ymax=ymax)
+return(plot)
+}
+
+visGroupA2C_2 <- visGroup(model = FinalHMC, ADS = 2,CBS = -2 , ymax = -2)
+visGroupA2C0 <- visGroup(model = FinalHMC, ADS = 2,CBS = 0 )
+visGroupA2C2 <- visGroup(model = FinalHMC, ADS = 2,CBS = 2, ymax = -3.5 )
+
+visGroupA0C_2 <- visGroup(model = FinalHMC, ADS = 0,CBS = -2 , ymax = -2)
+visGroupA0C0 <- visGroup(model = FinalHMC, ADS = 0,CBS = 0 )
+visGroupA0C2 <-  visGroup(model = FinalHMC, ADS = 0,CBS = 2, ymax = -4 )
+
+visGroupA2C_2 <-  visGroup(model = FinalHMC, ADS = 2,CBS = -2 , ymax = -2)
+visGroupA2C0 <- visGroup(model = FinalHMC, ADS = 2,CBS = 0 )
+visGroupA2C2 <- visGroup(model = FinalHMC, ADS = 2,CBS = 2, ymax = -4 )
+
+visGroupJoint <- ggarrange(visGroupA2C_2 , visGroupA2C0,visGroupA2C2, 
+          visGroupA0C_2, visGroupA0C0, visGroupA0C2,
+          visGroupA2C_2, visGroupA2C0, visGroupA2C2, ncol =3, nrow = 3)
+
+visGroupJoint
+```
+\normalsize
 
 
 

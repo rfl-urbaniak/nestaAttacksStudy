@@ -946,16 +946,21 @@ visContrastsCBS <- function(model = FinalHMC, ADS = ADS , IC =  5,
 
   return(ggplot(visContrastTreatment, aes(x = CBS, y = contrast, color = group ))+
             geom_pointrange(mapping = 
-        aes(ymin = cLow, ymax = cHigh), size = .2, alpha = .5) +theme_tufte())
+        aes(ymin = cLow, ymax = cHigh), size = .05, 
+        fatten = .1, alpha = .5,
+        position = position_dodge(width = .8))+
+          theme_tufte())
 }
 
 
 visContrastCBSJoint <- ggarrange(visContrastsCBS(FinalHMC,ADS = -2)+
-      ggtitle("ADS=-2")+ylim(c(-2.5,2.5))+ scale_color_discrete(guide=FALSE),
-          visContrastsCBS(FinalHMC,ADS = 0)+ggtitle("ADS=0")+
-        ylim(c(-2.5,2.5))+ scale_color_discrete(guide=FALSE),
-        visContrastsCBS(FinalHMC,ADS = 2)+ggtitle("ADS=2")+
-        ylim(c(-2.5,2.5))+ theme(legend.position = c(0.75, 0.1)), ncol = 3)
+      ggtitle("ADS = -2")+ylim(c(-2.5,2.5))+ scale_color_discrete(guide=FALSE),
+          visContrastsCBS(FinalHMC,ADS = 0)+ggtitle("ADS = 0")+
+        ylim(c(-2.5,2.5))+ scale_color_discrete(guide=FALSE)+
+        removeY,
+        visContrastsCBS(FinalHMC,ADS = 2)+ggtitle("ADS = 2")+
+        ylim(c(-2.5,2.5))+ theme(legend.position = c(0.75, 0.15))+
+        removeY, ncol = 3)
 
 visContrastCBSJoint2 <- annotate_figure(visContrastCBSJoint, 
       top = text_grob("(range restricted to (-2.5,2.5), IC at the rounded mean = 5)",
@@ -969,10 +974,157 @@ visContrastCBSJoint3
 \normalsize
 
 
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold",out.width = "100%", warning = FALSE, message = FALSE}
+
+visContrastsADS <- function(model = FinalHMC, CBS = CBS , IC =  5, 
+                            ADS = seq(-3,3,by  = 0.1))
+{
+  data <- expand.grid(CBS, groupID, IC , ADS)
+  colnames(data) <- c("CBS", "groupID", "IC", "ADS")
+  posterior <- extract.samples(model, n = 1e5)
+  mu <- link( model, data=data ) 
+  means <-  round(apply(mu , 2 , mean ), 4)
+  HPDIs <- round(apply( mu , 2 , HPDI ),4)
+  visContrastADS <- cbind(data,means,t(as.data.frame(HPDIs)))
+
+
+  ones <- 3 * (1:(nrow(visContrastADS)/3))-2
+  twos <- 3 * (1:(nrow(visContrastADS)/3))-1
+  threes <- 3 * (1:(nrow(visContrastADS)/3))
+  
+  colnames(visContrastADS)[c(6,7)] <- c("low", "high")
+  contrastADS <- numeric(nrow(visContrastADS))
+  for(i in threes){
+    contrastADS[i] <- visContrastADS$means[i] - visContrastADS$means[i-2]  
+  }
+  for(i in twos){
+    contrastADS[i] <- visContrastADS$means[i] - visContrastADS$means[i-1]  
+  }
+  visContrastADS$contrast <- contrastADS
+  visContrastADS$shift <-  visContrastADS$contrast - visContrastADS$means
+  for(i in ones){
+    visContrastADS$shift[i] <- 0
+  }
+  visContrastADS$cLow <- visContrastADS$low + visContrastADS$shift
+  visContrastADS$cHigh <- visContrastADS$high + visContrastADS$shift
+  
+  visContrastADS$group = rep(c("control", "empathy", "normative"), 
+                             nrow(visContrastADS)/3)
+  visContrastTreatmentADS <- visContrastADS[groupID !=1,]
+
+  return(ggplot(visContrastTreatmentADS, aes(x = ADS, y = contrast, color = group ))+
+  geom_pointrange(mapping = aes(ymin = cLow, ymax = cHigh), size = .05,
+                  fatten = .1, alpha = .5, 
+                  position = position_dodge(width = .8)) +theme_tufte())
+}
 
 
 
+visContrastADSJoint <- ggarrange(visContrastsADS(FinalHMC,CBS = -2)+ggtitle("CBS = -2")
+                                 +ylim(c(-2.5,2.5))+ scale_color_discrete(guide=FALSE),
+                                 visContrastsADS(FinalHMC,CBS = 0)+ggtitle("CBS = 0")
+                                 +ylim(c(-2.5,2.5))+ scale_color_discrete(guide=FALSE)+
+                                   removeY,
+                                 visContrastsADS(FinalHMC,CBS = 2)+ggtitle("CBS = 2")
+                                 +ylim(c(-2.5,2.5))+
+                                   theme(legend.position = c(0.75, 0.15))+
+                                   removeY, ncol = 3)
 
+visContrastADSJoint2 <- annotate_figure(visContrastADSJoint, 
+top = text_grob("(range restricted to (-2.5,2.5), IC at the rounded mean = 5)",
+                                                        size = 10))
+visContrastADSJoint3 <- annotate_figure(visContrastADSJoint2, 
+top = text_grob("Predicted distance from the control group mean vs. ADS (standardized)",
+                                                        size = 12))
+
+visContrastADSJoint3
+```
+\normalsize
+
+
+Now, let's inspect the impact of intervention counts by treatment type by looking at contrasts (distances from the control group mean) with 89% HPDIs by IC.
+
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE}
+visContrastsIC <- function(model = FinalHMC, CBS = CBS , IC =  seq(0,30,by = 1), ADS = ADS)
+{
+  groupID <- 1:3
+  data <- expand.grid(CBS, groupID, IC , ADS)
+  data
+  colnames(data) <- c("CBS", "groupID", "IC", "ADS")
+  posterior <- extract.samples(model, n = 1e5)
+  mu <- link( model, data=data ) 
+  means <-  round(apply(mu , 2 , mean ), 4)
+  HPDIs <- round(apply( mu , 2 , HPDI ),4)
+  visContrastIC <- cbind(data,means,t(as.data.frame(HPDIs)))
+  
+  ones <- 3 * (1:(nrow(visContrastIC)/3))-2
+  twos <- 3 * (1:(nrow(visContrastIC)/3))-1
+  threes <- 3 * (1:(nrow(visContrastIC)/3))
+  
+  colnames(visContrastIC)[c(6,7)] <- c("low", "high")
+  contrastIC <- numeric(nrow(visContrastIC))
+  for(i in threes){
+    contrastIC[i] <- visContrastIC$means[i] - visContrastIC$means[i-2]  
+  }
+  for(i in twos){
+    contrastIC[i] <- visContrastIC$means[i] - visContrastIC$means[i-1]  
+  }
+  visContrastIC$contrast <- contrastIC
+  visContrastIC$shift <-  visContrastIC$contrast - visContrastIC$means
+  for(i in ones){
+    visContrastIC$shift[i] <- 0
+  }
+  visContrastIC$cLow <- visContrastIC$low + visContrastIC$shift
+  visContrastIC$cHigh <- visContrastIC$high + visContrastIC$shift
+  
+  visContrastIC$group = rep(c("control", "empathy", "normative"), nrow(visContrastIC)/3)
+  visContrastTreatmentIC <- visContrastIC[groupID !=1,]
+  
+  return(ggplot(visContrastTreatmentIC, aes(x = IC, y = contrast, color = group ))+
+    geom_pointrange(mapping = aes(ymin = cLow, ymax = cHigh), size = .2, alpha = .5)+
+    ylim(c(-2,2)) +theme_tufte())
+}
+
+
+visContrastsICJoint <- ggarrange(
+visContrastsIC(ADS = 2, CBS = -2)+removeX+ 
+               theme(legend.position = c(0.3, 0.9),
+                     legend.key.size = unit(.3, 'cm'),
+                     legend.key.height = unit(.3, 'cm'),
+                     legend.key.width = unit(.3, 'cm'),
+                     legend.title= element_blank())+
+  ggtitle("CBS = -2")+
+  ylab("ADS = 2"),
+    visContrastsIC(ADS = 2, CBS = 0)+removeY+removeX+ scale_color_discrete(guide=FALSE)+
+  ggtitle("CBS = 0"),
+    visContrastsIC(ADS = 2, CBS = 2)+removeY+removeX+ggtitle("CBS = 2")+ scale_color_discrete(guide=FALSE),
+visContrastsIC(ADS = 0, CBS = -2)+removeX+ scale_color_discrete(guide=FALSE)+
+  ylab("ADS = 0"),
+    visContrastsIC(ADS = 0, CBS = 0)+removeY+removeX+ 
+  scale_color_discrete(guide=FALSE),
+    visContrastsIC(ADS = 0, CBS = 2)+removeY+removeX+ scale_color_discrete(guide=FALSE),  
+visContrastsIC(ADS = -2, CBS = -2)+ scale_color_discrete(guide=FALSE)+
+  ylab("ADS = -2"),
+    visContrastsIC(ADS = -2, CBS = 0)+removeY+ scale_color_discrete(guide=FALSE),
+    visContrastsIC(ADS = -2, CBS = 0)+removeY+ scale_color_discrete(guide=FALSE), 
+ncol = 3, nrow = 3
+)
+
+visContrastsICJoint2 <- annotate_figure(visContrastsICJoint, 
+top = text_grob("(range restricted to (-3,3))", 
+                size = 10))
+visContrastsICJoint3 <- annotate_figure(visContrastsICJoint2, 
+ top = text_grob("Predicted distance from the control group mean vs. IC (standardized)",
+                size = 12))
+
+visContrastsICJoint3
+```
+\normalsize
 
 
 

@@ -1710,16 +1710,21 @@ versus CBS, then versus ADS.
 
   \KeywordTok{return}\NormalTok{(}\KeywordTok{ggplot}\NormalTok{(visContrastTreatment, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ CBS, }\DataTypeTok{y =}\NormalTok{ contrast, }\DataTypeTok{color =}\NormalTok{ group ))}\OperatorTok{+}
 \StringTok{            }\KeywordTok{geom_pointrange}\NormalTok{(}\DataTypeTok{mapping =} 
-        \KeywordTok{aes}\NormalTok{(}\DataTypeTok{ymin =}\NormalTok{ cLow, }\DataTypeTok{ymax =}\NormalTok{ cHigh), }\DataTypeTok{size =} \FloatTok{.2}\NormalTok{, }\DataTypeTok{alpha =} \FloatTok{.5}\NormalTok{) }\OperatorTok{+}\KeywordTok{theme_tufte}\NormalTok{())}
+        \KeywordTok{aes}\NormalTok{(}\DataTypeTok{ymin =}\NormalTok{ cLow, }\DataTypeTok{ymax =}\NormalTok{ cHigh), }\DataTypeTok{size =} \FloatTok{.05}\NormalTok{, }
+        \DataTypeTok{fatten =} \FloatTok{.1}\NormalTok{, }\DataTypeTok{alpha =} \FloatTok{.5}\NormalTok{,}
+        \DataTypeTok{position =} \KeywordTok{position_dodge}\NormalTok{(}\DataTypeTok{width =} \FloatTok{.8}\NormalTok{))}\OperatorTok{+}
+\StringTok{          }\KeywordTok{theme_tufte}\NormalTok{())}
 \NormalTok{\}}
 
 
 \NormalTok{visContrastCBSJoint <-}\StringTok{ }\KeywordTok{ggarrange}\NormalTok{(}\KeywordTok{visContrastsCBS}\NormalTok{(FinalHMC,}\DataTypeTok{ADS =} \DecValTok{-2}\NormalTok{)}\OperatorTok{+}
-\StringTok{      }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"ADS=-2"}\NormalTok{)}\OperatorTok{+}\KeywordTok{ylim}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{2.5}\NormalTok{,}\FloatTok{2.5}\NormalTok{))}\OperatorTok{+}\StringTok{ }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{),}
-          \KeywordTok{visContrastsCBS}\NormalTok{(FinalHMC,}\DataTypeTok{ADS =} \DecValTok{0}\NormalTok{)}\OperatorTok{+}\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"ADS=0"}\NormalTok{)}\OperatorTok{+}
-\StringTok{        }\KeywordTok{ylim}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{2.5}\NormalTok{,}\FloatTok{2.5}\NormalTok{))}\OperatorTok{+}\StringTok{ }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{),}
-        \KeywordTok{visContrastsCBS}\NormalTok{(FinalHMC,}\DataTypeTok{ADS =} \DecValTok{2}\NormalTok{)}\OperatorTok{+}\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"ADS=2"}\NormalTok{)}\OperatorTok{+}
-\StringTok{        }\KeywordTok{ylim}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{2.5}\NormalTok{,}\FloatTok{2.5}\NormalTok{))}\OperatorTok{+}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.position =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.75}\NormalTok{, }\FloatTok{0.1}\NormalTok{)), }\DataTypeTok{ncol =} \DecValTok{3}\NormalTok{)}
+\StringTok{      }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"ADS = -2"}\NormalTok{)}\OperatorTok{+}\KeywordTok{ylim}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{2.5}\NormalTok{,}\FloatTok{2.5}\NormalTok{))}\OperatorTok{+}\StringTok{ }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{),}
+          \KeywordTok{visContrastsCBS}\NormalTok{(FinalHMC,}\DataTypeTok{ADS =} \DecValTok{0}\NormalTok{)}\OperatorTok{+}\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"ADS = 0"}\NormalTok{)}\OperatorTok{+}
+\StringTok{        }\KeywordTok{ylim}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{2.5}\NormalTok{,}\FloatTok{2.5}\NormalTok{))}\OperatorTok{+}\StringTok{ }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{)}\OperatorTok{+}
+\StringTok{        }\NormalTok{removeY,}
+        \KeywordTok{visContrastsCBS}\NormalTok{(FinalHMC,}\DataTypeTok{ADS =} \DecValTok{2}\NormalTok{)}\OperatorTok{+}\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"ADS = 2"}\NormalTok{)}\OperatorTok{+}
+\StringTok{        }\KeywordTok{ylim}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{2.5}\NormalTok{,}\FloatTok{2.5}\NormalTok{))}\OperatorTok{+}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.position =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.75}\NormalTok{, }\FloatTok{0.15}\NormalTok{))}\OperatorTok{+}
+\StringTok{        }\NormalTok{removeY, }\DataTypeTok{ncol =} \DecValTok{3}\NormalTok{)}
 
 \NormalTok{visContrastCBSJoint2 <-}\StringTok{ }\KeywordTok{annotate_figure}\NormalTok{(visContrastCBSJoint, }
       \DataTypeTok{top =} \KeywordTok{text_grob}\NormalTok{(}\StringTok{"(range restricted to (-2.5,2.5), IC at the rounded mean = 5)"}\NormalTok{,}
@@ -1733,6 +1738,167 @@ versus CBS, then versus ADS.
 \end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-15-1} \end{center}
+
+\normalsize
+
+\vspace{1mm} \footnotesize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{visContrastsADS <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(}\DataTypeTok{model =}\NormalTok{ FinalHMC, }\DataTypeTok{CBS =}\NormalTok{ CBS , }\DataTypeTok{IC =}  \DecValTok{5}\NormalTok{, }
+                            \DataTypeTok{ADS =} \KeywordTok{seq}\NormalTok{(}\OperatorTok{-}\DecValTok{3}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DataTypeTok{by  =} \FloatTok{0.1}\NormalTok{))}
+\NormalTok{\{}
+\NormalTok{  data <-}\StringTok{ }\KeywordTok{expand.grid}\NormalTok{(CBS, groupID, IC , ADS)}
+  \KeywordTok{colnames}\NormalTok{(data) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"CBS"}\NormalTok{, }\StringTok{"groupID"}\NormalTok{, }\StringTok{"IC"}\NormalTok{, }\StringTok{"ADS"}\NormalTok{)}
+\NormalTok{  posterior <-}\StringTok{ }\KeywordTok{extract.samples}\NormalTok{(model, }\DataTypeTok{n =} \FloatTok{1e5}\NormalTok{)}
+\NormalTok{  mu <-}\StringTok{ }\KeywordTok{link}\NormalTok{( model, }\DataTypeTok{data=}\NormalTok{data ) }
+\NormalTok{  means <-}\StringTok{  }\KeywordTok{round}\NormalTok{(}\KeywordTok{apply}\NormalTok{(mu , }\DecValTok{2}\NormalTok{ , mean ), }\DecValTok{4}\NormalTok{)}
+\NormalTok{  HPDIs <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{apply}\NormalTok{( mu , }\DecValTok{2}\NormalTok{ , HPDI ),}\DecValTok{4}\NormalTok{)}
+\NormalTok{  visContrastADS <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(data,means,}\KeywordTok{t}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(HPDIs)))}
+
+
+\NormalTok{  ones <-}\StringTok{ }\DecValTok{3} \OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{(}\KeywordTok{nrow}\NormalTok{(visContrastADS)}\OperatorTok{/}\DecValTok{3}\NormalTok{))}\OperatorTok{-}\DecValTok{2}
+\NormalTok{  twos <-}\StringTok{ }\DecValTok{3} \OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{(}\KeywordTok{nrow}\NormalTok{(visContrastADS)}\OperatorTok{/}\DecValTok{3}\NormalTok{))}\OperatorTok{-}\DecValTok{1}
+\NormalTok{  threes <-}\StringTok{ }\DecValTok{3} \OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{(}\KeywordTok{nrow}\NormalTok{(visContrastADS)}\OperatorTok{/}\DecValTok{3}\NormalTok{))}
+  
+  \KeywordTok{colnames}\NormalTok{(visContrastADS)[}\KeywordTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{)] <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"low"}\NormalTok{, }\StringTok{"high"}\NormalTok{)}
+\NormalTok{  contrastADS <-}\StringTok{ }\KeywordTok{numeric}\NormalTok{(}\KeywordTok{nrow}\NormalTok{(visContrastADS))}
+  \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in}\NormalTok{ threes)\{}
+\NormalTok{    contrastADS[i] <-}\StringTok{ }\NormalTok{visContrastADS}\OperatorTok{$}\NormalTok{means[i] }\OperatorTok{-}\StringTok{ }\NormalTok{visContrastADS}\OperatorTok{$}\NormalTok{means[i}\DecValTok{-2}\NormalTok{]  }
+\NormalTok{  \}}
+  \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in}\NormalTok{ twos)\{}
+\NormalTok{    contrastADS[i] <-}\StringTok{ }\NormalTok{visContrastADS}\OperatorTok{$}\NormalTok{means[i] }\OperatorTok{-}\StringTok{ }\NormalTok{visContrastADS}\OperatorTok{$}\NormalTok{means[i}\DecValTok{-1}\NormalTok{]  }
+\NormalTok{  \}}
+\NormalTok{  visContrastADS}\OperatorTok{$}\NormalTok{contrast <-}\StringTok{ }\NormalTok{contrastADS}
+\NormalTok{  visContrastADS}\OperatorTok{$}\NormalTok{shift <-}\StringTok{  }\NormalTok{visContrastADS}\OperatorTok{$}\NormalTok{contrast }\OperatorTok{-}\StringTok{ }\NormalTok{visContrastADS}\OperatorTok{$}\NormalTok{means}
+  \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in}\NormalTok{ ones)\{}
+\NormalTok{    visContrastADS}\OperatorTok{$}\NormalTok{shift[i] <-}\StringTok{ }\DecValTok{0}
+\NormalTok{  \}}
+\NormalTok{  visContrastADS}\OperatorTok{$}\NormalTok{cLow <-}\StringTok{ }\NormalTok{visContrastADS}\OperatorTok{$}\NormalTok{low }\OperatorTok{+}\StringTok{ }\NormalTok{visContrastADS}\OperatorTok{$}\NormalTok{shift}
+\NormalTok{  visContrastADS}\OperatorTok{$}\NormalTok{cHigh <-}\StringTok{ }\NormalTok{visContrastADS}\OperatorTok{$}\NormalTok{high }\OperatorTok{+}\StringTok{ }\NormalTok{visContrastADS}\OperatorTok{$}\NormalTok{shift}
+  
+\NormalTok{  visContrastADS}\OperatorTok{$}\NormalTok{group =}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"control"}\NormalTok{, }\StringTok{"empathy"}\NormalTok{, }\StringTok{"normative"}\NormalTok{), }
+                             \KeywordTok{nrow}\NormalTok{(visContrastADS)}\OperatorTok{/}\DecValTok{3}\NormalTok{)}
+\NormalTok{  visContrastTreatmentADS <-}\StringTok{ }\NormalTok{visContrastADS[groupID }\OperatorTok{!=}\DecValTok{1}\NormalTok{,]}
+
+  \KeywordTok{return}\NormalTok{(}\KeywordTok{ggplot}\NormalTok{(visContrastTreatmentADS, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ ADS, }\DataTypeTok{y =}\NormalTok{ contrast, }\DataTypeTok{color =}\NormalTok{ group ))}\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_pointrange}\NormalTok{(}\DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{ymin =}\NormalTok{ cLow, }\DataTypeTok{ymax =}\NormalTok{ cHigh), }\DataTypeTok{size =} \FloatTok{.05}\NormalTok{,}
+                  \DataTypeTok{fatten =} \FloatTok{.1}\NormalTok{, }\DataTypeTok{alpha =} \FloatTok{.5}\NormalTok{, }
+                  \DataTypeTok{position =} \KeywordTok{position_dodge}\NormalTok{(}\DataTypeTok{width =} \FloatTok{.8}\NormalTok{)) }\OperatorTok{+}\KeywordTok{theme_tufte}\NormalTok{())}
+\NormalTok{\}}
+
+
+
+\NormalTok{visContrastADSJoint <-}\StringTok{ }\KeywordTok{ggarrange}\NormalTok{(}\KeywordTok{visContrastsADS}\NormalTok{(FinalHMC,}\DataTypeTok{CBS =} \DecValTok{-2}\NormalTok{)}\OperatorTok{+}\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"CBS = -2"}\NormalTok{)}
+                                 \OperatorTok{+}\KeywordTok{ylim}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{2.5}\NormalTok{,}\FloatTok{2.5}\NormalTok{))}\OperatorTok{+}\StringTok{ }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{),}
+                                 \KeywordTok{visContrastsADS}\NormalTok{(FinalHMC,}\DataTypeTok{CBS =} \DecValTok{0}\NormalTok{)}\OperatorTok{+}\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"CBS = 0"}\NormalTok{)}
+                                 \OperatorTok{+}\KeywordTok{ylim}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{2.5}\NormalTok{,}\FloatTok{2.5}\NormalTok{))}\OperatorTok{+}\StringTok{ }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{)}\OperatorTok{+}
+\StringTok{                                   }\NormalTok{removeY,}
+                                 \KeywordTok{visContrastsADS}\NormalTok{(FinalHMC,}\DataTypeTok{CBS =} \DecValTok{2}\NormalTok{)}\OperatorTok{+}\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"CBS = 2"}\NormalTok{)}
+                                 \OperatorTok{+}\KeywordTok{ylim}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\FloatTok{2.5}\NormalTok{,}\FloatTok{2.5}\NormalTok{))}\OperatorTok{+}
+\StringTok{                                   }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.position =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.75}\NormalTok{, }\FloatTok{0.15}\NormalTok{))}\OperatorTok{+}
+\StringTok{                                   }\NormalTok{removeY, }\DataTypeTok{ncol =} \DecValTok{3}\NormalTok{)}
+
+\NormalTok{visContrastADSJoint2 <-}\StringTok{ }\KeywordTok{annotate_figure}\NormalTok{(visContrastADSJoint, }
+\DataTypeTok{top =} \KeywordTok{text_grob}\NormalTok{(}\StringTok{"(range restricted to (-2.5,2.5), IC at the rounded mean = 5)"}\NormalTok{,}
+                                                        \DataTypeTok{size =} \DecValTok{10}\NormalTok{))}
+\NormalTok{visContrastADSJoint3 <-}\StringTok{ }\KeywordTok{annotate_figure}\NormalTok{(visContrastADSJoint2, }
+\DataTypeTok{top =} \KeywordTok{text_grob}\NormalTok{(}\StringTok{"Predicted distance from the control group mean vs. ADS (standardized)"}\NormalTok{,}
+                                                        \DataTypeTok{size =} \DecValTok{12}\NormalTok{))}
+
+\NormalTok{visContrastADSJoint3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-16-1} \end{center}
+
+\normalsize
+
+Now, let's inspect the impact of intervention counts by treatment type
+by looking at contrasts (distances from the control group mean) with
+89\% HPDIs by IC.
+
+\vspace{1mm} \footnotesize
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{visContrastsIC <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(}\DataTypeTok{model =}\NormalTok{ FinalHMC, }\DataTypeTok{CBS =}\NormalTok{ CBS , }\DataTypeTok{IC =}  \KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{30}\NormalTok{,}\DataTypeTok{by =} \DecValTok{1}\NormalTok{), }\DataTypeTok{ADS =}\NormalTok{ ADS)}
+\NormalTok{\{}
+\NormalTok{  groupID <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{3}
+\NormalTok{  data <-}\StringTok{ }\KeywordTok{expand.grid}\NormalTok{(CBS, groupID, IC , ADS)}
+\NormalTok{  data}
+  \KeywordTok{colnames}\NormalTok{(data) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"CBS"}\NormalTok{, }\StringTok{"groupID"}\NormalTok{, }\StringTok{"IC"}\NormalTok{, }\StringTok{"ADS"}\NormalTok{)}
+\NormalTok{  posterior <-}\StringTok{ }\KeywordTok{extract.samples}\NormalTok{(model, }\DataTypeTok{n =} \FloatTok{1e5}\NormalTok{)}
+\NormalTok{  mu <-}\StringTok{ }\KeywordTok{link}\NormalTok{( model, }\DataTypeTok{data=}\NormalTok{data ) }
+\NormalTok{  means <-}\StringTok{  }\KeywordTok{round}\NormalTok{(}\KeywordTok{apply}\NormalTok{(mu , }\DecValTok{2}\NormalTok{ , mean ), }\DecValTok{4}\NormalTok{)}
+\NormalTok{  HPDIs <-}\StringTok{ }\KeywordTok{round}\NormalTok{(}\KeywordTok{apply}\NormalTok{( mu , }\DecValTok{2}\NormalTok{ , HPDI ),}\DecValTok{4}\NormalTok{)}
+\NormalTok{  visContrastIC <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(data,means,}\KeywordTok{t}\NormalTok{(}\KeywordTok{as.data.frame}\NormalTok{(HPDIs)))}
+  
+\NormalTok{  ones <-}\StringTok{ }\DecValTok{3} \OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{(}\KeywordTok{nrow}\NormalTok{(visContrastIC)}\OperatorTok{/}\DecValTok{3}\NormalTok{))}\OperatorTok{-}\DecValTok{2}
+\NormalTok{  twos <-}\StringTok{ }\DecValTok{3} \OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{(}\KeywordTok{nrow}\NormalTok{(visContrastIC)}\OperatorTok{/}\DecValTok{3}\NormalTok{))}\OperatorTok{-}\DecValTok{1}
+\NormalTok{  threes <-}\StringTok{ }\DecValTok{3} \OperatorTok{*}\StringTok{ }\NormalTok{(}\DecValTok{1}\OperatorTok{:}\NormalTok{(}\KeywordTok{nrow}\NormalTok{(visContrastIC)}\OperatorTok{/}\DecValTok{3}\NormalTok{))}
+  
+  \KeywordTok{colnames}\NormalTok{(visContrastIC)[}\KeywordTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{7}\NormalTok{)] <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"low"}\NormalTok{, }\StringTok{"high"}\NormalTok{)}
+\NormalTok{  contrastIC <-}\StringTok{ }\KeywordTok{numeric}\NormalTok{(}\KeywordTok{nrow}\NormalTok{(visContrastIC))}
+  \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in}\NormalTok{ threes)\{}
+\NormalTok{    contrastIC[i] <-}\StringTok{ }\NormalTok{visContrastIC}\OperatorTok{$}\NormalTok{means[i] }\OperatorTok{-}\StringTok{ }\NormalTok{visContrastIC}\OperatorTok{$}\NormalTok{means[i}\DecValTok{-2}\NormalTok{]  }
+\NormalTok{  \}}
+  \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in}\NormalTok{ twos)\{}
+\NormalTok{    contrastIC[i] <-}\StringTok{ }\NormalTok{visContrastIC}\OperatorTok{$}\NormalTok{means[i] }\OperatorTok{-}\StringTok{ }\NormalTok{visContrastIC}\OperatorTok{$}\NormalTok{means[i}\DecValTok{-1}\NormalTok{]  }
+\NormalTok{  \}}
+\NormalTok{  visContrastIC}\OperatorTok{$}\NormalTok{contrast <-}\StringTok{ }\NormalTok{contrastIC}
+\NormalTok{  visContrastIC}\OperatorTok{$}\NormalTok{shift <-}\StringTok{  }\NormalTok{visContrastIC}\OperatorTok{$}\NormalTok{contrast }\OperatorTok{-}\StringTok{ }\NormalTok{visContrastIC}\OperatorTok{$}\NormalTok{means}
+  \ControlFlowTok{for}\NormalTok{(i }\ControlFlowTok{in}\NormalTok{ ones)\{}
+\NormalTok{    visContrastIC}\OperatorTok{$}\NormalTok{shift[i] <-}\StringTok{ }\DecValTok{0}
+\NormalTok{  \}}
+\NormalTok{  visContrastIC}\OperatorTok{$}\NormalTok{cLow <-}\StringTok{ }\NormalTok{visContrastIC}\OperatorTok{$}\NormalTok{low }\OperatorTok{+}\StringTok{ }\NormalTok{visContrastIC}\OperatorTok{$}\NormalTok{shift}
+\NormalTok{  visContrastIC}\OperatorTok{$}\NormalTok{cHigh <-}\StringTok{ }\NormalTok{visContrastIC}\OperatorTok{$}\NormalTok{high }\OperatorTok{+}\StringTok{ }\NormalTok{visContrastIC}\OperatorTok{$}\NormalTok{shift}
+  
+\NormalTok{  visContrastIC}\OperatorTok{$}\NormalTok{group =}\StringTok{ }\KeywordTok{rep}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\StringTok{"control"}\NormalTok{, }\StringTok{"empathy"}\NormalTok{, }\StringTok{"normative"}\NormalTok{), }\KeywordTok{nrow}\NormalTok{(visContrastIC)}\OperatorTok{/}\DecValTok{3}\NormalTok{)}
+\NormalTok{  visContrastTreatmentIC <-}\StringTok{ }\NormalTok{visContrastIC[groupID }\OperatorTok{!=}\DecValTok{1}\NormalTok{,]}
+  
+  \KeywordTok{return}\NormalTok{(}\KeywordTok{ggplot}\NormalTok{(visContrastTreatmentIC, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ IC, }\DataTypeTok{y =}\NormalTok{ contrast, }\DataTypeTok{color =}\NormalTok{ group ))}\OperatorTok{+}
+\StringTok{    }\KeywordTok{geom_pointrange}\NormalTok{(}\DataTypeTok{mapping =} \KeywordTok{aes}\NormalTok{(}\DataTypeTok{ymin =}\NormalTok{ cLow, }\DataTypeTok{ymax =}\NormalTok{ cHigh), }\DataTypeTok{size =} \FloatTok{.2}\NormalTok{, }\DataTypeTok{alpha =} \FloatTok{.5}\NormalTok{)}\OperatorTok{+}
+\StringTok{    }\KeywordTok{ylim}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\OperatorTok{-}\DecValTok{2}\NormalTok{,}\DecValTok{2}\NormalTok{)) }\OperatorTok{+}\KeywordTok{theme_tufte}\NormalTok{())}
+\NormalTok{\}}
+
+
+\NormalTok{visContrastsICJoint <-}\StringTok{ }\KeywordTok{ggarrange}\NormalTok{(}
+\KeywordTok{visContrastsIC}\NormalTok{(}\DataTypeTok{ADS =} \DecValTok{2}\NormalTok{, }\DataTypeTok{CBS =} \DecValTok{-2}\NormalTok{)}\OperatorTok{+}\NormalTok{removeX}\OperatorTok{+}\StringTok{ }
+\StringTok{               }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{legend.position =} \KeywordTok{c}\NormalTok{(}\FloatTok{0.3}\NormalTok{, }\FloatTok{0.9}\NormalTok{),}
+                     \DataTypeTok{legend.key.size =} \KeywordTok{unit}\NormalTok{(.}\DecValTok{3}\NormalTok{, }\StringTok{'cm'}\NormalTok{),}
+                     \DataTypeTok{legend.key.height =} \KeywordTok{unit}\NormalTok{(.}\DecValTok{3}\NormalTok{, }\StringTok{'cm'}\NormalTok{),}
+                     \DataTypeTok{legend.key.width =} \KeywordTok{unit}\NormalTok{(.}\DecValTok{3}\NormalTok{, }\StringTok{'cm'}\NormalTok{),}
+                     \DataTypeTok{legend.title=} \KeywordTok{element_blank}\NormalTok{())}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"CBS = -2"}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"ADS = 2"}\NormalTok{),}
+    \KeywordTok{visContrastsIC}\NormalTok{(}\DataTypeTok{ADS =} \DecValTok{2}\NormalTok{, }\DataTypeTok{CBS =} \DecValTok{0}\NormalTok{)}\OperatorTok{+}\NormalTok{removeY}\OperatorTok{+}\NormalTok{removeX}\OperatorTok{+}\StringTok{ }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"CBS = 0"}\NormalTok{),}
+    \KeywordTok{visContrastsIC}\NormalTok{(}\DataTypeTok{ADS =} \DecValTok{2}\NormalTok{, }\DataTypeTok{CBS =} \DecValTok{2}\NormalTok{)}\OperatorTok{+}\NormalTok{removeY}\OperatorTok{+}\NormalTok{removeX}\OperatorTok{+}\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"CBS = 2"}\NormalTok{)}\OperatorTok{+}\StringTok{ }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{),}
+\KeywordTok{visContrastsIC}\NormalTok{(}\DataTypeTok{ADS =} \DecValTok{0}\NormalTok{, }\DataTypeTok{CBS =} \DecValTok{-2}\NormalTok{)}\OperatorTok{+}\NormalTok{removeX}\OperatorTok{+}\StringTok{ }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"ADS = 0"}\NormalTok{),}
+    \KeywordTok{visContrastsIC}\NormalTok{(}\DataTypeTok{ADS =} \DecValTok{0}\NormalTok{, }\DataTypeTok{CBS =} \DecValTok{0}\NormalTok{)}\OperatorTok{+}\NormalTok{removeY}\OperatorTok{+}\NormalTok{removeX}\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{),}
+    \KeywordTok{visContrastsIC}\NormalTok{(}\DataTypeTok{ADS =} \DecValTok{0}\NormalTok{, }\DataTypeTok{CBS =} \DecValTok{2}\NormalTok{)}\OperatorTok{+}\NormalTok{removeY}\OperatorTok{+}\NormalTok{removeX}\OperatorTok{+}\StringTok{ }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{),  }
+\KeywordTok{visContrastsIC}\NormalTok{(}\DataTypeTok{ADS =} \DecValTok{-2}\NormalTok{, }\DataTypeTok{CBS =} \DecValTok{-2}\NormalTok{)}\OperatorTok{+}\StringTok{ }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{)}\OperatorTok{+}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"ADS = -2"}\NormalTok{),}
+    \KeywordTok{visContrastsIC}\NormalTok{(}\DataTypeTok{ADS =} \DecValTok{-2}\NormalTok{, }\DataTypeTok{CBS =} \DecValTok{0}\NormalTok{)}\OperatorTok{+}\NormalTok{removeY}\OperatorTok{+}\StringTok{ }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{),}
+    \KeywordTok{visContrastsIC}\NormalTok{(}\DataTypeTok{ADS =} \DecValTok{-2}\NormalTok{, }\DataTypeTok{CBS =} \DecValTok{0}\NormalTok{)}\OperatorTok{+}\NormalTok{removeY}\OperatorTok{+}\StringTok{ }\KeywordTok{scale_color_discrete}\NormalTok{(}\DataTypeTok{guide=}\OtherTok{FALSE}\NormalTok{), }
+\DataTypeTok{ncol =} \DecValTok{3}\NormalTok{, }\DataTypeTok{nrow =} \DecValTok{3}
+\NormalTok{)}
+
+\NormalTok{visContrastsICJoint2 <-}\StringTok{ }\KeywordTok{annotate_figure}\NormalTok{(visContrastsICJoint, }
+\DataTypeTok{top =} \KeywordTok{text_grob}\NormalTok{(}\StringTok{"(range restricted to (-3,3))"}\NormalTok{, }
+                \DataTypeTok{size =} \DecValTok{10}\NormalTok{))}
+\NormalTok{visContrastsICJoint3 <-}\StringTok{ }\KeywordTok{annotate_figure}\NormalTok{(visContrastsICJoint2, }
+ \DataTypeTok{top =} \KeywordTok{text_grob}\NormalTok{(}\StringTok{"Predicted distance from the control group mean vs. IC (standardized)"}\NormalTok{,}
+                \DataTypeTok{size =} \DecValTok{12}\NormalTok{))}
+
+\NormalTok{visContrastsICJoint3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/unnamed-chunk-17-1} \end{center}
 
 \normalsize
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.16)  13 SEP 2021 17:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.16)  14 SEP 2021 07:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2555,50 +2555,81 @@ df  used on input line 1592.
 Package xcolor Warning: Incompatible color definition on input line 1602.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1649.
+Package xcolor Warning: Incompatible color definition on input line 1657.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1649.
+Package xcolor Warning: Incompatible color definition on input line 1657.
 
 
-Underfull \vbox (badness 10000) detected at line 1649
+Underfull \vbox (badness 10000) detected at line 1657
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1649.
+Package xcolor Warning: Incompatible color definition on input line 1657.
 
 [21 <./bayesianReport_files/figure-latex/unnamed-chunk-13-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 1649.
+Package xcolor Warning: Incompatible color definition on input line 1657.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1649.
+Package xcolor Warning: Incompatible color definition on input line 1657.
 
-<bayesianReport_files/figure-latex/unnamed-chunk-14-1.pdf, id=293, 459.7175pt x
- 314.17375pt>
+<bayesianReport_files/figure-latex/unnamed-chunk-14-1.pdf, id=293, 462.72874pt 
+x 305.14pt>
 File: bayesianReport_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (ty
 pe pdf)
 <use bayesianReport_files/figure-latex/unnamed-chunk-14-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/unnamed-chunk-14-1.p
-df  used on input line 1651.
-(pdftex.def)             Requested size: 408.31955pt x 279.04807pt.
+df  used on input line 1659.
+(pdftex.def)             Requested size: 408.29695pt x 269.2457pt.
+
+Package xcolor Warning: Incompatible color definition on input line 1669.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1733.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1733.
+
+
+Underfull \vbox (badness 10000) detected at line 1733
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 1733.
+
 [22 <./bayesianReport_files/figure-latex/unnamed-chunk-14-1.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1660.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1660.
+
+Package xcolor Warning: Incompatible color definition on input line 1733.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1733.
+
+<bayesianReport_files/figure-latex/unnamed-chunk-15-1.pdf, id=310, 458.71375pt 
+x 315.1775pt>
+File: bayesianReport_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (ty
+pe pdf)
+<use bayesianReport_files/figure-latex/unnamed-chunk-15-1.pdf>
+Package pdftex.def Info: bayesianReport_files/figure-latex/unnamed-chunk-15-1.p
+df  used on input line 1735.
+(pdftex.def)             Requested size: 408.31696pt x 280.55037pt.
+[23 <./bayesianReport_files/figure-latex/unnamed-chunk-15-1.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1744.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1744.
 (./bayesianReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1660.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1660.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1744.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1744.
 
 Package rerunfilecheck Info: File `bayesianReport.out' has not changed.
 (rerunfilecheck)             Checksum: 39FA0B7DEBC13FC70F7D907CE33E6905;933.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1660.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1744.
  ) 
 Here is how much of TeX's memory you used:
- 31631 strings out of 492982
- 546989 string characters out of 6134896
- 741582 words of memory out of 5000000
- 34433 multiletter control sequences out of 15000+600000
- 92242 words of font info for 238 fonts, out of 8000000 for 9000
+ 31639 strings out of 492982
+ 547291 string characters out of 6134896
+ 741581 words of memory out of 5000000
+ 34437 multiletter control sequences out of 15000+600000
+ 92372 words of font info for 240 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,10n,76p,8845b,712s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
@@ -2614,10 +2645,10 @@ ive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bayesianReport.pdf (22 pages, 635731 bytes).
+Output written on bayesianReport.pdf (23 pages, 668680 bytes).
 PDF statistics:
- 366 PDF objects out of 1000 (max. 8388607)
- 280 compressed objects within 3 object streams
- 46 named destinations out of 1000 (max. 500000)
- 22664 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 384 PDF objects out of 1000 (max. 8388607)
+ 294 compressed objects within 3 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 22669 words of extra memory for PDF output out of 24883 (max. 10000000)
 

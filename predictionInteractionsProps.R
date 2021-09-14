@@ -1,5 +1,14 @@
 source("utils/plotPriors.R")
 
+removeX <-   theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+
+removeY <-   theme(axis.title.y=element_blank(),
+                   axis.text.y=element_blank(),
+                   axis.ticks.y=element_blank())
+
+
 summaries <- readRDS(file = "datasets/Summaries.rds")
 summaries$ABS <- standardize(summaries$AB)
 summaries$CBS <- standardize(summaries$CB)
@@ -199,117 +208,185 @@ meansDisp <- meansDisp[,c(1,3,4)]
 
 plot <- ggplot(muLong)+geom_violin(aes(x = group, y = AdiffS), alpha = 0.2)+
   xlab("")+
-  labs(title = paste("ADS=", ADS, ", CBS=",  CBS, ", IC=5", sep = ""))+
-  theme_tufte()+ 
-  annotation_custom(tableGrob(meansDisp), xmin=xmin,  ymax=ymax)
+  labs(title = paste("ADS=", ADS, ", CBS=",  CBS,  sep = ""))+
+  theme_tufte()+ylim(c(-4,4))
+#+   annotation_custom(tableGrob(meansDisp), xmin=xmin,  ymax=ymax)
 return(plot)
 }
 
 
-visGroupA2C_2 <- visGroup(model = FinalHMC, ADS = 2,CBS = -2 , ymax = -2)
+visGroupA2C_2 <- visGroup(model = FinalHMC, ADS = 2,CBS = -2)
 visGroupA2C0 <- visGroup(model = FinalHMC, ADS = 2,CBS = 0 )
-visGroupA2C2 <- visGroup(model = FinalHMC, ADS = 2,CBS = 2, ymax = -3.5 )
+visGroupA2C2 <- visGroup(model = FinalHMC, ADS = 2,CBS = 2)
 
-visGroupA0C_2 <- visGroup(model = FinalHMC, ADS = 0,CBS = -2 , ymax = -2)
+visGroupA0C_2 <- visGroup(model = FinalHMC, ADS = 0,CBS = -2 )
 visGroupA0C0 <- visGroup(model = FinalHMC, ADS = 0,CBS = 0 )
-visGroupA0C2 <-  visGroup(model = FinalHMC, ADS = 0,CBS = 2, ymax = -4 )
+visGroupA0C2 <-  visGroup(model = FinalHMC, ADS = 0,CBS = 2)
 
-visGroupA2C_2 <-  visGroup(model = FinalHMC, ADS = 2,CBS = -2 , ymax = -2)
+visGroupA2C_2 <-  visGroup(model = FinalHMC, ADS = 2,CBS = -2 )
 visGroupA2C0 <- visGroup(model = FinalHMC, ADS = 2,CBS = 0 )
-visGroupA2C2 <- visGroup(model = FinalHMC, ADS = 2,CBS = 2, ymax = -4 )
+visGroupA2C2 <- visGroup(model = FinalHMC, ADS = 2,CBS = 2 )
 
-ggarrange(visGroupA2C_2 , visGroupA2C0,visGroupA2C2, 
-          visGroupA0C_2, visGroupA0C0, visGroupA0C2,
-          visGroupA2C_2, visGroupA2C0, visGroupA2C2, ncol =3, nrow = 3)
-
-
+ggarrange(visGroupA2C_2+removeX , visGroupA2C0+theme_void(),visGroupA2C2+theme_void(), 
+          visGroupA0C_2+removeX, visGroupA0C0+theme_void(), visGroupA0C2+theme_void(),
+          visGroupA2C_2, visGroupA2C0+removeY, visGroupA2C2+removeY, ncol =3, nrow = 3)
 
 
 
-ggsave("images/predictedGroups0.pdf", width = 20, height = 15, units = "cm", dpi = 450)                             
+#now contrast
 
 
 
-#
-#now moving to posteriors, first by group
-#first by group for ADS = CBS = -1.3
-ADS <- -1.3
-CBS <- -1.3
-groupID <- 1:3
+model <- FinalHMC
+
 IC <- 5 
-data <- expand.grid(ADS = ADS,groupID = groupID, CBS = CBS, IC =  IC)
-data
-posterior <- extract.samples(InteractionsModelDiff, n = 1e5)
-mu <- link( InteractionsModelDiff, data=data ) 
-head(mu)
-colnames(mu) <- levels(summaries$group)
-muLong <- melt(mu)
-colnames(muLong) <- c("id", "group", "AdiffS")
-head(muLong)
-means <-  apply(mu , 2 , mean )
-means <- as.data.frame(means)
-means$group <- rownames(means)
-rownames(means) <- NULL
+ADS = 0
+CBS = seq(-3,3,by  = 0.1)
 
-ggplot(muLong)+geom_violin(aes(x = group, y = AdiffS, fill = group, color = group), alpha = 0.2)+theme_tufte()+xlab("")+labs(title = "Posterior dstribution of attack change", subtitle = "(at ADS = CBS = -1.3, IC at mean = 5)")+  geom_hline(data = means, aes(yintercept = means, colour = group), size = 0.3)+xlab("")+ylab("change in attacks (standardized)") +geom_hline(yintercept = noChange, size = .3)+annotate(geom = "text", label = "no change in count", x = "empathy", y = 0.65, hjust = 0, vjust = 0, size = 4) 
+visContrastsCBS <- function(model = FinalHMC, ADS = ADS , IC =  5, CBS = seq(-3,3,by  = 0.1))
+  {
+  groupID <- 1:3
+  data <- expand.grid(ADS, groupID, IC , CBS)
+  colnames(data) <- c("ADS", "groupID", "IC", "CBS")
+  posterior <- extract.samples(model, n = 1e5)
+  link( model, data=data ) 
+  mu <- link( model, data=data ) 
+  means <-  round(apply(mu , 2 , mean ), 4)
+  HPDIs <- round(apply( mu , 2 , HPDI ),4)
+  visContrast <- cbind(data,means,t(as.data.frame(HPDIs)))
+  
+  ones <- 3 * (1:(nrow(visContrast)/3))-2
+  twos <- 3 * (1:(nrow(visContrast)/3))-1
+  threes <- 3 * (1:(nrow(visContrast)/3))
+  
+  colnames(visContrast)[c(6,7)] <- c("low", "high")
+  contrast <- numeric(nrow(visContrast))
+  cLow <- numeric(nrow(visContrast))
+  cHigh <- numeric(nrow(visContrast))
+  for(i in threes){
+  contrast[i] <- visContrast$means[i] - visContrast$means[i-2]  
+  }
+  for(i in twos){
+  contrast[i] <- visContrast$means[i] - visContrast$means[i-1]  
+  }
+  visContrast$contrast <- contrast
+  visContrast$shift <-  visContrast$contrast - visContrast$means
+  for(i in ones){
+  visContrast$shift[i] <- 0
+  }
+  visContrast$cLow <- visContrast$low + visContrast$shift
+  visContrast$cHigh <- visContrast$high + visContrast$shift
 
+  visContrast$group = rep(c("control", "empathy", "normative"), nrow(visContrast)/3)
 
-ggsave("images/predictedGroups-13.pdf", width = 20, height = 15, units = "cm", dpi = 450)                             
+  visContrastTreatment <- visContrast[groupID !=1,]
 
-
-
-
-#now moving to posteriors, first by group
-#first by group for ADS = CBS = 1.3
-ADS <- 1.3
-CBS <- 1.3
-groupID <- 1:3
-IC <- 5 
-data <- expand.grid(ADS = ADS,groupID = groupID, CBS = CBS, IC =  IC)
-data
-posterior <- extract.samples(InteractionsModelDiff, n = 1e5)
-mu <- link( InteractionsModelDiff, data=data ) 
-head(mu)
-colnames(mu) <- levels(summaries$group)
-muLong <- melt(mu)
-colnames(muLong) <- c("id", "group", "AdiffS")
-head(muLong)
-means <-  apply(mu , 2 , mean )
-means <- as.data.frame(means)
-means$group <- rownames(means)
-rownames(means) <- NULL
-
-ggplot(muLong)+geom_violin(aes(x = group, y = AdiffS, fill = group, color = group), alpha = 0.2)+theme_tufte()+xlab("")+labs(title = "Posterior dstribution of attack change", subtitle = "(at ADS = CBS = 1.3, IC at mean = 5)")+  geom_hline(data = means, aes(yintercept = means, colour = group), size = 0.3)+xlab("")+ylab("change in attacks (standardized)") +geom_hline(yintercept = noChange, size = .3)+annotate(geom = "text", label = "no change in count", x = "empathy", y = 0.65, hjust = 0, vjust = 0, size = 4) 
-
-
-ggsave("images/predictedGroups13.pdf", width = 20, height = 15, units = "cm", dpi = 450)                             
+  return(ggplot(visContrastTreatment, aes(x = CBS, y = contrast, color = group ))+ geom_pointrange(mapping = aes(ymin = cLow, ymax = cHigh), size = .2, alpha = .5) +theme_tufte())
+}
 
 
 
-#posteriors by by group
-#first by group for ADS = CBS = 2.2
-ADS <- 2.2
-CBS <- 2.2
-groupID <- 1:3
-IC <- 5 
-data <- expand.grid(ADS = ADS,groupID = groupID, CBS = CBS, IC =  IC)
-data
-posterior <- extract.samples(InteractionsModelDiff, n = 1e5)
-mu <- link( InteractionsModelDiff, data=data ) 
-head(mu)
-colnames(mu) <- levels(summaries$group)
-muLong <- melt(mu)
-colnames(muLong) <- c("id", "group", "AdiffS")
-head(muLong)
-means <-  apply(mu , 2 , mean )
-means <- as.data.frame(means)
-means$group <- rownames(means)
-rownames(means) <- NULL
+visContrastCBSJoint <- ggarrange(visContrastsCBS(FinalHMC,ADS = -2)+ggtitle("ADS=-2")+ylim(c(-2.5,2.5))+ scale_color_discrete(guide=FALSE),
+          visContrastsCBS(FinalHMC,ADS = 0)+ggtitle("ADS=0")+ylim(c(-2.5,2.5))+ scale_color_discrete(guide=FALSE),
+          visContrastsCBS(FinalHMC,ADS = 2)+ggtitle("ADS=2")+ylim(c(-2.5,2.5))+
+            theme(legend.position = c(0.75, 0.1)), ncol = 3)
 
-ggplot(muLong)+geom_violin(aes(x = group, y = AdiffS, fill = group, color = group), alpha = 0.2)+theme_tufte()+xlab("")+labs(title = "Posterior dstribution of attack change", subtitle = "(at ADS = CBS = 2.2, IC at mean = 5)")+  geom_hline(data = means, aes(yintercept = means, colour = group), size = 0.3)+xlab("")+ylab("change in attacks (standardized)") +geom_hline(yintercept = noChange, size = .3)+annotate(geom = "text", label = "no change in count", x = "empathy", y = 0.65, hjust = 0, vjust = 0, size = 4) 
+visContrastCBSJoint2 <- annotate_figure(visContrastCBSJoint, 
+                top = text_grob("(range restricted to (-2.5,2.5), IC at the rounded mean = 5)",
+                                size = 10))
+visContrastCBSJoint3 <- annotate_figure(visContrastCBSJoint2, 
+                                  top = text_grob("Predicted distance from the control group mean vs. CBS  (standardized)",
+                                                  size = 12))
 
 
-ggsave("images/predictedGroups22.pdf", width = 20, height = 15, units = "cm", dpi = 450)                             
+visContrastCBSJoint3
+
+
+
+
+visContrastsADS <- function(model = FinalHMC, CBS = CBS , IC =  5, ADS = seq(-3,3,by  = 0.1))
+{
+  data <- expand.grid(CBS, groupID, IC , ADS)
+  colnames(data) <- c("CBS", "groupID", "IC", "ADS")
+  posterior <- extract.samples(model, n = 1e5)
+  mu <- link( model, data=data ) 
+  means <-  round(apply(mu , 2 , mean ), 4)
+  HPDIs <- round(apply( mu , 2 , HPDI ),4)
+  visContrastADS <- cbind(data,means,t(as.data.frame(HPDIs)))
+
+
+  ones <- 3 * (1:(nrow(visContrastADS)/3))-2
+  twos <- 3 * (1:(nrow(visContrastADS)/3))-1
+  threes <- 3 * (1:(nrow(visContrastADS)/3))
+  
+  colnames(visContrastADS)[c(6,7)] <- c("low", "high")
+  contrastADS <- numeric(nrow(visContrastADS))
+  for(i in threes){
+    contrastADS[i] <- visContrastADS$means[i] - visContrastADS$means[i-2]  
+  }
+  for(i in twos){
+    contrastADS[i] <- visContrastADS$means[i] - visContrastADS$means[i-1]  
+  }
+  visContrastADS$contrast <- contrastADS
+  visContrastADS$shift <-  visContrastADS$contrast - visContrastADS$means
+  for(i in ones){
+    visContrastADS$shift[i] <- 0
+  }
+  visContrastADS$cLow <- visContrastADS$low + visContrastADS$shift
+  visContrastADS$cHigh <- visContrastADS$high + visContrastADS$shift
+  
+  visContrastADS$group = rep(c("control", "empathy", "normative"), nrow(visContrastADS)/3)
+  visContrastTreatmentADS <- visContrastADS[groupID !=1,]
+
+  return(ggplot(visContrastTreatmentADS, aes(x = ADS, y = contrast, color = group ))+ geom_pointrange(mapping = aes(ymin = cLow, ymax = cHigh), size = .2, alpha = .5) +theme_tufte())
+}
+
+
+
+
+visContrastsADS(FinalHMC,CBS = -2)
+visContrastsADS(FinalHMC,CBS = 0)
+visContrastsADS(FinalHMC,CBS = 2)
+
+
+
+
+
+
+visContrastADSJoint <- ggarrange(visContrastsADS(FinalHMC,CBS = -2)+ggtitle("ADS=-2")+ylim(c(-2.5,2.5))+ scale_color_discrete(guide=FALSE),
+                                 visContrastsADS(FinalHMC,CBS = 0)+ggtitle("ADS=0")+ylim(c(-2.5,2.5))+ scale_color_discrete(guide=FALSE),
+                                 visContrastsADS(FinalHMC,CBS = 2)+ggtitle("ADS=2")+ylim(c(-2.5,2.5))+
+                                   theme(legend.position = c(0.75, 0.1)), ncol = 3)
+
+visContrastADSJoint2 <- annotate_figure(visContrastADSJoint, 
+                                        top = text_grob("(range restricted to (-2.5,2.5), IC at the rounded mean = 5)",
+                                                        size = 10))
+visContrastADSJoint3 <- annotate_figure(visContrastADSJoint2, 
+                                        top = text_grob("Predicted distance from the control group mean vs. ADS (standardized)",
+                                                        size = 12))
+
+
+visContrastADSJoint3
+
+
+
+
+
+
+
+
+
+  muLong <- melt(mu)
+  colnames(muLong) <- c("id", "group", "AdiffS")
+  means <-  round(apply(mu , 2 , mean ), 2)
+  mu_HPDI <- round(apply( mu , 2 , HPDI ),2)
+  means <- as.data.frame(means)
+  means$group <- rownames(means)
+  rownames(means) <- NULL
+  meansDisp <- cbind(means,t(as.data.frame(mu_HPDI)))
+  meansDisp <- meansDisp[,c(1,3,4)]
+  
+
 
 
 

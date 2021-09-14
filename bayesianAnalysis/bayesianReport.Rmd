@@ -39,6 +39,14 @@ library(reshape)
 
 mykable <- function(object) {kable(object, "latex", booktabs = T) %>% kable_styling(latex_options = "striped",font_size = 9)}  
 
+removeX <-   theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+
+removeY <-   theme(axis.title.y=element_blank(),
+                   axis.text.y=element_blank(),
+                   axis.ticks.y=element_blank())
+
 #kable(table(data$group), "latex", booktabs = T, col.names = c("Group", "n")) %>% 
 #  kable_styling(latex_options = c("striped","HOLD_position"),font_size = 9) 
 ```
@@ -830,7 +838,8 @@ These, however, are notoriously hard to interpret in models with interactions. F
 
 \vspace{1mm}
 \footnotesize
-```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE}
+
 visGroup <- function (model, ADS, CBS, xmin =2, ymax = -3)
 {
 groupID <- 1:3
@@ -851,32 +860,116 @@ meansDisp <- meansDisp[,c(1,3,4)]
 
 plot <- ggplot(muLong)+geom_violin(aes(x = group, y = AdiffS), alpha = 0.2)+
   xlab("")+
-  labs(title = paste("ADS=", ADS, ", CBS=",  CBS, ", IC=5", sep = ""))+
-  theme_tufte(base_size = 6)
-#+ 
-#  annotation_custom(tableGrob(meansDisp), xmin=xmin,  ymax=ymax)
+  labs(title = paste("ADS=", ADS, ", CBS=",  CBS,  sep = ""))+
+  theme_tufte()+ylim(c(-4,4))
+#+   annotation_custom(tableGrob(meansDisp), xmin=xmin,  ymax=ymax)
 return(plot)
 }
 
-visGroupA2C_2 <- visGroup(model = FinalHMC, ADS = 2,CBS = -2 , ymax = -2)
-visGroupA2C0 <- visGroup(model = FinalHMC, ADS = 2,CBS = 0 )
-visGroupA2C2 <- visGroup(model = FinalHMC, ADS = 2,CBS = 2, ymax = -3.5 )
 
-visGroupA0C_2 <- visGroup(model = FinalHMC, ADS = 0,CBS = -2 , ymax = -2)
+visGroupA2C_2 <- visGroup(model = FinalHMC, ADS = 2,CBS = -2)
+visGroupA2C0 <- visGroup(model = FinalHMC, ADS = 2,CBS = 0 )
+visGroupA2C2 <- visGroup(model = FinalHMC, ADS = 2,CBS = 2)
+
+visGroupA0C_2 <- visGroup(model = FinalHMC, ADS = 0,CBS = -2 )
 visGroupA0C0 <- visGroup(model = FinalHMC, ADS = 0,CBS = 0 )
-visGroupA0C2 <-  visGroup(model = FinalHMC, ADS = 0,CBS = 2, ymax = -4 )
+visGroupA0C2 <-  visGroup(model = FinalHMC, ADS = 0,CBS = 2)
 
-visGroupA2C_2 <-  visGroup(model = FinalHMC, ADS = 2,CBS = -2 , ymax = -2)
+visGroupA2C_2 <-  visGroup(model = FinalHMC, ADS = 2,CBS = -2 )
 visGroupA2C0 <- visGroup(model = FinalHMC, ADS = 2,CBS = 0 )
-visGroupA2C2 <- visGroup(model = FinalHMC, ADS = 2,CBS = 2, ymax = -4 )
+visGroupA2C2 <- visGroup(model = FinalHMC, ADS = 2,CBS = 2 )
 
-visGroupJoint <- ggarrange(visGroupA2C_2 , visGroupA2C0,visGroupA2C2, 
-          visGroupA0C_2, visGroupA0C0, visGroupA0C2,
-          visGroupA2C_2, visGroupA2C0, visGroupA2C2, ncol =3, nrow = 3)
+visGroupJoint <- ggarrange(visGroupA2C_2+removeX + ggtitle("CBS = -2")+ylab("ADS = 2") , visGroupA2C0+theme_void()+ ggtitle("CBS = 0"),visGroupA2C2+theme_void()+ ggtitle("CBS = 2"), 
+          visGroupA0C_2+removeX+ylab("ADS = 0")+ggtitle(""), visGroupA0C0+theme_void()+ggtitle(""), visGroupA0C2+theme_void()+ggtitle(""),
+          visGroupA2C_2+ylab("ADS = -2")+ggtitle(""), visGroupA2C0+removeY+ggtitle(""), visGroupA2C2+removeY+ggtitle(""), ncol =3, nrow = 3)
 
-visGroupJoint
+ 
+visGroupJoint2 <- annotate_figure(visGroupJoint, 
+  top = text_grob("(range restricted to (-4,4), IC at the rounded mean = 5)",
+                  size = 10))
+visGroupJoint3 <- annotate_figure(visGroupJoint2, 
+  top = text_grob("Predicted change in attacks by activity type and treatment groups (standardized)",
+                  size = 12))
+
+visGroupJoint3 
 ```
 \normalsize
+
+
+
+
+
+To gain more clarity, let's look at predicted contrasts, here understood as distances from the control group mean, by activity types, first versus CBS, then versus ADS.
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", message = FALSE, warning = FALSE}
+visContrastsCBS <- function(model = FinalHMC, ADS = ADS , IC =  5,
+                            CBS = seq(-3,3,by  = 0.1))
+  {
+  groupID <- 1:3
+  data <- expand.grid(ADS, groupID, IC , CBS)
+  colnames(data) <- c("ADS", "groupID", "IC", "CBS")
+  posterior <- extract.samples(model, n = 1e5)
+  link( model, data=data ) 
+  mu <- link( model, data=data ) 
+  means <-  round(apply(mu , 2 , mean ), 4)
+  HPDIs <- round(apply( mu , 2 , HPDI ),4)
+  visContrast <- cbind(data,means,t(as.data.frame(HPDIs)))
+  
+  ones <- 3 * (1:(nrow(visContrast)/3))-2
+  twos <- 3 * (1:(nrow(visContrast)/3))-1
+  threes <- 3 * (1:(nrow(visContrast)/3))
+  
+  colnames(visContrast)[c(6,7)] <- c("low", "high")
+  contrast <- numeric(nrow(visContrast))
+  cLow <- numeric(nrow(visContrast))
+  cHigh <- numeric(nrow(visContrast))
+  for(i in threes){
+  contrast[i] <- visContrast$means[i] - visContrast$means[i-2]  
+  }
+  for(i in twos){
+  contrast[i] <- visContrast$means[i] - visContrast$means[i-1]  
+  }
+  visContrast$contrast <- contrast
+  visContrast$shift <-  visContrast$contrast - visContrast$means
+  for(i in ones){
+  visContrast$shift[i] <- 0
+  }
+  visContrast$cLow <- visContrast$low + visContrast$shift
+  visContrast$cHigh <- visContrast$high + visContrast$shift
+
+  visContrast$group = rep(c("control", "empathy", "normative"), 
+                          nrow(visContrast)/3)
+
+  visContrastTreatment <- visContrast[groupID !=1,]
+
+  return(ggplot(visContrastTreatment, aes(x = CBS, y = contrast, color = group ))+
+            geom_pointrange(mapping = 
+        aes(ymin = cLow, ymax = cHigh), size = .2, alpha = .5) +theme_tufte())
+}
+
+
+visContrastCBSJoint <- ggarrange(visContrastsCBS(FinalHMC,ADS = -2)+
+      ggtitle("ADS=-2")+ylim(c(-2.5,2.5))+ scale_color_discrete(guide=FALSE),
+          visContrastsCBS(FinalHMC,ADS = 0)+ggtitle("ADS=0")+
+        ylim(c(-2.5,2.5))+ scale_color_discrete(guide=FALSE),
+        visContrastsCBS(FinalHMC,ADS = 2)+ggtitle("ADS=2")+
+        ylim(c(-2.5,2.5))+ theme(legend.position = c(0.75, 0.1)), ncol = 3)
+
+visContrastCBSJoint2 <- annotate_figure(visContrastCBSJoint, 
+      top = text_grob("(range restricted to (-2.5,2.5), IC at the rounded mean = 5)",
+                                size = 10))
+visContrastCBSJoint3 <- annotate_figure(visContrastCBSJoint2, 
+top = text_grob("Predicted distance from the control group mean vs. CBS  (standardized)",
+                                size = 12))
+
+visContrastCBSJoint3
+```
+\normalsize
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.16)  14 SEP 2021 10:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.7.16)  16 SEP 2021 07:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2230,126 +2230,104 @@ used on input line 559.
 Package xcolor Warning: Incompatible color definition on input line 579.
 
 
-Package xcolor Warning: Incompatible color definition on input line 601.
+Package xcolor Warning: Incompatible color definition on input line 600.
 
 
-Package xcolor Warning: Incompatible color definition on input line 601.
+Package xcolor Warning: Incompatible color definition on input line 600.
 
-<bayesianReport_files/figure-latex/dag1-1.pdf, id=125, 421.575pt x 290.08376pt>
 
+Package xcolor Warning: Incompatible color definition on input line 612.
+
+[7 <./bayesianReport_files/figure-latex/correlations-1.pdf>]
+
+Package xcolor Warning: Incompatible color definition on input line 620.
+
+
+Package xcolor Warning: Incompatible color definition on input line 620.
+
+<bayesianReport_files/figure-latex/dag1-1.pdf, id=138, 421.575pt x 291.0875pt>
 File: bayesianReport_files/figure-latex/dag1-1.pdf Graphic file (type pdf)
 <use bayesianReport_files/figure-latex/dag1-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/dag1-1.pdf  used on 
-input line 603.
-(pdftex.def)             Requested size: 408.30327pt x 280.95154pt.
-[7 <./bayesianReport_files/figure-latex/correlations-1.pdf>]
+input line 622.
+(pdftex.def)             Requested size: 326.64648pt x 225.54161pt.
 
-Package xcolor Warning: Incompatible color definition on input line 622.
-
-
-Package xcolor Warning: Incompatible color definition on input line 626.
+Package xcolor Warning: Incompatible color definition on input line 641.
 
 
-Package xcolor Warning: Incompatible color definition on input line 626.
+Package xcolor Warning: Incompatible color definition on input line 645.
+
+
+Package xcolor Warning: Incompatible color definition on input line 645.
 
 [8 <./bayesianReport_files/figure-latex/dag1-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 720.
+Package xcolor Warning: Incompatible color definition on input line 738.
 
 
-Package xcolor Warning: Incompatible color definition on input line 724.
+Package xcolor Warning: Incompatible color definition on input line 742.
 
 
-Package xcolor Warning: Incompatible color definition on input line 724.
+Package xcolor Warning: Incompatible color definition on input line 742.
 
 
-Package xcolor Warning: Incompatible color definition on input line 730.
-
-
-Package xcolor Warning: Incompatible color definition on input line 734.
-
-
-Package xcolor Warning: Incompatible color definition on input line 734.
-
-
-Package xcolor Warning: Incompatible color definition on input line 750.
-
-
-Package xcolor Warning: Incompatible color definition on input line 777.
-
-
-Package xcolor Warning: Incompatible color definition on input line 777.
-
-
-Underfull \vbox (badness 10000) detected at line 777
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 777.
+Package xcolor Warning: Incompatible color definition on input line 769.
 
 [9]
 
-Package xcolor Warning: Incompatible color definition on input line 777.
+Package xcolor Warning: Incompatible color definition on input line 799.
 
 
-Package xcolor Warning: Incompatible color definition on input line 777.
+Package xcolor Warning: Incompatible color definition on input line 799.
 
-
-Package xcolor Warning: Incompatible color definition on input line 783.
-
-
-Package xcolor Warning: Incompatible color definition on input line 787.
-
-
-Package xcolor Warning: Incompatible color definition on input line 787.
-
-<bayesianReport_files/figure-latex/dag2-1.pdf, id=155, 422.57875pt x 290.08376p
-t>
+<bayesianReport_files/figure-latex/dag2-1.pdf, id=155, 422.57875pt x 291.0875pt
+>
 File: bayesianReport_files/figure-latex/dag2-1.pdf Graphic file (type pdf)
 <use bayesianReport_files/figure-latex/dag2-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/dag2-1.pdf  used on 
-input line 793.
-(pdftex.def)             Requested size: 408.30823pt x 280.2876pt.
+input line 805.
+(pdftex.def)             Requested size: 326.644pt x 225.00417pt.
+[10 <./bayesianReport_files/figure-latex/dag2-1.pdf>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 803.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 830.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 803.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 830.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 803.
-LaTeX Font Info:    Try loading font information for OT1+jkpss on input line 81
-4.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 830.
+LaTeX Font Info:    Try loading font information for OT1+jkpss on input line 84
+1.
 (/usr/share/texlive/texmf-dist/tex/latex/kpfonts/ot1jkpss.fd
 File: ot1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for OT1/jkpss.
-) [10 <./bayesianReport_files/figure-latex/dag2-1.pdf>]
+)
 
-Package xcolor Warning: Incompatible color definition on input line 839.
+Package xcolor Warning: Incompatible color definition on input line 866.
 
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 841.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 868.
 
-Package xcolor Warning: Incompatible color definition on input line 910.
-
-
-Package xcolor Warning: Incompatible color definition on input line 910.
+Package xcolor Warning: Incompatible color definition on input line 937.
 
 
-Package xcolor Warning: Incompatible color definition on input line 910.
+Package xcolor Warning: Incompatible color definition on input line 937.
+
+
+Package xcolor Warning: Incompatible color definition on input line 937.
 
 [11]
 
-Package xcolor Warning: Incompatible color definition on input line 910.
+Package xcolor Warning: Incompatible color definition on input line 937.
 
 
-Package xcolor Warning: Incompatible color definition on input line 910.
+Package xcolor Warning: Incompatible color definition on input line 937.
 
 
-Package xcolor Warning: Incompatible color definition on input line 916.
+Package xcolor Warning: Incompatible color definition on input line 943.
 
 
-Package xcolor Warning: Incompatible color definition on input line 940.
+Package xcolor Warning: Incompatible color definition on input line 967.
 
 
-Package xcolor Warning: Incompatible color definition on input line 940.
+Package xcolor Warning: Incompatible color definition on input line 967.
 
 <bayesianReport_files/figure-latex/unnamed-chunk-6-1.pdf, id=179, 457.71pt x 31
 5.1775pt>
@@ -2357,31 +2335,31 @@ File: bayesianReport_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (typ
 e pdf)
 <use bayesianReport_files/figure-latex/unnamed-chunk-6-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/unnamed-chunk-6-1.pd
-f  used on input line 942.
+f  used on input line 969.
 (pdftex.def)             Requested size: 408.31047pt x 281.16115pt.
 [12]
 
-Package xcolor Warning: Incompatible color definition on input line 951.
+Package xcolor Warning: Incompatible color definition on input line 978.
 
 
-Package xcolor Warning: Incompatible color definition on input line 998.
+Package xcolor Warning: Incompatible color definition on input line 1025.
 
 
-Package xcolor Warning: Incompatible color definition on input line 998.
+Package xcolor Warning: Incompatible color definition on input line 1025.
 
 
-Underfull \vbox (badness 10000) detected at line 998
+Underfull \vbox (badness 10000) detected at line 1025
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 998.
+Package xcolor Warning: Incompatible color definition on input line 1025.
 
 [13 <./bayesianReport_files/figure-latex/unnamed-chunk-6-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 998.
+Package xcolor Warning: Incompatible color definition on input line 1025.
 
 
-Package xcolor Warning: Incompatible color definition on input line 998.
+Package xcolor Warning: Incompatible color definition on input line 1025.
 
 <bayesianReport_files/figure-latex/unnamed-chunk-7-1.pdf, id=200, 464.73625pt x
  305.14pt>
@@ -2389,16 +2367,16 @@ File: bayesianReport_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (typ
 e pdf)
 <use bayesianReport_files/figure-latex/unnamed-chunk-7-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/unnamed-chunk-7-1.pd
-f  used on input line 1000.
+f  used on input line 1027.
 (pdftex.def)             Requested size: 408.30966pt x 268.091pt.
 
-Package xcolor Warning: Incompatible color definition on input line 1011.
+Package xcolor Warning: Incompatible color definition on input line 1038.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1015.
+Package xcolor Warning: Incompatible color definition on input line 1042.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1015.
+Package xcolor Warning: Incompatible color definition on input line 1042.
 
 <bayesianReport_files/figure-latex/unnamed-chunk-8-1.pdf, id=201, 461.725pt x 3
 19.1925pt>
@@ -2406,18 +2384,18 @@ File: bayesianReport_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (typ
 e pdf)
 <use bayesianReport_files/figure-latex/unnamed-chunk-8-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/unnamed-chunk-8-1.pd
-f  used on input line 1017.
+f  used on input line 1044.
 (pdftex.def)             Requested size: 408.299pt x 282.25887pt.
 [14 <./bayesianReport_files/figure-latex/unnamed-chunk-7-1.pdf> <./bayesianRepo
 rt_files/figure-latex/unnamed-chunk-8-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 1027.
+Package xcolor Warning: Incompatible color definition on input line 1054.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1035.
+Package xcolor Warning: Incompatible color definition on input line 1062.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1035.
+Package xcolor Warning: Incompatible color definition on input line 1062.
 
 <bayesianReport_files/figure-latex/unnamed-chunk-9-1.pdf, id=224, 440.64626pt x
  313.17pt>
@@ -2425,86 +2403,86 @@ File: bayesianReport_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (typ
 e pdf)
 <use bayesianReport_files/figure-latex/unnamed-chunk-9-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/unnamed-chunk-9-1.pd
-f  used on input line 1037.
+f  used on input line 1064.
 (pdftex.def)             Requested size: 408.31084pt x 290.18901pt.
 [15 <./bayesianReport_files/figure-latex/unnamed-chunk-9-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 1076.
+Package xcolor Warning: Incompatible color definition on input line 1103.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1261.
+Package xcolor Warning: Incompatible color definition on input line 1289.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1261.
+Package xcolor Warning: Incompatible color definition on input line 1289.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1261.
+Package xcolor Warning: Incompatible color definition on input line 1289.
 
 [16]
 
-Package xcolor Warning: Incompatible color definition on input line 1261.
+Package xcolor Warning: Incompatible color definition on input line 1289.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1261.
+Package xcolor Warning: Incompatible color definition on input line 1289.
 
 
-Underfull \vbox (badness 10000) detected at line 1261
+Underfull \vbox (badness 10000) detected at line 1289
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1261
+Underfull \vbox (badness 10000) detected at line 1289
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1261.
+Package xcolor Warning: Incompatible color definition on input line 1289.
 
 [17]
 
-Package xcolor Warning: Incompatible color definition on input line 1261.
+Package xcolor Warning: Incompatible color definition on input line 1289.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1261.
+Package xcolor Warning: Incompatible color definition on input line 1289.
 
 
-Underfull \vbox (badness 10000) detected at line 1261
+Underfull \vbox (badness 10000) detected at line 1289
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1261
+Underfull \vbox (badness 10000) detected at line 1289
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1261.
+Package xcolor Warning: Incompatible color definition on input line 1289.
 
 [18]
 
-Package xcolor Warning: Incompatible color definition on input line 1261.
+Package xcolor Warning: Incompatible color definition on input line 1289.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1261.
+Package xcolor Warning: Incompatible color definition on input line 1289.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1267.
+Package xcolor Warning: Incompatible color definition on input line 1295.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1274.
+Package xcolor Warning: Incompatible color definition on input line 1302.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1274.
+Package xcolor Warning: Incompatible color definition on input line 1302.
 
 
-Overfull \hbox (25.191pt too wide) in paragraph at lines 1279--1301
+Overfull \hbox (25.191pt too wide) in paragraph at lines 1307--1329
  [][] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1303.
+Package xcolor Warning: Incompatible color definition on input line 1331.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1307.
+Package xcolor Warning: Incompatible color definition on input line 1335.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1307.
+Package xcolor Warning: Incompatible color definition on input line 1335.
 
 <bayesianReport_files/figure-latex/unnamed-chunk-11-1.pdf, id=262, 439.6425pt x
  303.1325pt>
@@ -2512,35 +2490,35 @@ File: bayesianReport_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (ty
 pe pdf)
 <use bayesianReport_files/figure-latex/unnamed-chunk-11-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/unnamed-chunk-11-1.p
-df  used on input line 1309.
+df  used on input line 1337.
 (pdftex.def)             Requested size: 408.30649pt x 281.5264pt.
 [19 <./bayesianReport_files/figure-latex/unnamed-chunk-11-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 1331.
+Package xcolor Warning: Incompatible color definition on input line 1359.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1353.
+Package xcolor Warning: Incompatible color definition on input line 1384.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1353.
+Package xcolor Warning: Incompatible color definition on input line 1384.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1360.
+Package xcolor Warning: Incompatible color definition on input line 1391.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1364.
+Package xcolor Warning: Incompatible color definition on input line 1395.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1364.
+Package xcolor Warning: Incompatible color definition on input line 1395.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1586.
+Package xcolor Warning: Incompatible color definition on input line 1617.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1590.
+Package xcolor Warning: Incompatible color definition on input line 1621.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1590.
+Package xcolor Warning: Incompatible color definition on input line 1621.
 
 <bayesianReport_files/figure-latex/unnamed-chunk-13-1.pdf, id=276, 438.63875pt 
 x 292.09125pt>
@@ -2548,31 +2526,31 @@ File: bayesianReport_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (ty
 pe pdf)
 <use bayesianReport_files/figure-latex/unnamed-chunk-13-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/unnamed-chunk-13-1.p
-df  used on input line 1592.
+df  used on input line 1623.
 (pdftex.def)             Requested size: 408.30463pt x 271.89162pt.
 [20]
 
-Package xcolor Warning: Incompatible color definition on input line 1602.
+Package xcolor Warning: Incompatible color definition on input line 1633.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1657.
+Package xcolor Warning: Incompatible color definition on input line 1688.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1657.
+Package xcolor Warning: Incompatible color definition on input line 1688.
 
 
-Underfull \vbox (badness 10000) detected at line 1657
+Underfull \vbox (badness 10000) detected at line 1688
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1657.
+Package xcolor Warning: Incompatible color definition on input line 1688.
 
 [21 <./bayesianReport_files/figure-latex/unnamed-chunk-13-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 1657.
+Package xcolor Warning: Incompatible color definition on input line 1688.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1657.
+Package xcolor Warning: Incompatible color definition on input line 1688.
 
 <bayesianReport_files/figure-latex/unnamed-chunk-14-1.pdf, id=293, 462.72874pt 
 x 305.14pt>
@@ -2580,30 +2558,30 @@ File: bayesianReport_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (ty
 pe pdf)
 <use bayesianReport_files/figure-latex/unnamed-chunk-14-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/unnamed-chunk-14-1.p
-df  used on input line 1659.
+df  used on input line 1690.
 (pdftex.def)             Requested size: 408.29695pt x 269.2457pt.
 
-Package xcolor Warning: Incompatible color definition on input line 1669.
+Package xcolor Warning: Incompatible color definition on input line 1700.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1738.
+Package xcolor Warning: Incompatible color definition on input line 1769.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1738.
+Package xcolor Warning: Incompatible color definition on input line 1769.
 
 
-Underfull \vbox (badness 10000) detected at line 1738
+Underfull \vbox (badness 10000) detected at line 1769
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1738.
+Package xcolor Warning: Incompatible color definition on input line 1769.
 
 [22 <./bayesianReport_files/figure-latex/unnamed-chunk-14-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 1738.
+Package xcolor Warning: Incompatible color definition on input line 1769.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1738.
+Package xcolor Warning: Incompatible color definition on input line 1769.
 
 <bayesianReport_files/figure-latex/unnamed-chunk-15-1.pdf, id=310, 452.69125pt 
 x 315.1775pt>
@@ -2611,17 +2589,17 @@ File: bayesianReport_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (ty
 pe pdf)
 <use bayesianReport_files/figure-latex/unnamed-chunk-15-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/unnamed-chunk-15-1.p
-df  used on input line 1740.
+df  used on input line 1771.
 (pdftex.def)             Requested size: 408.29561pt x 284.2679pt.
 
-Package xcolor Warning: Incompatible color definition on input line 1746.
+Package xcolor Warning: Incompatible color definition on input line 1777.
 
 [23 <./bayesianReport_files/figure-latex/unnamed-chunk-15-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 1811.
+Package xcolor Warning: Incompatible color definition on input line 1842.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1811.
+Package xcolor Warning: Incompatible color definition on input line 1842.
 
 <bayesianReport_files/figure-latex/unnamed-chunk-16-1.pdf, id=327, 452.69125pt 
 x 315.1775pt>
@@ -2629,36 +2607,36 @@ File: bayesianReport_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (ty
 pe pdf)
 <use bayesianReport_files/figure-latex/unnamed-chunk-16-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/unnamed-chunk-16-1.p
-df  used on input line 1813.
+df  used on input line 1844.
 (pdftex.def)             Requested size: 408.29561pt x 284.2679pt.
 [24]
 
-Package xcolor Warning: Incompatible color definition on input line 1823.
+Package xcolor Warning: Incompatible color definition on input line 1854.
 
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 1869
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 1900
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
 
-Package xcolor Warning: Incompatible color definition on input line 1899.
+Package xcolor Warning: Incompatible color definition on input line 1930.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1899.
+Package xcolor Warning: Incompatible color definition on input line 1930.
 
 
-Underfull \vbox (badness 10000) detected at line 1899
+Underfull \vbox (badness 10000) detected at line 1930
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1899.
+Package xcolor Warning: Incompatible color definition on input line 1930.
 
 [25 <./bayesianReport_files/figure-latex/unnamed-chunk-16-1.pdf>]
 
-Package xcolor Warning: Incompatible color definition on input line 1899.
+Package xcolor Warning: Incompatible color definition on input line 1930.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1899.
+Package xcolor Warning: Incompatible color definition on input line 1930.
 
 <bayesianReport_files/figure-latex/unnamed-chunk-17-1.pdf, id=349, 461.725pt x 
 315.1775pt>
@@ -2666,25 +2644,25 @@ File: bayesianReport_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (ty
 pe pdf)
 <use bayesianReport_files/figure-latex/unnamed-chunk-17-1.pdf>
 Package pdftex.def Info: bayesianReport_files/figure-latex/unnamed-chunk-17-1.p
-df  used on input line 1901.
+df  used on input line 1932.
 (pdftex.def)             Requested size: 408.299pt x 278.70844pt.
 [26 <./bayesianReport_files/figure-latex/unnamed-chunk-17-1.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1910.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1910.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1941.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1941.
 (./bayesianReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1910.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1910.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1941.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1941.
 
 Package rerunfilecheck Info: File `bayesianReport.out' has not changed.
 (rerunfilecheck)             Checksum: 39FA0B7DEBC13FC70F7D907CE33E6905;933.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1910.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1941.
  ) 
 Here is how much of TeX's memory you used:
- 31675 strings out of 492982
- 548246 string characters out of 6134896
- 741582 words of memory out of 5000000
- 34466 multiletter control sequences out of 15000+600000
- 92665 words of font info for 241 fonts, out of 8000000 for 9000
+ 31680 strings out of 492982
+ 548243 string characters out of 6134896
+ 741579 words of memory out of 5000000
+ 34461 multiletter control sequences out of 15000+600000
+ 93108 words of font info for 248 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,10n,76p,8845b,712s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texliv
@@ -2700,7 +2678,7 @@ ive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
 r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on bayesianReport.pdf (26 pages, 748584 bytes).
+Output written on bayesianReport.pdf (26 pages, 749109 bytes).
 PDF statistics:
  425 PDF objects out of 1000 (max. 8388607)
  325 compressed objects within 4 object streams

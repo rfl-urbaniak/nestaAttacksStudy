@@ -580,7 +580,7 @@ structure that we will be working with:
 \begin{Highlighting}[]
 \NormalTok{dag <-}\StringTok{ }\KeywordTok{dagitty}\NormalTok{(}\StringTok{"}
 \StringTok{  dag\{}
-\StringTok{  CDS -> ADS -> IC  ons}
+\StringTok{  CDS -> ADS -> IC  }
 \StringTok{               U [unobserved]   }
 \StringTok{               U -> CBS -> ABS  }
 \StringTok{               U -> ABS        }
@@ -595,12 +595,31 @@ structure that we will be working with:
 \StringTok{               CBS -> CDS -> CAS}
 \StringTok{               ABS -> ADS -> AAS}
 \StringTok{               \}"}\NormalTok{)}
-\KeywordTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+\KeywordTok{coordinates}\NormalTok{(dag)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## $x
+## AAS ABS ADS CAS CBS CDS  IC  IT   U 
+##  NA  NA  NA  NA  NA  NA  NA  NA  NA 
+## 
+## $y
+## AAS ABS ADS CAS CBS CDS  IC  IT   U 
+##  NA  NA  NA  NA  NA  NA  NA  NA  NA
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{coordinates}\NormalTok{( dag ) <-}\StringTok{ }\KeywordTok{list}\NormalTok{( }\DataTypeTok{x=}\KeywordTok{c}\NormalTok{(}\DataTypeTok{CBS=}\DecValTok{0}\NormalTok{,}\DataTypeTok{ABS=}\DecValTok{0}\NormalTok{,}\DataTypeTok{CDS=}\DecValTok{1}\NormalTok{,}\DataTypeTok{ADS=}\DecValTok{1}\NormalTok{, }\DataTypeTok{CAS =} \DecValTok{2}\NormalTok{,}
+                    \DataTypeTok{AAS =} \DecValTok{2}\NormalTok{, }\DataTypeTok{IT =} \FloatTok{1.5}\NormalTok{, }\DataTypeTok{IC =} \FloatTok{1.5}\NormalTok{, }\DataTypeTok{U =} \FloatTok{.5}\NormalTok{) ,}
+\DataTypeTok{y=}\KeywordTok{c}\NormalTok{(}\DataTypeTok{CBS =}\DecValTok{0}\NormalTok{,}\DataTypeTok{ABS =} \DecValTok{1}\NormalTok{,}\DataTypeTok{CDS =} \DecValTok{0}\NormalTok{,}\DataTypeTok{ADS =} \DecValTok{1}\NormalTok{, }\DataTypeTok{CAS =} \DecValTok{0}\NormalTok{, }\DataTypeTok{AAS =} \DecValTok{1}\NormalTok{, }
+    \DataTypeTok{IT =} \FloatTok{.3}\NormalTok{, }\DataTypeTok{IC =} \FloatTok{.7}\NormalTok{, }\DataTypeTok{U =}\NormalTok{.}\DecValTok{5}\NormalTok{) )}
 \KeywordTok{drawdag}\NormalTok{(dag)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/dag1-1} \end{center}
+\begin{center}\includegraphics[width=0.8\linewidth]{bayesianReport_files/figure-latex/dag1-1} \end{center}
 
 \normalsize
 
@@ -712,36 +731,36 @@ indirect path, it goes through \textsf{CAS}, so we should not condition
 on it if we are to identify causal effect on attacks mediated by impact
 on comments (unless we care about the direct effect of \textsf{IC} and
 \textsf{IT} on \textsf{AAS}, but that's a separate question). This is in
-line with the adjustment set identified algorithmically, and the same
-move makes sense when we want to predict \textsf{CAS}.
+line with the adjustment set identified algorithmically.
 
 \vspace{1mm} \footnotesize
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\KeywordTok{adjustmentSets}\NormalTok{(dag, }\DataTypeTok{exposure =} \KeywordTok{c}\NormalTok{(}\StringTok{"IC"}\NormalTok{, }\StringTok{"IT"}\NormalTok{), }\DataTypeTok{outcome =} \StringTok{"AAS"}\NormalTok{)}
+\KeywordTok{adjustmentSets}\NormalTok{(dag, }\DataTypeTok{exposure =} \KeywordTok{c}\NormalTok{(}\StringTok{"IC"}\NormalTok{, }\StringTok{"IT"}\NormalTok{), }\DataTypeTok{outcome =} \StringTok{"AAS"}\NormalTok{, }\DataTypeTok{type =} \StringTok{"all"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
 ## { ADS }
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{adjustmentSets}\NormalTok{(dag, }\DataTypeTok{exposure =} \KeywordTok{c}\NormalTok{(}\StringTok{"IC"}\NormalTok{, }\StringTok{"IT"}\NormalTok{), }\DataTypeTok{outcome =} \StringTok{"CAS"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## { ADS }
+## { ABS, ADS }
+## { ADS, CBS }
+## { ABS, ADS, CBS }
+## { ADS, CDS }
+## { ABS, ADS, CDS }
+## { ADS, CBS, CDS }
+## { ABS, ADS, CBS, CDS }
+## { ADS, U }
+## { ABS, ADS, U }
+## { ADS, CBS, U }
+## { ABS, ADS, CBS, U }
+## { ADS, CDS, U }
+## { ABS, ADS, CDS, U }
+## { ADS, CBS, CDS, U }
+## { ABS, ADS, CBS, CDS, U }
 \end{verbatim}
 
 \normalsize
-
-It's open season for other variables, and our decision to include them
-in the model will be guided by information-theoretic criteria of
-predictive power.
 
 In fact, we will be predicting the difference between attacks before and
 after, and the difference between comments, before and after. Let's add
@@ -751,7 +770,7 @@ them to the dag to double-check our selection of variables.
 \begin{Highlighting}[]
 \NormalTok{dag2 <-}\StringTok{ }\KeywordTok{dagitty}\NormalTok{(}\StringTok{"}
 \StringTok{  dag\{}
-\StringTok{                CDS -> ADS -> IC  ons}
+\StringTok{                CDS -> ADS -> IC  }
 \StringTok{                U [unobserved]   }
 \StringTok{                U -> CBS -> ABS  }
 \StringTok{                U -> ABS        }
@@ -770,27 +789,35 @@ them to the dag to double-check our selection of variables.
 \StringTok{                CBS -> CdiffS}
 \StringTok{                CAS -> CdiffS}
 \StringTok{                \}"}\NormalTok{)}
-\KeywordTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
+\KeywordTok{coordinates}\NormalTok{( dag2 ) <-}\StringTok{ }\KeywordTok{list}\NormalTok{( }\DataTypeTok{x=}\KeywordTok{c}\NormalTok{(}\DataTypeTok{CBS=}\DecValTok{0}\NormalTok{,}\DataTypeTok{ABS=}\DecValTok{0}\NormalTok{,}\DataTypeTok{CDS=}\DecValTok{1}\NormalTok{,}\DataTypeTok{ADS=}\DecValTok{1}\NormalTok{,}
+    \DataTypeTok{CAS =} \DecValTok{2}\NormalTok{, }\DataTypeTok{AAS =} \DecValTok{2}\NormalTok{, }\DataTypeTok{IT =} \FloatTok{1.5}\NormalTok{, }\DataTypeTok{IC =} \FloatTok{1.5}\NormalTok{, }\DataTypeTok{U =} \FloatTok{.5}\NormalTok{, }\DataTypeTok{AdiffS=} \FloatTok{2.5}\NormalTok{, }\DataTypeTok{CdiffS =} \FloatTok{2.5}\NormalTok{) ,}
+\DataTypeTok{y=}\KeywordTok{c}\NormalTok{(}\DataTypeTok{CBS =}\DecValTok{0}\NormalTok{,}\DataTypeTok{ABS =} \DecValTok{1}\NormalTok{,}\DataTypeTok{CDS =} \DecValTok{0}\NormalTok{,}\DataTypeTok{ADS =} \DecValTok{1}\NormalTok{, }\DataTypeTok{CAS =} \DecValTok{0}\NormalTok{, }\DataTypeTok{AAS =} \DecValTok{1}\NormalTok{, }\DataTypeTok{IT =} \FloatTok{.3}\NormalTok{, }\DataTypeTok{IC =} \FloatTok{.7}\NormalTok{, }\DataTypeTok{U =}\NormalTok{.}\DecValTok{5}\NormalTok{, }\DataTypeTok{CdiffS =} \FloatTok{-.2}\NormalTok{,  }\DataTypeTok{AdiffS =} \FloatTok{1.2}\NormalTok{) )}
+
 \KeywordTok{drawdag}\NormalTok{(dag2)}
-\KeywordTok{adjustmentSets}\NormalTok{(dag2, }\DataTypeTok{exposure =} \KeywordTok{c}\NormalTok{(}\StringTok{"IC"}\NormalTok{, }\StringTok{"IT"}\NormalTok{), }\DataTypeTok{outcome =} \StringTok{"AdiffS"}\NormalTok{)}
+\KeywordTok{adjustmentSets}\NormalTok{(dag2, }\DataTypeTok{exposure =} \KeywordTok{c}\NormalTok{(}\StringTok{"IC"}\NormalTok{, }\StringTok{"IT"}\NormalTok{), }\DataTypeTok{outcome =} \StringTok{"AdiffS"}\NormalTok{, }\DataTypeTok{type =} \StringTok{"canonical"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## { ADS }
+## { ABS, ADS, CBS, CDS }
 \end{verbatim}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{adjustmentSets}\NormalTok{(dag2, }\DataTypeTok{exposure =} \KeywordTok{c}\NormalTok{(}\StringTok{"IC"}\NormalTok{, }\StringTok{"IT"}\NormalTok{), }\DataTypeTok{outcome =} \StringTok{"CdiffS"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\begin{center}\includegraphics[width=0.8\linewidth]{bayesianReport_files/figure-latex/dag2-1} \end{center}
 
-\begin{verbatim}
-## { ADS }
-\end{verbatim}
+Finding a maximal sensible set (canonical) of covariates suggests
+inlcuding \textsf{CDS} and \textsf{ABS}. As already discussed, we do not
+include \textsf{CDS} because of its strong correlation with
+\textsf{CBS}. We also do not condition on \textsf{ABS}---not only
+because it has a pretty strong correlation with another predictor
+(\textsf{ADS}), but rather mainly because it is used to define the
+output variable. In such a set-up, of course that a model including
+\textsf{ABS} would have better predictive power, but since a
+definitional connection is present, thinking that its inclusion in the
+model tells us something about causality would be misled.
 
-\begin{center}\includegraphics[width=1\linewidth]{bayesianReport_files/figure-latex/dag2-1} \end{center}
+It's open season for the other variables (and interactions between
+them), and our decision to include them in the model will be guided by
+information-theoretic criteria of predictive power.
 
 \section{Bayesian models, priors and
 diagnostics}\label{bayesian-models-priors-and-diagnostics}
@@ -1241,6 +1268,7 @@ are listed after dashes.
 \NormalTok{)}
 
 
+
 \NormalTok{tooFar <-}\StringTok{ }\KeywordTok{quap}\NormalTok{(}
   \KeywordTok{alist}\NormalTok{(}
 \NormalTok{    AdiffS }\OperatorTok{~}\StringTok{ }\KeywordTok{dnorm}\NormalTok{( mu, sigma ),}
@@ -1273,26 +1301,26 @@ are listed after dashes.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{table}[H]
+\begin{table}
 \centering\begingroup\fontsize{9}{11}\selectfont
 
 \begin{tabular}{lrrrrrr}
 \toprule
   & WAIC & SE & dWAIC & dSE & pWAIC & weight\\
 \midrule
-\cellcolor{gray!6}{Final} & \cellcolor{gray!6}{1184.641} & \cellcolor{gray!6}{89.47387} & \cellcolor{gray!6}{0.000000} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{26.85809} & \cellcolor{gray!6}{0.8393664}\\
-tooFar & 1189.257 & 90.39801 & 4.616272 & 2.884162 & 29.81499 & 0.0834720\\
-\cellcolor{gray!6}{ADSITICCBS\_ITIC\_ADSIC} & \cellcolor{gray!6}{1189.414} & \cellcolor{gray!6}{87.19709} & \cellcolor{gray!6}{4.773490} & \cellcolor{gray!6}{5.762571} & \cellcolor{gray!6}{25.62296} & \cellcolor{gray!6}{0.0771616}\\
+\cellcolor{gray!6}{Final} & \cellcolor{gray!6}{1184.641} & \cellcolor{gray!6}{89.47387} & \cellcolor{gray!6}{0.000000} & \cellcolor{gray!6}{NA} & \cellcolor{gray!6}{26.85809} & \cellcolor{gray!6}{0.8345169}\\
+tooFar & 1189.123 & 90.35400 & 4.481669 & 2.882584 & 29.76051 & 0.0887673\\
+\cellcolor{gray!6}{ADSITICCBS\_ITIC\_ADSIC} & \cellcolor{gray!6}{1189.414} & \cellcolor{gray!6}{87.19709} & \cellcolor{gray!6}{4.773490} & \cellcolor{gray!6}{5.762571} & \cellcolor{gray!6}{25.62296} & \cellcolor{gray!6}{0.0767158}\\
 null & 1344.835 & 144.95033 & 160.193855 & 132.894118 & 17.16957 & 0.0000000\\
 \cellcolor{gray!6}{IT} & \cellcolor{gray!6}{1345.879} & \cellcolor{gray!6}{144.64185} & \cellcolor{gray!6}{161.237934} & \cellcolor{gray!6}{132.478842} & \cellcolor{gray!6}{19.27433} & \cellcolor{gray!6}{0.0000000}\\
 \addlinespace
 ADSIT & 1348.714 & 142.29377 & 164.072877 & 130.485213 & 23.06652 & 0.0000000\\
 \cellcolor{gray!6}{ADS} & \cellcolor{gray!6}{1349.706} & \cellcolor{gray!6}{145.13624} & \cellcolor{gray!6}{165.065051} & \cellcolor{gray!6}{133.323101} & \cellcolor{gray!6}{23.10634} & \cellcolor{gray!6}{0.0000000}\\
-ADSIT\_ADSIT & 1351.571 & 154.69385 & 166.930496 & 140.429304 & 31.91506 & 0.0000000\\
+ADSIT\_ADSIT & 1350.941 & 153.88118 & 166.300056 & 139.579270 & 32.04695 & 0.0000000\\
 \cellcolor{gray!6}{ADSITIC\_ADSIC} & \cellcolor{gray!6}{1352.972} & \cellcolor{gray!6}{154.55405} & \cellcolor{gray!6}{168.331385} & \cellcolor{gray!6}{140.054704} & \cellcolor{gray!6}{30.65579} & \cellcolor{gray!6}{0.0000000}\\
 ADSITIC & 1353.603 & 147.38084 & 168.962571 & 134.581071 & 28.54365 & 0.0000000\\
 \addlinespace
-\cellcolor{gray!6}{ADSIC} & \cellcolor{gray!6}{1353.939} & \cellcolor{gray!6}{147.29717} & \cellcolor{gray!6}{169.298374} & \cellcolor{gray!6}{134.821036} & \cellcolor{gray!6}{26.91553} & \cellcolor{gray!6}{0.0000000}\\
+\cellcolor{gray!6}{ADSIC} & \cellcolor{gray!6}{1355.210} & \cellcolor{gray!6}{148.15271} & \cellcolor{gray!6}{170.568848} & \cellcolor{gray!6}{135.609996} & \cellcolor{gray!6}{27.22326} & \cellcolor{gray!6}{0.0000000}\\
 ADSITIC\_ADSIC\_ADSIT & 1355.353 & 156.53444 & 170.712149 & 142.268677 & 33.80858 & 0.0000000\\
 \cellcolor{gray!6}{ADSITIC\_ADSIT\_ITIC\_ADSIC} & \cellcolor{gray!6}{1355.442} & \cellcolor{gray!6}{155.55820} & \cellcolor{gray!6}{170.800602} & \cellcolor{gray!6}{140.950680} & \cellcolor{gray!6}{34.03861} & \cellcolor{gray!6}{0.0000000}\\
 \bottomrule
@@ -1347,6 +1375,9 @@ out and load a pre-compiled model for computational convenience
 \CommentTok{#   data = summaries}
 \CommentTok{# )}
 \CommentTok{# saveRDS(FinalHMC, file = "models/FinalHMC.rds")}
+
+
+\CommentTok{#saveRDS(FinalHMC, file = "models/FinalHMC.rds")}
 
 \NormalTok{FinalHMC <-}\StringTok{ }\KeywordTok{readRDS}\NormalTok{(}\DataTypeTok{file =} \StringTok{"models/FinalHMC.rds"}\NormalTok{)}
 \end{Highlighting}

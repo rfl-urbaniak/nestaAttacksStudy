@@ -103,14 +103,24 @@ max(NallTotal$day)
 getwd()
 #remove duplicates
 NallTotalClean <- NallTotal[!duplicated(NallTotal$id), ]
-nrow(NallTotalClean)
+#all <- NallTotalClean
 NHateTotalClean <- NHateTotal[!duplicated(NHateTotal$id), ]
 nrow(NHateTotalClean)
 head(NallTotalClean)
 
+head(NHateTotalClean)
+colnames(NHateTotalClean)
+
+head(NallTotalClean)
+
+saveRDS(NHateTotalClean, file = "hateCleanComplete.rds")
+saveRDS(NallTotalClean, file = "allCleanComplete.rds")
+
 #includes text
 write.csv(NallTotalClean,"All.csv")
 write.csv(NHateTotalClean,"HateAll.csv")
+
+
 
 
 AllClean <-  NallTotalClean %>% select(-4,-5,-6) #removed text, subreddit, NA
@@ -121,6 +131,8 @@ HateClean <-  NHateTotalClean %>% select(-c(text,subreddit,redditFilter,violence
 head(HateClean)
 nrow(HateClean)
 
+
+allClean <- readRDS(file = "AllClean.rds")
 
 saveRDS(AllClean, file = "AllClean.rds")
 saveRDS(HateClean, file = "HateClean.rds")

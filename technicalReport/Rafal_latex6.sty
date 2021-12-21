@@ -1,0 +1,158 @@
+%\documentclass{article}
+
+% %packages
+ \usepackage{booktabs}
+
+\usepackage{multirow}
+
+\usepackage{graphicx}
+
+\usepackage{longtable}
+\usepackage{ragged2e}
+\usepackage{etex}
+%\usepackage{yfonts}
+\usepackage{marvosym}
+\usepackage[notextcomp]{kpfonts}
+\usepackage{nicefrac}
+\newcommand*{\QED}{\hfill \footnotesize {\sc Q.e.d.}}
+\usepackage{floatrow}
+
+\usepackage[textsize=footnotesize]{todonotes}
+%\linespread{1.5}
+\usepackage{pdfpages}
+\setlength{\parindent}{10pt}
+\setlength{\parskip}{1pt}
+
+
+%language
+\usepackage{times}
+\usepackage{t1enc}
+%\usepackage[utf8x]{inputenc}
+%\usepackage[polish]{babel}
+%\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[scaled=0.88]{helvet}
+
+
+%AMS
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\usepackage{geometry}
+ \geometry{a4paper,left=35mm,top=20mm,}
+
+
+%environments
+\newtheorem{fact}{Fact}
+
+
+
+%abbreviations
+\newcommand{\ra}{\rangle}
+\newcommand{\la}{\langle}
+\newcommand{\n}{\neg}
+\newcommand{\et}{\wedge}
+\newcommand{\jt}{\rightarrow}
+\newcommand{\ko}[1]{\forall  #1\,}
+\newcommand{\ro}{\leftrightarrow}
+\newcommand{\exi}[1]{\exists\, {_{#1}}}
+\newcommand{\pr}[1]{\mathsf{P}(#1)}
+\newcommand{\cost}{\mathsf{cost}}
+
+
+\newcommand{\odds}{\mathsf{Odds}}
+\newcommand{\ind}{\mathsf{Ind}}
+\newcommand{\nf}[2]{\nicefrac{#1\,}{#2}}
+\newcommand{\R}[1]{\texttt{#1}}
+\newcommand{\prr}[1]{\mbox{$\mathtt{P}_{prior}(#1)$}}
+\newcommand{\prp}[1]{\mbox{$\mathtt{P}_{posterior}(#1)$}}
+
+
+
+\newtheorem{q}{\color{blue}Question}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+
+
+
+%technical intermezzo
+%---------------------
+
+\newcommand{\intermezzoa}{
+	\begin{minipage}[c]{13cm}
+	\begin{center}\rule{10cm}{0.4pt}
+
+
+
+	\tiny{\sc Optional Content Starts}
+	
+	\vspace{-1mm}
+	
+	\rule{10cm}{0.4pt}\end{center}
+	\end{minipage}\nopagebreak 
+	}
+
+
+\newcommand{\intermezzob}{\nopagebreak 
+	\begin{minipage}[c]{13cm}
+	\begin{center}\rule{10cm}{0.4pt}
+
+	\tiny{\sc Optional Content Ends}
+	
+	\vspace{-1mm}
+	
+	\rule{10cm}{0.4pt}\end{center}
+	\end{minipage}
+	}
+%--------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newtheorem*{reply*}{Reply}
+\usepackage{enumitem}
+\newcommand{\question}[1]{\begin{enumerate}[resume,leftmargin=0cm,labelsep=0cm,align=left]
+\item #1
+\end{enumerate}}
+
+\usepackage{float}
+
+% \setbeamertemplate{blocks}[rounded][shadow=true]
+% \setbeamertemplate{itemize items}[ball]
+% \AtBeginPart{}
+% \AtBeginSection{}
+% \AtBeginSubsection{}
+% \AtBeginSubsubsection{}
+% \setlength{\emergencystretch}{0em}
+% \setlength{\parskip}{0pt}
+
+
+
+
+
+
+\usepackage[authoryear]{natbib}
+
+%\bibliographystyle{apalike}

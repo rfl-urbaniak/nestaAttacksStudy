@@ -58,8 +58,6 @@ removeY <-   theme(axis.title.y=element_blank(),
 
 # Exploration
 
-Load the dataset and take a look first.
-
 \vspace{1mm}
 \footnotesize
 ```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}

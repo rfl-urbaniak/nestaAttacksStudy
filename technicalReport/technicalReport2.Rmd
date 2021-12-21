@@ -1,0 +1,210 @@
+---
+title: "Bayesian analysis of the NESTA study of interventions against  verbal aggression online \\linebreak  Technical Report"
+author: "Rafal Urbaniak"
+output:
+  pdf_document:
+  number_sections: yes
+df_print: kable
+keep_tex: yes
+includes:
+  in_header: Rafal_latex6.sty
+html_document:
+  df_print: paged
+word_document: default
+classoption: dvipsnames, enabledeprecatedfontcommands
+fontsize: 10pt
+documentclass: scrartcl
+urlcolor: blue
+bibliography: ../references/attacks.bib
+csl: ../references/apa-6th-edition.csl
+---
+  
+  
+```{r, setup, include=FALSE}
+knitr::opts_knit$set(root.dir = '../')
+
+#libraries used
+library(ggplot2)
+library(ggthemes)
+library(gridExtra)
+library(kableExtra)
+library(viridis)
+library(rethinking)
+library(ggplot2)
+library(ggpubr)
+library(tidyverse)
+library(GGally)
+library(dagitty)
+library(reshape)
+library(lubridate)
+library(formatR)
+
+
+
+mykable <- function(object) {kable(object, "latex", booktabs = T) %>% kable_styling(latex_options = "striped",font_size = 9)}  
+
+removeX <-   theme(axis.title.x=element_blank(),
+                   axis.text.x=element_blank(),
+                   axis.ticks.x=element_blank())
+
+removeY <-   theme(axis.title.y=element_blank(),
+                   axis.text.y=element_blank(),
+                   axis.ticks.y=element_blank())
+
+knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 70), tidy = TRUE)
+
+#kable(table(data$group), "latex", booktabs = T, col.names = c("Group", "n")) %>% 
+#  kable_styling(latex_options = c("striped","HOLD_position"),font_size = 9) 
+```
+
+
+
+\tableofcontents
+
+
+
+
+
+
+# Data and exploration
+
+
+
+
+\vspace{1mm}
+\scriptsize
+
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE, tidy = TRUE}
+Hate <- readRDS(file = "datasets/RAWNESTA/Hate.rds")
+Comments <-   readRDS(file = "datasets/RAWNESTA/Comments.rds")
+summaries <- read.csv(file = "datasets/Summaries.csv")
+
+dates <- colnames(Hate)[-1]
+dates <- as.Date(dates)
+startDate <- dates[1]
+interventionDate <- "2020-07-08"
+observationDate <- "2020-09-09"
+end <- dates[length(dates)]
+
+periods<- numeric(length(dates))
+periods <- ifelse(dates < interventionDate,"pre-treatment",periods)
+periods <- ifelse(dates >= interventionDate & dates < observationDate,"treatment",periods)
+periods <- ifelse(dates >= observationDate,"post-treatment",periods)
+
+hateTS <- as.data.frame(colSums(Hate[,-1]))
+hateTS$date <- as.Date(rownames(hateTS))
+rownames(hateTS) <- NULL
+colnames(hateTS) <- c("attacks","date")
+hateTS$periods <- periods
+
+interventions <- readRDS(file = "datasets/interventions.rds")
+interventionsTS <- as.data.frame(table(interventions$day))
+interventionsTS$Var1 <- as.Date(interventionsTS$Var1)
+colnames(interventionsTS) <- c("date", "interventions")
+
+periodsDF <- merge(x = hateTS, y = interventionsTS, by = "date", all.x = TRUE)
+
+idx <- c(1, diff(periodsDF$date))
+i2 <- c(1,which(idx != 1), nrow(periodsDF)+1)
+periodsDF$grp <- rep(1:length(diff(i2)), diff(i2))
+
+periodsDF$interventions[is.na(periodsDF$interventions) & periodsDF$periods == "treatment"] <- 0
+
+periodsPlot <- ggplot(periodsDF)+
+  geom_line(aes(x=date, y = attacks, group = grp),
+             alpha = 0.8, size = .6)+
+  geom_line(aes(x=date, y = interventions, group = grp),
+            alpha = 0.8, size = .6)+
+  geom_vline(xintercept = startDate, lty =2, size =.2, alpha=0.5)+
+  geom_vline(xintercept = as.Date(interventionDate), lty =2, size =.2, alpha=0.5)+
+  geom_vline(xintercept =  as.Date(observationDate), lty = 2, size =.2, alpha=0.5 )+
+  geom_vline(xintercept = as.Date(end), lty =2, size =.2, alpha=0.5)+
+  labs(title = "Attacks and interventions time series",
+       subtitle = "no line at data gaps", 
+       caption = "days with data: 81 (pre-treatment), 62 (treatment), 72 (post-treatment)")+
+  theme_tufte() + theme(axis.title.x=element_blank(), 
+      plot.caption = element_text(hjust = 0.5,  face= "italic"))+
+  scale_x_date(date_labels = "%b %d", breaks = c(startDate, as.Date(startDate), as.Date(interventionDate), as.Date(observationDate), end), 
+               limits = c(startDate-30,end+10))+ylab("count")+
+  annotate("rect", xmin = as.Date(interventionDate), xmax = as.Date(observationDate), ymin = -1, ymax = 360,
+           alpha = .2,fill = "darkgreen")+ylim(c(-1,370))+
+  annotate("text", label = "pre-treatment", x = as.Date(startDate)+2, y = 370, hjust =0 )+
+  annotate("text", label = "treatment", x = as.Date(interventionDate)+2, y = 370, hjust =0 )+
+  annotate("text", label = "post-treatment", x = as.Date(observationDate)+2, y = 370, hjust =0 )+
+  annotate("text", label = "interventions:", x = as.Date(interventionDate)-52, y = 15, hjust =0 )+
+  annotate("text", label = "attacks:", x = as.Date(startDate)-30, y = 215, hjust =0 )
+
+periodsDF$weekdays <-  weekdays(as.Date(periodsDF$date))
+periodsDF$weeks <-  week(as.Date(periodsDF$date))
+
+periodsDF$weekdays <- as.factor(periodsDF$weekdays)
+levels(periodsDF$weekdays) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+                                "Saturday", "Sunday")
+weeksPlot <- ggplot(periodsDF)+
+  geom_smooth(aes(x = weekdays, y = attacks, group =1))+
+  geom_line(aes(x = weekdays, y = attacks, group = weeks),alpha = 0.1)+
+  theme_tufte()+labs(title="Weekly attacks over six months", subtitle = "No weekly patterns")+xlab("")+
+  ylab("count")
+```
+\normalsize
+
+
+
+For the duration of the project we selected `r length(unique(summaries$author))` Reddit users and tracked their activity, starting on `r `startDate`, beginning the intervention period on `r interventionDate`, leading to a further observation period starting on  `r observationDate` and ending on  `r end`. The time series of attacks observed and of interventions conducted can be inspected in Figure \ref{fig:periodsPlot}.
+
+
+\begin{figure}
+```{r periodsPlot,echo=FALSE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE}
+periodsPlot
+```
+\caption{Daily sums of attacks and interventions throughout the three experimental periods.}
+\label{fig:periodsPlot}
+\end{figure}
+
+
+
+
+
+
+
+\vspace{1mm}
+\footnotesize
+```{r,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+#head(summaries) %>% kable( "latex", booktabs = T) %>% 
+#  kable_styling(latex_options = c("striped", "scale_down") ,font_size = 9)
+
+```
+\normalsize
+
+
+
+
+
+
+
+
+
+
+
+
+The basic variables we are dealing with are in the following table. 
+
+
+
+```{r,echo=FALSE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
+variable <- c("AB", "AD", "AA", "CB", "CD", "CA", "group", "IC")
+explanation <- c("attacks before (pre-treatment)", "attacks during (the treatment period)",
+                 "attacks after (post-treatment)", "comments before", "comments during",
+                 "comments after", "treatment group", "intervention count")
+vars <- data.frame(variable, explanation)
+mykable(vars)
+```
+
+
+
+
+
+
+
+
+

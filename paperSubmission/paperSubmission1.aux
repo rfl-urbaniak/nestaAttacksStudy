@@ -1,75 +1,198 @@
 \relax 
-\@writefile{toc}{\contentsline {section}{\numberline {1}Data analysis}{2}{}\protected@file@percent }
-\newlabel{sec{analysis}}{{1}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Exploration and data}{2}{}\protected@file@percent }
-\newlabel{subsec:data-and-exploration}{{1.1}{2}}
-\@writefile{tdo}{\contentsline {todo}{how?}{2}{}\protected@file@percent }
-\pgfsyspdfmark {pgfid1}{28654089}{40604467}
-\pgfsyspdfmark {pgfid4}{34931998}{40619212}
-\pgfsyspdfmark {pgfid5}{36357406}{40350515}
-\@writefile{tdo}{\contentsline {todo}{add ref}{2}{}\protected@file@percent }
-\pgfsyspdfmark {pgfid6}{28073349}{18748211}
-\pgfsyspdfmark {pgfid9}{34931998}{18762956}
-\pgfsyspdfmark {pgfid10}{36357406}{18494259}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Daily sums of attacks and interventions throughout the three experimental periods, with GAM smoothing (left) and daily attack sums from all weeks in the experimental period plotted against week days (right)---no pattern seems to arise.}}{3}{}\protected@file@percent }
-\newlabel{fig:periodsPlot}{{1}{3}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Variables involved in the before-and-after analysis.}}{4}{}\protected@file@percent }
-\newlabel{tab:baaVars}{{1}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Distribution of daily interventions (by treatment group).}}{4}{}\protected@file@percent }
-\newlabel{fig:interventionsDistro}{{2}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Empirical distribution of change in attacks (by treatment group).}}{5}{}\protected@file@percent }
-\newlabel{fig:violJoint}{{3}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Change in attacks vs the number of interventions received by treatment group, jittered with linear smoothing.}}{6}{}\protected@file@percent }
-\newlabel{fig:linearShift}{{4}{6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Examples of individual time series. Black points are attacks (smoothed in blue), red lines represent the cumulative number of interventions received (lag 3) divided by 10, gray lines represent overall activity level divided by a variable divider listed in the subtitle. Divisions introduced for visual comparability of general trends.}}{7}{}\protected@file@percent }
-\newlabel{fig:tsVis}{{5}{7}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Causal thinking, choice of variables and models}{8}{}\protected@file@percent }
-\newlabel{subsec:causal-thinking-choice-of-variables-and-models}{{1.2}{8}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Correlations between predictors (left) and a plausible causal model (right) used in the before-and-after analysis.}}{9}{}\protected@file@percent }
-\newlabel{fig:correlations}{{6}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.3}Results}{14}{}\protected@file@percent }
-\newlabel{subsec:resultss}{{1.3}{14}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.1}Interventions on a given day}{14}{}\protected@file@percent }
-\newlabel{subsubsec:interventions-on-a-given-day}{{1.3.1}{14}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.2}Cumulative sum of interventions}{14}{}\protected@file@percent }
-\newlabel{subsubsec:cumulative-sum-of-interventions}{{1.3.2}{14}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {1.3.3}Long term before/after analysis}{14}{}\protected@file@percent }
-\newlabel{subsubsec:long-term-beforeafter-analysis}{{1.3.3}{14}}
-\newlabel{RF1}{15}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Impact of interventions received lag $1\leq k \leq 7$ on attacks on a given day. High-level coefficients are pictured in black.}}{15}{}\protected@file@percent }
-\newlabel{fig:dailyResults}{{7}{15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Multiplicative impact of cumulative interventions lag 3 on attacks. Individual users' coefficents only, full range (top), and with attention restricted to the bulk of the sample. Sub-sample coefficients depend on aggression and are represented as lines, colored by sub-sample. Note low number and high uncertainty for highly aggressive users, which motivate the restriction of the $x$ axis for inspection.}}{16}{}\protected@file@percent }
-\newlabel{fig:cumulativeResultsPlot}{{8}{16}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Multiplicative impact of cumulative interventions lag 3 on attacks. General level coefficents only, in three quantiles (.25, .5, .75). Colored by sub-sample.}}{17}{}\protected@file@percent }
-\newlabel{fig:cumulativeResultsGeneralPlot}{{9}{17}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Predicted change in attacks, depending on user’s activity level (CBS: comments before, standardized) and how aggressive overall they were (ADS: attacks during, standardized). The more aggressive and active the users, the higher the attacks drop in the normative group, slight drop correlated with emotive interventions for not too active users.}}{18}{}\protected@file@percent }
-\newlabel{fig:predictedChange}{{10}{18}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Predicted contrasts (difference in attacks as compared to the control group) for the two treatment groups vs activity before the treatment. Notice that empathetic interventions correlated with decreased attacks for less active users, but performed worse than normative interventions for more active users. Normative interventions, in contrast, seem to have better impact on more active users.}}{19}{}\protected@file@percent }
-\newlabel{fig:ContrastCBS}{{11}{19}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Predicted contrasts (difference in attacks as compared to the control group) for the two treatment groups vs aggression during the treatment period. Notice that empathetic interventions correlated with decreased attacks for less aggressive users, but performed worse than normative interventions for more aggressive users. Normative interventions, in contrast, seem to have better impact on more aggressive users.}}{20}{}\protected@file@percent }
-\newlabel{fig:ContrastADS}{{12}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Contrasts (change in attacks as compared to the control group) vs the number of interventions received. Note that repeating empathetic interventions correlates with decreased attacks, while repeating normative interventions is counterproductive.}}{21}{}\protected@file@percent }
-\newlabel{fig:ContrastsIC}{{13}{21}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Discussion}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}Volunteer engagement and impact of competitions}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}The challenge of keeping volunteers engaged}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Volunteer activity data analysis}{22}{}\protected@file@percent }
+\citation{leader2016dangerous,garland2020countering}
+\citation{dictionary2002merriam}
+\citation{schieb2016governing}
+\citation{benesch2016considerations}
+\citation{rieger2018hate}
+\citation{garland2020countering}
+\citation{ziegele2018journalistic}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Counter-speech interventions}{2}{}\protected@file@percent }
+\citation{ziems2020racism}
+\citation{xie2011social}
+\citation{schieb2016governing}
+\citation{alvarez2018normative}
+\citation{chandrasekharan2017you}
+\citation{bilewicz2021artificial}
+\citation{brauer2010descriptive}
+\citation{fischer2011bystander}
+\citation{ziegele2018journalistic,schieb2016governing,legault2011ironic}
+\citation{morris2018common}
+\citation{cialdini1990focus}
+\citation{cialdini2006managing,cialdini1990focus,goldstein2008room}
+\citation{cialdini1990focus}
+\citation{morris2018common}
+\citation{kallgren2000focus}
+\citation{cialdini1990focus}
+\citation{yanowitzky2006communication,cialdini2004social,kallgren2000focus}
+\citation{cialdini1990focus}
+\citation{goldstein2008room}
+\citation{stangor2001changing}
+\citation{crandall2002social}
+\citation{munger2017tweetment}
+\citation{bilewicz2021artificial}
+\citation{price2006normative}
+\citation{alvarez2018normative}
+\citation{cheng2017anyone}
+\citation{bilewicz2021artificial}
+\citation{cialdini_focus_1991,cialdini2004social,cialdini2006managing}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Data analysis}{7}{}\protected@file@percent }
+\newlabel{sec{analysis}}{{2}{7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Data collection and exploration}{7}{}\protected@file@percent }
+\newlabel{subsec:data-and-exploration}{{2.1}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Daily sums of attacks and interventions throughout the three experimental periods, with GAM smoothing (left) and daily attack sums from all weeks in the experimental period plotted against week days (right)---no pattern seems to arise.}}{10}{}\protected@file@percent }
+\newlabel{fig:periodsPlot}{{1}{10}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Variables involved in the before-and-after analysis.}}{11}{}\protected@file@percent }
+\newlabel{tab:baaVars}{{1}{11}}
+\@writefile{tdo}{\contentsline {todo}{add ref}{11}{}\protected@file@percent }
+\pgfsyspdfmark {pgfid1}{28073349}{29351534}
+\pgfsyspdfmark {pgfid4}{34931998}{29366279}
+\pgfsyspdfmark {pgfid5}{36357406}{29097582}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Distribution of daily interventions (by treatment group).}}{12}{}\protected@file@percent }
+\newlabel{fig:interventionsDistro}{{2}{12}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Empirical distribution of change in attacks (by treatment group).}}{13}{}\protected@file@percent }
+\newlabel{fig:violJoint}{{3}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Change in attacks vs the number of interventions received by treatment group, jittered with linear smoothing.}}{14}{}\protected@file@percent }
+\newlabel{fig:linearShift}{{4}{14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Examples of individual time series. Black points are attacks (smoothed in blue), red lines represent the cumulative number of interventions received (lag 3) divided by 10, gray lines represent overall activity level divided by a variable divider listed in the subtitle. Divisions introduced for visual comparability of general trends.}}{15}{}\protected@file@percent }
+\newlabel{fig:tsVis}{{5}{15}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Causal thinking, choice of variables and models}{16}{}\protected@file@percent }
+\newlabel{subsec:causal-thinking-choice-of-variables-and-models}{{2.2}{16}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Correlations between predictors (left) and a plausible causal model (right) used in the before-and-after analysis.}}{17}{}\protected@file@percent }
+\newlabel{fig:correlations}{{6}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Results}{22}{}\protected@file@percent }
+\newlabel{subsec:resultss}{{2.3}{22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.1}Interventions on a given day}{22}{}\protected@file@percent }
+\newlabel{subsubsec:interventions-on-a-given-day}{{2.3.1}{22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.2}Cumulative sum of interventions}{22}{}\protected@file@percent }
+\newlabel{subsubsec:cumulative-sum-of-interventions}{{2.3.2}{22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.3.3}Long term before/after analysis}{22}{}\protected@file@percent }
+\newlabel{subsubsec:long-term-beforeafter-analysis}{{2.3.3}{22}}
+\newlabel{RF1}{23}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Impact of interventions received lag $1\leq k \leq 7$ on attacks on a given day. High-level coefficients are pictured in black.}}{23}{}\protected@file@percent }
+\newlabel{fig:dailyResults}{{7}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Multiplicative impact of cumulative interventions lag 3 on attacks. Individual users' coefficents only, full range (top), and with attention restricted to the bulk of the sample. Sub-sample coefficients depend on aggression and are represented as lines, colored by sub-sample. Note low number and high uncertainty for highly aggressive users, which motivate the restriction of the $x$ axis for inspection.}}{24}{}\protected@file@percent }
+\newlabel{fig:cumulativeResultsPlot}{{8}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Multiplicative impact of cumulative interventions lag 3 on attacks. General level coefficents only, in three quantiles (.25, .5, .75). Colored by sub-sample.}}{25}{}\protected@file@percent }
+\newlabel{fig:cumulativeResultsGeneralPlot}{{9}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Predicted change in attacks, depending on user’s activity level (CBS: comments before, standardized) and how aggressive overall they were (ADS: attacks during, standardized). The more aggressive and active the users, the higher the attacks drop in the normative group, slight drop correlated with emotive interventions for not too active users.}}{26}{}\protected@file@percent }
+\newlabel{fig:predictedChange}{{10}{26}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Predicted contrasts (difference in attacks as compared to the control group) for the two treatment groups vs activity before the treatment. Notice that empathetic interventions correlated with decreased attacks for less active users, but performed worse than normative interventions for more active users. Normative interventions, in contrast, seem to have better impact on more active users.}}{27}{}\protected@file@percent }
+\newlabel{fig:ContrastCBS}{{11}{27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Predicted contrasts (difference in attacks as compared to the control group) for the two treatment groups vs aggression during the treatment period. Notice that empathetic interventions correlated with decreased attacks for less aggressive users, but performed worse than normative interventions for more aggressive users. Normative interventions, in contrast, seem to have better impact on more aggressive users.}}{28}{}\protected@file@percent }
+\newlabel{fig:ContrastADS}{{12}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Contrasts (change in attacks as compared to the control group) vs the number of interventions received. Note that repeating empathetic interventions correlates with decreased attacks, while repeating normative interventions is counterproductive.}}{29}{}\protected@file@percent }
+\newlabel{fig:ContrastsIC}{{13}{29}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Discussion}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4}Volunteer engagement and impact of competitions}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}The challenge of keeping volunteers engaged}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Volunteer activity data analysis}{30}{}\protected@file@percent }
 \@writefile{toc}{\let\numberline\tmptocnumberline}
-\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}A}Explanation of WAIC}{23}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Daily individual voilunteer intervention counts accross time with competition periods marked (top) and daily group intervention means grouped by whether a competition was ongoing (bottom). Note most of high means in the non-competition period are in the first week.}}{24}{}\protected@file@percent }
-\newlabel{fig:volunteersBasic}{{14}{24}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Volunteer total engagement with their daily baseline and multipliers for enthusiasm and impact of competition. Pointranges represent individual level coefficients, group coefficients are represented by black lines with shaded 89\% HPDI areas.}}{25}{}\protected@file@percent }
-\newlabel{fig:volunteersModel}{{15}{25}}
-\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}B}Time series model selection}{26}{}\protected@file@percent }
-\newlabel{sec:time-series-model-selection}{{Appendix \nobreakspace  {}B}{26}}
-\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}C}Model choice for the long term analysis}{30}{}\protected@file@percent }
-\newlabel{sec:priors}{{Appendix \nobreakspace  {}C}{30}}
-\@writefile{lof}{\contentsline {figure}{\numberline {B.16}{\ignorespaces Simulated priors for the individual i1 coefficients, and prior for the cumulative impact model with larger input variability (hence, the prior is more narrow to eliminate unrealistically huge impact).}}{31}{}\protected@file@percent }
-\newlabel{fig:priori1plot}{{B.16}{31}}
-\@writefile{lof}{\contentsline {figure}{\numberline {C.17}{\ignorespaces Model comparison, WAIC scores. The filled points are the in-sample deviance values. The open points are the WAIC values. The line segments represent standard errors of the WAIC scores. really want however is the standard error of the difference in WAIC between the two models. The triangle is the difference to the top rated model, and the line segment going through it is the standard error of this difference.}}{33}{}\protected@file@percent }
-\newlabel{fig:modelComparisonPlot}{{C.17}{33}}
-\@writefile{lot}{\contentsline {table}{\numberline {C.2}{\ignorespaces Model comparison results.}}{34}{}\protected@file@percent }
-\newlabel{tab:comparison}{{C.2}{34}}
-\@writefile{lof}{\contentsline {figure}{\numberline {C.18}{\ignorespaces Prior predictive check for two different sets of priors.}}{35}{}\protected@file@percent }
-\newlabel{fig:priors}{{C.18}{35}}
-\gdef \@abspage@last{37}
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}A}Explanation of WAIC}{31}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Daily individual voilunteer intervention counts accross time with competition periods marked (top) and daily group intervention means grouped by whether a competition was ongoing (bottom). Note most of high means in the non-competition period are in the first week.}}{32}{}\protected@file@percent }
+\newlabel{fig:volunteersBasic}{{14}{32}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Volunteer total engagement with their daily baseline and multipliers for enthusiasm and impact of competition. Pointranges represent individual level coefficients, group coefficients are represented by black lines with shaded 89\% HPDI areas.}}{33}{}\protected@file@percent }
+\newlabel{fig:volunteersModel}{{15}{33}}
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}B}Time series model selection}{34}{}\protected@file@percent }
+\newlabel{sec:time-series-model-selection}{{Appendix \nobreakspace  {}B}{34}}
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix \nobreakspace  {}C}Model choice for the long term analysis}{38}{}\protected@file@percent }
+\newlabel{sec:priors}{{Appendix \nobreakspace  {}C}{38}}
+\@writefile{lof}{\contentsline {figure}{\numberline {B.16}{\ignorespaces Simulated priors for the individual i1 coefficients, and prior for the cumulative impact model with larger input variability (hence, the prior is more narrow to eliminate unrealistically huge impact).}}{39}{}\protected@file@percent }
+\newlabel{fig:priori1plot}{{B.16}{39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.17}{\ignorespaces Model comparison, WAIC scores. The filled points are the in-sample deviance values. The open points are the WAIC values. The line segments represent standard errors of the WAIC scores. really want however is the standard error of the difference in WAIC between the two models. The triangle is the difference to the top rated model, and the line segment going through it is the standard error of this difference.}}{41}{}\protected@file@percent }
+\newlabel{fig:modelComparisonPlot}{{C.17}{41}}
+\bibcite{Zachary_hate}{{1}{2019}{{Laub}}{{}}}
+\bibcite{sorrentino2019epidemiology}{{2}{2019}{{Sorrentino et~al.}}{{Sorrentino, Baldry, Farrington, and Blaya}}}
+\bibcite{vogels_state_2021}{{3}{2021}{{Vogels}}{{}}}
+\bibcite{barlett2021comparing}{{4}{2021}{{Barlett et~al.}}{{Barlett, Simmers, Roth, and Gentile}}}
+\bibcite{grant_2021}{{5}{2021}{{Grant}}{{}}}
+\@writefile{lot}{\contentsline {table}{\numberline {C.2}{\ignorespaces Model comparison results.}}{42}{}\protected@file@percent }
+\newlabel{tab:comparison}{{C.2}{42}}
+\@writefile{lof}{\contentsline {figure}{\numberline {C.18}{\ignorespaces Prior predictive check for two different sets of priors.}}{43}{}\protected@file@percent }
+\newlabel{fig:priors}{{C.18}{43}}
+\bibcite{noauthor_l1ght_2020}{{6}{2020}{{L1ght}}{{}}}
+\bibcite{bhattacharya}{{7}{2021}{{Bhattacharya}}{{}}}
+\bibcite{gerrard2020covid19}{{8}{2020}{{Gerrard}}{{}}}
+\bibcite{yang2021consequences}{{9}{2021}{{Yang et~al.}}{{Yang, Wang, Sun, Xu, Wang, Chen, Yu, Zhang, Zhu, Dai et~al.}}}
+\bibcite{hinduja2010bullying}{{10}{2010}{{Hinduja and Patchin}}{{}}}
+\bibcite{alhujailli2020affective}{{11}{2020}{{Alhujailli et~al.}}{{Alhujailli, Karwowski, Wan, and Hancock}}}
+\bibcite{kowalski2013psychological}{{12}{2013}{{Kowalski and Limber}}{{}}}
+\bibcite{lee2002persuasive}{{13}{2002}{{Lee and Leets}}{{}}}
+\bibcite{williams2019hatred}{{14}{2019}{{Williams}}{{}}}
+\bibcite{fink2018dangerous}{{15}{2018}{{Fink}}{{}}}
+\bibcite{soral2018exposure}{{16}{2018}{{Soral et~al.}}{{Soral, Bilewicz, and Winiewski}}}
+\bibcite{alvarez2018normative}{{17}{2018}{{{\'A}lvarez-Benjumea and Winter}}{{}}}
+\bibcite{williams2020hate}{{18}{2020}{{Williams et~al.}}{{Williams, Burnap, Javed, Liu, and Ozalp}}}
+\bibcite{urbaniak2022personal}{{19}{2022}{{Urbaniak et~al.}}{{Urbaniak, Ptaszy{\'n}ski, Tempska, Leliwa, Brochocki, and Wroczy{\'n}ski}}}
+\bibcite{tworek2021fighting}{{20}{2021}{{Tworek}}{{}}}
+\bibcite{trengove2022critical}{{21}{2022}{{Trengove et~al.}}{{Trengove, Kazim, Almeida, Hilliard, Zannone, and Lomas}}}
+\bibcite{cnbc_2020}{{22}{2020}{{cnb}}{{}}}
+\bibcite{newton_2013}{{23}{2013}{{Newton}}{{}}}
+\bibcite{failory_2022}{{24}{2022}{{Failory}}{{}}}
+\bibcite{los_angeles_times_2021}{{25}{2021}{{los}}{{}}}
+\bibcite{seifert_2013}{{26}{2013}{{Seifert}}{{}}}
+\bibcite{macavaney2019hate}{{27}{2019}{{MacAvaney et~al.}}{{MacAvaney, Yao, Yang, Russell, Goharian, and Frieder}}}
+\bibcite{schmidt2017survey}{{28}{2017}{{Schmidt and Wiegand}}{{}}}
+\bibcite{jordan2015machine}{{29}{2015}{{Jordan and Mitchell}}{{}}}
+\bibcite{lecun2015deep}{{30}{2015}{{LeCun et~al.}}{{LeCun, Bengio, and Hinton}}}
+\bibcite{sejnowski2020unreasonable}{{31}{2020}{{Sejnowski}}{{}}}
+\bibcite{binns2017like}{{32}{2017}{{Binns et~al.}}{{Binns, Veale, Van~Kleek, and Shadbolt}}}
+\bibcite{geva2019we}{{33}{2019}{{Geva et~al.}}{{Geva, Goldberg, and Berant}}}
+\bibcite{mehrabi2021survey}{{34}{2021}{{Mehrabi et~al.}}{{Mehrabi, Morstatter, Saxena, Lerman, and Galstyan}}}
+\bibcite{sap_risk_2019}{{35}{2019}{{Sap et~al.}}{{Sap, Card, Gabriel, Choi, and Smith}}}
+\bibcite{jigsaw2019}{{36}{2019}{{Vanian}}{{}}}
+\bibcite{grondahl2018all}{{37}{2018}{{Gr{\"o}ndahl et~al.}}{{Gr{\"o}ndahl, Pajola, Juuti, Conti, and Asokan}}}
+\bibcite{rosa2019automatic}{{38}{2019}{{Rosa et~al.}}{{Rosa, Pereira, Ribeiro, Ferreira, Carvalho, Oliveira, Coheur, Paulino, Sim{\~a}o, and Trancoso}}}
+\bibcite{yin2021towards}{{39}{2021}{{Yin and Zubiaga}}{{}}}
+\bibcite{wu2019errudite}{{40}{2019}{{Wu et~al.}}{{Wu, Ribeiro, Heer, and Weld}}}
+\bibcite{lipton2019troubling}{{41}{2019}{{Lipton and Steinhardt}}{{}}}
+\bibcite{musgrave2020metric}{{42}{2020}{{Musgrave et~al.}}{{Musgrave, Belongie, and Lim}}}
+\bibcite{steinhardt2017certified}{{43}{2017}{{Steinhardt et~al.}}{{Steinhardt, Koh, and Liang}}}
+\bibcite{melis2017state}{{44}{2017}{{Melis et~al.}}{{Melis, Dyer, and Blunsom}}}
+\bibcite{steinhardt2015learning}{{45}{2015}{{Steinhardt and Liang}}{{}}}
+\bibcite{esteva_dermatologist-level_2017}{{46}{2017}{{Esteva et~al.}}{{Esteva, Kuprel, Novoa, Ko, Swetter, Blau, and Thrun}}}
+\bibcite{rottger2020hatecheck}{{47}{2020}{{R{\"o}ttger et~al.}}{{R{\"o}ttger, Vidgen, Nguyen, Waseem, Margetts, and Pierrehumbert}}}
+\bibcite{onlinesafetydata}{{48}{????}{{onl}}{{}}}
+\bibcite{noauthor_facebook:_2012}{{49}{2012}{{noa}}{{}}}
+\bibcite{noauthor_10_2021}{{50}{2021}{{noa}}{{}}}
+\bibcite{noauthor_reddit_nodate}{{51}{2020}{{noa}}{{}}}
+\bibcite{roberts2014behind}{{52}{2014}{{Roberts}}{{}}}
+\bibcite{roberts2016commercial}{{53}{2016}{{Roberts}}{{}}}
+\bibcite{karunakaran2019testing}{{54}{2019}{{Karunakaran and Ramakrishan}}{{}}}
+\bibcite{steiger2021psychological}{{55}{2021}{{Steiger et~al.}}{{Steiger, Bharucha, Venkatagiri, Riedl, and Lease}}}
+\bibcite{newton_facebook_2020}{{56}{2020}{{Newton}}{{}}}
+\bibcite{parks2019dirty}{{57}{2019}{{Parks}}{{}}}
+\bibcite{stepanikova2012racial}{{58}{2012}{{Stepanikova}}{{}}}
+\bibcite{koetsier_report}{{59}{2020}{{Koetsier}}{{}}}
+\bibcite{hoff2009cyberbullying}{{60}{2009}{{Hoff and Mitchell}}{{}}}
+\bibcite{keipi2016online}{{61}{2016}{{Keipi et~al.}}{{Keipi, N{\"a}si, Oksanen, and R{\"a}s{\"a}nen}}}
+\bibcite{wachs2019associations}{{62}{2019}{{Wachs et~al.}}{{Wachs, Wright, Sittichai, Singh, Biswal, Kim, Yang, G{\'a}mez-Guadix, Almendros, Flora et~al.}}}
+\bibcite{french_as_2021}{{63}{2021}{{French}}{{}}}
+\bibcite{ADL_free}{{64}{2020}{{League}}{{}}}
+\bibcite{noauthor_:game_nodate}{{65}{2017}{{noa}}{{}}}
+\bibcite{leader2016dangerous}{{66}{2016}{{Leader~Maynard and Benesch}}{{}}}
+\bibcite{garland2020countering}{{67}{2020}{{Garland et~al.}}{{Garland, Ghazi-Zahedi, Young, H{\'e}bert-Dufresne, and Galesic}}}
+\bibcite{dictionary2002merriam}{{68}{2002}{{Dictionary}}{{}}}
+\bibcite{schieb2016governing}{{69}{2016}{{Schieb and Preuss}}{{}}}
+\bibcite{benesch2016considerations}{{70}{2016}{{Benesch et~al.}}{{Benesch, Ruths, Dillon, Saleem, and Wright}}}
+\bibcite{rieger2018hate}{{71}{2018}{{Rieger et~al.}}{{Rieger, Schmitt, and Frischlich}}}
+\bibcite{ziegele2018journalistic}{{72}{2018}{{Ziegele et~al.}}{{Ziegele, Jost, Bormann, and Heinbach}}}
+\bibcite{ziems2020racism}{{73}{2020}{{Ziems et~al.}}{{Ziems, He, Soni, and Kumar}}}
+\bibcite{xie2011social}{{74}{2011}{{Xie et~al.}}{{Xie, Sreenivasan, Korniss, Zhang, Lim, and Szymanski}}}
+\bibcite{chandrasekharan2017you}{{75}{2017}{{Chandrasekharan et~al.}}{{Chandrasekharan, Pavalanathan, Srinivasan, Glynn, Eisenstein, and Gilbert}}}
+\bibcite{bilewicz2021artificial}{{76}{2021}{{Bilewicz et~al.}}{{Bilewicz, Tempska, Leliwa, Dowgiałło, Tańska, Urbaniak, and Wroczyński}}}
+\bibcite{brauer2010descriptive}{{77}{2010}{{Brauer and Chaurand}}{{}}}
+\bibcite{fischer2011bystander}{{78}{2011}{{Fischer et~al.}}{{Fischer, Krueger, Greitemeyer, Vogrincic, Kastenm{\""u}ller, Frey, Heene, Wicher, and Kainbacher}}}
+\bibcite{legault2011ironic}{{79}{2011}{{Legault et~al.}}{{Legault, Gutsell, and Inzlicht}}}
+\bibcite{morris2018common}{{80}{2018}{{Morris and Cushman}}{{}}}
+\bibcite{cialdini1990focus}{{81}{1990}{{Cialdini et~al.}}{{Cialdini, Reno, and Kallgren}}}
+\bibcite{cialdini2006managing}{{82}{2006}{{Cialdini et~al.}}{{Cialdini, Demaine, Sagarin, Barrett, Rhoads, and Winter}}}
+\bibcite{goldstein2008room}{{83}{2008}{{Goldstein et~al.}}{{Goldstein, Cialdini, and Griskevicius}}}
+\bibcite{kallgren2000focus}{{84}{2000}{{Kallgren et~al.}}{{Kallgren, Reno, and Cialdini}}}
+\bibcite{cialdini2004social}{{85}{2004}{{Cialdini and Goldstein}}{{}}}
+\bibcite{stangor2001changing}{{86}{2001}{{Stangor et~al.}}{{Stangor, Sechrist, and Jost}}}
+\bibcite{crandall2002social}{{87}{2002}{{Crandall et~al.}}{{Crandall, Eshleman, and O'brien}}}
+\bibcite{munger2017tweetment}{{88}{2017}{{Munger}}{{}}}
+\bibcite{price2006normative}{{89}{2006}{{Price et~al.}}{{Price, Nir, and Cappella}}}
+\bibcite{cheng2017anyone}{{90}{2017}{{Cheng et~al.}}{{Cheng, Bernstein, Danescu-Niculescu-Mizil, and Leskovec}}}
+\bibcite{cialdini_focus_1991}{{91}{1991}{{Cialdini et~al.}}{{Cialdini, Kallgren, and Reno}}}
+\gdef \@abspage@last{54}

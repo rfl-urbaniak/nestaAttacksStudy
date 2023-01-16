@@ -49,6 +49,7 @@
 \usepackage{booktabs}
 \usepackage{todonotes}
 \usepackage{rotating}
+\usepackage{url}
 
 
 \journal{Information Processing \ Management}
@@ -145,18 +146,167 @@ Not sure what graphical abstract is supposed to be, but it goes here.
 
 %% main text
 
+
+
+
+
+
+
+
+
+
+
+\section{Counter-speech interventions}
+%counter-speech def
+
+The term counter-speech refers to the use of means of communication to counteract hate speech or other forms of harmful or extremist speech. It is a form of counter-narrative that seeks to challenge and undermine the messages of hate and extremism, and to promote alternative, positive, and inclusive narratives. It can be broadly defined as citizens’ response to hate speech with the purpose of stopping it and reducing its consequences \citep{leader2016dangerous, garland2020countering}. Hate speech is a type of speech used with the intention to insult, offend, or intimidate a person based on their identity (such as race, religion, sexual orientation, national origin, or disability) \citep{dictionary2002merriam}. This type of speech is often used to spread hateful or discriminatory ideas, both offline and online, and can take many forms, such as name-calling, threats, or slurs. Social media platforms often recommend their users to employ counter speech as a way to stop hate speech from spreading, conveniently handing the problem out to dedicated users to avoid creating new technologies or investing in manual moderation \citep{schieb2016governing}. 
+
+\citet{benesch2016considerations} defined successful counter-speech in two ways. The first type has a favorable impact on the hateful user, for example by shifting their discourse or beliefs, and the second one impacts the whole audience of counter-speech, by shifting the norm of the conversation.  \citep{rieger2018hate} proposed a three-layered classification of counter-speech: primary prevention, where counter-voices are being disseminated to the general public in order to educate and promote civic behavior; secondary prevention, where counter-speech is being directed at specific groups, for example, those more vulnerable to harmful effects of online hate, and tertiary prevention where counter-voices respond directly to those spreading hate. Our responses fulfilled all these functions, as they were publicly visible comments sent as direct responses to hateful users.
+
+When it comes to the effectiveness of online counter-speech there is just a handful of large-scale classification studies. One of them used a special situation in Germany, where groups that label themselves as hateful or counter-speaking talked about immigration and elections. Results based on analysis of 130,000 Twitter conversations suggest that counter speech can help make discussions less divisive, encourage more counter-speech and lead to fewer hateful responses \citep{garland2020countering}. 
+
+Another study by \citet{ziegele2018journalistic} looked at almost 10,000 comments on the Facebook pages of 15 news organizations in Germany to investigate the patterns, determinants, and potential effects of interactive moderation. The authors found that the moderation style of initial comments was related to the presence of incivility in users' subsequent reply comments. Specifically, a sociable moderation style was associated with a decrease in incivility in reply comments, while a regulative style was associated with an increase in incivility. This shows that the style of counter responses can also determine their effectiveness. 
+
+Moreover, the work by \citet{ziems2020racism} looked at the dynamics of the spread of racial hate during a pandemic and the role of counter speech in mitigating this spread. Using a hand-labeled data set of 3,355 tweets, they trained a text classifier to identify hate and counter speech tweets and conducted a longitudinal analysis of tweets and users. Interestingly, hateful and counter speech users interacted and engaged extensively with one another, rather than staying in isolated, polarized communities. Results revealed that Twitter users were more likely to become hateful after being exposed to hateful content and that counter speech messages may discourage users from becoming hateful, suggesting that consistent counter speech could be a potential solution for effects of hate on social media platforms. 
+
+ \citep{xie2011social} examined the influence of committed minorities, and looked at how a small group of people with an opinion different from the majority can quickly change the whole group's opinion. They found that if more than 10 percent of the group expresses another viewpoint, there is a dramatic decrease in the time taken for the entire population to adopt it. In other words, a relatively small group of committed individuals can have a significant impact on the opinion of the majority. 
+
+Similarly, \citep{schieb2016governing} used a computer simulation to study whether counter-speech can curb hate speech on Facebook. They found that even a small group of users speaking out against hate can influence a much larger group, as long as there are enough people in the audience who do not hold extreme opinions. They also emphasized the potential negative effects of counter-voices, especially when they do not hold to the same standards of civic discussion but instead act in an authoritative or mocking way towards those expressing extremist ideologies. 
+
+Although some studies suggest censorship and elimination of hateful content to be a more effective strategy of toxicity reduction \citep{alvarez2018normative}, it also also collide with civil liberties and diffuse rather than reduce hate \citep{chandrasekharan2017you}. Therefore counter-speech seems to be a golden means for reducing antisocial behavior while preserving civil liberties. 
+
+
+In our study, we have employed counter-speaking strategies to see whether they can be applied to a slightly different phenomenon, namely personal attacks. Personal attacks are instances of speech that are intended to hurt, offend, or belittle a specific person or group. This can include name-calling, insults, or other types of derogatory language that is directed at an individual or group \citep{bilewicz2021artificial}. While personal attacks and hate speech can sometimes overlap, the main difference between the two is that personal attacks are focused on an individual or a specific group of people, whereas hate speech is aimed at an entire group of people based on their identity.
+
+% we have previously studied the effectiveness of counter-speech in lowering the use of personal attacks on Reddit using an automatic intervention system  \citep{bilewicz2021artificial}. 
+
+%In this follow-up study we wanted to see whether 
+
+%\citet{benesch2016considerations} recommend counter-speech strategies based on empathy and affiliation, employing humor, warning of consequences of such behavior, labeling and shaming.
+%Although censorship and hateful content elimination has shown to be a more effective strategy of toxicity reduction @alvarez2018normative, it can also collide with civil liberties and diffuse rather than reduce hate @chandrasekharan2017you. Therefore counter-speech seems to be a golden mean for reducing antisocial behavior while preserving civil liberties. 
+Although counter-speech can be an effective strategy for toxic discourse mitigation, it usually occurs as a spontaneous act, as it is determined by personal motivations of the counter-speaking party. For example, \citet{brauer2010descriptive} found that being personally implicated by a counter-normative behavior was a primary determinant of the bystander reaction. 
+
+Apart from that, the more public the space, the less likely it is that someone will step up, as studies on bystander interventions consistently show that presence of other people in critical situations reduces the probability of assistance from bystanders \citep{fischer2011bystander}. %It is much less likely to happen in natural settings then in a laboratory. @? 
+
+Moreover, even if a bystander decides to react, they will not necessarily choose the most effective strategy, which can lead to potentially undesirable side-effects. For instance,  counter-voices that do not hold up to civic standards themselves but act in an authoritative manner or mock those falling for extremist ideologies, can actually strengthen the underlying attitudes \citep{ziegele2018journalistic, schieb2016governing, legault2011ironic}.
+%empathy here somewhere 
+
+The issue of low bystander reactivity has been addressed in our study by engaging volunteers personally committed to lowering online violence, and creating an opportunity structure for quick response, by real-time notifications about the occurrences of personal attacks that they should respond to (see however our section on volunteer engagement for a discussion of difficulties with this strategy).
+
+To maximize the potential impact of our interventions and to minimize  accidental instigation of more verbal aggression, we decided to educate the volunteers on scientifically grounded strategies for normative influence and persuasive messaging.  Let us elaborate.
+ Social norms are agreed to be powerful determinants of human behavior. 
+According to theories of norm compliance people tend to comply with the norms they are exposed to \citep{morris2018common}, \citep{cialdini1990focus}.  A good deal of studies have found that perceptions of what others are doing causes us to behave similarly. Norms can be applied to exert persuasive impact, for example to solve a social problem such as littering or wasting resources \citep{cialdini2006managing, cialdini1990focus, goldstein2008room}. 
+
+%Researchers have repeatedly found that perceptions of what others are doing influences subjects to behave similarly, for example when it comes to choosing consumer product (venkatesen, 1966), or looking at the sky (milgram, bichman, berkowitz, 1969).  
+
+%Reasons why social norms have such strong influence on peoples decisions, attitudes, and the way they express them are still disputed. %cytowanie
+
+Some scholars propose that perceived social norms serve as shortcuts helping us quickly adapt to new environments \citep{cialdini1990focus}. Others say that we are only motivated by norms we have internalized during socialization, so the normative influence can only be exerted if the norm resonates with our internal value system \citep{morris2018common}.  Focus Theory of Normative Conduct \citep{kallgren2000focus} is a psychological, theoretical framework used for understanding best conditions and practices for exerting normative influence. Its main assumption is that norms that are focal in attention are likely to influence behavior.  %explain on an example cialdini experiment
+To achieve persuasive impact a distinction between two types of norms has to be made. While it might sound strange to talk about desriptive norms, this is the way the terminology in the field developed, so we will keep using such terms.  A descriptive norm refers to what is typically done, by showing  examples of  normal behavior in a given situation, and injunctive or prescriptive norm refers to what is commonly approved, such the rules of proper conduct and moral beliefs \citep{cialdini1990focus}.  A descriptive norm motivates compliance by providing evidence about what is likely to be an effective and adaptive action, while injuctive norm motivates by informing which actions will be approved and which will result in social sanctions \citep{yanowitzky2006communication, cialdini2004social, kallgren2000focus}. 
+
+%This has important implications for normative influence practitioners, as the same behavior can be prescriptively normative and descriptively not normative, and vice versa. In other words, something may be the right thing to do but few people actually do it  \citep{brauer2010descriptive}.
+%truism. say more
+
+The positive influence of injunctive and descriptive norms on unwanted social behavior was first presented in a study on littering in public spaces conducted by \citet{cialdini1990focus}. Study subjects were exposed to either descriptive or injunctive anti-littering norm, and the impact on the littering behavior was observed. In the descriptive condition the subjects were exposed to a clean or littered environment, serving as a proof of choices made by others. In the injunctive condition participants received messages stating the anti-littering norm.
+
+Injunctive messages directly asking not to litter had significantly reduced littering, and subjects littered more in a highly littered environment, and littered less in a clean environment although these effects were not statistically significant. %which ones 
+Although seeing litter in an otherwise clean environment could have also engaged an injunctive norm, as it might have reminded subjects about societal objections to littering.
+
+%Some of these results were replicated \citep {berquisr2021replicating} \citep {berger2016norm} %say more 
+
+A descriptive norm can be also evoked by providing a written information about what others usually do. \citet{goldstein2008room} distributed flyers with normative messages that contained descriptive information about reuse of hotel towels (“the majority of guests reuse their towels”). This strategy has been proven superior to traditional appeals focusing on environmental protection. Moreover, normative appeals were most effective when the described behavior occurred in the same location (“in this hotel  room”), and so referred to the so-called local norms. 
+
+The information about how others think and behave can also have an impact on prejudice and its expression. For example, positive information about the racial beliefs of others produced stereotype change in message recipients \citep{stangor2001changing}, and public expression of prejudice, and reactions to hostile jokes were highly correlated with social approval of these expressions \citep{crandall2002social}. 
+
+When it comes to the online realm, group norm promotion and social sanctioning of online racist harassment resulted in the reduction of racist tweets (although only in the condition in which a white male with high followers was approaching another white male). In other words, sending direct, counter-speech messages to users with similar identities,  resulted in a decrease in their use of hate speech on Twitter \citep{munger2017tweetment}. Moreover, in a study conducted by \citet{bilewicz2021artificial}, a bot disguised as a Reddit user, equipped with normative and empathetic interventions, significantly decreased the number of personal attacks generated in this forum. In addition, types of statements made by people in online political discussions influenced the way others expressed their opinions \citep{price2006normative}, and the expression of online hate-speech in  \citep{alvarez2018normative} was strongly dependant on the amount of hate-speech already present in a given environment.  
+
+The context of online interactions can also contribute to the spread of counter-normative behaviors. For example, negative mood and prior exposition to troll content was the strongest predictor for trolling behavior in \citep{cheng2017anyone}.
+
+
+%On the other hand, when it comes to pro-environmental choices, people are more likely to conform to information about what others don't do rather than what others do, building on an evolutionary predisposition to more urgently attend to negative rather than positive stimuli @bergquist2019and.  
+%Stosujemy normatywne i empatyczne interwencje - w literaturze te mechanizmy psychologiczne są opisane jako skuteczne w obniżaniu agresji - cytujemy literature. 
+%W jakich innych badaniach counter speech wykorzystywali empatie i norme - nas (Bilewicz study), Munger, Roma racist, itp..+opisać jak nasze obecne badanie sie rozni - po raz pierwszy wykorztstyujemy collective intelligence ludzie + AI
+%describe hypothesis i give argument behind the hypothesis
+
+ 
+ 
+ In line with this discussion, for the purpose of our study we have distinguished two types of counter responses to personal attacks: ``empathetic'' and ``normative''. The empathetic approach is aimed at countering the so-called desensitization to violence. It is a very dangerous process, finally leading to dehumanization of stigmatized groups. %Unfortunately, the impersonal structure of online space makes it very easy for the desensitization to occur. 
+ Being frequently exposed to online hate speech builds tolerance to the phenomenon and as a result we no longer see such statements as offensive, which lowers our sympathy for the victims and increases prejudice. By sending empathetic interventions we hoped to evoke compassion, self-reflection and humanize the person on the other side of the screen \citep{bilewicz2021artificial}. 
+
+The normative approach stems from the  aforementioned psychological research of normative social influence, stating that in ambiguous situations, people tend to rely on social cues, to determine what kinds of behaviors will be accepted. Taking from these studies, we refer to two types of norms: injunctive norms---describing what the members of this community are supposed to do and what is approved or disapproved by others (laws, rules, code of conduct, savoir-vivre, etc.) and descriptive norms - what the members of this community actually do \citep{cialdini_focus_1991, cialdini2004social, cialdini2006managing}. 
+
+%To put it in an example, there is a general rule that we should not litter in public spaces (injunctive norm), but we are much more likely to leave our garbage, when there’s evidence that other people did not follow the rule - the space is littered with trash (descriptive norm). We hope that our interventions will provide constructive social cues about acceptable forms of communication and influence the way users converse in a given community.
+
+%Another phenomenon illustrating the power of the context is the bystander effect. The bystander theory  states that individuals are less likely to offer help to a victim when there are other people present - the greater the number of bystanders, the less likely it is that one of them will help. But it takes only one helpful volunteer for others to follow. The study by Machackova and others (2015) have shown the bystander effect also takes place online. and a more recent study has shown that ordinary people, with no habit of trolling, will engage in trolling behavior under proper circumstances.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Data analysis}\label{sec{analysis}}
 
-\subsection{Exploration and data}\label{subsec:data-and-exploration}
+\subsection{Data collection and exploration}\label{subsec:data-and-exploration}
 
 
 
-For the duration of the project we selected 486 Reddit users\todo{how?} and tracked
-their activity (with some breaks resulting from API restrictions and
-technical issues, which were mostly sorted out in the observation
-period), starting on 2020-03-09, beginning the intervention period on
-2020-07-08, leading to a further observation period starting on
-2020-09-09 and ending on 2020-11-20. The time series of attacks observed
+
+
+
+
+
+
+We conducted a 6-months field experiment in a digital setting conducted on a popular Q\&A and news forum, Reddit (\url{www.reddit.com}). We formed treatment and control groups based on three main criteria:
+
+\renewcommand{\labelenumii}{\Roman{enumii}}
+ \begin{enumerate}
+ \item During the intervention period, we have expected to have 20 active volunteers at any given time, each willing to conduct approximately 10 interventions a day.  So, we needed approximately 200 attacks daily generated by the treatment groups.
+\item We first conducted a preliminary identification of users who regularly attack others to test interventions on them. The key issue here is that such users are not too common, and attacks are rather rare among other users. If instead we simply picked a random group of users with the intention of intervening in response to their online attacks, the sample size would have to be extremely large, and still the chance of observing enough attacks to draw any interesing conclusions from the reactions to our interventions would be low. Thus, we need to keep in mind that the group studied is not just users of Reddit, but rather users who for a least a few weeks tended to systematically attack others.
+
+\item The identification of users who were active during the whole preliminary monitoring period was necessary to minimize the risk of attrition during the study. 
+ \end{enumerate}
+
+\noindent The user identification process was as follows:
+
+\renewcommand{\labelenumii}{\Roman{enumii}}
+ \begin{enumerate}
+   \item First, we obtained 1 week of real-time umoderated data from Reddit (February 15-22. 2020), unmoderated data from Reddit. The content was downloaded from the data stream provided by pushshift.io. 
+   \item Samurai Labs Artificial Intelligence for personal attacks detection was applied to identify those users who attacked others at least once within this period. This resulted in the identification of 93966 users. 
+   \item We removed all accounts which we suspected not to be run by humans (AutoModerator and all users which had "bot" in the username string). This resulted in the removal of 388 users, thus 93578 were left on our list.
+   \item Next, we removed those users who generated only 1 personal attack during the week. This step resulted in the removal of users generating the number of personal attacks below the third quartile (Q3). 20124 users were left in our group.
+   \item We removed users who generated less than 14 comments during this week. It was not a lot, since 14 comments were below the 1st quartile (Q1: 28 comments), but such a criterion moved us in the direction of identification of those who are relatively active. This resulted in the removal of 2192 users, so 17932 were left.
+   \item We discarded users whose personal attacks to all comments ratio was below 2\%. This means the inclusion in the sample of users above the 1st quartile of personal attacks to all comments ratio. 4422 users were removed, leaving us with a group of 13510.
+   \item The next step of the process begun on  March 9, 2020, and lasted until May 5, 2020 (9 weeks). During this period we have monitored the activity of the identified group of 13510 users and applied further selection criteria to make sure we select those who were regularly active and attacked other users.
+   \item The period of monitoring was divided into weeks. We have discarded those weeks during which technical difficulties occurred with \linebreak \url{pushshift.io} (resulting in missing data). So we have taken into consideration only 6 full weeks for the period.
+   \item Users who generated at least 1 attack per week during 5 out of 6 weeks were identified. Initially, we planned to restrict the list to only those users who generate at least 1 attack during each week (6/6), but such a restrictive criterion led to only 255 users left, which was not enough for the study. The less restrictive criterion (at least 1 attack generated during 5/6 weeks) resulted in 694 people. 
+   \item Next, we calculated the daily average number of personal attacks generated by the resulting group (357 attacks per day).
+   \item Knowing that we need around 200 attacks per day  per treatment group (just enough for volunteers to keep up according to our assumption), we have randomly selected 195 users per each treatment group (normative and empathetic). The rest was delegated as a control group (304 users). 
+   \item Some of those were further removed as t data visualisation  and content inspection helped to identify them as bots, or they ceased their activity during the period. We were left with the data on 440 users.
+
+   
+ \end{enumerate}
+
+
+The duration of the experiment, 6 months, was divided into three 2-months periods. The first two months served as a monitoring period to properly select groups and establish baselines. The next 2 months served as a treatment period, during which groups received counter-speech comments from volunteers in response to personal attacks detected by the Artificial Intelligence-based system. The last 2-months served as the post-treatment monitoring period to gather the data needed to evaluate the effectiveness of interventions.
+We started with an observation period on March 9, 2020, leading to  the intervention period starting on July 8, 2020,  following with  a further observation period starting on September 9, 2020,
+and ending on November 20, 2020. The time series of attacks observed
 and of interventions conducted can be inspected in Figure
 \ref{fig:periodsPlot}, along with a quick search for weekly patterns.
 Some of the users turned out to be bots, a few ceased to be active
@@ -1421,6 +1571,758 @@ models, and we select the priors that do not result in unrealistically wide prio
 
 %\bibliographystyle{elsarticle-num-names}
 %\bibliography{attacks}
+
+
+%update when done 
+
+\begin{thebibliography}{91}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Misc
+\bibitem[{Laub(2019)}]{Zachary_hate}
+\bibinfo{author}{Z.~Laub}, \bibinfo{title}{Hate {Speech} on {Social} {Media}:
+  {Global} {Comparisons}}, \bibinfo{year}{2019}. \URLprefix
+  \url{https://www.cfr.org/backgrounder/hate-speech-social-media-global-comparisons}.
+%Type = Article
+\bibitem[{Sorrentino et~al.(2019)Sorrentino, Baldry, Farrington, and
+  Blaya}]{sorrentino2019epidemiology}
+\bibinfo{author}{A.~Sorrentino}, \bibinfo{author}{A.~C. Baldry},
+  \bibinfo{author}{D.~P. Farrington}, \bibinfo{author}{C.~Blaya},
+\newblock \bibinfo{title}{Epidemiology of cyberbullying across europe:
+  Differences between countries and genders},
+\newblock \bibinfo{journal}{Educational Sciences: Theory \& Practice}
+  \bibinfo{volume}{19} (\bibinfo{year}{2019}).
+%Type = Misc
+\bibitem[{Vogels(2021)}]{vogels_state_2021}
+\bibinfo{author}{E.~A. Vogels}, \bibinfo{title}{The {State} of {Online}
+  {Harassment}}, \bibinfo{year}{2021}. \URLprefix
+  \url{https://www.pewresearch.org/internet/2021/01/13/the-state-of-online-harassment/}.
+%Type = Article
+\bibitem[{Barlett et~al.(2021)Barlett, Simmers, Roth, and
+  Gentile}]{barlett2021comparing}
+\bibinfo{author}{C.~P. Barlett}, \bibinfo{author}{M.~M. Simmers},
+  \bibinfo{author}{B.~Roth}, \bibinfo{author}{D.~Gentile},
+\newblock \bibinfo{title}{Comparing cyberbullying prevalence and process before
+  and during the covid-19 pandemic},
+\newblock \bibinfo{journal}{The Journal of Social Psychology}
+  (\bibinfo{year}{2021}) \bibinfo{pages}{1--11}.
+%Type = Misc
+\bibitem[{Grant(2021)}]{grant_2021}
+\bibinfo{author}{J.~Grant}, \bibinfo{title}{Australia’s esafety commissioner
+  targets abuse online as covid-19 supercharges cyberbullying | the
+  strategist}, \bibinfo{year}{2021}. \URLprefix
+  \url{https://www.aspistrategist.org.au/australias-esafety-commissioner-targets-abuse-online-as-covid-19-supercharges-cyberbullying/}.
+%Type = Misc
+\bibitem[{L1ght(2020)}]{noauthor_l1ght_2020}
+\bibinfo{author}{L1ght}, \bibinfo{title}{L1ght releases groundbreaking report
+  on corona-related hate speech and online toxicity}, \bibinfo{year}{2020}.
+  \URLprefix
+  \url{https://l1ght.com/l1ght-releases-groundbreaking-report-on-corona-related-hate-speech-and-online-toxicity/}.
+%Type = Misc
+\bibitem[{Bhattacharya(2021)}]{bhattacharya}
+\bibinfo{author}{A.~Bhattacharya}, \bibinfo{title}{How {Covid}-19 lockdowns
+  weakened {Facebook}'s content moderation algorithms}, \bibinfo{year}{2021}.
+  \URLprefix
+  \url{https://qz.com/india/1976450/facebook-covid-19-lockdowns-hurt-content-moderation-algorithms/}.
+%Type = Article
+\bibitem[{Gerrard(2020)}]{gerrard2020covid19}
+\bibinfo{author}{Y.~Gerrard},
+\newblock \bibinfo{title}{<? covid19?> the covid-19 mental health content
+  moderation conundrum},
+\newblock \bibinfo{journal}{Social Media+ Society} \bibinfo{volume}{6}
+  (\bibinfo{year}{2020}) \bibinfo{pages}{2056305120948186}.
+%Type = Article
+\bibitem[{Yang et~al.(2021)Yang, Wang, Sun, Xu, Wang, Chen, Yu, Zhang, Zhu, Dai
+  et~al.}]{yang2021consequences}
+\bibinfo{author}{B.~Yang}, \bibinfo{author}{B.~Wang}, \bibinfo{author}{N.~Sun},
+  \bibinfo{author}{F.~Xu}, \bibinfo{author}{L.~Wang},
+  \bibinfo{author}{J.~Chen}, \bibinfo{author}{S.~Yu},
+  \bibinfo{author}{Y.~Zhang}, \bibinfo{author}{Y.~Zhu},
+  \bibinfo{author}{T.~Dai}, et~al.,
+\newblock \bibinfo{title}{The consequences of cyberbullying and traditional
+  bullying victimization among adolescents: gender differences in psychological
+  symptoms, self-harm and suicidality},
+\newblock \bibinfo{journal}{Psychiatry research} \bibinfo{volume}{306}
+  (\bibinfo{year}{2021}) \bibinfo{pages}{114219}.
+%Type = Article
+\bibitem[{Hinduja and Patchin(2010)}]{hinduja2010bullying}
+\bibinfo{author}{S.~Hinduja}, \bibinfo{author}{J.~W. Patchin},
+\newblock \bibinfo{title}{Bullying, cyberbullying, and suicide},
+\newblock \bibinfo{journal}{Archives of suicide research} \bibinfo{volume}{14}
+  (\bibinfo{year}{2010}) \bibinfo{pages}{206--221}.
+%Type = Article
+\bibitem[{Alhujailli et~al.(2020)Alhujailli, Karwowski, Wan, and
+  Hancock}]{alhujailli2020affective}
+\bibinfo{author}{A.~Alhujailli}, \bibinfo{author}{W.~Karwowski},
+  \bibinfo{author}{T.~T. Wan}, \bibinfo{author}{P.~Hancock},
+\newblock \bibinfo{title}{Affective and stress consequences of cyberbullying},
+\newblock \bibinfo{journal}{Symmetry} \bibinfo{volume}{12}
+  (\bibinfo{year}{2020}) \bibinfo{pages}{1536}.
+%Type = Article
+\bibitem[{Kowalski and Limber(2013)}]{kowalski2013psychological}
+\bibinfo{author}{R.~M. Kowalski}, \bibinfo{author}{S.~P. Limber},
+\newblock \bibinfo{title}{Psychological, physical, and academic correlates of
+  cyberbullying and traditional bullying},
+\newblock \bibinfo{journal}{Journal of adolescent health} \bibinfo{volume}{53}
+  (\bibinfo{year}{2013}) \bibinfo{pages}{S13--S20}.
+%Type = Article
+\bibitem[{Lee and Leets(2002)}]{lee2002persuasive}
+\bibinfo{author}{E.~Lee}, \bibinfo{author}{L.~Leets},
+\newblock \bibinfo{title}{Persuasive storytelling by hate groups online:
+  Examining its effects on adolescents},
+\newblock \bibinfo{journal}{American behavioral scientist} \bibinfo{volume}{45}
+  (\bibinfo{year}{2002}) \bibinfo{pages}{927--957}.
+%Type = Article
+\bibitem[{Williams(2019)}]{williams2019hatred}
+\bibinfo{author}{M.~Williams},
+\newblock \bibinfo{title}{Hatred behind the screens: A report on the rise of
+  online hate speech}  (\bibinfo{year}{2019}).
+%Type = Article
+\bibitem[{Fink(2018)}]{fink2018dangerous}
+\bibinfo{author}{C.~Fink},
+\newblock \bibinfo{title}{Dangerous speech, anti-muslim violence, and facebook
+  in myanmar},
+\newblock \bibinfo{journal}{Journal of International Affairs}
+  \bibinfo{volume}{71} (\bibinfo{year}{2018}) \bibinfo{pages}{43--52}.
+%Type = Article
+\bibitem[{Soral et~al.(2018)Soral, Bilewicz, and Winiewski}]{soral2018exposure}
+\bibinfo{author}{W.~Soral}, \bibinfo{author}{M.~Bilewicz},
+  \bibinfo{author}{M.~Winiewski},
+\newblock \bibinfo{title}{Exposure to hate speech increases prejudice through
+  desensitization},
+\newblock \bibinfo{journal}{Aggressive behavior} \bibinfo{volume}{44}
+  (\bibinfo{year}{2018}) \bibinfo{pages}{136--146}.
+  \DOIprefix\doi{10.1002/ab.21737}.
+%Type = Article
+\bibitem[{{\'A}lvarez-Benjumea and Winter(2018)}]{alvarez2018normative}
+\bibinfo{author}{A.~{\'A}lvarez-Benjumea}, \bibinfo{author}{F.~Winter},
+\newblock \bibinfo{title}{Normative change and culture of hate: An experiment
+  in online environments},
+\newblock \bibinfo{journal}{European Sociological Review} \bibinfo{volume}{34}
+  (\bibinfo{year}{2018}) \bibinfo{pages}{223--237}.
+  \DOIprefix\doi{10.2139/ssrn.3126089}.
+%Type = Article
+\bibitem[{Williams et~al.(2020)Williams, Burnap, Javed, Liu, and
+  Ozalp}]{williams2020hate}
+\bibinfo{author}{M.~L. Williams}, \bibinfo{author}{P.~Burnap},
+  \bibinfo{author}{A.~Javed}, \bibinfo{author}{H.~Liu},
+  \bibinfo{author}{S.~Ozalp},
+\newblock \bibinfo{title}{Hate in the machine: anti-black and anti-muslim
+  social media posts as predictors of offline racially and religiously
+  aggravated crime},
+\newblock \bibinfo{journal}{The British Journal of Criminology}
+  \bibinfo{volume}{60} (\bibinfo{year}{2020}) \bibinfo{pages}{93--117}.
+  \DOIprefix\doi{10.1093/bjc/azz049}.
+%Type = Article
+\bibitem[{Urbaniak et~al.(2022)Urbaniak, Ptaszy{\'n}ski, Tempska, Leliwa,
+  Brochocki, and Wroczy{\'n}ski}]{urbaniak2022personal}
+\bibinfo{author}{R.~Urbaniak}, \bibinfo{author}{M.~Ptaszy{\'n}ski},
+  \bibinfo{author}{P.~Tempska}, \bibinfo{author}{G.~Leliwa},
+  \bibinfo{author}{M.~Brochocki}, \bibinfo{author}{M.~Wroczy{\'n}ski},
+\newblock \bibinfo{title}{Personal attacks decrease user activity in social
+  networking platforms},
+\newblock \bibinfo{journal}{Computers in Human Behavior} \bibinfo{volume}{126}
+  (\bibinfo{year}{2022}) \bibinfo{pages}{106972}.
+%Type = Article
+\bibitem[{Tworek(2021)}]{tworek2021fighting}
+\bibinfo{author}{H.~J. Tworek},
+\newblock \bibinfo{title}{Fighting hate with speech law: Media and german
+  visions of democracy},
+\newblock \bibinfo{journal}{The Journal of Holocaust Research}
+  \bibinfo{volume}{35} (\bibinfo{year}{2021}) \bibinfo{pages}{106--122}.
+%Type = Article
+\bibitem[{Trengove et~al.(2022)Trengove, Kazim, Almeida, Hilliard, Zannone, and
+  Lomas}]{trengove2022critical}
+\bibinfo{author}{M.~Trengove}, \bibinfo{author}{E.~Kazim},
+  \bibinfo{author}{D.~Almeida}, \bibinfo{author}{A.~Hilliard},
+  \bibinfo{author}{S.~Zannone}, \bibinfo{author}{E.~Lomas},
+\newblock \bibinfo{title}{A critical review of the online safety bill},
+\newblock \bibinfo{journal}{Patterns}  (\bibinfo{year}{2022})
+  \bibinfo{pages}{100544}.
+%Type = Misc
+\bibitem[{cnb(2020)}]{cnbc_2020}
+\bibinfo{title}{Facebook frustrates advertisers as boycott over hate speech
+  kicks off}, \bibinfo{year}{2020}. \URLprefix
+  \url{https://www.cnbc.com/2020/07/01/facebook-frustrates-advertisers-as-boycott-over-hate-speech-kicks-off.html}.
+%Type = Misc
+\bibitem[{Newton(2013)}]{newton_2013}
+\bibinfo{author}{C.~Newton}, \bibinfo{title}{Killer app: Why do anonymous
+   networks keep leading to suicides?}, \bibinfo{year}{2013}.
+  \URLprefix
+  \url{https://www.theverge.com/2013/9/17/4740902/no-good-answers-why-didnt-ask-fm-learn-from-the-formspring-suicides}.
+%Type = Misc
+\bibitem[{Failory(2022)}]{failory_2022}
+\bibinfo{author}{Failory}, \bibinfo{title}{Yik yak's shut down: Why did the
+  location-based app failed?}, \bibinfo{year}{2022}. \URLprefix
+  \url{https://www.failory.com/cemetery/yik-yak}.
+%Type = Misc
+\bibitem[{los(2021)}]{los_angeles_times_2021}
+\bibinfo{title}{A teen who was bullied on snapchat died. his mom is suing to
+  hold social media liable}, \bibinfo{year}{2021}. \URLprefix
+  \url{https://www.latimes.com/business/story/2021-05-10/lawsuit-snap-teen-suicide-yolo-lmk}.
+%Type = Misc
+\bibitem[{Seifert(2013)}]{seifert_2013}
+\bibinfo{author}{D.~Seifert}, \bibinfo{title}{Social question and answer site
+  formspring to shut down on March 31st}, \bibinfo{year}{2013}. \URLprefix
+  \url{https://www.theverge.com/2013/3/15/4110196/social-question-answer-site-formspring-shut-down-march-31st}.
+%Type = Article
+\bibitem[{MacAvaney et~al.(2019)MacAvaney, Yao, Yang, Russell, Goharian, and
+  Frieder}]{macavaney2019hate}
+\bibinfo{author}{S.~MacAvaney}, \bibinfo{author}{H.-R. Yao},
+  \bibinfo{author}{E.~Yang}, \bibinfo{author}{K.~Russell},
+  \bibinfo{author}{N.~Goharian}, \bibinfo{author}{O.~Frieder},
+\newblock \bibinfo{title}{Hate speech detection: Challenges and solutions},
+\newblock \bibinfo{journal}{PloS one} \bibinfo{volume}{14}
+  (\bibinfo{year}{2019}) \bibinfo{pages}{e0221152}.
+%Type = Inproceedings
+\bibitem[{Schmidt and Wiegand(2017)}]{schmidt2017survey}
+\bibinfo{author}{A.~Schmidt}, \bibinfo{author}{M.~Wiegand},
+\newblock \bibinfo{title}{A survey on hate speech detection using natural
+  language processing},
+\newblock in: \bibinfo{booktitle}{Proceedings of the fifth international
+  workshop on natural language processing for social media},
+  \bibinfo{year}{2017}, pp. \bibinfo{pages}{1--10}.
+%Type = Article
+\bibitem[{Jordan and Mitchell(2015)}]{jordan2015machine}
+\bibinfo{author}{M.~I. Jordan}, \bibinfo{author}{T.~M. Mitchell},
+\newblock \bibinfo{title}{Machine learning: Trends, perspectives, and
+  prospects},
+\newblock \bibinfo{journal}{Science} \bibinfo{volume}{349}
+  (\bibinfo{year}{2015}) \bibinfo{pages}{255--260}.
+%Type = Article
+\bibitem[{LeCun et~al.(2015)LeCun, Bengio, and Hinton}]{lecun2015deep}
+\bibinfo{author}{Y.~LeCun}, \bibinfo{author}{Y.~Bengio},
+  \bibinfo{author}{G.~Hinton},
+\newblock \bibinfo{title}{Deep learning},
+\newblock \bibinfo{journal}{nature} \bibinfo{volume}{521}
+  (\bibinfo{year}{2015}) \bibinfo{pages}{436--444}.
+%Type = Article
+\bibitem[{Sejnowski(2020)}]{sejnowski2020unreasonable}
+\bibinfo{author}{T.~J. Sejnowski},
+\newblock \bibinfo{title}{The unreasonable effectiveness of deep learning in
+  artificial intelligence},
+\newblock \bibinfo{journal}{Proceedings of the National Academy of Sciences}
+  \bibinfo{volume}{117} (\bibinfo{year}{2020}) \bibinfo{pages}{30033--30038}.
+%Type = Inproceedings
+\bibitem[{Binns et~al.(2017)Binns, Veale, Van~Kleek, and
+  Shadbolt}]{binns2017like}
+\bibinfo{author}{R.~Binns}, \bibinfo{author}{M.~Veale},
+  \bibinfo{author}{M.~Van~Kleek}, \bibinfo{author}{N.~Shadbolt},
+\newblock \bibinfo{title}{Like trainer, like bot? inheritance of bias in
+  algorithmic content moderation},
+\newblock in: \bibinfo{booktitle}{International conference on social
+  informatics}, \bibinfo{organization}{Springer}, \bibinfo{year}{2017}, pp.
+  \bibinfo{pages}{405--415}.
+%Type = Article
+\bibitem[{Geva et~al.(2019)Geva, Goldberg, and Berant}]{geva2019we}
+\bibinfo{author}{M.~Geva}, \bibinfo{author}{Y.~Goldberg},
+  \bibinfo{author}{J.~Berant},
+\newblock \bibinfo{title}{Are we modeling the task or the annotator? an
+  investigation of annotator bias in natural language understanding datasets},
+\newblock \bibinfo{journal}{arXiv preprint arXiv:1908.07898}
+  (\bibinfo{year}{2019}).
+%Type = Article
+\bibitem[{Mehrabi et~al.(2021)Mehrabi, Morstatter, Saxena, Lerman, and
+  Galstyan}]{mehrabi2021survey}
+\bibinfo{author}{N.~Mehrabi}, \bibinfo{author}{F.~Morstatter},
+  \bibinfo{author}{N.~Saxena}, \bibinfo{author}{K.~Lerman},
+  \bibinfo{author}{A.~Galstyan},
+\newblock \bibinfo{title}{A survey on bias and fairness in machine learning},
+\newblock \bibinfo{journal}{ACM Computing Surveys (CSUR)} \bibinfo{volume}{54}
+  (\bibinfo{year}{2021}) \bibinfo{pages}{1--35}.
+%Type = Inproceedings
+\bibitem[{Sap et~al.(2019)Sap, Card, Gabriel, Choi, and Smith}]{sap_risk_2019}
+\bibinfo{author}{M.~Sap}, \bibinfo{author}{D.~Card},
+  \bibinfo{author}{S.~Gabriel}, \bibinfo{author}{Y.~Choi},
+  \bibinfo{author}{N.~A. Smith},
+\newblock \bibinfo{title}{The {Risk} of {Racial} {Bias} in {Hate} {Speech}
+  {Detection}},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 57th {Annual} {Meeting} of
+  the {Association} for {Computational} {Linguistics}},
+  \bibinfo{publisher}{Association for Computational Linguistics},
+  \bibinfo{address}{Florence, Italy}, \bibinfo{year}{2019}, pp.
+  \bibinfo{pages}{1668--1678}. \URLprefix
+  \url{https://aclanthology.org/P19-1163}.
+  \DOIprefix\doi{10.18653/v1/P19-1163}.
+%Type = Misc
+\bibitem[{Vanian(2019)}]{jigsaw2019}
+\bibinfo{author}{J.~Vanian}, \bibinfo{title}{Google's {Hate} {Speech}
+  {Detection} {A}.{I}. {Has} a {Racial} {Bias} {Problem}},
+  \bibinfo{year}{2019}. \URLprefix
+  \url{https://fortune.com/2019/08/16/google-jigsaw-perspective-racial-bias/}.
+%Type = Inproceedings
+\bibitem[{Gr{\"o}ndahl et~al.(2018)Gr{\"o}ndahl, Pajola, Juuti, Conti, and
+  Asokan}]{grondahl2018all}
+\bibinfo{author}{T.~Gr{\"o}ndahl}, \bibinfo{author}{L.~Pajola},
+  \bibinfo{author}{M.~Juuti}, \bibinfo{author}{M.~Conti},
+  \bibinfo{author}{N.~Asokan},
+\newblock \bibinfo{title}{All you need is" love" evading hate speech
+  detection},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 11th ACM workshop on
+  artificial intelligence and security}, \bibinfo{year}{2018}, pp.
+  \bibinfo{pages}{2--12}.
+%Type = Article
+\bibitem[{Rosa et~al.(2019)Rosa, Pereira, Ribeiro, Ferreira, Carvalho,
+  Oliveira, Coheur, Paulino, Sim{\~a}o, and Trancoso}]{rosa2019automatic}
+\bibinfo{author}{H.~Rosa}, \bibinfo{author}{N.~Pereira},
+  \bibinfo{author}{R.~Ribeiro}, \bibinfo{author}{P.~C. Ferreira},
+  \bibinfo{author}{J.~P. Carvalho}, \bibinfo{author}{S.~Oliveira},
+  \bibinfo{author}{L.~Coheur}, \bibinfo{author}{P.~Paulino},
+  \bibinfo{author}{A.~V. Sim{\~a}o}, \bibinfo{author}{I.~Trancoso},
+\newblock \bibinfo{title}{Automatic cyberbullying detection: A systematic
+  review},
+\newblock \bibinfo{journal}{Computers in Human Behavior} \bibinfo{volume}{93}
+  (\bibinfo{year}{2019}) \bibinfo{pages}{333--345}.
+%Type = Article
+\bibitem[{Yin and Zubiaga(2021)}]{yin2021towards}
+\bibinfo{author}{W.~Yin}, \bibinfo{author}{A.~Zubiaga},
+\newblock \bibinfo{title}{Towards generalisable hate speech detection: a review
+  on obstacles and solutions},
+\newblock \bibinfo{journal}{PeerJ Computer Science} \bibinfo{volume}{7}
+  (\bibinfo{year}{2021}) \bibinfo{pages}{e598}.
+%Type = Inproceedings
+\bibitem[{Wu et~al.(2019)Wu, Ribeiro, Heer, and Weld}]{wu2019errudite}
+\bibinfo{author}{T.~Wu}, \bibinfo{author}{M.~T. Ribeiro},
+  \bibinfo{author}{J.~Heer}, \bibinfo{author}{D.~S. Weld},
+\newblock \bibinfo{title}{Errudite: Scalable, reproducible, and testable error
+  analysis},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 57th Annual Meeting of the
+  Association for Computational Linguistics}, \bibinfo{year}{2019}, pp.
+  \bibinfo{pages}{747--763}.
+%Type = Article
+\bibitem[{Lipton and Steinhardt(2019)}]{lipton2019troubling}
+\bibinfo{author}{Z.~C. Lipton}, \bibinfo{author}{J.~Steinhardt},
+\newblock \bibinfo{title}{Troubling trends in machine learning scholarship:
+  Some ml papers suffer from flaws that could mislead the public and stymie
+  future research.},
+\newblock \bibinfo{journal}{Queue} \bibinfo{volume}{17} (\bibinfo{year}{2019})
+  \bibinfo{pages}{45--77}.
+%Type = Inproceedings
+\bibitem[{Musgrave et~al.(2020)Musgrave, Belongie, and
+  Lim}]{musgrave2020metric}
+\bibinfo{author}{K.~Musgrave}, \bibinfo{author}{S.~Belongie},
+  \bibinfo{author}{S.-N. Lim},
+\newblock \bibinfo{title}{A metric learning reality check},
+\newblock in: \bibinfo{booktitle}{European Conference on Computer Vision},
+  \bibinfo{organization}{Springer}, \bibinfo{year}{2020}, pp.
+  \bibinfo{pages}{681--699}.
+%Type = Inproceedings
+\bibitem[{Steinhardt et~al.(2017)Steinhardt, Koh, and
+  Liang}]{steinhardt2017certified}
+\bibinfo{author}{J.~Steinhardt}, \bibinfo{author}{P.~W. Koh},
+  \bibinfo{author}{P.~Liang},
+\newblock \bibinfo{title}{Certified defenses for data poisoning attacks},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 31st International
+  Conference on Neural Information Processing Systems}, \bibinfo{year}{2017},
+  pp. \bibinfo{pages}{3520--3532}.
+%Type = Article
+\bibitem[{Melis et~al.(2017)Melis, Dyer, and Blunsom}]{melis2017state}
+\bibinfo{author}{G.~Melis}, \bibinfo{author}{C.~Dyer},
+  \bibinfo{author}{P.~Blunsom},
+\newblock \bibinfo{title}{On the state of the art of evaluation in neural
+  language models},
+\newblock \bibinfo{journal}{arXiv preprint arXiv:1707.05589}
+  (\bibinfo{year}{2017}).
+%Type = Inproceedings
+\bibitem[{Steinhardt and Liang(2015)}]{steinhardt2015learning}
+\bibinfo{author}{J.~Steinhardt}, \bibinfo{author}{P.~Liang},
+\newblock \bibinfo{title}{Learning fast-mixing models for structured
+  prediction},
+\newblock in: \bibinfo{booktitle}{International Conference on Machine
+  Learning}, \bibinfo{organization}{PMLR}, \bibinfo{year}{2015}, pp.
+  \bibinfo{pages}{1063--1072}.
+%Type = Article
+\bibitem[{Esteva et~al.(2017)Esteva, Kuprel, Novoa, Ko, Swetter, Blau, and
+  Thrun}]{esteva_dermatologist-level_2017}
+\bibinfo{author}{A.~Esteva}, \bibinfo{author}{B.~Kuprel},
+  \bibinfo{author}{R.~A. Novoa}, \bibinfo{author}{J.~Ko},
+  \bibinfo{author}{S.~M. Swetter}, \bibinfo{author}{H.~M. Blau},
+  \bibinfo{author}{S.~Thrun},
+\newblock \bibinfo{title}{Dermatologist-level classification of skin cancer
+  with deep neural networks},
+\newblock \bibinfo{journal}{Nature} \bibinfo{volume}{542}
+  (\bibinfo{year}{2017}) \bibinfo{pages}{115--118}. \URLprefix
+  \url{http://www.nature.com/articles/nature21056}.
+  \DOIprefix\doi{10.1038/nature21056}.
+%Type = Article
+\bibitem[{R{\"o}ttger et~al.(2020)R{\"o}ttger, Vidgen, Nguyen, Waseem,
+  Margetts, and Pierrehumbert}]{rottger2020hatecheck}
+\bibinfo{author}{P.~R{\"o}ttger}, \bibinfo{author}{B.~Vidgen},
+  \bibinfo{author}{D.~Nguyen}, \bibinfo{author}{Z.~Waseem},
+  \bibinfo{author}{H.~Margetts}, \bibinfo{author}{J.~Pierrehumbert},
+\newblock \bibinfo{title}{Hatecheck: Functional tests for hate speech detection
+  models},
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2012.15606}
+  (\bibinfo{year}{2020}).
+%Type = Misc
+\bibitem[{onl(????)}]{onlinesafetydata}
+\bibinfo{title}{About the online safety data initiative}, ????
+%Type = Misc
+\bibitem[{noa(2012)}]{noauthor_facebook:_2012}
+\bibinfo{title}{Facebook: 3.2 {Billion} {Likes} \& {Comments} {Every} {Day}},
+  \bibinfo{year}{2012}. \URLprefix
+  \url{https://martech.org/facebook-3-2-billion-likes-comments-every-day/}.
+%Type = Misc
+\bibitem[{noa(2021)}]{noauthor_10_2021}
+\bibinfo{title}{10 {Twitter} {Statistics} {Every} {Marketer} {Should} {Know} in
+  2021 [{Infographic}]}, \bibinfo{year}{2021}. \URLprefix
+  \url{https://www.oberlo.com/blog/twitter-statistics}.
+%Type = Misc
+\bibitem[{noa(2020)}]{noauthor_reddit_nodate}
+\bibinfo{title}{Reddit in 2020}, \bibinfo{year}{2020}. \URLprefix
+  \url{https://www.reddit.com/r/blog/comments/k967mm/reddit_in_2020/}.
+%Type = Book
+\bibitem[{Roberts(2014)}]{roberts2014behind}
+\bibinfo{author}{S.~T. Roberts}, \bibinfo{title}{Behind the screen: The hidden
+  digital labor of commercial content moderation},
+  \bibinfo{publisher}{University of Illinois at Urbana-Champaign},
+  \bibinfo{year}{2014}.
+%Type = Article
+\bibitem[{Roberts(2016)}]{roberts2016commercial}
+\bibinfo{author}{S.~T. Roberts},
+\newblock \bibinfo{title}{Commercial content moderation: Digital laborers'
+  dirty work}  (\bibinfo{year}{2016}).
+%Type = Inproceedings
+\bibitem[{Karunakaran and Ramakrishan(2019)}]{karunakaran2019testing}
+\bibinfo{author}{S.~Karunakaran}, \bibinfo{author}{R.~Ramakrishan},
+\newblock \bibinfo{title}{Testing stylistic interventions to reduce emotional
+  impact of content moderation workers},
+\newblock in: \bibinfo{booktitle}{Proceedings of the AAAI Conference on Human
+  Computation and Crowdsourcing}, volume~\bibinfo{volume}{7},
+  \bibinfo{year}{2019}, pp. \bibinfo{pages}{50--58}.
+%Type = Inproceedings
+\bibitem[{Steiger et~al.(2021)Steiger, Bharucha, Venkatagiri, Riedl, and
+  Lease}]{steiger2021psychological}
+\bibinfo{author}{M.~Steiger}, \bibinfo{author}{T.~J. Bharucha},
+  \bibinfo{author}{S.~Venkatagiri}, \bibinfo{author}{M.~J. Riedl},
+  \bibinfo{author}{M.~Lease},
+\newblock \bibinfo{title}{The psychological well-being of content moderators},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 2021 CHI Conference on
+  Human Factors in Computing Systems, CHI}, volume~\bibinfo{volume}{21},
+  \bibinfo{year}{2021}.
+%Type = Misc
+\bibitem[{Newton(2020)}]{newton_facebook_2020}
+\bibinfo{author}{C.~Newton}, \bibinfo{title}{Facebook will pay \$52 million in
+  settlement with moderators who developed {PTSD} on the job},
+  \bibinfo{year}{2020}. \URLprefix
+  \url{https://www.theverge.com/2020/5/12/21255870/facebook-content-moderator-settlement-scola-ptsd-mental-health}.
+%Type = Article
+\bibitem[{Parks(2019)}]{parks2019dirty}
+\bibinfo{author}{L.~Parks},
+\newblock \bibinfo{title}{Dirty data: content moderation, regulatory
+  outsourcing, and the cleaners},
+\newblock \bibinfo{journal}{Film Quarterly} \bibinfo{volume}{73}
+  (\bibinfo{year}{2019}) \bibinfo{pages}{11--18}.
+%Type = Article
+\bibitem[{Stepanikova(2012)}]{stepanikova2012racial}
+\bibinfo{author}{I.~Stepanikova},
+\newblock \bibinfo{title}{Racial-ethnic biases, time pressure, and medical
+  decisions},
+\newblock \bibinfo{journal}{Journal of health and social behavior}
+  \bibinfo{volume}{53} (\bibinfo{year}{2012}) \bibinfo{pages}{329--343}.
+%Type = Misc
+\bibitem[{Koetsier(2020)}]{koetsier_report}
+\bibinfo{author}{J.~Koetsier}, \bibinfo{title}{Report: {Facebook} {Makes}
+  300,000 {Content} {Moderation} {Mistakes} {Every} {Day}},
+  \bibinfo{year}{2020}. \URLprefix
+  \url{https://www.forbes.com/sites/johnkoetsier/2020/06/09/300000-facebook-content-moderation-mistakes-daily-report-says/}.
+%Type = Article
+\bibitem[{Hoff and Mitchell(2009)}]{hoff2009cyberbullying}
+\bibinfo{author}{D.~L. Hoff}, \bibinfo{author}{S.~N. Mitchell},
+\newblock \bibinfo{title}{Cyberbullying: Causes, effects, and remedies},
+\newblock \bibinfo{journal}{Journal of Educational Administration}
+  (\bibinfo{year}{2009}).
+%Type = Book
+\bibitem[{Keipi et~al.(2016)Keipi, N{\"a}si, Oksanen, and
+  R{\"a}s{\"a}nen}]{keipi2016online}
+\bibinfo{author}{T.~Keipi}, \bibinfo{author}{M.~N{\"a}si},
+  \bibinfo{author}{A.~Oksanen}, \bibinfo{author}{P.~R{\"a}s{\"a}nen},
+  \bibinfo{title}{Online hate and harmful content: Cross-national
+  perspectives}, \bibinfo{publisher}{Taylor \& Francis}, \bibinfo{year}{2016}.
+%Type = Article
+\bibitem[{Wachs et~al.(2019)Wachs, Wright, Sittichai, Singh, Biswal, Kim, Yang,
+  G{\'a}mez-Guadix, Almendros, Flora et~al.}]{wachs2019associations}
+\bibinfo{author}{S.~Wachs}, \bibinfo{author}{M.~F. Wright},
+  \bibinfo{author}{R.~Sittichai}, \bibinfo{author}{R.~Singh},
+  \bibinfo{author}{R.~Biswal}, \bibinfo{author}{E.-m. Kim},
+  \bibinfo{author}{S.~Yang}, \bibinfo{author}{M.~G{\'a}mez-Guadix},
+  \bibinfo{author}{C.~Almendros}, \bibinfo{author}{K.~Flora}, et~al.,
+\newblock \bibinfo{title}{Associations between witnessing and perpetrating
+  online hate in eight countries: The buffering effects of problem-focused
+  coping},
+\newblock \bibinfo{journal}{International journal of environmental research and
+  public health} \bibinfo{volume}{16} (\bibinfo{year}{2019})
+  \bibinfo{pages}{3992}.
+%Type = Misc
+\bibitem[{French(2021)}]{french_as_2021}
+\bibinfo{author}{C.~French}, \bibinfo{title}{As the pandemic forces us online,
+  {LGBTQ2S}+ teens deal with cyberbullying}, \bibinfo{year}{2021}. \URLprefix
+  \url{https://www.ctvnews.ca/canada/as-the-pandemic-forces-us-online-lgbtq2s-teens-deal-with-cyberbullying-1.5430945}.
+%Type = Misc
+\bibitem[{League(2020)}]{ADL_free}
+\bibinfo{author}{A.-D. League}, \bibinfo{title}{Free to {Play}? {Hate},
+  {Harassment} and {Positive} {Social} {Experience} in {Online} {Games} 2020},
+  \bibinfo{year}{2020}. \URLprefix \url{https://www.adl.org/free-to-play-2020}.
+%Type = Misc
+\bibitem[{noa(2017)}]{noauthor_:game_nodate}
+\bibinfo{title}{In:{Game} {Abuse}}, \bibinfo{year}{2017}. \URLprefix
+  \url{https://www.ditchthelabel.org/research-papers/ingame-abuse/}.
+%Type = Article
+\bibitem[{Leader~Maynard and Benesch(2016)}]{leader2016dangerous}
+\bibinfo{author}{J.~Leader~Maynard}, \bibinfo{author}{S.~Benesch},
+\newblock \bibinfo{title}{Dangerous speech and dangerous ideology: An
+  integrated model for monitoring and prevention},
+\newblock \bibinfo{journal}{Genocide Studies and Prevention}
+  \bibinfo{volume}{9} (\bibinfo{year}{2016}).
+%Type = Article
+\bibitem[{Garland et~al.(2020)Garland, Ghazi-Zahedi, Young,
+  H{\'e}bert-Dufresne, and Galesic}]{garland2020countering}
+\bibinfo{author}{J.~Garland}, \bibinfo{author}{K.~Ghazi-Zahedi},
+  \bibinfo{author}{J.-G. Young}, \bibinfo{author}{L.~H{\'e}bert-Dufresne},
+  \bibinfo{author}{M.~Galesic},
+\newblock \bibinfo{title}{Countering hate on social media: Large scale
+  classification of hate and counter speech},
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2006.01974}
+  (\bibinfo{year}{2020}).
+%Type = Article
+\bibitem[{Dictionary(2002)}]{dictionary2002merriam}
+\bibinfo{author}{M.-W. Dictionary},
+\newblock \bibinfo{title}{Merriam-webster},
+\newblock \bibinfo{journal}{On-line at http://www. mw. com/home. htm}
+  \bibinfo{volume}{8} (\bibinfo{year}{2002}) \bibinfo{pages}{2}.
+%Type = Inproceedings
+\bibitem[{Schieb and Preuss(2016)}]{schieb2016governing}
+\bibinfo{author}{C.~Schieb}, \bibinfo{author}{M.~Preuss},
+\newblock \bibinfo{title}{Governing hate speech by means of counterspeech on
+  facebook},
+\newblock in: \bibinfo{booktitle}{66th ica annual conference, at fukuoka,
+  japan}, \bibinfo{year}{2016}, pp. \bibinfo{pages}{1--23}.
+%Type = Article
+\bibitem[{Benesch et~al.(2016)Benesch, Ruths, Dillon, Saleem, and
+  Wright}]{benesch2016considerations}
+\bibinfo{author}{S.~Benesch}, \bibinfo{author}{D.~Ruths},
+  \bibinfo{author}{K.~P. Dillon}, \bibinfo{author}{H.~M. Saleem},
+  \bibinfo{author}{L.~Wright},
+\newblock \bibinfo{title}{Considerations for successful counterspeech},
+\newblock \bibinfo{journal}{Dangerous Speech Project}  (\bibinfo{year}{2016}).
+%Type = Article
+\bibitem[{Rieger et~al.(2018)Rieger, Schmitt, and Frischlich}]{rieger2018hate}
+\bibinfo{author}{D.~Rieger}, \bibinfo{author}{J.~B. Schmitt},
+  \bibinfo{author}{L.~Frischlich},
+\newblock \bibinfo{title}{Hate and counter-voices in the internet: Introduction
+  to the special isssue},
+\newblock \bibinfo{journal}{Studies in Communication and Media}
+  (\bibinfo{year}{2018}) \bibinfo{pages}{459--472}.
+%Type = Article
+\bibitem[{Ziegele et~al.(2018)Ziegele, Jost, Bormann, and
+  Heinbach}]{ziegele2018journalistic}
+\bibinfo{author}{M.~Ziegele}, \bibinfo{author}{P.~Jost},
+  \bibinfo{author}{M.~Bormann}, \bibinfo{author}{D.~Heinbach},
+\newblock \bibinfo{title}{Journalistic counter-voices in comment sections:
+  Patterns, determinants, and potential consequences of interactive moderation
+  of uncivil user comments},
+\newblock \bibinfo{journal}{SCM Studies in Communication and Media}
+  \bibinfo{volume}{7} (\bibinfo{year}{2018}) \bibinfo{pages}{525--554}.
+%Type = Article
+\bibitem[{Ziems et~al.(2020)Ziems, He, Soni, and Kumar}]{ziems2020racism}
+\bibinfo{author}{C.~Ziems}, \bibinfo{author}{B.~He}, \bibinfo{author}{S.~Soni},
+  \bibinfo{author}{S.~Kumar},
+\newblock \bibinfo{title}{Racism is a virus: Anti-asian hate and counterhate in
+  social media during the covid-19 crisis},
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2005.12423}
+  (\bibinfo{year}{2020}).
+%Type = Article
+\bibitem[{Xie et~al.(2011)Xie, Sreenivasan, Korniss, Zhang, Lim, and
+  Szymanski}]{xie2011social}
+\bibinfo{author}{J.~Xie}, \bibinfo{author}{S.~Sreenivasan},
+  \bibinfo{author}{G.~Korniss}, \bibinfo{author}{W.~Zhang},
+  \bibinfo{author}{C.~Lim}, \bibinfo{author}{B.~K. Szymanski},
+\newblock \bibinfo{title}{Social consensus through the influence of committed
+  minorities},
+\newblock \bibinfo{journal}{Physical Review E} \bibinfo{volume}{84}
+  (\bibinfo{year}{2011}) \bibinfo{pages}{011130}.
+%Type = Article
+\bibitem[{Chandrasekharan et~al.(2017)Chandrasekharan, Pavalanathan,
+  Srinivasan, Glynn, Eisenstein, and Gilbert}]{chandrasekharan2017you}
+\bibinfo{author}{E.~Chandrasekharan}, \bibinfo{author}{U.~Pavalanathan},
+  \bibinfo{author}{A.~Srinivasan}, \bibinfo{author}{A.~Glynn},
+  \bibinfo{author}{J.~Eisenstein}, \bibinfo{author}{E.~Gilbert},
+\newblock \bibinfo{title}{You can't stay here: The efficacy of {R}eddit's 2015
+  ban examined through hate speech},
+\newblock \bibinfo{journal}{Proceedings of the ACM on Human-Computer
+  Interaction} \bibinfo{volume}{1} (\bibinfo{year}{2017})
+  \bibinfo{pages}{1--22}.
+%Type = Article
+\bibitem[{Bilewicz et~al.(2021)Bilewicz, Tempska, Leliwa, Dowgiałło, Tańska,
+  Urbaniak, and Wroczyński}]{bilewicz2021artificial}
+\bibinfo{author}{M.~Bilewicz}, \bibinfo{author}{P.~Tempska},
+  \bibinfo{author}{G.~Leliwa}, \bibinfo{author}{M.~Dowgiałło},
+  \bibinfo{author}{M.~Tańska}, \bibinfo{author}{R.~Urbaniak},
+  \bibinfo{author}{M.~Wroczyński},
+\newblock \bibinfo{title}{Artificial intelligence against hate: Intervention
+  reducing verbal aggression in the social network environment},
+\newblock \bibinfo{journal}{Aggressive Behavior} \bibinfo{volume}{47}
+  (\bibinfo{year}{2021}) \bibinfo{pages}{260--266}. \URLprefix
+  \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/ab.21948}.
+  \DOIprefix\doi{https://doi.org/10.1002/ab.21948}.
+  \href{http://arxiv.org/abs/https://onlinelibrary.wiley.com/doi/pdf/10.1002/ab.21948}{{\tt
+  arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1002/ab.21948}}.
+%Type = Article
+\bibitem[{Brauer and Chaurand(2010)}]{brauer2010descriptive}
+\bibinfo{author}{M.~Brauer}, \bibinfo{author}{N.~Chaurand},
+\newblock \bibinfo{title}{Descriptive norms, prescriptive norms, and social
+  control: An intercultural comparison of people's reactions to uncivil
+  behaviors},
+\newblock \bibinfo{journal}{European Journal of Social Psychology}
+  \bibinfo{volume}{40} (\bibinfo{year}{2010}) \bibinfo{pages}{490--499}.
+%Type = Article
+\bibitem[{Fischer et~al.(2011)Fischer, Krueger, Greitemeyer, Vogrincic,
+  Kastenm{\""u}ller, Frey, Heene, Wicher, and
+  Kainbacher}]{fischer2011bystander}
+\bibinfo{author}{P.~Fischer}, \bibinfo{author}{J.~I. Krueger},
+  \bibinfo{author}{T.~Greitemeyer}, \bibinfo{author}{C.~Vogrincic},
+  \bibinfo{author}{A.~Kastenm{\""u}ller}, \bibinfo{author}{D.~Frey},
+  \bibinfo{author}{M.~Heene}, \bibinfo{author}{M.~Wicher},
+  \bibinfo{author}{M.~Kainbacher},
+\newblock \bibinfo{title}{The bystander-effect: a meta-analytic review on
+  bystander intervention in dangerous and non-dangerous emergencies.},
+\newblock \bibinfo{journal}{Psychological bulletin} \bibinfo{volume}{137}
+  (\bibinfo{year}{2011}) \bibinfo{pages}{517}.
+%Type = Article
+\bibitem[{Legault et~al.(2011)Legault, Gutsell, and
+  Inzlicht}]{legault2011ironic}
+\bibinfo{author}{L.~Legault}, \bibinfo{author}{J.~N. Gutsell},
+  \bibinfo{author}{M.~Inzlicht},
+\newblock \bibinfo{title}{Ironic effects of antiprejudice messages: How
+  motivational interventions can reduce (but also increase) prejudice},
+\newblock \bibinfo{journal}{Psychological Science} \bibinfo{volume}{22}
+  (\bibinfo{year}{2011}) \bibinfo{pages}{1472--1477}.
+%Type = Article
+\bibitem[{Morris and Cushman(2018)}]{morris2018common}
+\bibinfo{author}{A.~Morris}, \bibinfo{author}{F.~Cushman},
+\newblock \bibinfo{title}{A common framework for theories of norm compliance},
+\newblock \bibinfo{journal}{Social Philosophy and Policy} \bibinfo{volume}{35}
+  (\bibinfo{year}{2018}) \bibinfo{pages}{101--127}.
+%Type = Article
+\bibitem[{Cialdini et~al.(1990)Cialdini, Reno, and
+  Kallgren}]{cialdini1990focus}
+\bibinfo{author}{R.~B. Cialdini}, \bibinfo{author}{R.~R. Reno},
+  \bibinfo{author}{C.~A. Kallgren},
+\newblock \bibinfo{title}{A focus theory of normative conduct: Recycling the
+  concept of norms to reduce littering in public places.},
+\newblock \bibinfo{journal}{Journal of personality and social psychology}
+  \bibinfo{volume}{58} (\bibinfo{year}{1990}) \bibinfo{pages}{1015}.
+%Type = Article
+\bibitem[{Cialdini et~al.(2006)Cialdini, Demaine, Sagarin, Barrett, Rhoads, and
+  Winter}]{cialdini2006managing}
+\bibinfo{author}{R.~B. Cialdini}, \bibinfo{author}{L.~J. Demaine},
+  \bibinfo{author}{B.~J. Sagarin}, \bibinfo{author}{D.~W. Barrett},
+  \bibinfo{author}{K.~Rhoads}, \bibinfo{author}{P.~L. Winter},
+\newblock \bibinfo{title}{Managing social norms for persuasive impact},
+\newblock \bibinfo{journal}{Social influence} \bibinfo{volume}{1}
+  (\bibinfo{year}{2006}) \bibinfo{pages}{3--15}.
+%Type = Article
+\bibitem[{Goldstein et~al.(2008)Goldstein, Cialdini, and
+  Griskevicius}]{goldstein2008room}
+\bibinfo{author}{N.~J. Goldstein}, \bibinfo{author}{R.~B. Cialdini},
+  \bibinfo{author}{V.~Griskevicius},
+\newblock \bibinfo{title}{A room with a viewpoint: Using social norms to
+  motivate environmental conservation in hotels},
+\newblock \bibinfo{journal}{Journal of consumer Research} \bibinfo{volume}{35}
+  (\bibinfo{year}{2008}) \bibinfo{pages}{472--482}.
+%Type = Article
+\bibitem[{Kallgren et~al.(2000)Kallgren, Reno, and
+  Cialdini}]{kallgren2000focus}
+\bibinfo{author}{C.~A. Kallgren}, \bibinfo{author}{R.~R. Reno},
+  \bibinfo{author}{R.~B. Cialdini},
+\newblock \bibinfo{title}{A focus theory of normative conduct: When norms do
+  and do not affect behavior},
+\newblock \bibinfo{journal}{Personality and social psychology bulletin}
+  \bibinfo{volume}{26} (\bibinfo{year}{2000}) \bibinfo{pages}{1002--1012}.
+%Type = Article
+\bibitem[{Cialdini and Goldstein(2004)}]{cialdini2004social}
+\bibinfo{author}{R.~B. Cialdini}, \bibinfo{author}{N.~J. Goldstein},
+\newblock \bibinfo{title}{Social influence: Compliance and conformity},
+\newblock \bibinfo{journal}{Annual review of psychology} \bibinfo{volume}{55}
+  (\bibinfo{year}{2004}) \bibinfo{pages}{591--621}.
+%Type = Article
+\bibitem[{Stangor et~al.(2001)Stangor, Sechrist, and
+  Jost}]{stangor2001changing}
+\bibinfo{author}{C.~Stangor}, \bibinfo{author}{G.~B. Sechrist},
+  \bibinfo{author}{J.~T. Jost},
+\newblock \bibinfo{title}{Changing racial beliefs by providing consensus
+  information},
+\newblock \bibinfo{journal}{Personality and Social Psychology Bulletin}
+  \bibinfo{volume}{27} (\bibinfo{year}{2001}) \bibinfo{pages}{486--496}.
+%Type = Article
+\bibitem[{Crandall et~al.(2002)Crandall, Eshleman, and
+  O'brien}]{crandall2002social}
+\bibinfo{author}{C.~S. Crandall}, \bibinfo{author}{A.~Eshleman},
+  \bibinfo{author}{L.~O'brien},
+\newblock \bibinfo{title}{Social norms and the expression and suppression of
+  prejudice: the struggle for internalization.},
+\newblock \bibinfo{journal}{Journal of personality and social psychology}
+  \bibinfo{volume}{82} (\bibinfo{year}{2002}) \bibinfo{pages}{359}.
+%Type = Article
+\bibitem[{Munger(2017)}]{munger2017tweetment}
+\bibinfo{author}{K.~Munger},
+\newblock \bibinfo{title}{Tweetment effects on the tweeted: Experimentally
+  reducing racist harassment},
+\newblock \bibinfo{journal}{Political Behavior} \bibinfo{volume}{39}
+  (\bibinfo{year}{2017}) \bibinfo{pages}{629--649}.
+  \DOIprefix\doi{10.1007/s11109-016-9373-5}.
+%Type = Article
+\bibitem[{Price et~al.(2006)Price, Nir, and Cappella}]{price2006normative}
+\bibinfo{author}{V.~Price}, \bibinfo{author}{L.~Nir}, \bibinfo{author}{J.~N.
+  Cappella},
+\newblock \bibinfo{title}{Normative and informational influences in online
+  political discussions},
+\newblock \bibinfo{journal}{Communication Theory} \bibinfo{volume}{16}
+  (\bibinfo{year}{2006}) \bibinfo{pages}{47--74}.
+%Type = Inproceedings
+\bibitem[{Cheng et~al.(2017)Cheng, Bernstein, Danescu-Niculescu-Mizil, and
+  Leskovec}]{cheng2017anyone}
+\bibinfo{author}{J.~Cheng}, \bibinfo{author}{M.~Bernstein},
+  \bibinfo{author}{C.~Danescu-Niculescu-Mizil}, \bibinfo{author}{J.~Leskovec},
+\newblock \bibinfo{title}{Anyone can become a troll: Causes of trolling
+  behavior in online discussions},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 2017 ACM conference on
+  computer supported cooperative work and social computing},
+  \bibinfo{year}{2017}, pp. \bibinfo{pages}{1217--1230}.
+%Type = Incollection
+\bibitem[{Cialdini et~al.(1991)Cialdini, Kallgren, and
+  Reno}]{cialdini_focus_1991}
+\bibinfo{author}{R.~B. Cialdini}, \bibinfo{author}{C.~A. Kallgren},
+  \bibinfo{author}{R.~R. Reno},
+\newblock \bibinfo{title}{A {Focus} {Theory} of {Normative} {Conduct}: {A}
+  {Theoretical} {Refinement} and {Reevaluation} of the {Role} of {Norms} in
+  {Human} {Behavior}},
+\newblock in: \bibinfo{booktitle}{Advances in {Experimental} {Social}
+  {Psychology}}, volume~\bibinfo{volume}{24}, \bibinfo{publisher}{Elsevier},
+  \bibinfo{year}{1991}, pp. \bibinfo{pages}{201--234}. \URLprefix
+  \url{https://linkinghub.elsevier.com/retrieve/pii/S0065260108603305}.
+  \DOIprefix\doi{10.1016/S0065-2601(08)60330-5}.
+
+\end{thebibliography}
+
+
+
+
+
+
+
+
+
 
 \end{document}
 

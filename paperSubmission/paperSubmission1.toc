@@ -4,7 +4,7 @@
 \contentsline {subsection}{\numberline {1.3}Results}{14}{}%
 \contentsline {subsubsection}{\numberline {1.3.1}Interventions on a given day}{14}{}%
 \contentsline {subsubsection}{\numberline {1.3.2}Cumulative sum of interventions}{14}{}%
-\contentsline {subsubsection}{\numberline {1.3.3}Long term before/after analysis}{15}{}%
+\contentsline {subsubsection}{\numberline {1.3.3}Long term before/after analysis}{14}{}%
 \contentsline {section}{\numberline {2}Discussion}{22}{}%
 \contentsline {section}{\numberline {3}Volunteer engagement and impact of competitions}{22}{}%
 \contentsline {subsection}{\numberline {3.1}The challenge of keeping volunteers engaged}{22}{}%

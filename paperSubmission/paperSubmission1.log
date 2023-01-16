@@ -1,9 +1,12 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.15)  2 DEC 2022 10:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.15)  16 JAN 2023 09:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/media/rafal/rfl/paperSubmission/paperSubmission1.tex
-(/media/rafal/rfl/paperSubmission/paperSubmission1.tex
+**/home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/paperSubmis
+sion1.tex
+
+(/home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/paperSubmiss
+ion1.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/elsa
 rticle/elsarticle.cls
@@ -75,8 +78,9 @@ File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 \@enLab=\toks18
 \@sep=\skip49
 \@@sep=\skip50
-(/media/rafal/rfl/paperSubmission/paperSubmission1.spl) (/usr/share/texlive/tex
-mf-dist/tex/latex/natbib/natbib.sty
+
+(/home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/paperSubmiss
+ion1.spl) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip51
 \bibsep=\skip52
@@ -439,36 +443,45 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Cskip=\skip58
 )
 \c@@todonotes@numberoftodonotes=\count298
-) (/media/rafal/rfl/paperSubmission/paperSubmission1.aux)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+\c@r@tfl@t=\count299
+\rotFPtop=\skip59
+\rotFPbot=\skip60
+\rot@float@box=\box70
+\rot@mess@toks=\toks36
+)
+(/home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/paperSubmiss
+ion1.aux)
 \openout1 = `paperSubmission1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
-LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count299
+\scratchcounter=\count300
 \scratchdimen=\dimen269
-\scratchbox=\box70
-\nofMPsegments=\count300
-\nofMParguments=\count301
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count302
+\scratchbox=\box71
+\nofMPsegments=\count301
+\nofMParguments=\count302
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count303
 \MPscratchDim=\dimen270
-\MPnumerator=\count303
-\makeMPintoPDFobject=\count304
-\everyMPtoPDFconversion=\toks37
+\MPnumerator=\count304
+\makeMPintoPDFobject=\count305
+\everyMPtoPDFconversion=\toks38
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -481,23 +494,25 @@ e
 Package todonotes Warning: The length marginparwidth is less than 2cm and will 
 most likely cause issues with the appearance of inserted todonotes. The issue c
 an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
-loading the todonotes package. on input line 55.
+loading the todonotes package. on input line 56.
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 138
+LaTeX Font Info:    Trying to load font information for U+msa on input line 139
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 138
+LaTeX Font Info:    Trying to load font information for U+msb on input line 139
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (/media/rafal/rfl/paperSubmission/paperSubmission1.toc)
+)
+(/home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/paperSubmiss
+ion1.toc)
 \tf@toc=\write5
 \openout5 = `paperSubmission1.toc'.
 
@@ -513,136 +528,146 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 <figures/periodsPlot-1.pdf, id=22, 440.64626pt x 315.1775pt>
 File: figures/periodsPlot-1.pdf Graphic file (type pdf)
 <use figures/periodsPlot-1.pdf>
-Package pdftex.def Info: figures/periodsPlot-1.pdf  used on input line 171.
+Package pdftex.def Info: figures/periodsPlot-1.pdf  used on input line 172.
 (pdftex.def)             Requested size: 343.2019pt x 245.48639pt.
 <figures/periodsPlot-2.pdf, id=23, 437.635pt x 303.1325pt>
 File: figures/periodsPlot-2.pdf Graphic file (type pdf)
 <use figures/periodsPlot-2.pdf>
-Package pdftex.def Info: figures/periodsPlot-2.pdf  used on input line 173.
+Package pdftex.def Info: figures/periodsPlot-2.pdf  used on input line 174.
 (pdftex.def)             Requested size: 343.2019pt x 237.72363pt.
 <figures/interventionsDistroPlot-1.pdf, id=24, 439.6425pt x 313.17pt>
 File: figures/interventionsDistroPlot-1.pdf Graphic file (type pdf)
 <use figures/interventionsDistroPlot-1.pdf>
 Package pdftex.def Info: figures/interventionsDistroPlot-1.pdf  used on input l
-ine 227.
+ine 228.
 (pdftex.def)             Requested size: 343.2019pt x 244.47708pt.
 <figures/violJoint-1.pdf, id=25, 451.6875pt x 317.185pt>
 File: figures/violJoint-1.pdf Graphic file (type pdf)
 <use figures/violJoint-1.pdf>
-Package pdftex.def Info: figures/violJoint-1.pdf  used on input line 244.
+Package pdftex.def Info: figures/violJoint-1.pdf  used on input line 245.
 (pdftex.def)             Requested size: 390.0pt x 273.88208pt.
-[2] [3 </media/rafal/rfl/paperSubmission/figures/periodsPlot-1.pdf> </media/raf
-al/rfl/paperSubmission/figures/periodsPlot-2.pdf>] [4 </media/rafal/rfl/paperSu
-bmission/figures/interventionsDistroPlot-1.pdf>] [5 </media/rafal/rfl/paperSubm
-ission/figures/violJoint-1.pdf>]
+[2] [3 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figur
+es/periodsPlot-1.pdf> </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperS
+ubmission/figures/periodsPlot-2.pdf>] [4 </home/rafal/UGPOP/projectsUGPOP/nesta
+AttacksStudy/paperSubmission/figures/interventionsDistroPlot-1.pdf>] [5 </home/
+rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figures/violJoint-1
+.pdf>]
 <figures/fig:linearShift-1.pdf, id=85, 454.69875pt x 315.1775pt>
 File: figures/fig:linearShift-1.pdf Graphic file (type pdf)
 <use figures/fig:linearShift-1.pdf>
-Package pdftex.def Info: figures/fig:linearShift-1.pdf  used on input line 262.
+Package pdftex.def Info: figures/fig:linearShift-1.pdf  used on input line 263.
 
 (pdftex.def)             Requested size: 390.0pt x 270.3356pt.
 <figures/fig:tsVisPlot6-1.pdf, id=86, 466.74374pt x 311.1625pt>
 File: figures/fig:tsVisPlot6-1.pdf Graphic file (type pdf)
 <use figures/fig:tsVisPlot6-1.pdf>
-Package pdftex.def Info: figures/fig:tsVisPlot6-1.pdf  used on input line 280.
+Package pdftex.def Info: figures/fig:tsVisPlot6-1.pdf  used on input line 281.
 (pdftex.def)             Requested size: 390.0pt x 260.01205pt.
-[6 </media/rafal/rfl/paperSubmission/figures/fig:linearShift-1.pdf>] [7 </media
-/rafal/rfl/paperSubmission/figures/fig:tsVisPlot6-1.pdf>]
+[6 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figures/f
+ig:linearShift-1.pdf>] [7 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/pa
+perSubmission/figures/fig:tsVisPlot6-1.pdf>]
 <figures/correlations-1.pdf, id=121, 394.47375pt x 311.1625pt>
 File: figures/correlations-1.pdf Graphic file (type pdf)
 <use figures/correlations-1.pdf>
-Package pdftex.def Info: figures/correlations-1.pdf  used on input line 327.
+Package pdftex.def Info: figures/correlations-1.pdf  used on input line 328.
 (pdftex.def)             Requested size: 187.19833pt x 147.66129pt.
 <figures/correlations-2.pdf, id=122, 421.575pt x 291.0875pt>
 File: figures/correlations-2.pdf Graphic file (type pdf)
 <use figures/correlations-2.pdf>
-Package pdftex.def Info: figures/correlations-2.pdf  used on input line 327.
+Package pdftex.def Info: figures/correlations-2.pdf  used on input line 328.
 (pdftex.def)             Requested size: 187.19833pt x 129.25592pt.
-[8] [9 </media/rafal/rfl/paperSubmission/figures/correlations-1.pdf> </media/ra
-fal/rfl/paperSubmission/figures/correlations-2.pdf>] [10] [11] [12] [13]
+[8] [9 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figur
+es/correlations-1.pdf> </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paper
+Submission/figures/correlations-2.pdf>] [10] [11] [12] [13]
 <figures/fig:dailyResultsPlot-1.pdf, id=164, 458.71375pt x 308.15125pt>
 File: figures/fig:dailyResultsPlot-1.pdf Graphic file (type pdf)
 <use figures/fig:dailyResultsPlot-1.pdf>
 Package pdftex.def Info: figures/fig:dailyResultsPlot-1.pdf  used on input line
- 586.
-(pdftex.def)             Requested size: 390.0pt x 262.00502pt.
+ 587.
+(pdftex.def)             Requested size: 548.5pt x 368.48657pt.
 <figures/fig:cumulativeResultsPlot-1.pdf, id=165, 455.7025pt x 315.1775pt>
 File: figures/fig:cumulativeResultsPlot-1.pdf Graphic file (type pdf)
 <use figures/fig:cumulativeResultsPlot-1.pdf>
 Package pdftex.def Info: figures/fig:cumulativeResultsPlot-1.pdf  used on input
- line 613.
+ line 614.
 (pdftex.def)             Requested size: 312.00119pt x 215.79428pt.
 <figures/fig:cumulativeResultsPlot-2.pdf, id=166, 459.7175pt x 298.11375pt>
 File: figures/fig:cumulativeResultsPlot-2.pdf Graphic file (type pdf)
 <use figures/fig:cumulativeResultsPlot-2.pdf>
 Package pdftex.def Info: figures/fig:cumulativeResultsPlot-2.pdf  used on input
- line 613.
+ line 614.
 (pdftex.def)             Requested size: 312.00119pt x 202.33257pt.
-[14 </media/rafal/rfl/paperSubmission/figures/fig:dailyResultsPlot-1.pdf>]
-<figures/fig:cumulativeResultsGeenralPlot-1.pdf, id=185, 459.7175pt x 315.1775p
+<figures/fig:cumulativeResultsGeenralPlot-1.pdf, id=167, 459.7175pt x 315.1775p
 t>
 File: figures/fig:cumulativeResultsGeenralPlot-1.pdf Graphic file (type pdf)
 <use figures/fig:cumulativeResultsGeenralPlot-1.pdf>
 Package pdftex.def Info: figures/fig:cumulativeResultsGeenralPlot-1.pdf  used o
-n input line 637.
+n input line 638.
 (pdftex.def)             Requested size: 390.0pt x 267.39236pt.
-<figures/unnamed-chunk-5-1.pdf, id=186, 462.72874pt x 311.1625pt>
+[14] [15 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
+ures/fig:dailyResultsPlot-1.pdf>] [16 </home/rafal/UGPOP/projectsUGPOP/nestaAtt
+acksStudy/paperSubmission/figures/fig:cumulativeResultsPlot-1.pdf> </home/rafal
+/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figures/fig:cumulativeRe
+sultsPlot-2.pdf>] [17 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperS
+ubmission/figures/fig:cumulativeResultsGeenralPlot-1.pdf>]
+<figures/unnamed-chunk-5-1.pdf, id=231, 462.72874pt x 311.1625pt>
 File: figures/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use figures/unnamed-chunk-5-1.pdf>
-Package pdftex.def Info: figures/unnamed-chunk-5-1.pdf  used on input line 677.
+Package pdftex.def Info: figures/unnamed-chunk-5-1.pdf  used on input line 678.
 
 (pdftex.def)             Requested size: 390.0pt x 262.25784pt.
-<figures/unnamed-chunk-7-1.pdf, id=187, 460.72125pt x 318.18875pt>
+<figures/unnamed-chunk-7-1.pdf, id=232, 460.72125pt x 318.18875pt>
 File: figures/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use figures/unnamed-chunk-7-1.pdf>
-Package pdftex.def Info: figures/unnamed-chunk-7-1.pdf  used on input line 694.
+Package pdftex.def Info: figures/unnamed-chunk-7-1.pdf  used on input line 695.
 
 (pdftex.def)             Requested size: 390.0pt x 269.34502pt.
-<figures/unnamed-chunk-9-1.pdf, id=188, 460.72125pt x 318.18875pt>
+<figures/unnamed-chunk-9-1.pdf, id=233, 460.72125pt x 318.18875pt>
 File: figures/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use figures/unnamed-chunk-9-1.pdf>
-Package pdftex.def Info: figures/unnamed-chunk-9-1.pdf  used on input line 709.
+Package pdftex.def Info: figures/unnamed-chunk-9-1.pdf  used on input line 710.
 
 (pdftex.def)             Requested size: 390.0pt x 269.34502pt.
-<figures/visICPlot-1.pdf, id=189, 461.725pt x 318.18875pt>
+<figures/visICPlot-1.pdf, id=234, 461.725pt x 318.18875pt>
 File: figures/visICPlot-1.pdf Graphic file (type pdf)
 <use figures/visICPlot-1.pdf>
-Package pdftex.def Info: figures/visICPlot-1.pdf  used on input line 737.
+Package pdftex.def Info: figures/visICPlot-1.pdf  used on input line 738.
 (pdftex.def)             Requested size: 390.0pt x 268.76239pt.
-[15] [16 </media/rafal/rfl/paperSubmission/figures/fig:cumulativeResultsPlot-1.
-pdf> </media/rafal/rfl/paperSubmission/figures/fig:cumulativeResultsPlot-2.pdf>
-] [17 </media/rafal/rfl/paperSubmission/figures/fig:cumulativeResultsGeenralPlo
-t-1.pdf>] [18 </media/rafal/rfl/paperSubmission/figures/unnamed-chunk-5-1.pdf>]
-[19 </media/rafal/rfl/paperSubmission/figures/unnamed-chunk-7-1.pdf>] [20 </med
-ia/rafal/rfl/paperSubmission/figures/unnamed-chunk-9-1.pdf>] [21 </media/rafal/
-rfl/paperSubmission/figures/visICPlot-1.pdf>] [22]
+[18 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figures/
+unnamed-chunk-5-1.pdf>] [19 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/
+paperSubmission/figures/unnamed-chunk-7-1.pdf>] [20 </home/rafal/UGPOP/projects
+UGPOP/nestaAttacksStudy/paperSubmission/figures/unnamed-chunk-9-1.pdf>] [21 </h
+ome/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figures/visICPl
+ot-1.pdf>] [22]
 <figures/fig:volunteersBasic5-1.pdf, id=294, 443.6575pt x 317.185pt>
 File: figures/fig:volunteersBasic5-1.pdf Graphic file (type pdf)
 <use figures/fig:volunteersBasic5-1.pdf>
 Package pdftex.def Info: figures/fig:volunteersBasic5-1.pdf  used on input line
- 841.
+ 842.
 (pdftex.def)             Requested size: 390.0pt x 278.82356pt.
 <figures/fig:volunteersModel17-1.pdf, id=295, 425.59pt x 307.1475pt>
 File: figures/fig:volunteersModel17-1.pdf Graphic file (type pdf)
 <use figures/fig:volunteersModel17-1.pdf>
 Package pdftex.def Info: figures/fig:volunteersModel17-1.pdf  used on input lin
-e 848.
+e 849.
 (pdftex.def)             Requested size: 390.0pt x 281.47775pt.
-[23] [24 </media/rafal/rfl/paperSubmission/figures/fig:volunteersBasic5-1.pdf>]
-[25 </media/rafal/rfl/paperSubmission/figures/fig:volunteersModel17-1.pdf>] [26
-] [27] [28] [29]
+[23] [24 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
+ures/fig:volunteersBasic5-1.pdf>] [25 </home/rafal/UGPOP/projectsUGPOP/nestaAtt
+acksStudy/paperSubmission/figures/fig:volunteersModel17-1.pdf>] [26] [27] [28] 
+[29]
 <figures/priori1plot-1.pdf, id=347, 444.66125pt x 309.155pt>
 File: figures/priori1plot-1.pdf Graphic file (type pdf)
 <use figures/priori1plot-1.pdf>
-Package pdftex.def Info: figures/priori1plot-1.pdf  used on input line 1253.
+Package pdftex.def Info: figures/priori1plot-1.pdf  used on input line 1254.
 (pdftex.def)             Requested size: 390.0pt x 271.1515pt.
-[30] [31 </media/rafal/rfl/paperSubmission/figures/priori1plot-1.pdf>]
-Overfull \hbox (6.80696pt too wide) in paragraph at lines 1282--1307
+[30] [31 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
+ures/priori1plot-1.pdf>]
+Overfull \hbox (6.80696pt too wide) in paragraph at lines 1283--1308
  [] 
  []
 
 
-Overfull \hbox (4.46474pt too wide) in paragraph at lines 1316--1336
+Overfull \hbox (4.46474pt too wide) in paragraph at lines 1317--1337
  [][] 
  []
 
@@ -650,58 +675,57 @@ Overfull \hbox (4.46474pt too wide) in paragraph at lines 1316--1336
 File: figures/fig:modelComparison-1.pdf Graphic file (type pdf)
 <use figures/fig:modelComparison-1.pdf>
 Package pdftex.def Info: figures/fig:modelComparison-1.pdf  used on input line 
-1345.
+1346.
 (pdftex.def)             Requested size: 390.0pt x 267.69176pt.
-[32] [33 </media/rafal/rfl/paperSubmission/figures/fig:modelComparison-1.pdf>]
+[32] [33 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
+ures/fig:modelComparison-1.pdf>]
 <figures/fig:priorCheck-1.pdf, id=376, 453.695pt x 315.1775pt>
 File: figures/fig:priorCheck-1.pdf Graphic file (type pdf)
 <use figures/fig:priorCheck-1.pdf>
-Package pdftex.def Info: figures/fig:priorCheck-1.pdf  used on input line 1378.
+Package pdftex.def Info: figures/fig:priorCheck-1.pdf  used on input line 1379.
 
 (pdftex.def)             Requested size: 312.00119pt x 216.7465pt.
 <figures/fig:priorCheck-2.pdf, id=377, 453.695pt x 315.1775pt>
 File: figures/fig:priorCheck-2.pdf Graphic file (type pdf)
 <use figures/fig:priorCheck-2.pdf>
-Package pdftex.def Info: figures/fig:priorCheck-2.pdf  used on input line 1378.
+Package pdftex.def Info: figures/fig:priorCheck-2.pdf  used on input line 1379.
 
 (pdftex.def)             Requested size: 312.00119pt x 216.7465pt.
-[34] [35 </media/rafal/rfl/paperSubmission/figures/fig:priorCheck-1.pdf> </medi
-a/rafal/rfl/paperSubmission/figures/fig:priorCheck-2.pdf>] (/media/rafal/rfl/pa
-perSubmission/paperSubmission1.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[34] [35 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
+ures/fig:priorCheck-1.pdf> </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/p
+aperSubmission/figures/fig:priorCheck-2.pdf>]
+(/home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/paperSubmiss
+ion1.aux) ) 
 Here is how much of TeX's memory you used:
- 14657 strings out of 478287
- 297194 string characters out of 5849288
- 568736 words of memory out of 5000000
- 32561 multiletter control sequences out of 15000+600000
+ 14739 strings out of 478287
+ 299043 string characters out of 5849288
+ 569494 words of memory out of 5000000
+ 32640 multiletter control sequences out of 15000+600000
  481251 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,10n,94p,1041b,939s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-i7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /media/rafal/rfl/paperSubmission/paperSubmission1.pdf (37 pag
-es, 1124460 bytes).
+ 99i,10n,94p,1074b,937s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on /home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmis
+sion/paperSubmission1.pdf (37 pages, 1126394 bytes).
 PDF statistics:
  499 PDF objects out of 1000 (max. 8388607)
  346 compressed objects within 4 object streams

@@ -48,6 +48,7 @@
 \usepackage[table]{xcolor}
 \usepackage{booktabs}
 \usepackage{todonotes}
+\usepackage{rotating}
 
 
 \journal{Information Processing \ Management}
@@ -179,7 +180,7 @@ ended up with data on 440 users.
 We analyzed the data from three perspectives: we used the daily data to
 (1) build seven time series models estimating the impact of individual
 interventions at lags 1-7 days, and (2) to study the impact of the
-cumulative number of total interventions received as the experiment
+cumulative number of  interventions received as the experiment
 progressed, and (3) we used aggregated data to run a long term
 before-and after analysis, comparing the summarized aggression levels
 before and after the intervention period.
@@ -300,7 +301,7 @@ models}\label{subsec:causal-thinking-choice-of-variables-and-models}
 First, we inspect correlations between predictors to avoid multicolinearity, as highly correlated predictors do not improve predictive performance and artificially inflate uncertainty in their corresponding coefficients in the models. We then develop
 a plausible causal model of the situation (Figure
 \ref{fig:correlations}). It turns out that to avoid multicolinearity we
-cannot condition on CDS if we condition on CAS or CBS. Similarly, for
+cannot condition on CDS (comments during, standardized) if we condition on CAS (comments after, standardized) or CBS (comments before, standardized). Similarly, for
 the time series data, since activity levels in particular day slices are
 correlated, it will not be useful to condition on more than one
 auto-regressive element (and since the predictive power is the highest
@@ -313,7 +314,7 @@ the causal structure of the problem. Comments during (the intervention period) i
 during, which trigger interventions. Unmeasured user features cause
 comments before (the intervention period), which impact attacks before directly. Comments during
 (their impact on ADS is already included) impact attacks during directly
-and comments after, which impact attacks after and attacks after
+and comments after, which impact attacks after
 directly. Intervention count impacts attacks after and comments after.
 The same directions of impact are included for intervention type.
 Finally, comments through time are connected causally, and so are
@@ -513,7 +514,7 @@ instead of simply looking at \(exp(ic3emp_{\mathsf{userID[i]}})\).
 
 
 Finally, in the before-and-after analysis, we put aside the time series
-element, look at aggregated counts before and after the treatment
+element, and look at aggregated counts before and after the treatment
 period, thus obtaining a more of a long-term effect analysis. Moreover,
 this time we standardize counts, obtaining continuous variables and
 employing normal distribution in the likelihoods, thus also making sure
@@ -552,11 +553,11 @@ group-specific coefficient for \textsf{ADS}, group coefficient,
 group-specific coefficient for \textsf{IC}, interaction coefficient for
 \textsf{ADS} and \textsf{IC}, and group-specific coefficient for
 \textsf{CBS}. This is plausible \emph{prima facie}, as which group a
-user belongs to might have impact on how the number of attacks during
-the treatment are related to the number of attacks after, the role of
+user belongs to might have an impact on how the number of attacks during
+the treatment is related to the number of attacks after, the role of
 the intervention count, and the role of comments before. Moreover, the
 levels of aggressive behavior displayed by the user during treatment
-might have impact on the role played by the intervention count.
+might have an impact on the role played by the intervention count.
 
 
 
@@ -581,12 +582,12 @@ visualize the results for the three groups, with jitter based on user
 aggression in the before period.
 
 
-\begin{figure}
+\begin{sidewaysfigure}
 
 \begin{center}\includegraphics[width=1\linewidth]{ figures/fig:dailyResultsPlot-1} \end{center}
 \caption{Impact of interventions received lag $1\leq k \leq 7$ on attacks on a given day. High-level coefficients are pictured in black.}
 \label{fig:dailyResults}
-\end{figure}
+\end{sidewaysfigure}
 
 Notice that in short term, interventions actually increase aggression
 the next day (even taking the user's yesterday's aggression and today's
@@ -1260,7 +1261,7 @@ values and that they allow for a very reasonable range of values.
 \section{Model choice for the long term analysis}\label{sec:priors}
 
 
-let us elaborate on how we decided to use to the seemingly fairly
+Let us elaborate on how we decided to use  the seemingly fairly
 complicated model we already described in the body of the paper. Once preliminary causal considerations guided our
 restrictions on variable selection, we proceed by building models of
 increasing complexity, and comparing them in terms of Widely Acceptable

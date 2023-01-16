@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Data analysis}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Exploration and data}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Causal thinking, choice of variables and models}{8}{}%
+\contentsline {subsection}{\numberline {1.3}Results}{14}{}%
+\contentsline {subsubsection}{\numberline {1.3.1}Interventions on a given day}{14}{}%
+\contentsline {subsubsection}{\numberline {1.3.2}Cumulative sum of interventions}{14}{}%
+\contentsline {subsubsection}{\numberline {1.3.3}Long term before/after analysis}{15}{}%
+\contentsline {section}{\numberline {2}Discussion}{22}{}%
+\contentsline {section}{\numberline {3}Volunteer engagement and impact of competitions}{22}{}%
+\contentsline {subsection}{\numberline {3.1}The challenge of keeping volunteers engaged}{22}{}%
+\contentsline {subsection}{\numberline {3.2}Volunteer activity data analysis}{22}{}%
+\let \numberline \tmptocnumberline 
+\contentsline {section}{\numberline {Appendix \nobreakspace {}A}Explanation of WAIC}{23}{}%
+\contentsline {section}{\numberline {Appendix \nobreakspace {}B}Time series model selection}{26}{}%
+\contentsline {section}{\numberline {Appendix \nobreakspace {}C}Model choice for the long term analysis}{30}{}%

@@ -1,0 +1,265 @@
+---
+title: "Volunteers in NESTA experiment \\linebreak  Technical Report"
+author: "Rafal Urbaniak"
+output:
+  pdf_document:
+    keep_tex: yes
+  number_sections: yes
+  df_print: kable
+includes:
+  in_header: Rafal_latex8.sty
+html_document:
+  df_print: paged
+word_document: default
+classoption: dvipsnames, enabledeprecatedfontcommands
+fontsize: 10pt
+documentclass: scrartcl
+urlcolor: blue
+---
+
+
+
+```{r, setup, include=FALSE}
+knitr::opts_knit$set(root.dir = '../')
+
+#libraries used
+library(ggplot2)
+library(ggthemes)
+library(gridExtra)
+library(kableExtra)
+library(viridis)
+library(rethinking)
+library(ggplot2)
+library(ggpubr)
+library(tidyverse)
+library(GGally)
+library(dagitty)
+library(reshape)
+library(lubridate)
+library(formatR)
+library(ggrepel)
+
+
+```
+  
+  
+The winning model, given our model selection method, is specified as follows:
+
+\begin{align*}
+\mathsf{interventions} \sim \mathsf{NegativeBinomial} (\lambda,\phi) \\
+log(\lambda) = l_\mathsf{volunteerID[i]} + enth_\mathsf{ volunteerID[i]} \times \mathsf{daysOfProject} + comp_\mathsf{volunteerID[i]} \times \mathsf{competition}\\  
+l_\mathsf{ volunteerID[i] }  \sim \mathsf{Norm}(lbar,lsigmabar) \\
+lbar \sim \mathsf{Norm}(2, .9)\\
+lsigmabar, enthsigmabar, compsigmabar \sim  \mathsf{Exp}(.5) \\
+enth _\mathsf{ volunteerID[i] }  \sim \mathsf{Norm}(enthbar, enthsigmabar)\\
+comp_\mathsf{ volunteerID[i] } \sim \mathsf{Norm}(compbar, compsigmabar) \\
+enthbar, compbar \sim  \mathsf{Norm}(0, .3)\\
+ \phi =  puser_\mathsf{ volunteerID[i] }  \\
+ puser_\mathsf{ volunteerID[i] } \sim \mathsf{Exp}(1)
+\end{align*}
+
+
+Intuitively, volunteer interventions are assumed to have negative binomial distribution around their own expected value $\lambda$ and individualized dispersion parameters $\phi$. On each day each a user has their own daily expected value, which is determined by the following factors:
+\begin{itemize}
+\item First, there's user's individual baseline activity for the whole treatment period, $l_\mathsf{ volunteerID[i] }$.
+\item next, each user has their own dispersion parameter,  $puser_\mathsf{ volunteerID[i] }$.
+\item then, there is (usually dwindling) enthusiasm: the impact of time on that user, $enth_\mathsf{volunteerID[i]} $ to be (after exponentiation) multiplied by the number of days that have passed since the experiment started,
+\item finally, we have the impact that the presence of competitions made on a user, $comp_\mathsf{ volunteerID[i] }$, which (after exponentiation) becomes the activity multiplier to be applied during competitions only.
+\end{itemize}
+
+\noindent Moreover, the model is hierarchical: the individual level parameters are drawn from distributions whose parameters are in turn to be estimated as well. Thus, $lbar$ is the overall baseline for the whole group, $enthbar$ is the overall estimated group enthusiasm coefficient, and $compbar$ is the overall estimated competition impact coefficient (all of them come with their own nuisance sigma parameters).
+
+
+
+\noindent All of these parameters are given priors in a manner analogous to the introduction of priors for the other time series models, as explained in the appendix.^[Interestingly, if we are interested in the causal effect of competitions, we should not use an auto-regressive predictor. If we auto-regress on a lag in the $[1,7]$ range, for some days we will be conditioning on interventions conducted during the same competition, which will already contain some information about the impact of that competition. In other words, auto-regression with short lags would lead to post-treatment bias. On the other hand, auto-regression with longer lags would either lead to dropping a lot of data in the beginning (where lagged information is not available), or degenerate the analysis by using 0s for missing lagged values in a long initial period. All this without much gain, as we have already inspected null models with  auto-regression with large lags and they do not lead to performance improvement.] 
+
+Raw data and daily means are illustrated in Figure \ref{fig:volunteersBasic}, and the individualized totals with the key coefficients based on the trained model are illustrated in Figure \ref{fig:volunteersModel}.
+
+
+
+
+```{r volunteersVis,echo=FALSE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE, tidy = FALSE}
+volunteersLong <- read_csv(file = "nestaVolunteers/volunteersLong.csv")
+competitionModel<- readRDS( "nestaVolunteers/competitionModel.rds")
+volunteersJoint <- readRDS( file = "nestaVolunteers/datasets/volunteersJoint.rds")
+
+profile <- c("low", "low", "low", "low",
+             "initial", "initial", "initial",  "selective",
+             "dynamic", "initial","selective","selective",
+             "dynamic","dynamic", "selective")
+
+volunteers <- unique(volunteersJoint$volunteer)
+volunteersIDs <- unique(volunteersJoint$volunteerID)
+
+volunteersSummary <- volunteersJoint %>%
+  group_by(volunteer) %>%
+  summarise(totalActivity = sum(interventions))
+
+volunteersSummary$volunteerID <- as.factor(volunteersIDs)
+
+volunteersSummary$profile <- factor(profile, levels = c("dynamic","active", "selective", "initial", "low"))
+volunteersSummary <- as.data.frame(volunteersSummary)
+
+meanRunning <- volunteersJoint  %>%
+  group_by(Date) %>%
+  summarise(competition = mean(competition), meanInterventions = mean(interventions))
+
+volunteersDailyMeansPlot <- ggplot(data = meanRunning)+ 
+  geom_violin(aes(x= as.factor(competition), y = meanInterventions,
+                  color = as.factor(competition)))+
+  theme_tufte(base_size = 10)+xlab("competition")+
+  ylab("mean daily interventions")+
+  ggtitle("Daily intervention means were higher during competitions")+
+  geom_jitter(width = .3, aes(x= as.factor(competition),
+              y = meanInterventions, 
+              color =  as.factor(competition), shape = Date < "2020-07-16",
+              size = meanInterventions)
+              , alpha = .6)+
+  theme(plot.title.position = "plot",legend.position = c(0.09, 0.8), legend.key.size = unit(.3, "cm") )+
+  scale_size(range = c(1,4))+guides(size = "none", color = "none")+
+  scale_color_manual(values = c("orangered", "grey"),
+                     labels = c("yes", "no"), name = "competition",
+                     breaks = c("1", "0"))+
+  guides(shape = guide_legend(title = "First week"))
+
+
+
+
+volunteersDailyPlot <- ggplot(volunteersJoint)+geom_point(aes(x = Date, y = interventions, color = as.factor(competition), size = interventions), alpha = .8)+
+  theme_tufte(base_size = 10)+
+  scale_color_manual(values = c("orangered", "grey"), labels = c("yes", "no"), name = "competition", breaks = c("1", "0"))+xlab("")+
+  theme(plot.title.position = "plot",legend.position = c(0.09, 0.9), legend.key.size = unit(.3, "cm") )+ 
+  scale_size(range = c(.5,2))+guides(size = "none")+labs(title = "After initial enthusiasm, volunteer engagement was higher during competitions")+ 
+  geom_line(data = meanRunning, aes(x = Date, y = meanInterventions))
+
+```
+
+
+
+
+
+\begin{figure}
+```{r fig:volunteersBasic5,echo=FALSE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE}
+grid.arrange(volunteersDailyPlot, volunteersDailyMeansPlot, ncol = 1)
+```
+\caption{Daily individual voilunteer intervention counts accross time with competition periods marked (top) and daily group intervention means grouped by whether a competition was ongoing (bottom). Note most of high means in the non-competition period are in the first week.}
+\label{fig:volunteersBasic}
+\end{figure}
+
+```{r fig:volunteersModelPrep,echo=FALSE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE, tidy = FALSE}
+
+annotsize <- 2.5
+
+sumsPlot  <- ggplot(volunteersSummary) +geom_bar(aes(x = reorder(as.factor(volunteerID), totalActivity)
+                                        , y = totalActivity, fill = profile), stat = "identity")+
+  coord_flip()+theme_tufte(base_size = 8)+ylab("total interventions")+xlab("")+
+  ggtitle("Total engagement")+
+  scale_fill_manual(values = c("darkred", "orangered", "darkgoldenrod", "bisque2", "azure4"),
+                    labels = c("active, more during competitions","active throughout" , "active only during competitions", "initial enthusiasm died", "almost no activity"))+
+  theme(plot.title.position = "plot", legend.key.size = unit(.25, "cm"),legend.key.width = unit(.3,"cm") , legend.position = c(.35, 1.15),
+        legend.title = element_blank())+xlab("volunteer ID")
+
+
+precis <- precis(competitionModel, depth = 2)
+lIndividual <- precis[grep("l\\[",rownames(precis)),]
+lGroup <- exp(precis[grep("lbar",rownames(precis)),])
+
+lmean <- exp(lIndividual$mean)
+llow <- exp(lIndividual$`5.5%`)
+lhigh <- exp(lIndividual$`94.5%`)
+
+eIndividual <- precis[grep("enth\\[",rownames(precis)),]
+enthmean <- exp(eIndividual$mean)
+enthlow <- exp(eIndividual$`5.5%`)
+enthhigh <- exp(eIndividual$`94.5%`)
+
+eGroup <- exp(precis[grep("enthbar",rownames(precis)),])
+
+cIndividual <- precis[grep("comp\\[",rownames(precis)),]
+cmean <- exp(cIndividual$mean)
+clow <- exp(cIndividual$`5.5%`)
+chigh <- exp(cIndividual$`94.5%`)
+
+cGroup <- exp(precis[grep("compbar",rownames(precis)),])
+
+volunteersDF <- data.frame(volunteer = volunteers, totalActivity = 
+                             volunteersSummary$totalActivity ,
+          profile = volunteersSummary$profile , 
+          profileID = as.integer(volunteersSummary$profile ),
+           volunteerID = as.integer(as.factor(volunteers)),
+           lmean = lmean, llow = llow, lhigh = lhigh,
+           emean = enthmean, elow = enthlow, ehigh = enthhigh,
+           cmean = cmean, clow = clow, chigh = chigh)
+
+lambdaPlot <- ggplot(volunteersDF)+geom_pointrange(aes(x = reorder(as.factor(volunteerID), totalActivity),y = lmean, ymin  = llow, ymax = lhigh,
+                                                       color = profile))+
+coord_flip()+theme_tufte(base_size = 8)+xlab("")+ylab(expression(lambda))+theme(axis.text.y =
+                element_blank(), axis.ticks.y = element_blank())+ggtitle("Daily baseline")+
+  scale_color_manual(values = c("darkred", "orangered", "darkgoldenrod", "bisque2", "azure4"),
+                    labels = c("active, more during competitions","active throughout" , 
+                               "active only during competitions", "initial enthusiasm died", "almost no activity"))+
+  guides(color = "none")+geom_hline(yintercept = lGroup$mean, alpha = .8)+
+  annotate("rect", ymin = lGroup$`5.5%`, ymax = lGroup$`94.5%`,
+           xmin = 0, xmax = 16.5,
+           alpha = .2,fill = "grey")+
+  annotate("label", label =  round(lGroup$mean,2), y = lGroup$mean+1, x = 16, size = annotsize)
+
+enthusiasmPlot <- ggplot(volunteersDF)+geom_pointrange(aes(x = reorder(as.factor(volunteerID), totalActivity),y = emean, ymin  = elow, ymax = ehigh,
+                                                       color = profile))+
+  coord_flip()+theme_tufte(base_size = 8)+xlab("")+ylab("multiplier per day passed")+theme(axis.text.y =
+                                                                       element_blank(), axis.ticks.y = element_blank())+
+  ggtitle("Enthusiasm change per day")+
+  scale_color_manual(values = c("darkred", "orangered", "darkgoldenrod", "bisque2", "azure4"),
+                     labels = c("active, more during competitions","active throughout" , 
+                                "active only during competitions", "initial enthusiasm died", "almost no activity"))+
+  guides(color = "none")+geom_hline(yintercept = 1, alpha = .6, color = "grey", lty = 2)+
+  geom_hline(yintercept = eGroup$mean, alpha = .9)+
+  annotate("rect", ymin = eGroup$`5.5%`, ymax = eGroup$`94.5%`,
+           xmin = 0, xmax = 16.5,
+           alpha = .2,fill = "grey")+
+  annotate("label", label =  round(eGroup$mean,2), y = eGroup$mean+.02, x = 16, size = annotsize)
+
+competitionPlot <- ggplot(volunteersDF)+geom_pointrange(aes(x = reorder(as.factor(volunteerID), totalActivity),y = cmean, ymin  = clow, ymax = chigh,
+                                                           color = profile))+
+  coord_flip()+theme_tufte(base_size = 8)+xlab("")+ylab("multiplier if competition is on")+theme(axis.text.y =
+                                                                                element_blank(), axis.ticks.y = element_blank())+
+  ggtitle("Impact of competitions")+
+  scale_color_manual(values = c("darkred", "orangered", "darkgoldenrod", "bisque2", "azure4"),
+                     labels = c("active, more during competitions","active throughout" , 
+                                "active only during competitions", "initial enthusiasm died", "almost no activity"))+
+  guides(color = "none")+geom_hline(yintercept = 1, alpha = .6, color = "grey", lty = 2)+
+  geom_hline(yintercept = cGroup$mean, alpha = .9)+
+  annotate("rect", ymin = cGroup$`5.5%`, ymax = cGroup$`94.5%`,
+           xmin = 0, xmax = 16.5,
+           alpha = .2,fill = "grey")+
+  annotate("label", label =  round(cGroup$mean,2), 
+           y = cGroup$mean+1, x = 16, size = annotsize)
+
+sumsPlotGrob <- ggplotGrob(sumsPlot)
+lambdaPlotGrob <- ggplotGrob(lambdaPlot)
+enthusiasmPlotGrob <- ggplotGrob(enthusiasmPlot)
+competitionPlotGrob <- ggplotGrob(competitionPlot)
+
+
+
+```
+
+
+
+
+\begin{figure}
+```{r fig:volunteersModel17,echo=FALSE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "250%", out.extra='angle=90', warning = FALSE, message = FALSE}
+ggplot(data.frame(a=1)) + xlim(1, 38) + ylim(1, 10)+theme_void()+
+annotation_custom(sumsPlotGrob, xmin = 1, xmax = 10, ymin =1.2, ymax = 9.56)+
+annotation_custom(lambdaPlotGrob, xmin = 10, xmax = 20, ymin =1, ymax = 10)+
+annotation_custom(enthusiasmPlotGrob, xmin = 18, xmax = 28, ymin = 1, ymax = 10)+
+annotation_custom(competitionPlotGrob, xmin = 28.5, xmax = 38.5, ymin =1, ymax = 10)
+```
+\caption{Volunteer total engagement with their daily baseline and multipliers for enthusiasm and impact of competition. Pointranges represent individual level coefficients, group coefficients are represented by black lines with shaded 89\% HPDI areas.}
+\label{fig:volunteersModel}
+\end{figure}
+
+
+
+
+

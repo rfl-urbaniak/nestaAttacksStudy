@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.15)  16 JAN 2023 11:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.15)  17 JAN 2023 13:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -515,11 +515,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 140
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 (/home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/paperSubmiss
-ion1.toc)
-\tf@toc=\write5
-\openout5 = `paperSubmission1.toc'.
-
-
+ion1.toc
 Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [] 
  []
@@ -527,493 +523,576 @@ Overfull \hbox (2.61108pt too wide) has occurred while \output is active
 [1
 
 
-] [2] [3] [4]
+])
+\tf@toc=\write5
+\openout5 = `paperSubmission1.toc'.
 
-Package natbib Warning: Citation `yanowitzky2006communication' on page 5 undefi
-ned on input line 205.
+[2] [3] [4] [5] [6] [7] [8] [9]
 
-[5] [6] [7]
-Underfull \hbox (badness 4660) in paragraph at lines 297--298
+Package natbib Warning: Citation `yanowitzky2006communication' on page 10 undef
+ined on input line 276.
+
+[10] [11]
+Overfull \hbox (3.78018pt too wide) in paragraph at lines 312--312
+\OT1/cmr/m/n/12 zmienic[]  
+ []
+
+
+Overfull \hbox (3.78018pt too wide) in paragraph at lines 312--312
+\OT1/cmr/m/n/12 zmienic[]  
+ []
+
+
+LaTeX Warning: Reference `sec:collective-intelligence' on page 12 undefined on 
+input line 322.
+
+
+Package natbib Warning: Citation `ptaszynski2018automatic' on page 12 undefined
+ on input line 322.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--322
+[][]$\OT1/cmtt/m/n/10 https : / / www . japantimes . co . jp / news / 2022 / 12
+ / 03 / business / tech /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--322
+[][]$\OT1/cmtt/m/n/10 https : / / www . forbes . com / sites / forbestechcounci
+l / 2022 / 06 / 14 /
+ []
+
+
+Underfull \hbox (badness 3838) in paragraph at lines 327--327
+[][]$\OT1/cmtt/m/n/10 https : / / www . samurailabs . ai/$\OT1/cmr/m/n/10 , de-
+scribed in (Ptaszy^^Snski, Leliwa, Piech, &
+ []
+
+[12]
+
+Package natbib Warning: Citation `ijerph182211759' on page 13 undefined on inpu
+t line 342.
+
+
+Package natbib Warning: Citation `URBANIAK2022107371' on page 13 undefined on i
+nput line 342.
+
+
+Package natbib Warning: Citation `ptaszynski2018cyberbullying' on page 13 undef
+ined on input line 364.
+
+
+Package natbib Warning: Citation `ijerph182211759' on page 13 undefined on inpu
+t line 364.
+
+
+Package natbib Warning: Citation `URBANIAK2022107371' on page 13 undefined on i
+nput line 364.
+
+Package epstopdf Info: Source file: <example.eps>
+(epstopdf)                    date: 2023-01-17 13:14:27
+(epstopdf)                    size: 1142569 bytes
+(epstopdf)             Output file: <example-eps-converted-to.pdf>
+(epstopdf)                    date: 2023-01-17 13:14:47
+(epstopdf)                    size: 557635 bytes
+(epstopdf)             Command: <repstopdf --outfile=example-eps-converted-to.p
+df example.eps>
+(epstopdf)             \includegraphics on input line 368.
+Package epstopdf Info: Output file is already uptodate.
+<example-eps-converted-to.pdf, id=61, 1927.2pt x 1084.05pt>
+File: example-eps-converted-to.pdf Graphic file (type pdf)
+<use example-eps-converted-to.pdf>
+Package pdftex.def Info: example-eps-converted-to.pdf  used on input line 368.
+(pdftex.def)             Requested size: 390.0pt x 219.37006pt.
+[13] [14 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/exa
+mple-eps-converted-to.pdf>]
+Underfull \hbox (badness 4660) in paragraph at lines 491--492
 \OT1/cmr/m/n/12 those weeks dur-ing which tech-ni-cal dif-fi-cul-ties oc-curred
  with
  []
 
-[8]
-<figures/periodsPlot-1.pdf, id=45, 440.64626pt x 315.1775pt>
+[15]
+<figures/periodsPlot-1.pdf, id=76, 440.64626pt x 315.1775pt>
 File: figures/periodsPlot-1.pdf Graphic file (type pdf)
 <use figures/periodsPlot-1.pdf>
-Package pdftex.def Info: figures/periodsPlot-1.pdf  used on input line 322.
+Package pdftex.def Info: figures/periodsPlot-1.pdf  used on input line 516.
 (pdftex.def)             Requested size: 343.2019pt x 245.48639pt.
-<figures/periodsPlot-2.pdf, id=46, 437.635pt x 303.1325pt>
+<figures/periodsPlot-2.pdf, id=77, 437.635pt x 303.1325pt>
 File: figures/periodsPlot-2.pdf Graphic file (type pdf)
 <use figures/periodsPlot-2.pdf>
-Package pdftex.def Info: figures/periodsPlot-2.pdf  used on input line 324.
+Package pdftex.def Info: figures/periodsPlot-2.pdf  used on input line 518.
 (pdftex.def)             Requested size: 343.2019pt x 237.72363pt.
-[9] [10 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figu
-res/periodsPlot-1.pdf> </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paper
-Submission/figures/periodsPlot-2.pdf>]
-<figures/interventionsDistroPlot-1.pdf, id=83, 439.6425pt x 313.17pt>
+[16] [17 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
+ures/periodsPlot-1.pdf> </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/pape
+rSubmission/figures/periodsPlot-2.pdf>]
+<figures/interventionsDistroPlot-1.pdf, id=110, 439.6425pt x 313.17pt>
 File: figures/interventionsDistroPlot-1.pdf Graphic file (type pdf)
 <use figures/interventionsDistroPlot-1.pdf>
 Package pdftex.def Info: figures/interventionsDistroPlot-1.pdf  used on input l
-ine 378.
+ine 572.
 (pdftex.def)             Requested size: 343.2019pt x 244.47708pt.
-<figures/violJoint-1.pdf, id=84, 451.6875pt x 317.185pt>
+<figures/violJoint-1.pdf, id=111, 451.6875pt x 317.185pt>
 File: figures/violJoint-1.pdf Graphic file (type pdf)
 <use figures/violJoint-1.pdf>
-Package pdftex.def Info: figures/violJoint-1.pdf  used on input line 395.
+Package pdftex.def Info: figures/violJoint-1.pdf  used on input line 589.
 (pdftex.def)             Requested size: 390.0pt x 273.88208pt.
-<figures/fig:linearShift-1.pdf, id=85, 454.69875pt x 315.1775pt>
+<figures/fig:linearShift-1.pdf, id=112, 454.69875pt x 315.1775pt>
 File: figures/fig:linearShift-1.pdf Graphic file (type pdf)
 <use figures/fig:linearShift-1.pdf>
-Package pdftex.def Info: figures/fig:linearShift-1.pdf  used on input line 413.
+Package pdftex.def Info: figures/fig:linearShift-1.pdf  used on input line 607.
 
 (pdftex.def)             Requested size: 390.0pt x 270.3356pt.
-<figures/fig:tsVisPlot6-1.pdf, id=86, 466.74374pt x 311.1625pt>
+<figures/fig:tsVisPlot6-1.pdf, id=113, 466.74374pt x 311.1625pt>
 File: figures/fig:tsVisPlot6-1.pdf Graphic file (type pdf)
 <use figures/fig:tsVisPlot6-1.pdf>
-Package pdftex.def Info: figures/fig:tsVisPlot6-1.pdf  used on input line 431.
+Package pdftex.def Info: figures/fig:tsVisPlot6-1.pdf  used on input line 625.
 (pdftex.def)             Requested size: 390.0pt x 260.01205pt.
-[11] [12 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
-ures/interventionsDistroPlot-1.pdf>] [13 </home/rafal/UGPOP/projectsUGPOP/nesta
-AttacksStudy/paperSubmission/figures/violJoint-1.pdf>] [14 </home/rafal/UGPOP/p
+[18] [19 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
+ures/interventionsDistroPlot-1.pdf>] [20 </home/rafal/UGPOP/projectsUGPOP/nesta
+AttacksStudy/paperSubmission/figures/violJoint-1.pdf>] [21 </home/rafal/UGPOP/p
 rojectsUGPOP/nestaAttacksStudy/paperSubmission/figures/fig:linearShift-1.pdf>] 
-[15 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figures/
+[22 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figures/
 fig:tsVisPlot6-1.pdf>]
-<figures/correlations-1.pdf, id=147, 394.47375pt x 311.1625pt>
+<figures/correlations-1.pdf, id=176, 394.47375pt x 311.1625pt>
 File: figures/correlations-1.pdf Graphic file (type pdf)
 <use figures/correlations-1.pdf>
-Package pdftex.def Info: figures/correlations-1.pdf  used on input line 478.
+Package pdftex.def Info: figures/correlations-1.pdf  used on input line 672.
 (pdftex.def)             Requested size: 187.19833pt x 147.66129pt.
-<figures/correlations-2.pdf, id=148, 421.575pt x 291.0875pt>
+<figures/correlations-2.pdf, id=177, 421.575pt x 291.0875pt>
 File: figures/correlations-2.pdf Graphic file (type pdf)
 <use figures/correlations-2.pdf>
-Package pdftex.def Info: figures/correlations-2.pdf  used on input line 478.
+Package pdftex.def Info: figures/correlations-2.pdf  used on input line 672.
 (pdftex.def)             Requested size: 187.19833pt x 129.25592pt.
-[16] [17 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
+[23] [24 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
 ures/correlations-1.pdf> </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/pap
-erSubmission/figures/correlations-2.pdf>] [18] [19] [20] [21]
-<figures/fig:dailyResultsPlot-1.pdf, id=191, 458.71375pt x 308.15125pt>
+erSubmission/figures/correlations-2.pdf>] [25] [26] [27] [28]
+<figures/fig:dailyResultsPlot-1.pdf, id=219, 458.71375pt x 308.15125pt>
 File: figures/fig:dailyResultsPlot-1.pdf Graphic file (type pdf)
 <use figures/fig:dailyResultsPlot-1.pdf>
 Package pdftex.def Info: figures/fig:dailyResultsPlot-1.pdf  used on input line
- 737.
+ 931.
 (pdftex.def)             Requested size: 548.5pt x 368.48657pt.
-<figures/fig:cumulativeResultsPlot-1.pdf, id=192, 455.7025pt x 315.1775pt>
+<figures/fig:cumulativeResultsPlot-1.pdf, id=220, 455.7025pt x 315.1775pt>
 File: figures/fig:cumulativeResultsPlot-1.pdf Graphic file (type pdf)
 <use figures/fig:cumulativeResultsPlot-1.pdf>
 Package pdftex.def Info: figures/fig:cumulativeResultsPlot-1.pdf  used on input
- line 764.
+ line 958.
 (pdftex.def)             Requested size: 312.00119pt x 215.79428pt.
-<figures/fig:cumulativeResultsPlot-2.pdf, id=193, 459.7175pt x 298.11375pt>
+<figures/fig:cumulativeResultsPlot-2.pdf, id=221, 459.7175pt x 298.11375pt>
 File: figures/fig:cumulativeResultsPlot-2.pdf Graphic file (type pdf)
 <use figures/fig:cumulativeResultsPlot-2.pdf>
 Package pdftex.def Info: figures/fig:cumulativeResultsPlot-2.pdf  used on input
- line 764.
+ line 958.
 (pdftex.def)             Requested size: 312.00119pt x 202.33257pt.
-<figures/fig:cumulativeResultsGeenralPlot-1.pdf, id=194, 459.7175pt x 315.1775p
+<figures/fig:cumulativeResultsGeenralPlot-1.pdf, id=222, 459.7175pt x 315.1775p
 t>
 File: figures/fig:cumulativeResultsGeenralPlot-1.pdf Graphic file (type pdf)
 <use figures/fig:cumulativeResultsGeenralPlot-1.pdf>
 Package pdftex.def Info: figures/fig:cumulativeResultsGeenralPlot-1.pdf  used o
-n input line 788.
+n input line 982.
 (pdftex.def)             Requested size: 390.0pt x 267.39236pt.
-[22] [23 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
-ures/fig:dailyResultsPlot-1.pdf>] [24 </home/rafal/UGPOP/projectsUGPOP/nestaAtt
+[29] [30 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
+ures/fig:dailyResultsPlot-1.pdf>] [31 </home/rafal/UGPOP/projectsUGPOP/nestaAtt
 acksStudy/paperSubmission/figures/fig:cumulativeResultsPlot-1.pdf> </home/rafal
 /UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figures/fig:cumulativeRe
-sultsPlot-2.pdf>] [25 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperS
+sultsPlot-2.pdf>] [32 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperS
 ubmission/figures/fig:cumulativeResultsGeenralPlot-1.pdf>]
-<figures/unnamed-chunk-5-1.pdf, id=257, 462.72874pt x 311.1625pt>
+<figures/unnamed-chunk-5-1.pdf, id=285, 462.72874pt x 311.1625pt>
 File: figures/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use figures/unnamed-chunk-5-1.pdf>
-Package pdftex.def Info: figures/unnamed-chunk-5-1.pdf  used on input line 828.
-
+Package pdftex.def Info: figures/unnamed-chunk-5-1.pdf  used on input line 1022
+.
 (pdftex.def)             Requested size: 390.0pt x 262.25784pt.
-<figures/unnamed-chunk-7-1.pdf, id=258, 460.72125pt x 318.18875pt>
+<figures/unnamed-chunk-7-1.pdf, id=286, 460.72125pt x 318.18875pt>
 File: figures/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use figures/unnamed-chunk-7-1.pdf>
-Package pdftex.def Info: figures/unnamed-chunk-7-1.pdf  used on input line 845.
-
+Package pdftex.def Info: figures/unnamed-chunk-7-1.pdf  used on input line 1039
+.
 (pdftex.def)             Requested size: 390.0pt x 269.34502pt.
-<figures/unnamed-chunk-9-1.pdf, id=259, 460.72125pt x 318.18875pt>
+<figures/unnamed-chunk-9-1.pdf, id=287, 460.72125pt x 318.18875pt>
 File: figures/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use figures/unnamed-chunk-9-1.pdf>
-Package pdftex.def Info: figures/unnamed-chunk-9-1.pdf  used on input line 860.
-
+Package pdftex.def Info: figures/unnamed-chunk-9-1.pdf  used on input line 1054
+.
 (pdftex.def)             Requested size: 390.0pt x 269.34502pt.
-<figures/visICPlot-1.pdf, id=260, 461.725pt x 318.18875pt>
+[33 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figures/
+unnamed-chunk-5-1.pdf>] [34 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/
+paperSubmission/figures/unnamed-chunk-7-1.pdf>] [35 </home/rafal/UGPOP/projects
+UGPOP/nestaAttacksStudy/paperSubmission/figures/unnamed-chunk-9-1.pdf>]
+<figures/visICPlot-1.pdf, id=332, 461.725pt x 318.18875pt>
 File: figures/visICPlot-1.pdf Graphic file (type pdf)
 <use figures/visICPlot-1.pdf>
-Package pdftex.def Info: figures/visICPlot-1.pdf  used on input line 888.
+Package pdftex.def Info: figures/visICPlot-1.pdf  used on input line 1082.
 (pdftex.def)             Requested size: 390.0pt x 268.76239pt.
-[26 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figures/
-unnamed-chunk-5-1.pdf>] [27 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/
-paperSubmission/figures/unnamed-chunk-7-1.pdf>] [28 </home/rafal/UGPOP/projects
-UGPOP/nestaAttacksStudy/paperSubmission/figures/unnamed-chunk-9-1.pdf>] [29 </h
-ome/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figures/visICPl
-ot-1.pdf>] [30]
-<figures/fig:volunteersBasic5-1.pdf, id=322, 443.6575pt x 317.185pt>
+[36 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figures/
+visICPlot-1.pdf>]
+<figures/fig:volunteersBasic5-1.pdf, id=347, 443.6575pt x 317.185pt>
 File: figures/fig:volunteersBasic5-1.pdf Graphic file (type pdf)
 <use figures/fig:volunteersBasic5-1.pdf>
 Package pdftex.def Info: figures/fig:volunteersBasic5-1.pdf  used on input line
- 992.
+ 1186.
 (pdftex.def)             Requested size: 390.0pt x 278.82356pt.
-<figures/fig:volunteersModel17-1.pdf, id=323, 425.59pt x 307.1475pt>
+[37]
+<figures/fig:volunteersModel17-1.pdf, id=351, 425.59pt x 307.1475pt>
 File: figures/fig:volunteersModel17-1.pdf Graphic file (type pdf)
 <use figures/fig:volunteersModel17-1.pdf>
 Package pdftex.def Info: figures/fig:volunteersModel17-1.pdf  used on input lin
-e 999.
+e 1193.
 (pdftex.def)             Requested size: 390.0pt x 281.47775pt.
-[31] [32 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
-ures/fig:volunteersBasic5-1.pdf>] [33 </home/rafal/UGPOP/projectsUGPOP/nestaAtt
-acksStudy/paperSubmission/figures/fig:volunteersModel17-1.pdf>] [34] [35] [36] 
-[37]
-<figures/priori1plot-1.pdf, id=373, 444.66125pt x 309.155pt>
+[38 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/figures/
+fig:volunteersBasic5-1.pdf>] [39 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksS
+tudy/paperSubmission/figures/fig:volunteersModel17-1.pdf>] [40] [41] [42] [43] 
+[44]
+<figures/priori1plot-1.pdf, id=401, 444.66125pt x 309.155pt>
 File: figures/priori1plot-1.pdf Graphic file (type pdf)
 <use figures/priori1plot-1.pdf>
-Package pdftex.def Info: figures/priori1plot-1.pdf  used on input line 1404.
+Package pdftex.def Info: figures/priori1plot-1.pdf  used on input line 1598.
 (pdftex.def)             Requested size: 390.0pt x 271.1515pt.
-[38] [39 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
-ures/priori1plot-1.pdf>]
-Overfull \hbox (6.80696pt too wide) in paragraph at lines 1433--1458
+
+Overfull \hbox (6.80696pt too wide) in paragraph at lines 1627--1652
  [] 
  []
 
-
-Overfull \hbox (4.46474pt too wide) in paragraph at lines 1467--1487
+[45] [46 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
+ures/priori1plot-1.pdf>]
+Overfull \hbox (4.46474pt too wide) in paragraph at lines 1661--1681
  [][] 
  []
 
-<figures/fig:modelComparison-1.pdf, id=387, 441.65pt x 303.1325pt>
+<figures/fig:modelComparison-1.pdf, id=415, 441.65pt x 303.1325pt>
 File: figures/fig:modelComparison-1.pdf Graphic file (type pdf)
 <use figures/fig:modelComparison-1.pdf>
 Package pdftex.def Info: figures/fig:modelComparison-1.pdf  used on input line 
-1496.
+1690.
 (pdftex.def)             Requested size: 390.0pt x 267.69176pt.
-[40] [41 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
+[47] [48 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
 ures/fig:modelComparison-1.pdf>]
-<figures/fig:priorCheck-1.pdf, id=403, 453.695pt x 315.1775pt>
+<figures/fig:priorCheck-1.pdf, id=432, 453.695pt x 315.1775pt>
 File: figures/fig:priorCheck-1.pdf Graphic file (type pdf)
 <use figures/fig:priorCheck-1.pdf>
-Package pdftex.def Info: figures/fig:priorCheck-1.pdf  used on input line 1529.
+Package pdftex.def Info: figures/fig:priorCheck-1.pdf  used on input line 1723.
 
 (pdftex.def)             Requested size: 312.00119pt x 216.7465pt.
-<figures/fig:priorCheck-2.pdf, id=404, 453.695pt x 315.1775pt>
+<figures/fig:priorCheck-2.pdf, id=433, 453.695pt x 315.1775pt>
 File: figures/fig:priorCheck-2.pdf Graphic file (type pdf)
 <use figures/fig:priorCheck-2.pdf>
-Package pdftex.def Info: figures/fig:priorCheck-2.pdf  used on input line 1529.
+Package pdftex.def Info: figures/fig:priorCheck-2.pdf  used on input line 1723.
 
 (pdftex.def)             Requested size: 312.00119pt x 216.7465pt.
 
-Underfull \hbox (badness 7595) in paragraph at lines 1593--1598
+Underfull \hbox (badness 7595) in paragraph at lines 1787--1792
 []\OT1/cmr/m/n/12 Z. Laub, Hate Speech on So-cial Me-dia: Global Com-par-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1593--1598
+Underfull \hbox (badness 10000) in paragraph at lines 1787--1792
 \OT1/cmr/m/n/12 isons, 2019. URL: $\OT1/cmtt/m/n/12 https : / / www . cfr . org
  / backgrounder /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1607--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1801--1806
 []\OT1/cmr/m/n/12 E. A. Vo-gels, The State of On-line Ha-rass-ment, 2021.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1607--1612
+Underfull \hbox (badness 10000) in paragraph at lines 1801--1806
 \OT1/cmr/m/n/12 URL: $\OT1/cmtt/m/n/12 https : / / www . pewresearch . org / in
 ternet / 2021 / 01 / 13 /
  []
 
 
-Underfull \hbox (badness 6141) in paragraph at lines 1621--1626
+Underfull \hbox (badness 6141) in paragraph at lines 1815--1820
 []\OT1/cmr/m/n/12 J. Grant, Aus-tralia's esafety com-mis-sioner tar-gets abuse 
 on-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1621--1626
+Underfull \hbox (badness 10000) in paragraph at lines 1815--1820
 \OT1/cmr/m/n/12 line as covid-19 su-per-charges cy-ber-bul-ly-ing | the strate-
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1621--1626
+Underfull \hbox (badness 10000) in paragraph at lines 1815--1820
 \OT1/cmr/m/n/12 gist, 2021. URL: $\OT1/cmtt/m/n/12 https : / / www . aspistrate
 gist . org . au /
  []
 
 
-Overfull \hbox (210.51666pt too wide) in paragraph at lines 1621--1626
+Overfull \hbox (210.51666pt too wide) in paragraph at lines 1815--1820
 \OT1/cmtt/m/n/12 australias-[]esafety-[]commissioner-[]targets-[]abuse-[]online
 -[]as-[]covid-[]19-[]supercharges-[]cyberbullying/$\OT1/cmr/m/n/12 . 
  []
 
-[42] [43 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
-ures/fig:priorCheck-1.pdf> </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/p
-aperSubmission/figures/fig:priorCheck-2.pdf>]
-Underfull \hbox (badness 4505) in paragraph at lines 1627--1632
+
+Underfull \hbox (badness 4505) in paragraph at lines 1821--1826
 []\OT1/cmr/m/n/12 L1ght, L1ght re-leases ground-break-ing re-port on corona-rel
 ated
  []
 
 
-Overfull \hbox (180.14165pt too wide) in paragraph at lines 1627--1632
+Overfull \hbox (180.14165pt too wide) in paragraph at lines 1821--1826
 \OT1/cmtt/m/n/12 l1ght-[]releases-[]groundbreaking-[]report-[]on-[]corona-[]rel
 ated-[]hate-[]speech-[]and-[]online-[]toxicity/$\OT1/cmr/m/n/12 . 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1633--1638
+Underfull \hbox (badness 10000) in paragraph at lines 1827--1832
 []\OT1/cmr/m/n/12 A. Bhat-tacharya, How Covid-19 lock-downs weak-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1633--1638
+Underfull \hbox (badness 10000) in paragraph at lines 1827--1832
 \OT1/cmr/m/n/12 ened Face-book's con-tent mod-er-a-tion al-go-rithms,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1633--1638
+Underfull \hbox (badness 10000) in paragraph at lines 1827--1832
 \OT1/cmr/m/n/12 2021. URL: $\OT1/cmtt/m/n/12 https : / / qz . com / india / 197
 6450 /
  []
 
 
-Overfull \hbox (29.94157pt too wide) in paragraph at lines 1633--1638
+Overfull \hbox (29.94157pt too wide) in paragraph at lines 1827--1832
 \OT1/cmtt/m/n/12 facebook-[]covid-[]19-[]lockdowns-[]hurt-[]content-[]moderatio
 n-[]algorithms/$\OT1/cmr/m/n/12 . 
  []
 
-[44]
-Underfull \hbox (badness 10000) in paragraph at lines 1755--1758
+[49] [50 </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/fig
+ures/fig:priorCheck-1.pdf> </home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/p
+aperSubmission/figures/fig:priorCheck-2.pdf>] [51]
+Underfull \hbox (badness 10000) in paragraph at lines 1949--1952
 []\OT1/cmr/m/n/12 Facebook frus-trates ad-ver-tis-ers as boy-cott over hate spe
 ech
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1755--1758
+Underfull \hbox (badness 10000) in paragraph at lines 1949--1952
 \OT1/cmr/m/n/12 kicks off, 2020. URL: $\OT1/cmtt/m/n/12 https : / / www . cnbc 
 . com / 2020 / 07 / 01 /
  []
 
 
-Overfull \hbox (70.90274pt too wide) in paragraph at lines 1755--1758
+Overfull \hbox (70.90274pt too wide) in paragraph at lines 1949--1952
 \OT1/cmtt/m/n/12 facebook-[]frustrates-[]advertisers-[]as-[]boycott-[]over-[]ha
 te-[]speech-[]kicks-[]off .
  []
 
 
-Overfull \hbox (56.64159pt too wide) in paragraph at lines 1759--1764
+Overfull \hbox (56.64159pt too wide) in paragraph at lines 1953--1958
 \OT1/cmtt/m/n/12 no-[]good-[]answers-[]why-[]didnt-[]ask-[]fm-[]learn-[]from-[]
 the-[]formspring-[]suicides$\OT1/cmr/m/n/12 . 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1775--1780
+Underfull \hbox (badness 10000) in paragraph at lines 1969--1974
 []\OT1/cmr/m/n/12 D. Seifert, So-cial ques-tion and an-swer site form-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1775--1780
+Underfull \hbox (badness 10000) in paragraph at lines 1969--1974
 \OT1/cmr/m/n/12 spring to shut down on March 31st, 2013. URL:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1775--1780
+Underfull \hbox (badness 10000) in paragraph at lines 1969--1974
 \OT1/cmtt/m/n/12 https : / / www . theverge . com / 2013 / 3 / 15 / 4110196 /
  []
 
 
-Overfull \hbox (5.74156pt too wide) in paragraph at lines 1775--1780
+Overfull \hbox (5.74156pt too wide) in paragraph at lines 1969--1974
 \OT1/cmtt/m/n/12 social-[]question-[]answer-[]site-[]formspring-[]shut-[]down-[
 ]march-[]31st$\OT1/cmr/m/n/12 . 
  []
 
-[45]
-Underfull \hbox (badness 2426) in paragraph at lines 1859--1865
+[52]
+Underfull \hbox (badness 2426) in paragraph at lines 2053--2059
 []\OT1/cmr/m/n/12 J. Va-nian, Google's Hate Speech De-tec-tion A.I. Has a Racia
 l
  []
 
 
-Underfull \hbox (badness 7631) in paragraph at lines 1859--1865
+Underfull \hbox (badness 7631) in paragraph at lines 2053--2059
 \OT1/cmr/m/n/12 Bias Prob-lem, 2019. URL: $\OT1/cmtt/m/n/12 https : / / fortune
  . com / 2019 / 08 / 16 /
  []
 
-[46] [47]
-Underfull \hbox (badness 10000) in paragraph at lines 1972--1976
+[53]
+Underfull \hbox (badness 10000) in paragraph at lines 2166--2170
 []\OT1/cmr/m/n/12 Facebook: 3.2 Bil-lion Likes & Com-ments Ev-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1972--1976
+Underfull \hbox (badness 10000) in paragraph at lines 2166--2170
 \OT1/cmr/m/n/12 ery Day, 2012. URL: $\OT1/cmtt/m/n/12 https : / / martech . org
  /
  []
 
-
-Underfull \hbox (badness 3895) in paragraph at lines 1982--1985
+[54]
+Underfull \hbox (badness 3895) in paragraph at lines 2176--2179
 []\OT1/cmr/m/n/12 Reddit in 2020, 2020. URL: $\OT1/cmtt/m/n/12 https : / / www 
 . reddit . com / r / blog /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2015--2020
+Underfull \hbox (badness 10000) in paragraph at lines 2209--2214
 []\OT1/cmr/m/n/12 C. New-ton, Face-book will pay \TS1/cmr/m/n/12 $\OT1/cmr/m/n/
 12 52 mil-lion in set-tle-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2015--2020
+Underfull \hbox (badness 10000) in paragraph at lines 2209--2214
 \OT1/cmr/m/n/12 with mod-er-a-tors who de-vel-oped PTSD on the job, 2020.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2015--2020
+Underfull \hbox (badness 10000) in paragraph at lines 2209--2214
 \OT1/cmr/m/n/12 URL: $\OT1/cmtt/m/n/12 https : / / www . theverge . com / 2020 
 / 5 / 12 / 21255870 /
  []
 
 
-Overfull \hbox (23.76657pt too wide) in paragraph at lines 2015--2020
+Overfull \hbox (23.76657pt too wide) in paragraph at lines 2209--2214
 \OT1/cmtt/m/n/12 facebook-[]content-[]moderator-[]settlement-[]scola-[]ptsd-[]m
 ental-[]health$\OT1/cmr/m/n/12 . 
  []
 
-[48]
-Underfull \hbox (badness 10000) in paragraph at lines 2035--2040
+
+Underfull \hbox (badness 10000) in paragraph at lines 2229--2234
 []\OT1/cmr/m/n/12 J. Koet-sier, Re-port: Face-book Makes 300,000 Con-tent
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2035--2040
+Underfull \hbox (badness 10000) in paragraph at lines 2229--2234
 \OT1/cmr/m/n/12 Mod-er-a-tion Mis-takes Ev-ery Day, 2020. URL: $\OT1/cmtt/m/n/1
 2 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2035--2040
+Underfull \hbox (badness 10000) in paragraph at lines 2229--2234
 \OT1/cmtt/m/n/12 / / www . forbes . com / sites / johnkoetsier / 2020 / 06 / 09
  /
  []
 
 
-Overfull \hbox (23.76657pt too wide) in paragraph at lines 2035--2040
+Overfull \hbox (23.76657pt too wide) in paragraph at lines 2229--2234
 \OT1/cmtt/m/n/12 300000-[]facebook-[]content-[]moderation-[]mistakes-[]daily-[]
 report-[]says/$\OT1/cmr/m/n/12 . 
  []
 
-
-Overfull \hbox (90.42775pt too wide) in paragraph at lines 2068--2072
+[55]
+Overfull \hbox (90.42775pt too wide) in paragraph at lines 2262--2266
 \OT1/cmtt/m/n/12 as-[]the-[]pandemic-[]forces-[]us-[]online-[]lgbtq2s-[]teens-[
 ]deal-[]with-[]cyberbullying-[]1 .
  []
 
 
-Underfull \hbox (badness 5147) in paragraph at lines 2078--2081
+Underfull \hbox (badness 5147) in paragraph at lines 2272--2275
 []\OT1/cmr/m/n/12 In:Game Abuse, 2017. URL: $\OT1/cmtt/m/n/12 https : / / www .
  ditchthelabel . org /
  []
 
 
-Underfull \hbox (badness 1803) in paragraph at lines 2090--2098
+Underfull \hbox (badness 1803) in paragraph at lines 2284--2292
 []\OT1/cmr/m/n/12 J. Gar-land, K. Ghazi-Zahedi, J.-G. Young, L. H^^Sebert-Dufre
 sne,
  []
 
-[49]
-Underfull \hbox (badness 1127) in paragraph at lines 2157--2167
+[56]
+Underfull \hbox (badness 1127) in paragraph at lines 2351--2361
 []\OT1/cmr/m/n/12 E. Chan-drasekha-ran, U. Pavalanathan, A. Srini-vasan, A. Gly
 nn,
  []
 
 
-Underfull \hbox (badness 1024) in paragraph at lines 2168--2181
+Underfull \hbox (badness 1024) in paragraph at lines 2362--2375
 []\OT1/cmr/m/n/12 M. Bilewicz, P. Temp-ska, G. Leliwa, M. Dow-gia l lo, M. Ta^^
 Snska,
  []
 
 
-Underfull \hbox (badness 5374) in paragraph at lines 2168--2181
+Underfull \hbox (badness 5374) in paragraph at lines 2362--2375
 \OT1/cmr/m/n/12 R. Ur-ba-niak, M. Wroczy^^Snski,  Ar-ti-fi-cial in-tel-li-gence
  against
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2168--2181
+Underfull \hbox (badness 10000) in paragraph at lines 2362--2375
 \OT1/cmr/m/n/12 hate: In-ter-ven-tion re-duc-ing ver-bal ag-gres-sion in the so
 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2168--2181
+Underfull \hbox (badness 10000) in paragraph at lines 2362--2375
 \OT1/cmr/m/n/12 cial net-work en-vi-ron-ment,  Ag-gres-sive Be-hav-ior 47 (2021
 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2168--2181
+Underfull \hbox (badness 10000) in paragraph at lines 2362--2375
 \OT1/cmr/m/n/12 260--266. URL: $\OT1/cmtt/m/n/12 https : / / onlinelibrary . wi
 ley . com / doi / abs /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2168--2181
+Underfull \hbox (badness 10000) in paragraph at lines 2362--2375
 \OT1/cmtt/m/n/12 10 . 1002 / ab . 21948$\OT1/cmr/m/n/12 . doi:$\OT1/cmtt/m/n/12
  https : / / doi . org / 10 . 1002 / ab . 21948$\OT1/cmr/m/n/12 .
  []
 
 
-Overfull \hbox (20.26657pt too wide) in paragraph at lines 2168--2181
+Overfull \hbox (20.26657pt too wide) in paragraph at lines 2362--2375
 \OT1/cmtt/m/n/12 arXiv:https://onlinelibrary.wiley.com/doi/pdf/10.1002/ab.21948
 \OT1/cmr/m/n/12 . 
  []
 
-[50] [51]
+[57] [58]
 
 Package natbib Warning: There were undefined citations.
 
-[52]
+[59]
 (/home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmission/paperSubmiss
-ion1.aux) ) 
+ion1.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 15118 strings out of 478287
- 307506 string characters out of 5849288
- 575412 words of memory out of 5000000
- 33014 multiletter control sequences out of 15000+600000
- 481420 words of font info for 74 fonts, out of 8000000 for 9000
+ 15143 strings out of 478287
+ 308063 string characters out of 5849288
+ 579602 words of memory out of 5000000
+ 33036 multiletter control sequences out of 15000+600000
+ 481588 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,10n,94p,1277b,939s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+ 99i,10n,94p,1518b,943s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+i7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr
+/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
 Output written on /home/rafal/UGPOP/projectsUGPOP/nestaAttacksStudy/paperSubmis
-sion/paperSubmission1.pdf (54 pages, 1175541 bytes).
+sion/paperSubmission1.pdf (61 pages, 1767779 bytes).
 PDF statistics:
- 557 PDF objects out of 1000 (max. 8388607)
- 385 compressed objects within 4 object streams
+ 591 PDF objects out of 1000 (max. 8388607)
+ 406 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 

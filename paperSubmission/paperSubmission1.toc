@@ -1,20 +1,21 @@
 \contentsline {section}{\numberline {1}Automated versus human-based moderation}{2}{}%
 \contentsline {section}{\numberline {2}Different approaches to content moderation}{6}{}%
 \contentsline {section}{\numberline {3}Counter-speech interventions}{7}{}%
-\contentsline {section}{\numberline {4}Technology applied for personal attack detection}{12}{}%
-\contentsline {section}{\numberline {5}Data analysis}{14}{}%
-\contentsline {subsection}{\numberline {5.1}Data collection and exploration}{14}{}%
-\contentsline {subsection}{\numberline {5.2}Causal thinking, choice of variables and models}{23}{}%
-\contentsline {subsection}{\numberline {5.3}Results}{29}{}%
-\contentsline {subsubsection}{\numberline {5.3.1}Interventions on a given day}{29}{}%
-\contentsline {subsubsection}{\numberline {5.3.2}Cumulative sum of interventions}{29}{}%
-\contentsline {subsubsection}{\numberline {5.3.3}Long term before/after analysis}{29}{}%
-\contentsline {section}{\numberline {6}Managing volunteers}{36}{}%
-\contentsline {section}{\numberline {7}Discussion}{38}{}%
-\contentsline {section}{\numberline {8}Volunteer engagement and impact of competitions}{38}{}%
-\contentsline {subsection}{\numberline {8.1}The challenge of keeping volunteers engaged}{38}{}%
-\contentsline {subsection}{\numberline {8.2}Volunteer activity data analysis}{38}{}%
+\contentsline {section}{\numberline {4}Collective Intelligence and moderation}{12}{}%
+\contentsline {section}{\numberline {5}Technology applied for personal attack detection}{14}{}%
+\contentsline {section}{\numberline {6}Data analysis}{15}{}%
+\contentsline {subsection}{\numberline {6.1}Data collection and exploration}{15}{}%
+\contentsline {subsection}{\numberline {6.2}Causal thinking, choice of variables and models}{25}{}%
+\contentsline {subsection}{\numberline {6.3}Results}{31}{}%
+\contentsline {subsubsection}{\numberline {6.3.1}Interventions on a given day}{31}{}%
+\contentsline {subsubsection}{\numberline {6.3.2}Cumulative sum of interventions}{31}{}%
+\contentsline {subsubsection}{\numberline {6.3.3}Long term before/after analysis}{31}{}%
+\contentsline {section}{\numberline {7}Managing volunteers}{38}{}%
+\contentsline {section}{\numberline {8}Discussion}{40}{}%
+\contentsline {section}{\numberline {9}Volunteer engagement and impact of competitions}{40}{}%
+\contentsline {subsection}{\numberline {9.1}The challenge of keeping volunteers engaged}{40}{}%
+\contentsline {subsection}{\numberline {9.2}Volunteer activity data analysis}{40}{}%
 \let \numberline \tmptocnumberline 
-\contentsline {section}{\numberline {Appendix \nobreakspace {}A}Explanation of WAIC}{42}{}%
-\contentsline {section}{\numberline {Appendix \nobreakspace {}B}Time series model selection}{43}{}%
-\contentsline {section}{\numberline {Appendix \nobreakspace {}C}Model choice for the long term analysis}{47}{}%
+\contentsline {section}{\numberline {Appendix \nobreakspace {}A}Explanation of WAIC}{44}{}%
+\contentsline {section}{\numberline {Appendix \nobreakspace {}B}Time series model selection}{45}{}%
+\contentsline {section}{\numberline {Appendix \nobreakspace {}C}Model choice for the long term analysis}{49}{}%

@@ -1,21 +1,22 @@
-\contentsline {section}{\numberline {1}Automated versus human-based moderation}{2}{}%
-\contentsline {section}{\numberline {2}Different approaches to content moderation}{6}{}%
-\contentsline {section}{\numberline {3}Counter-speech interventions}{7}{}%
-\contentsline {section}{\numberline {4}Collective Intelligence and moderation}{12}{}%
-\contentsline {section}{\numberline {5}Technology applied for personal attack detection}{14}{}%
-\contentsline {section}{\numberline {6}Data analysis}{15}{}%
-\contentsline {subsection}{\numberline {6.1}Data collection and exploration}{15}{}%
-\contentsline {subsection}{\numberline {6.2}Causal thinking, choice of variables and models}{25}{}%
-\contentsline {subsection}{\numberline {6.3}Results}{31}{}%
-\contentsline {subsubsection}{\numberline {6.3.1}Interventions on a given day}{31}{}%
-\contentsline {subsubsection}{\numberline {6.3.2}Cumulative sum of interventions}{31}{}%
-\contentsline {subsubsection}{\numberline {6.3.3}Long term before/after analysis}{31}{}%
-\contentsline {section}{\numberline {7}Managing volunteers}{38}{}%
-\contentsline {section}{\numberline {8}Discussion}{40}{}%
-\contentsline {section}{\numberline {9}Volunteer engagement and impact of competitions}{40}{}%
-\contentsline {subsection}{\numberline {9.1}The challenge of keeping volunteers engaged}{40}{}%
-\contentsline {subsection}{\numberline {9.2}Volunteer activity data analysis}{40}{}%
+\contentsline {section}{\numberline {1}Introduction}{2}{}%
+\contentsline {section}{\numberline {2}Automated versus human-based moderation}{4}{}%
+\contentsline {section}{\numberline {3}Different approaches to content moderation}{9}{}%
+\contentsline {section}{\numberline {4}Counter-speech interventions}{10}{}%
+\contentsline {section}{\numberline {5}Collective Intelligence and moderation}{16}{}%
+\contentsline {section}{\numberline {6}Technology applied for personal attack detection}{18}{}%
+\contentsline {section}{\numberline {7}Data analysis}{20}{}%
+\contentsline {subsection}{\numberline {7.1}Data collection and exploration}{20}{}%
+\contentsline {subsection}{\numberline {7.2}Causal thinking, choice of variables and models}{29}{}%
+\contentsline {subsection}{\numberline {7.3}Results}{34}{}%
+\contentsline {subsubsection}{\numberline {7.3.1}Interventions on a given day}{34}{}%
+\contentsline {subsubsection}{\numberline {7.3.2}Cumulative sum of interventions}{36}{}%
+\contentsline {subsubsection}{\numberline {7.3.3}Long term before/after analysis}{36}{}%
+\contentsline {section}{\numberline {8}Managing volunteers}{42}{}%
+\contentsline {section}{\numberline {9}Discussion}{44}{}%
+\contentsline {section}{\numberline {10}Volunteer engagement and impact of competitions}{44}{}%
+\contentsline {subsection}{\numberline {10.1}The challenge of keeping volunteers engaged}{44}{}%
+\contentsline {subsection}{\numberline {10.2}Volunteer activity data analysis}{44}{}%
 \let \numberline \tmptocnumberline 
-\contentsline {section}{\numberline {Appendix \nobreakspace {}A}Explanation of WAIC}{44}{}%
-\contentsline {section}{\numberline {Appendix \nobreakspace {}B}Time series model selection}{45}{}%
-\contentsline {section}{\numberline {Appendix \nobreakspace {}C}Model choice for the long term analysis}{49}{}%
+\contentsline {section}{\numberline {Appendix \nobreakspace {}A}Explanation of WAIC}{48}{}%
+\contentsline {section}{\numberline {Appendix \nobreakspace {}B}Time series model selection}{49}{}%
+\contentsline {section}{\numberline {Appendix \nobreakspace {}C}Model choice for the long term analysis}{53}{}%

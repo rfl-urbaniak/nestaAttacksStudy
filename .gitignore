@@ -6,6 +6,10 @@
 *.bak
 *.sav
 *.log
+*.tex
+volunteers/reportVolunteers_cache
+volunteers/reportVolunteers_files
+volunteers/nesta_study_technical_report_files
 technical_report/nesta_study_technical_report_files
 technical_report/nesta_study_technical_report_cache
 

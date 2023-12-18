@@ -81,9 +81,9 @@ knitr::opts_chunk$set(tidy.opts = list(width.cutoff = 70), tidy = FALSE)
 \scriptsize
 
 ```{r periodsVisualisationPrep,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE, tidy = FALSE}
-Hate <- readRDS(file = "datasets/RAWNESTA/Hate.rds")
-Comments <-   readRDS(file = "datasets/RAWNESTA/Comments.rds")
-summaries <- read.csv(file = "datasets/Summaries.csv")
+Hate <- readRDS(file = "data/raw/Hate.rds")
+Comments <-   readRDS(file = "data/raw/Comments.rds")
+summaries <- read.csv(file = "data/Summaries.csv")
 
 summaries$ABS <- standardize(summaries$AB)
 summaries$CBS <- standardize(summaries$CB)
@@ -113,7 +113,7 @@ rownames(hateTS) <- NULL
 colnames(hateTS) <- c("attacks","date")
 hateTS$periods <- periods
 
-interventions <- readRDS(file = "datasets/interventions.rds")
+interventions <- readRDS(file = "data/interventions.rds")
 interventionsTS <- as.data.frame(table(interventions$day))
 interventionsTS$Var1 <- as.Date(interventionsTS$Var1)
 colnames(interventionsTS) <- c("date", "interventions")
@@ -363,7 +363,7 @@ Further insights, undermining the initial impression suggested by Figure \ref{fi
 \vspace{1mm}
 \footnotesize
 ```{r tsVisPrep,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%", warning = FALSE, message = FALSE}
-hateDFs <- readRDS("datasets/hateDFsNoDropouts.RDS")
+hateDFs <- readRDS("data/hateDFsNoDropouts.RDS")
 
 
 start <- as.Date("2020-03-09")
@@ -552,7 +552,7 @@ and the user-specific coefficient model had the following structure:
 
 \footnotesize
 ```{r nullTSmodels,echo=TRUE,eval=FALSE,fig.align = "center", cache=TRUE, fig.show = "hold", out.width = "100%",   message = FALSE, warning = FALSE, results = FALSE}
-dat <- readRDS(file = "datasets/dat.RDS")
+dat <- readRDS(file = "data/dat.RDS")
 
 lmu <- .05
 lsigma <- 2.8
@@ -1203,8 +1203,8 @@ groupID <- 1:3
 IC <- 5  #mean for interventions in treatment
 data <- expand.grid(ADS = ADS,groupID = groupID, CBS = CBS, IC =  IC)
 #prior <- extract.prior(InteractionsModelDiffSD1, n = 1e4)
-#saveRDS(prior, file = "datasets/prior1.RDS")
-prior <- readRDS(file = "datasets/prior1.RDS")
+#saveRDS(prior, file = "data/prior1.RDS")
+prior <- readRDS(file = "data/prior1.RDS")
 mu <- link( InteractionsModelDiffSD1 , post=prior , data=data )
 colnames(mu) <- levels(summaries$group)
 muLong <- melt(mu)
@@ -1225,8 +1225,8 @@ groupID <- 1:3
 IC <- 0:20
 data <- expand.grid(ADS = ADS,groupID = groupID, CBS = CBS, IC =  IC)
 #prior <- extract.prior(InteractionsModelDiffSD1, n = 1e4)
-#saveRDS(prior, file = "datasets/prior2.RDS")
-prior <- readRDS(file = "datasets/prior2.RDS")
+#saveRDS(prior, file = "data/prior2.RDS")
+prior <- readRDS(file = "data/prior2.RDS")
 mu <- link(InteractionsModelDiffSD1 , post=prior , data=data )
 mu.mean <- apply( mu , 2, mean )
 mu.HPDI <- data.frame(t(apply( mu , 2 , HPDI )))
@@ -1258,8 +1258,8 @@ groupID <- 1:3
 IC <- 5  #mean for interventions in treatment
 data <- expand.grid(ADS = ADS,groupID = groupID, CBS = CBS, IC =  IC)
 #prior <- extract.prior(InteractionsModelDiff, n = 1e4)
-#saveRDS(prior, file = "datasets/prior3.RDS")
-prior <- readRDS(file = "datasets/prior3.RDS")
+#saveRDS(prior, file = "data/prior3.RDS")
+prior <- readRDS(file = "data/prior3.RDS")
 
 mu <- link(InteractionsModelDiff , post=prior , data=data ) 
 colnames(mu) <- levels(summaries$group)
@@ -1284,8 +1284,8 @@ groupID <- 1:3
 IC <- 0:20
 data <- expand.grid(ADS = ADS,groupID = groupID, CBS = CBS, IC =  IC)
 #prior <- extract.prior(InteractionsModelDiff, n = 1e4)
-#saveRDS(prior, file = "datasets/prior4.RDS")
-prior <- readRDS(file = "datasets/prior4.RDS")
+#saveRDS(prior, file = "data/prior4.RDS")
+prior <- readRDS(file = "data/prior4.RDS")
 mu <- link(InteractionsModelDiff , post=prior , data=data )
 mu.mean <- apply( mu , 2, mean )
 mu.HPDI <- data.frame(t(apply( mu , 2 , HPDI )))
@@ -1327,14 +1327,13 @@ priorJoint03Titled
 Now,  let's double-check if our model building tools behave appropriately for models of this sort on the data that we have---some model diagnostics before we move on (Figure \ref{fig:traceplot}). What we are witnessing is (1) stationarity (the chains stay mostly in the most probable regions), (2) good mixing (they explore a range of options in the beginning), and (3) convergence (they stabilize as they progress).  We also need to   inspect the distribution of residuals, expecting them to be more or less normally distributed, which they are (Figure \ref{fig:residuals}).
 
 
-\begin{figure}
-```{r traceplot,echo=FALSE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "80%", results = "hide"}
-InteractionsModelDiff <- readRDS(file = "models/InteractionsModelDiff.rds")
-traceplot( InteractionsModelDiff )
-```
-\caption{Traceplot of the model selected using Widelly Acceptable Information Criterion.}
-\label{fig:traceplot}
-\end{figure}
+<!-- ```{r traceplot,echo=FALSE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "80%", results = "hide"} -->
+<!-- InteractionsModelDiff <- readRDS(file = "models/InteractionsModelDiff.rds") -->
+<!-- traceplot( InteractionsModelDiff ) -->
+<!-- ``` -->
+<!-- \caption{Traceplot of the model selected using Widelly Acceptable Information Criterion.} -->
+<!-- \label{fig:traceplot} -->
+<!-- \end{figure} -->
 
 
 
@@ -1647,16 +1646,16 @@ We build seven separate models for the impact of interventions $k$ days ago, $1\
 \footnotesize
 ```{r dailyResults,echo=TRUE,eval=TRUE,fig.align = "center",cache=TRUE, fig.show = "hold", out.width = "100%"}
 
-hateDFs <- readRDS(file ="datasets/hateDFs2.RDS")
+hateDFs <- readRDS(file ="data/hateDFs2.RDS")
 sampleDFs <- hateDFs
 
-d1precis <- readRDS("timeSeriesDFs/d1precis.rds")
-d2precis <- readRDS("timeSeriesDFs/d2precis.rds")
-d3precis <- readRDS("timeSeriesDFs/d3precis.rds")
-d4precis <- readRDS("timeSeriesDFs/d4precis.rds")
-d5precis <- readRDS("timeSeriesDFs/d5precis.rds")
-d6precis <- readRDS("timeSeriesDFs/d6precis.rds")
-d7precis <- readRDS("timeSeriesDFs/d7precis.rds")
+d1precis <- readRDS("data/timeSeriesDFs/d1precis.rds")
+d2precis <- readRDS("data/timeSeriesDFs/d2precis.rds")
+d3precis <- readRDS("data/timeSeriesDFs/d3precis.rds")
+d4precis <- readRDS("data/timeSeriesDFs/d4precis.rds")
+d5precis <- readRDS("data/timeSeriesDFs/d5precis.rds")
+d6precis <- readRDS("data/timeSeriesDFs/d6precis.rds")
+d7precis <- readRDS("data/timeSeriesDFs/d7precis.rds")
 
 n <- length(hateDFs)
 df <- list()
@@ -1807,14 +1806,14 @@ getPrecisForParamInd <- function(object, i, group, dat){
   return(df)
 }
 
-datA <- readRDS(file = "timeSeries/tsaStanCumulative/datA.RDS")
-fitA <- readRDS("timeSeries/tsaStanCumulative/c3interactionStanFitA.rds")
-datB <- readRDS(file = "timeSeries/tsaStanCumulative/datB.RDS")
-fitB <- readRDS("timeSeries/tsaStanCumulative/c3interactionStanFitB.rds")
-datC <- readRDS(file = "timeSeries/tsaStanCumulative/datC.RDS")
-fitC <- readRDS("timeSeries/tsaStanCumulative/c3interactionStanFitC.rds")
-datD <- readRDS(file = "timeSeries/tsaStanCumulative/datD.RDS")
-fitD <- readRDS("timeSeries/tsaStanCumulative/c3interactionStanFitD.rds")
+datA <- readRDS(file = "data/timeSeries/datA.RDS")
+fitA <- readRDS("data/timeSeries/c3interactionStanFitA.rds")
+datB <- readRDS(file = "data/timeSeries/datB.RDS")
+fitB <- readRDS("data/timeSeries/c3interactionStanFitB.rds")
+datC <- readRDS(file = "data/timeSeries/datC.RDS")
+fitC <- readRDS("data/timeSeries/c3interactionStanFitC.rds")
+datD <- readRDS(file = "data/timeSeries/datD.RDS")
+fitD <- readRDS("data/timeSeries/c3interactionStanFitD.rds")
 
 samplesA <- rstan::extract(fitA, permuted = TRUE,
                            inc_warmup = FALSE,  include = TRUE)

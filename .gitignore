@@ -1,3 +1,12 @@
 *.Rproj
 .Rproj.user
+*.rds
+*.RDS
+*.csv
+*.bak
+*.sav
+*.log
+technical_report/nesta_study_technical_report_files
+technical_report/nesta_study_technical_report_cache
+models/
 

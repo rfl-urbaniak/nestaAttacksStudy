@@ -7,6 +7,7 @@
 *.sav
 *.log
 *.tex
+.Rhistory
 volunteers/reportVolunteers_cache
 volunteers/reportVolunteers_files
 volunteers/nesta_study_technical_report_files

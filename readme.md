@@ -3,6 +3,7 @@ This repository contains data and code that accompany the paper titled
 > Whom to pity, whom to scold? Effects of empathetic and normative AI-assisted interventions
 > on aggressive Reddit users with different activity profiles.
 
+This study was supported by a grant from the NESTA Collective Intelligence Grants Programme (2019–2020) and by the National Science Center (grant no. 2021/41/B/HS1/01814).
 
 1. The main code and explanation of how particular datasets fit into the project are available in `technical_report/nesta_study_technical_report.pdf`. If you want to compile the pdf from scratch, use the `.Rmd` file after installing all the necessary packages as specified in the preamble of that file. To be able to compile you will also need to download two folders from GoogleDrive. UPDATE: newer versions of ggplot2 break compilation, the working version is 3.4.4 and can be installed using `remotes::install_version("ggplot2", version = "3.4.4")`.
 
